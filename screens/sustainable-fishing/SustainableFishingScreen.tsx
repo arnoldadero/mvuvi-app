@@ -14,6 +14,7 @@ import {
 } from 'tamagui';
 import { useTranslation } from 'react-i18next';
 import { Info, Fish, Calendar, Ruler, Book } from '@tamagui/lucide-icons';
+import { LanguageSelector } from '../../components/common/LanguageSelector';
 
 interface SustainableFishingScreenProps {
   navigation: any;
@@ -44,7 +45,10 @@ export function SustainableFishingScreen({ navigation }: SustainableFishingScree
       <StatusBar barStyle="dark-content" backgroundColor="#fff" />
       <ScrollView>
         <YStack padding="$4" space="$4">
-          <H2>{t('sustainableFishing.title')}</H2>
+          <XStack justifyContent="space-between" alignItems="center">
+            <H2>{t('sustainableFishing.title')}</H2>
+            <LanguageSelector minimal />
+          </XStack>
           <Paragraph>{t('sustainableFishing.description')}</Paragraph>
           
           <Tabs

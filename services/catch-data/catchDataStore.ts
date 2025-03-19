@@ -1,5 +1,6 @@
 import { create } from 'zustand';
 import { supabase } from '../supabase/supabaseClient';
+import { locationService } from '../location/locationService';
 
 export interface CatchRecord {
   id: string;
@@ -12,6 +13,8 @@ export interface CatchRecord {
   effortHours: number;
   notes?: string;
   userId?: string;
+  latitude?: number;
+  longitude?: number;
 }
 
 export interface CatchStatistics {
@@ -87,6 +90,8 @@ export const useCatchDataStore = create<CatchDataState>((set, get) => ({
         effortHours: item.effort_hours,
         notes: item.notes,
         userId: item.user_id,
+        latitude: item.latitude,
+        longitude: item.longitude,
       }));
       
       set({ 
@@ -116,6 +121,26 @@ export const useCatchDataStore = create<CatchDataState>((set, get) => ({
         return;
       }
       
+      // Get current location if not provided
+      if (!record.latitude || !record.longitude) {
+        try {
+          const locationResult = await locationService.getCurrentLocation();
+          
+          if (locationResult.coordinates) {
+            record.latitude = locationResult.coordinates.latitude;
+            record.longitude = locationResult.coordinates.longitude;
+            
+            // Use the reverse geocoded location name if no location was provided
+            if (!record.location && locationResult.locationName) {
+              record.location = locationResult.locationName;
+            }
+          }
+        } catch (error) {
+          console.warn('Failed to get location data:', error);
+          // Continue without location data if it fails
+        }
+      }
+      
       // Prepare data for insertion
       const recordData = {
         fish_species: record.fishSpecies,
@@ -127,6 +152,8 @@ export const useCatchDataStore = create<CatchDataState>((set, get) => ({
         effort_hours: record.effortHours,
         notes: record.notes || '',
         user_id: user.id,
+        latitude: record.latitude,
+        longitude: record.longitude,
       };
       
       // Insert into Supabase
@@ -153,6 +180,8 @@ export const useCatchDataStore = create<CatchDataState>((set, get) => ({
           effortHours: data[0].effort_hours,
           notes: data[0].notes,
           userId: data[0].user_id,
+          latitude: data[0].latitude,
+          longitude: data[0].longitude,
         };
         
         // Add to local state

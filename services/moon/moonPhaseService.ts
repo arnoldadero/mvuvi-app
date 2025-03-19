@@ -80,8 +80,8 @@ function getFishingRecommendation(phase: MoonPhase, age: number): { isFavorable:
       };
     case MoonPhase.FULL_MOON:
       return {
-        isFavorable: true,
-        recommendation: "Good for night fishing. The bright moon helps visibility but fish may be more cautious.",
+        isFavorable: false,
+        recommendation: "Bad for night fishing. The bright moon helps visibility and fish are more cautious.",
       };
     case MoonPhase.FIRST_QUARTER:
     case MoonPhase.LAST_QUARTER:

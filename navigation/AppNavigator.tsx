@@ -9,15 +9,12 @@ import { MoonPhaseScreen } from '../screens/weather/MoonPhaseScreen';
 import { LoginScreen } from '../screens/auth/LoginScreen';
 import { RegisterScreen } from '../screens/auth/RegisterScreen';
 import { ForgotPasswordScreen } from '../screens/auth/ForgotPasswordScreen';
-import { AddFishSightingScreen } from '../screens/fish-finding/AddFishSightingScreen';
-import { FishSightingDetailsScreen } from '../screens/fish-finding/FishSightingDetailsScreen';
 import { ReportMarketPriceScreen } from '../screens/market-prices/ReportMarketPriceScreen';
 import { EmergencyContactsScreen } from '../screens/safety/EmergencyContactsScreen';
 import { SafetyChecklistScreen } from '../screens/safety/SafetyChecklistScreen';
 import { FishSpeciesGuideScreen } from '../screens/sustainable-fishing/FishSpeciesGuideScreen';
 import { FishingRegulationsScreen } from '../screens/sustainable-fishing/FishingRegulationsScreen';
 import { FishingSeasonalCalendarScreen } from '../screens/sustainable-fishing/FishingSeasonalCalendarScreen';
-import { AddCatchRecordScreen } from '../screens/catch-data/AddCatchRecordScreen';
 import { CatchRecordDetailsScreen } from '../screens/catch-data/CatchRecordDetailsScreen';
 
 // Import TabNavigator
@@ -36,10 +33,6 @@ export type RootStackParamList = {
   // Weather screens
   MoonPhase: undefined;
   
-  // Fish Finding screens
-  AddFishSighting: undefined;
-  FishSightingDetails: { sightingId: string };
-  
   // Market Prices screens
   ReportMarketPrice: undefined;
   
@@ -53,8 +46,7 @@ export type RootStackParamList = {
   FishingSeasonalCalendar: undefined;
   
   // Catch Data screens
-  AddCatchRecord: undefined;
-  CatchRecordDetails: { recordId: string };
+  CatchRecordDetails: { catchId: string };
 };
 
 // Define screen props types
@@ -109,18 +101,6 @@ export function AppNavigator() {
               options={{ title: t('moonPhase.title') }} 
             />
             
-            {/* Fish Finding related screens */}
-            <Stack.Screen 
-              name="AddFishSighting" 
-              component={AddFishSightingScreen} 
-              options={{ title: t('fishFinding.addSighting') }} 
-            />
-            <Stack.Screen 
-              name="FishSightingDetails" 
-              component={FishSightingDetailsScreen} 
-              options={{ title: t('fishFinding.sightingDetails') }} 
-            />
-            
             {/* Market Prices related screens */}
             <Stack.Screen 
               name="ReportMarketPrice" 
@@ -158,11 +138,6 @@ export function AppNavigator() {
             />
             
             {/* Catch Data related screens */}
-            <Stack.Screen 
-              name="AddCatchRecord" 
-              component={AddCatchRecordScreen} 
-              options={{ title: t('catchData.addRecord') }} 
-            />
             <Stack.Screen 
               name="CatchRecordDetails" 
               component={CatchRecordDetailsScreen} 

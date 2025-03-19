@@ -6,20 +6,18 @@ import { Feather } from '@expo/vector-icons';
 
 // Import main screens for each tab
 import { WeatherScreen } from '../screens/weather/WeatherScreen';
-import { FishFindingScreen } from '../screens/fish-finding/FishFindingScreen';
 import { MarketPricesScreen } from '../screens/market-prices/MarketPricesScreen';
 import { SafetyScreen } from '../screens/safety/SafetyScreen';
 import { SustainableFishingScreen } from '../screens/sustainable-fishing/SustainableFishingScreen';
-import { CatchDataScreen } from '../screens/catch-data/CatchDataScreen';
+import { RecordCatchScreen } from '../screens/catch-data/RecordCatchScreen';
 
 // Define the tab navigator param list
 export type TabParamList = {
   Weather: undefined;
-  FishFinding: undefined;
   MarketPrices: undefined;
   Safety: undefined;
   SustainableFishing: undefined;
-  CatchData: undefined;
+  CatchData: { initialLocation?: { latitude: number; longitude: number } };
 };
 
 const Tab = createBottomTabNavigator<TabParamList>();
@@ -36,8 +34,6 @@ export function TabNavigator() {
           // Set the icon based on the route name
           if (route.name === 'Weather') {
             iconName = 'cloud';
-          } else if (route.name === 'FishFinding') {
-            iconName = 'map-pin';
           } else if (route.name === 'MarketPrices') {
             iconName = 'dollar-sign';
           } else if (route.name === 'Safety') {
@@ -66,13 +62,6 @@ export function TabNavigator() {
         }}
       />
       <Tab.Screen 
-        name="FishFinding" 
-        component={FishFindingScreen} 
-        options={{ 
-          title: t('fishFinding.title'),
-        }}
-      />
-      <Tab.Screen 
         name="MarketPrices" 
         component={MarketPricesScreen} 
         options={{ 
@@ -95,9 +84,9 @@ export function TabNavigator() {
       />
       <Tab.Screen 
         name="CatchData" 
-        component={CatchDataScreen} 
+        component={RecordCatchScreen} 
         options={{ 
-          title: t('catchData.title'),
+          title: t('catch.recordCatch'),
         }}
       />
     </Tab.Navigator>
