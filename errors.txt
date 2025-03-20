@@ -1,0 +1,2145 @@
+[96mnode_modules/@expo/config-plugins/build/ios/Swift.d.ts[0m:[93m1[0m:[93m23[0m - [91merror[0m[90m TS2688: [0mCannot find type definition file for 'xcode'.
+
+[7m1[0m /// <reference types="xcode" />
+[7m [0m [91m                      ~~~~~[0m
+
+[96mnode_modules/@expo/config-plugins/build/ios/XcodeProjectFile.d.ts[0m:[93m1[0m:[93m23[0m - [91merror[0m[90m TS2688: [0mCannot find type definition file for 'xcode'.
+
+[7m1[0m /// <reference types="xcode" />
+[7m [0m [91m                      ~~~~~[0m
+
+[96mnode_modules/@react-navigation/core/lib/typescript/commonjs/src/StaticNavigation.d.ts[0m:[93m35[0m:[93m27[0m - [91merror[0m[90m TS2315: [0mType 'StaticParamList' is not generic.
+
+[7m35[0m } ? NavigatorScreenParams<StaticParamList<T['screen']>> | undefined : T extends StaticNavigation<any, any, any> ? NavigatorScreenParams<StaticParamList<T>> | undefined : UnknownToUndefined<ParamsForScreenComponent<T>>;
+[7m  [0m [91m                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96mnode_modules/@react-navigation/core/lib/typescript/commonjs/src/StaticNavigation.d.ts[0m:[93m35[0m:[93m137[0m - [91merror[0m[90m TS2315: [0mType 'StaticParamList' is not generic.
+
+[7m35[0m } ? NavigatorScreenParams<StaticParamList<T['screen']>> | undefined : T extends StaticNavigation<any, any, any> ? NavigatorScreenParams<StaticParamList<T>> | undefined : UnknownToUndefined<ParamsForScreenComponent<T>>;
+[7m  [0m [91m                                                                                                                                        ~~~~~~~~~~~~~~~~~~[0m
+
+[96mnode_modules/@react-navigation/core/lib/typescript/commonjs/src/StaticNavigation.d.ts[0m:[93m130[0m:[93m13[0m - [91merror[0m[90m TS2456: [0mType alias 'StaticParamList' circularly references itself.
+
+[7m130[0m export type StaticParamList<T extends {
+[7m   [0m [91m            ~~~~~~~~~~~~~~~[0m
+
+[96mnode_modules/@tamagui/adapt/types/Adapt.d.ts[0m:[93m2[0m:[93m8[0m - [91merror[0m[90m TS1259: [0mModule '"C:/Senior dev/mvuvi-app/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+
+[7m2[0m import React from 'react';
+[7m [0m [91m       ~~~~~[0m
+
+  [96mnode_modules/@types/react/index.d.ts[0m:[93m46[0m:[93m1[0m
+    [7m46[0m export = React;
+    [7m  [0m [96m~~~~~~~~~~~~~~~[0m
+    This module is declared with 'export =', and can only be used with a default import when using the 'esModuleInterop' flag.
+
+[96mnode_modules/@tamagui/checkbox-headless/types/useCheckbox.d.ts[0m:[93m1[0m:[93m8[0m - [91merror[0m[90m TS1259: [0mModule '"C:/Senior dev/mvuvi-app/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+
+[7m1[0m import React from 'react';
+[7m [0m [91m       ~~~~~[0m
+
+  [96mnode_modules/@types/react/index.d.ts[0m:[93m46[0m:[93m1[0m
+    [7m46[0m export = React;
+    [7m  [0m [96m~~~~~~~~~~~~~~~[0m
+    This module is declared with 'export =', and can only be used with a default import when using the 'esModuleInterop' flag.
+
+[96mnode_modules/@tamagui/checkbox/types/createCheckbox.d.ts[0m:[93m1[0m:[93m8[0m - [91merror[0m[90m TS1259: [0mModule '"C:/Senior dev/mvuvi-app/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+
+[7m1[0m import React from 'react';
+[7m [0m [91m       ~~~~~[0m
+
+  [96mnode_modules/@types/react/index.d.ts[0m:[93m46[0m:[93m1[0m
+    [7m46[0m export = React;
+    [7m  [0m [96m~~~~~~~~~~~~~~~[0m
+    This module is declared with 'export =', and can only be used with a default import when using the 'esModuleInterop' flag.
+
+[96mnode_modules/@tamagui/dismissable/types/DismissableProps.d.ts[0m:[93m1[0m:[93m13[0m - [91merror[0m[90m TS1259: [0mModule '"C:/Senior dev/mvuvi-app/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+
+[7m1[0m import type React from 'react';
+[7m [0m [91m            ~~~~~[0m
+
+  [96mnode_modules/@types/react/index.d.ts[0m:[93m46[0m:[93m1[0m
+    [7m46[0m export = React;
+    [7m  [0m [96m~~~~~~~~~~~~~~~[0m
+    This module is declared with 'export =', and can only be used with a default import when using the 'esModuleInterop' flag.
+
+[96mnode_modules/@tamagui/floating/types/useFloating.d.ts[0m:[93m1[0m:[93m8[0m - [91merror[0m[90m TS1259: [0mModule '"C:/Senior dev/mvuvi-app/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+
+[7m1[0m import React from 'react';
+[7m [0m [91m       ~~~~~[0m
+
+  [96mnode_modules/@types/react/index.d.ts[0m:[93m46[0m:[93m1[0m
+    [7m46[0m export = React;
+    [7m  [0m [96m~~~~~~~~~~~~~~~[0m
+    This module is declared with 'export =', and can only be used with a default import when using the 'esModuleInterop' flag.
+
+[96mnode_modules/@tamagui/focus-scope/types/FocusScopeProps.d.ts[0m:[93m1[0m:[93m13[0m - [91merror[0m[90m TS1259: [0mModule '"C:/Senior dev/mvuvi-app/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+
+[7m1[0m import type React from 'react';
+[7m [0m [91m            ~~~~~[0m
+
+  [96mnode_modules/@types/react/index.d.ts[0m:[93m46[0m:[93m1[0m
+    [7m46[0m export = React;
+    [7m  [0m [96m~~~~~~~~~~~~~~~[0m
+    This module is declared with 'export =', and can only be used with a default import when using the 'esModuleInterop' flag.
+
+[96mnode_modules/@tamagui/group/types/Group.d.ts[0m:[93m3[0m:[93m8[0m - [91merror[0m[90m TS1259: [0mModule '"C:/Senior dev/mvuvi-app/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+
+[7m3[0m import React from 'react';
+[7m [0m [91m       ~~~~~[0m
+
+  [96mnode_modules/@types/react/index.d.ts[0m:[93m46[0m:[93m1[0m
+    [7m46[0m export = React;
+    [7m  [0m [96m~~~~~~~~~~~~~~~[0m
+    This module is declared with 'export =', and can only be used with a default import when using the 'esModuleInterop' flag.
+
+[96mnode_modules/@tamagui/image/types/Image.d.ts[0m:[93m1[0m:[93m8[0m - [91merror[0m[90m TS1259: [0mModule '"C:/Senior dev/mvuvi-app/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+
+[7m1[0m import React from 'react';
+[7m [0m [91m       ~~~~~[0m
+
+  [96mnode_modules/@types/react/index.d.ts[0m:[93m46[0m:[93m1[0m
+    [7m46[0m export = React;
+    [7m  [0m [96m~~~~~~~~~~~~~~~[0m
+    This module is declared with 'export =', and can only be used with a default import when using the 'esModuleInterop' flag.
+
+[96mnode_modules/@tamagui/portal/types/GorhomPortal.d.ts[0m:[93m2[0m:[93m8[0m - [91merror[0m[90m TS1259: [0mModule '"C:/Senior dev/mvuvi-app/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+
+[7m2[0m import React from 'react';
+[7m [0m [91m       ~~~~~[0m
+
+  [96mnode_modules/@types/react/index.d.ts[0m:[93m46[0m:[93m1[0m
+    [7m46[0m export = React;
+    [7m  [0m [96m~~~~~~~~~~~~~~~[0m
+    This module is declared with 'export =', and can only be used with a default import when using the 'esModuleInterop' flag.
+
+[96mnode_modules/@tamagui/radio-group/types/createRadioGroup.d.ts[0m:[93m1[0m:[93m8[0m - [91merror[0m[90m TS1259: [0mModule '"C:/Senior dev/mvuvi-app/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+
+[7m1[0m import React from 'react';
+[7m [0m [91m       ~~~~~[0m
+
+  [96mnode_modules/@types/react/index.d.ts[0m:[93m46[0m:[93m1[0m
+    [7m46[0m export = React;
+    [7m  [0m [96m~~~~~~~~~~~~~~~[0m
+    This module is declared with 'export =', and can only be used with a default import when using the 'esModuleInterop' flag.
+
+[96mnode_modules/@tamagui/remove-scroll/types/RemoveScroll.d.ts[0m:[93m1[0m:[93m8[0m - [91merror[0m[90m TS1259: [0mModule '"C:/Senior dev/mvuvi-app/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+
+[7m1[0m import React from 'react';
+[7m [0m [91m       ~~~~~[0m
+
+  [96mnode_modules/@types/react/index.d.ts[0m:[93m46[0m:[93m1[0m
+    [7m46[0m export = React;
+    [7m  [0m [96m~~~~~~~~~~~~~~~[0m
+    This module is declared with 'export =', and can only be used with a default import when using the 'esModuleInterop' flag.
+
+[96mnode_modules/@tamagui/sheet/types/contexts.d.ts[0m:[93m1[0m:[93m8[0m - [91merror[0m[90m TS1259: [0mModule '"C:/Senior dev/mvuvi-app/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+
+[7m1[0m import React from 'react';
+[7m [0m [91m       ~~~~~[0m
+
+  [96mnode_modules/@types/react/index.d.ts[0m:[93m46[0m:[93m1[0m
+    [7m46[0m export = React;
+    [7m  [0m [96m~~~~~~~~~~~~~~~[0m
+    This module is declared with 'export =', and can only be used with a default import when using the 'esModuleInterop' flag.
+
+[96mnode_modules/@tamagui/sheet/types/SheetScrollView.d.ts[0m:[93m1[0m:[93m8[0m - [91merror[0m[90m TS1259: [0mModule '"C:/Senior dev/mvuvi-app/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+
+[7m1[0m import React from 'react';
+[7m [0m [91m       ~~~~~[0m
+
+  [96mnode_modules/@types/react/index.d.ts[0m:[93m46[0m:[93m1[0m
+    [7m46[0m export = React;
+    [7m  [0m [96m~~~~~~~~~~~~~~~[0m
+    This module is declared with 'export =', and can only be used with a default import when using the 'esModuleInterop' flag.
+
+[96mnode_modules/@tamagui/sheet/types/types.d.ts[0m:[93m6[0m:[93m13[0m - [91merror[0m[90m TS1259: [0mModule '"C:/Senior dev/mvuvi-app/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+
+[7m6[0m import type React from 'react';
+[7m [0m [91m            ~~~~~[0m
+
+  [96mnode_modules/@types/react/index.d.ts[0m:[93m46[0m:[93m1[0m
+    [7m46[0m export = React;
+    [7m  [0m [96m~~~~~~~~~~~~~~~[0m
+    This module is declared with 'export =', and can only be used with a default import when using the 'esModuleInterop' flag.
+
+[96mnode_modules/@tamagui/sheet/types/useSheetController.d.ts[0m:[93m1[0m:[93m8[0m - [91merror[0m[90m TS1259: [0mModule '"C:/Senior dev/mvuvi-app/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+
+[7m1[0m import React from 'react';
+[7m [0m [91m       ~~~~~[0m
+
+  [96mnode_modules/@types/react/index.d.ts[0m:[93m46[0m:[93m1[0m
+    [7m46[0m export = React;
+    [7m  [0m [96m~~~~~~~~~~~~~~~[0m
+    This module is declared with 'export =', and can only be used with a default import when using the 'esModuleInterop' flag.
+
+[96mnode_modules/@tamagui/sheet/types/useSheetProviderProps.d.ts[0m:[93m1[0m:[93m8[0m - [91merror[0m[90m TS1259: [0mModule '"C:/Senior dev/mvuvi-app/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+
+[7m1[0m import React from 'react';
+[7m [0m [91m       ~~~~~[0m
+
+  [96mnode_modules/@types/react/index.d.ts[0m:[93m46[0m:[93m1[0m
+    [7m46[0m export = React;
+    [7m  [0m [96m~~~~~~~~~~~~~~~[0m
+    This module is declared with 'export =', and can only be used with a default import when using the 'esModuleInterop' flag.
+
+[96mnode_modules/@tamagui/stacks/types/NestingContext.d.ts[0m:[93m1[0m:[93m8[0m - [91merror[0m[90m TS1259: [0mModule '"C:/Senior dev/mvuvi-app/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+
+[7m1[0m import React from 'react';
+[7m [0m [91m       ~~~~~[0m
+
+  [96mnode_modules/@types/react/index.d.ts[0m:[93m46[0m:[93m1[0m
+    [7m46[0m export = React;
+    [7m  [0m [96m~~~~~~~~~~~~~~~[0m
+    This module is declared with 'export =', and can only be used with a default import when using the 'esModuleInterop' flag.
+
+[96mnode_modules/@tamagui/text/types/wrapChildrenInText.d.ts[0m:[93m2[0m:[93m8[0m - [91merror[0m[90m TS1259: [0mModule '"C:/Senior dev/mvuvi-app/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+
+[7m2[0m import React from 'react';
+[7m [0m [91m       ~~~~~[0m
+
+  [96mnode_modules/@types/react/index.d.ts[0m:[93m46[0m:[93m1[0m
+    [7m46[0m export = React;
+    [7m  [0m [96m~~~~~~~~~~~~~~~[0m
+    This module is declared with 'export =', and can only be used with a default import when using the 'esModuleInterop' flag.
+
+[96mnode_modules/@tamagui/toggle-group/types/ToggleGroup.d.ts[0m:[93m4[0m:[93m8[0m - [91merror[0m[90m TS1259: [0mModule '"C:/Senior dev/mvuvi-app/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+
+[7m4[0m import React from 'react';
+[7m [0m [91m       ~~~~~[0m
+
+  [96mnode_modules/@types/react/index.d.ts[0m:[93m46[0m:[93m1[0m
+    [7m46[0m export = React;
+    [7m  [0m [96m~~~~~~~~~~~~~~~[0m
+    This module is declared with 'export =', and can only be used with a default import when using the 'esModuleInterop' flag.
+
+[96mnode_modules/@tamagui/web/types/_withStableStyle.d.ts[0m:[93m1[0m:[93m8[0m - [91merror[0m[90m TS1259: [0mModule '"C:/Senior dev/mvuvi-app/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+
+[7m1[0m import React from 'react';
+[7m [0m [91m       ~~~~~[0m
+
+  [96mnode_modules/@types/react/index.d.ts[0m:[93m46[0m:[93m1[0m
+    [7m46[0m export = React;
+    [7m  [0m [96m~~~~~~~~~~~~~~~[0m
+    This module is declared with 'export =', and can only be used with a default import when using the 'esModuleInterop' flag.
+
+[96mnode_modules/@tamagui/web/types/createComponent.d.ts[0m:[93m1[0m:[93m8[0m - [91merror[0m[90m TS1259: [0mModule '"C:/Senior dev/mvuvi-app/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+
+[7m1[0m import React from 'react';
+[7m [0m [91m       ~~~~~[0m
+
+  [96mnode_modules/@types/react/index.d.ts[0m:[93m46[0m:[93m1[0m
+    [7m46[0m export = React;
+    [7m  [0m [96m~~~~~~~~~~~~~~~[0m
+    This module is declared with 'export =', and can only be used with a default import when using the 'esModuleInterop' flag.
+
+[96mnode_modules/@tamagui/web/types/helpers/createShallowSetState.d.ts[0m:[93m1[0m:[93m13[0m - [91merror[0m[90m TS1259: [0mModule '"C:/Senior dev/mvuvi-app/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+
+[7m1[0m import type React from 'react';
+[7m [0m [91m            ~~~~~[0m
+
+  [96mnode_modules/@types/react/index.d.ts[0m:[93m46[0m:[93m1[0m
+    [7m46[0m export = React;
+    [7m  [0m [96m~~~~~~~~~~~~~~~[0m
+    This module is declared with 'export =', and can only be used with a default import when using the 'esModuleInterop' flag.
+
+[96mnode_modules/@tamagui/web/types/helpers/isTamaguiElement.d.ts[0m:[93m1[0m:[93m8[0m - [91merror[0m[90m TS1259: [0mModule '"C:/Senior dev/mvuvi-app/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+
+[7m1[0m import React from 'react';
+[7m [0m [91m       ~~~~~[0m
+
+  [96mnode_modules/@types/react/index.d.ts[0m:[93m46[0m:[93m1[0m
+    [7m46[0m export = React;
+    [7m  [0m [96m~~~~~~~~~~~~~~~[0m
+    This module is declared with 'export =', and can only be used with a default import when using the 'esModuleInterop' flag.
+
+[96mnode_modules/@tamagui/web/types/types.d.ts[0m:[93m689[0m:[93m40[0m - [91merror[0m[90m TS2322: [0mType 'GenericFontKey' is not assignable to type 'string | number | bigint | boolean'.
+  Type 'symbol' is not assignable to type 'string | number | bigint | boolean'.
+
+[7m689[0m export type FontLineHeightTokens = `$${GetTokenFontKeysFor<'lineHeight'>}` | number;
+[7m   [0m [91m                                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96mnode_modules/@tamagui/web/types/types.d.ts[0m:[93m691[0m:[93m36[0m - [91merror[0m[90m TS2322: [0mType 'GenericFontKey' is not assignable to type 'string | number | bigint | boolean'.
+  Type 'symbol' is not assignable to type 'string | number | bigint | boolean'.
+
+[7m691[0m export type FontWeightTokens = `$${GetTokenFontKeysFor<'weight'>}` | FontWeightValues;
+[7m   [0m [91m                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96mnode_modules/@tamagui/web/types/types.d.ts[0m:[93m692[0m:[93m35[0m - [91merror[0m[90m TS2322: [0mType 'GenericFontKey' is not assignable to type 'string | number | bigint | boolean'.
+  Type 'symbol' is not assignable to type 'string | number | bigint | boolean'.
+
+[7m692[0m export type FontColorTokens = `$${GetTokenFontKeysFor<'color'>}` | number;
+[7m   [0m [91m                                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96mnode_modules/@tamagui/web/types/types.d.ts[0m:[93m693[0m:[93m43[0m - [91merror[0m[90m TS2322: [0mType 'GenericFontKey' is not assignable to type 'string | number | bigint | boolean'.
+  Type 'symbol' is not assignable to type 'string | number | bigint | boolean'.
+
+[7m693[0m export type FontLetterSpacingTokens = `$${GetTokenFontKeysFor<'letterSpacing'>}` | number;
+[7m   [0m [91m                                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96mnode_modules/@tamagui/web/types/types.d.ts[0m:[93m694[0m:[93m35[0m - [91merror[0m[90m TS2322: [0mType 'GenericFontKey' is not assignable to type 'string | number | bigint | boolean'.
+  Type 'symbol' is not assignable to type 'string | number | bigint | boolean'.
+
+[7m694[0m export type FontStyleTokens = `$${GetTokenFontKeysFor<'style'>}` | RNTextStyle['fontStyle'];
+[7m   [0m [91m                                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96mnode_modules/@tamagui/web/types/types.d.ts[0m:[93m695[0m:[93m39[0m - [91merror[0m[90m TS2322: [0mType 'GenericFontKey' is not assignable to type 'string | number | bigint | boolean'.
+  Type 'symbol' is not assignable to type 'string | number | bigint | boolean'.
+
+[7m695[0m export type FontTransformTokens = `$${GetTokenFontKeysFor<'transform'>}` | RNTextStyle['textTransform'];
+[7m   [0m [91m                                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96mnode_modules/@tamagui/web/types/views/Configuration.d.ts[0m:[93m1[0m:[93m8[0m - [91merror[0m[90m TS1259: [0mModule '"C:/Senior dev/mvuvi-app/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+
+[7m1[0m import React from 'react';
+[7m [0m [91m       ~~~~~[0m
+
+  [96mnode_modules/@types/react/index.d.ts[0m:[93m46[0m:[93m1[0m
+    [7m46[0m export = React;
+    [7m  [0m [96m~~~~~~~~~~~~~~~[0m
+    This module is declared with 'export =', and can only be used with a default import when using the 'esModuleInterop' flag.
+
+[96mnode_modules/@tamagui/web/types/views/FontLanguage.types.d.ts[0m:[93m1[0m:[93m13[0m - [91merror[0m[90m TS1259: [0mModule '"C:/Senior dev/mvuvi-app/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+
+[7m1[0m import type React from 'react';
+[7m [0m [91m            ~~~~~[0m
+
+  [96mnode_modules/@types/react/index.d.ts[0m:[93m46[0m:[93m1[0m
+    [7m46[0m export = React;
+    [7m  [0m [96m~~~~~~~~~~~~~~~[0m
+    This module is declared with 'export =', and can only be used with a default import when using the 'esModuleInterop' flag.
+
+[96mnode_modules/@tamagui/web/types/views/Theme.d.ts[0m:[93m2[0m:[93m8[0m - [91merror[0m[90m TS1259: [0mModule '"C:/Senior dev/mvuvi-app/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+
+[7m2[0m import React from 'react';
+[7m [0m [91m       ~~~~~[0m
+
+  [96mnode_modules/@types/react/index.d.ts[0m:[93m46[0m:[93m1[0m
+    [7m46[0m export = React;
+    [7m  [0m [96m~~~~~~~~~~~~~~~[0m
+    This module is declared with 'export =', and can only be used with a default import when using the 'esModuleInterop' flag.
+
+[96mnode_modules/@types/node/module.d.ts[0m:[93m687[0m:[93m13[0m - [91merror[0m[90m TS2403: [0mSubsequent variable declarations must have the same type.  Variable 'require' must be of type 'NodeRequire', but here has type 'Require'.
+
+[7m687[0m         var require: NodeJS.Require;
+[7m   [0m [91m            ~~~~~~~[0m
+
+  [96mnode_modules/react-native/types/index.d.ts[0m:[93m169[0m:[93m7[0m
+    [7m169[0m   var require: NodeRequire;
+    [7m   [0m [96m      ~~~~~~~[0m
+    'require' was also declared here.
+
+[96mnode_modules/@types/react-native/index.d.ts[0m:[93m143[0m:[93m11[0m - [91merror[0m[90m TS2451: [0mCannot redeclare block-scoped variable 'originalXMLHttpRequest'.
+
+[7m143[0m     const originalXMLHttpRequest: any;
+[7m   [0m [91m          ~~~~~~~~~~~~~~~~~~~~~~[0m
+
+  [96mnode_modules/react-native/types/index.d.ts[0m:[93m202[0m:[93m9[0m
+    [7m202[0m   const originalXMLHttpRequest: any;
+    [7m   [0m [96m        ~~~~~~~~~~~~~~~~~~~~~~[0m
+    'originalXMLHttpRequest' was also declared here.
+
+[96mnode_modules/@types/react-native/index.d.ts[0m:[93m145[0m:[93m11[0m - [91merror[0m[90m TS2451: [0mCannot redeclare block-scoped variable '__BUNDLE_START_TIME__'.
+
+[7m145[0m     const __BUNDLE_START_TIME__: number;
+[7m   [0m [91m          ~~~~~~~~~~~~~~~~~~~~~[0m
+
+  [96mnode_modules/react-native/types/index.d.ts[0m:[93m204[0m:[93m9[0m
+    [7m204[0m   const __BUNDLE_START_TIME__: number;
+    [7m   [0m [96m        ~~~~~~~~~~~~~~~~~~~~~[0m
+    '__BUNDLE_START_TIME__' was also declared here.
+
+[96mnode_modules/@types/react-native/index.d.ts[0m:[93m146[0m:[93m11[0m - [91merror[0m[90m TS2451: [0mCannot redeclare block-scoped variable 'ErrorUtils'.
+
+[7m146[0m     const ErrorUtils: ErrorUtils;
+[7m   [0m [91m          ~~~~~~~~~~[0m
+
+  [96mnode_modules/react-native/types/index.d.ts[0m:[93m205[0m:[93m9[0m
+    [7m205[0m   const ErrorUtils: ErrorUtils;
+    [7m   [0m [96m        ~~~~~~~~~~[0m
+    'ErrorUtils' was also declared here.
+
+[96mnode_modules/@types/react-native/index.d.ts[0m:[93m153[0m:[93m11[0m - [91merror[0m[90m TS2451: [0mCannot redeclare block-scoped variable '__DEV__'.
+
+[7m153[0m     const __DEV__: boolean;
+[7m   [0m [91m          ~~~~~~~[0m
+
+  [96mnode_modules/react-native/types/index.d.ts[0m:[93m212[0m:[93m9[0m
+    [7m212[0m   const __DEV__: boolean;
+    [7m   [0m [96m        ~~~~~~~[0m
+    '__DEV__' was also declared here.
+
+[96mnode_modules/@types/react-native/index.d.ts[0m:[93m155[0m:[93m11[0m - [91merror[0m[90m TS2451: [0mCannot redeclare block-scoped variable 'HermesInternal'.
+
+[7m155[0m     const HermesInternal: null | {};
+[7m   [0m [91m          ~~~~~~~~~~~~~~[0m
+
+  [96mnode_modules/react-native/types/index.d.ts[0m:[93m214[0m:[93m9[0m
+    [7m214[0m   const HermesInternal: null | {};
+    [7m   [0m [96m        ~~~~~~~~~~~~~~[0m
+    'HermesInternal' was also declared here.
+
+[96mnode_modules/@types/react-native/Libraries/Lists/SectionList.d.ts[0m:[93m47[0m:[93m18[0m - [91merror[0m[90m TS2430: [0mInterface 'SectionListProps<ItemT, SectionT>' incorrectly extends interface 'VirtualizedListWithoutRenderItemProps<ItemT>'.
+  Types of property 'renderScrollComponent' are incompatible.
+    Type '(props: import("C:/Senior dev/mvuvi-app/node_modules/@types/react-native/Libraries/Components/ScrollView/ScrollView").ScrollViewProps) => React.ReactElement<import("C:/Senior dev/mvuvi-app/node_modules/@types/react-native/Libraries/Components/ScrollView/ScrollView").ScrollViewProps, string | React.JSXElementConstruc...' is not assignable to type '(props: import("C:/Senior dev/mvuvi-app/node_modules/react-native/Libraries/Components/ScrollView/ScrollView").ScrollViewProps) => React.ReactElement<import("C:/Senior dev/mvuvi-app/node_modules/react-native/Libraries/Components/ScrollView/ScrollView").ScrollViewProps, string | React.JSXElementConstructor<...>>'.
+      Types of parameters 'props' and 'props' are incompatible.
+        Type 'import("C:/Senior dev/mvuvi-app/node_modules/react-native/Libraries/Components/ScrollView/ScrollView").ScrollViewProps' is not assignable to type 'import("C:/Senior dev/mvuvi-app/node_modules/@types/react-native/Libraries/Components/ScrollView/ScrollView").ScrollViewProps'.
+          Types of property 'contentContainerStyle' are incompatible.
+            Type 'import("C:/Senior dev/mvuvi-app/node_modules/react-native/Libraries/StyleSheet/StyleSheet").StyleProp<import("C:/Senior dev/mvuvi-app/node_modules/react-native/Libraries/StyleSheet/StyleSheetTypes").ViewStyle>' is not assignable to type 'import("C:/Senior dev/mvuvi-app/node_modules/@types/react-native/Libraries/StyleSheet/StyleSheet").StyleProp<import("C:/Senior dev/mvuvi-app/node_modules/@types/react-native/Libraries/StyleSheet/StyleSheetTypes").ViewStyle>'.
+              Type '""' is not assignable to type 'StyleProp<ViewStyle>'.
+
+[7m47[0m export interface SectionListProps<ItemT, SectionT = DefaultSectionT>
+[7m  [0m [91m                 ~~~~~~~~~~~~~~~~[0m
+
+[96mnode_modules/@types/react-native/modules/BatchedBridge.d.ts[0m:[93m8[0m:[93m15[0m - [91merror[0m[90m TS2300: [0mDuplicate identifier 'MessageQueue'.
+
+[7m8[0m declare class MessageQueue {
+[7m [0m [91m              ~~~~~~~~~~~~[0m
+
+  [96mnode_modules/react-native/types/modules/BatchedBridge.d.ts[0m:[93m17[0m:[93m15[0m
+    [7m17[0m declare class MessageQueue {
+    [7m  [0m [96m              ~~~~~~~~~~~~[0m
+    'MessageQueue' was also declared here.
+  [96mnode_modules/react-native/types/modules/BatchedBridge.d.ts[0m:[93m31[0m:[93m18[0m
+    [7m31[0m   export default MessageQueue;
+    [7m  [0m [96m                 ~~~~~~~~~~~~[0m
+    and here.
+
+[96mnode_modules/@types/react-native/modules/BatchedBridge.d.ts[0m:[93m18[0m:[93m20[0m - [91merror[0m[90m TS2300: [0mDuplicate identifier 'BatchedBridge'.
+
+[7m18[0m     export default BatchedBridge;
+[7m  [0m [91m                   ~~~~~~~~~~~~~[0m
+
+  [96mnode_modules/react-native/types/modules/BatchedBridge.d.ts[0m:[93m27[0m:[93m18[0m
+    [7m27[0m   export default BatchedBridge;
+    [7m  [0m [96m                 ~~~~~~~~~~~~~[0m
+    'BatchedBridge' was also declared here.
+
+[96mnode_modules/@types/react-native/modules/BatchedBridge.d.ts[0m:[93m22[0m:[93m20[0m - [91merror[0m[90m TS2300: [0mDuplicate identifier 'MessageQueue'.
+
+[7m22[0m     export default MessageQueue;
+[7m  [0m [91m                   ~~~~~~~~~~~~[0m
+
+  [96mnode_modules/react-native/types/modules/BatchedBridge.d.ts[0m:[93m17[0m:[93m15[0m
+    [7m17[0m declare class MessageQueue {
+    [7m  [0m [96m              ~~~~~~~~~~~~[0m
+    'MessageQueue' was also declared here.
+  [96mnode_modules/react-native/types/modules/BatchedBridge.d.ts[0m:[93m31[0m:[93m18[0m
+    [7m31[0m   export default MessageQueue;
+    [7m  [0m [96m                 ~~~~~~~~~~~~[0m
+    and here.
+
+[96mnode_modules/@types/react-native/modules/Codegen.d.ts[0m:[93m1[0m:[93m1[0m - [91merror[0m[90m TS6200: [0mDefinitions of the following identifiers conflict with those in another file: codegenNativeCommands, NativeComponentType, codegenNativeComponent, BubblingEventHandler, DirectEventHandler, Double, Float, Int32, UnsafeObject, DefaultTypes, WithDefault
+
+[7m1[0m declare module "react-native/Libraries/Utilities/codegenNativeCommands" {
+[7m [0m [91m~~~~~~~[0m
+
+  [96mnode_modules/react-native/types/modules/Codegen.d.ts[0m:[93m10[0m:[93m1[0m
+    [7m10[0m declare module 'react-native/Libraries/Utilities/codegenNativeCommands' {
+    [7m  [0m [96m~~~~~~~[0m
+    Conflicts are in this file.
+
+[96mnode_modules/@types/react-native/modules/Devtools.d.ts[0m:[93m2[0m:[93m17[0m - [91merror[0m[90m TS2300: [0mDuplicate identifier 'StackFrame'.
+
+[7m2[0m     export type StackFrame = {
+[7m [0m [91m                ~~~~~~~~~~[0m
+
+  [96mnode_modules/react-native/types/modules/Devtools.d.ts[0m:[93m11[0m:[93m15[0m
+    [7m11[0m   export type StackFrame = {
+    [7m  [0m [96m              ~~~~~~~~~~[0m
+    'StackFrame' was also declared here.
+
+[96mnode_modules/@types/react-native/modules/globals.d.ts[0m:[93m10[0m:[93m1[0m - [91merror[0m[90m TS6200: [0mDefinitions of the following identifiers conflict with those in another file: FormDataValue, FormDataPart, BodyInit_, HeadersInit_, RequestCredentials_, RequestMode_, ResponseType_, WebsocketMessageEventListener, WebsocketErrorEventListener, WebsocketOpenEventListener, WebsocketCloseEventListener, WebsocketEventListener
+
+[7m10[0m declare function clearInterval(handle: number): void;
+[7m  [0m [91m~~~~~~~[0m
+
+  [96mnode_modules/react-native/types/modules/globals.d.ts[0m:[93m19[0m:[93m1[0m
+    [7m19[0m declare function clearInterval(handle: number): void;
+    [7m  [0m [96m~~~~~~~[0m
+    Conflicts are in this file.
+
+[96mnode_modules/@types/react-native/modules/globals.d.ts[0m:[93m69[0m:[93m13[0m - [91merror[0m[90m TS2403: [0mSubsequent variable declarations must have the same type.  Variable 'Blob' must be of type '{ new (blobParts?: BlobPart[], options?: BlobPropertyBag): Blob; prototype: Blob; }', but here has type '{ new (blobParts?: (string | Blob)[], options?: BlobOptions): Blob; prototype: Blob; }'.
+
+[7m69[0m declare var Blob: {
+[7m  [0m [91m            ~~~~[0m
+
+  [96mnode_modules/typescript/lib/lib.dom.d.ts[0m:[93m3514[0m:[93m13[0m
+    [7m3514[0m declare var Blob: {
+    [7m    [0m [96m            ~~~~[0m
+    'Blob' was also declared here.
+
+[96mnode_modules/@types/react-native/modules/globals.d.ts[0m:[93m90[0m:[93m15[0m - [91merror[0m[90m TS2300: [0mDuplicate identifier 'FormData'.
+
+[7m90[0m declare class FormData {
+[7m  [0m [91m              ~~~~~~~~[0m
+
+  [96mnode_modules/typescript/lib/lib.dom.d.ts[0m:[93m9265[0m:[93m11[0m
+    [7m9265[0m interface FormData {
+    [7m    [0m [96m          ~~~~~~~~[0m
+    'FormData' was also declared here.
+  [96mnode_modules/typescript/lib/lib.dom.d.ts[0m:[93m9285[0m:[93m13[0m
+    [7m9285[0m declare var FormData: {
+    [7m    [0m [96m            ~~~~~~~~[0m
+    and here.
+  [96mnode_modules/@types/react/global.d.ts[0m:[93m154[0m:[93m11[0m
+    [7m154[0m interface FormData {}
+    [7m   [0m [96m          ~~~~~~~~[0m
+    and here.
+
+[96mnode_modules/@types/react-native/modules/globals.d.ts[0m:[93m114[0m:[93m13[0m - [91merror[0m[90m TS2403: [0mSubsequent variable declarations must have the same type.  Variable 'Headers' must be of type '{ new (init?: HeadersInit): Headers; prototype: Headers; }', but here has type '{ new (init?: HeadersInit_): Headers; prototype: Headers; }'.
+
+[7m114[0m declare var Headers: {
+[7m   [0m [91m            ~~~~~~~[0m
+
+  [96mnode_modules/typescript/lib/lib.dom.d.ts[0m:[93m14300[0m:[93m13[0m
+    [7m14300[0m declare var Headers: {
+    [7m     [0m [96m            ~~~~~~~[0m
+    'Headers' was also declared here.
+
+[96mnode_modules/@types/react-native/modules/globals.d.ts[0m:[93m126[0m:[93m5[0m - [91merror[0m[90m TS2374: [0mDuplicate index signature for type 'string'.
+
+[7m126[0m     [key: string]: any;
+[7m   [0m [91m    ~~~~~~~~~~~~~~~~~~~[0m
+
+[96mnode_modules/@types/react-native/modules/globals.d.ts[0m:[93m148[0m:[93m5[0m - [91merror[0m[90m TS2717: [0mSubsequent property declarations must have the same type.  Property 'body' must be of type 'BodyInit', but here has type 'BodyInit_'.
+
+[7m148[0m     body?: BodyInit_ | undefined;
+[7m   [0m [91m    ~~~~[0m
+
+  [96mnode_modules/typescript/lib/lib.dom.d.ts[0m:[93m1922[0m:[93m5[0m
+    [7m1922[0m     body?: BodyInit | null;
+    [7m    [0m [96m    ~~~~[0m
+    'body' was also declared here.
+
+[96mnode_modules/@types/react-native/modules/globals.d.ts[0m:[93m150[0m:[93m5[0m - [91merror[0m[90m TS2717: [0mSubsequent property declarations must have the same type.  Property 'headers' must be of type 'HeadersInit', but here has type 'HeadersInit_'.
+
+[7m150[0m     headers?: HeadersInit_ | undefined;
+[7m   [0m [91m    ~~~~~~~[0m
+
+  [96mnode_modules/typescript/lib/lib.dom.d.ts[0m:[93m1928[0m:[93m5[0m
+    [7m1928[0m     headers?: HeadersInit;
+    [7m    [0m [96m    ~~~~~~~[0m
+    'headers' was also declared here.
+
+[96mnode_modules/@types/react-native/modules/globals.d.ts[0m:[93m156[0m:[93m5[0m - [91merror[0m[90m TS2717: [0mSubsequent property declarations must have the same type.  Property 'window' must be of type 'null', but here has type 'any'.
+
+[7m156[0m     window?: any;
+[7m   [0m [91m    ~~~~~~[0m
+
+  [96mnode_modules/typescript/lib/lib.dom.d.ts[0m:[93m1947[0m:[93m5[0m
+    [7m1947[0m     window?: null;
+    [7m    [0m [96m    ~~~~~~[0m
+    'window' was also declared here.
+
+[96mnode_modules/@types/react-native/modules/globals.d.ts[0m:[93m170[0m:[93m13[0m - [91merror[0m[90m TS2403: [0mSubsequent variable declarations must have the same type.  Variable 'Request' must be of type '{ new (input: RequestInfo | URL, init?: RequestInit): Request; prototype: Request; }', but here has type '{ new (input: string | Request, init?: RequestInit): Request; prototype: Request; }'.
+
+[7m170[0m declare var Request: {
+[7m   [0m [91m            ~~~~~~~[0m
+
+  [96mnode_modules/typescript/lib/lib.dom.d.ts[0m:[93m19822[0m:[93m13[0m
+    [7m19822[0m declare var Request: {
+    [7m     [0m [96m            ~~~~~~~[0m
+    'Request' was also declared here.
+
+[96mnode_modules/@types/react-native/modules/globals.d.ts[0m:[93m175[0m:[93m14[0m - [91merror[0m[90m TS2300: [0mDuplicate identifier 'RequestInfo'.
+
+[7m175[0m declare type RequestInfo = Request | string;
+[7m   [0m [91m             ~~~~~~~~~~~[0m
+
+  [96mnode_modules/typescript/lib/lib.dom.d.ts[0m:[93m29413[0m:[93m6[0m
+    [7m29413[0m type RequestInfo = Request | string;
+    [7m     [0m [96m     ~~~~~~~~~~~[0m
+    'RequestInfo' was also declared here.
+
+[96mnode_modules/@types/react-native/modules/globals.d.ts[0m:[93m178[0m:[93m5[0m - [91merror[0m[90m TS2717: [0mSubsequent property declarations must have the same type.  Property 'headers' must be of type 'HeadersInit', but here has type 'HeadersInit_'.
+
+[7m178[0m     headers?: HeadersInit_ | undefined;
+[7m   [0m [91m    ~~~~~~~[0m
+
+  [96mnode_modules/typescript/lib/lib.dom.d.ts[0m:[93m1955[0m:[93m5[0m
+    [7m1955[0m     headers?: HeadersInit;
+    [7m    [0m [96m    ~~~~~~~[0m
+    'headers' was also declared here.
+
+[96mnode_modules/@types/react-native/modules/globals.d.ts[0m:[93m194[0m:[93m13[0m - [91merror[0m[90m TS2403: [0mSubsequent variable declarations must have the same type.  Variable 'Response' must be of type '{ new (body?: BodyInit, init?: ResponseInit): Response; prototype: Response; error(): Response; json(data: any, init?: ResponseInit): Response; redirect(url: string | URL, status?: number): Response; }', but here has type '{ new (body?: BodyInit_, init?: ResponseInit): Response; prototype: Response; error: () => Response; redirect: (url: string, status?: number) => Response; }'.
+
+[7m194[0m declare var Response: {
+[7m   [0m [91m            ~~~~~~~~[0m
+
+  [96mnode_modules/typescript/lib/lib.dom.d.ts[0m:[93m19898[0m:[93m13[0m
+    [7m19898[0m declare var Response: {
+    [7m     [0m [96m            ~~~~~~~~[0m
+    'Response' was also declared here.
+
+[96mnode_modules/@types/react-native/modules/globals.d.ts[0m:[93m283[0m:[93m5[0m - [91merror[0m[90m TS2717: [0mSubsequent property declarations must have the same type.  Property 'abort' must be of type 'ProgressEvent<XMLHttpRequestEventTarget>', but here has type 'ProgressEvent<EventTarget>'.
+
+[7m283[0m     abort: ProgressEvent;
+[7m   [0m [91m    ~~~~~[0m
+
+  [96mnode_modules/typescript/lib/lib.dom.d.ts[0m:[93m27600[0m:[93m5[0m
+    [7m27600[0m     "abort": ProgressEvent<XMLHttpRequestEventTarget>;
+    [7m     [0m [96m    ~~~~~~~[0m
+    'abort' was also declared here.
+
+[96mnode_modules/@types/react-native/modules/globals.d.ts[0m:[93m284[0m:[93m5[0m - [91merror[0m[90m TS2717: [0mSubsequent property declarations must have the same type.  Property 'error' must be of type 'ProgressEvent<XMLHttpRequestEventTarget>', but here has type 'ProgressEvent<EventTarget>'.
+
+[7m284[0m     error: ProgressEvent;
+[7m   [0m [91m    ~~~~~[0m
+
+  [96mnode_modules/typescript/lib/lib.dom.d.ts[0m:[93m27601[0m:[93m5[0m
+    [7m27601[0m     "error": ProgressEvent<XMLHttpRequestEventTarget>;
+    [7m     [0m [96m    ~~~~~~~[0m
+    'error' was also declared here.
+
+[96mnode_modules/@types/react-native/modules/globals.d.ts[0m:[93m285[0m:[93m5[0m - [91merror[0m[90m TS2717: [0mSubsequent property declarations must have the same type.  Property 'load' must be of type 'ProgressEvent<XMLHttpRequestEventTarget>', but here has type 'ProgressEvent<EventTarget>'.
+
+[7m285[0m     load: ProgressEvent;
+[7m   [0m [91m    ~~~~[0m
+
+  [96mnode_modules/typescript/lib/lib.dom.d.ts[0m:[93m27602[0m:[93m5[0m
+    [7m27602[0m     "load": ProgressEvent<XMLHttpRequestEventTarget>;
+    [7m     [0m [96m    ~~~~~~[0m
+    'load' was also declared here.
+
+[96mnode_modules/@types/react-native/modules/globals.d.ts[0m:[93m286[0m:[93m5[0m - [91merror[0m[90m TS2717: [0mSubsequent property declarations must have the same type.  Property 'loadend' must be of type 'ProgressEvent<XMLHttpRequestEventTarget>', but here has type 'ProgressEvent<EventTarget>'.
+
+[7m286[0m     loadend: ProgressEvent;
+[7m   [0m [91m    ~~~~~~~[0m
+
+  [96mnode_modules/typescript/lib/lib.dom.d.ts[0m:[93m27603[0m:[93m5[0m
+    [7m27603[0m     "loadend": ProgressEvent<XMLHttpRequestEventTarget>;
+    [7m     [0m [96m    ~~~~~~~~~[0m
+    'loadend' was also declared here.
+
+[96mnode_modules/@types/react-native/modules/globals.d.ts[0m:[93m287[0m:[93m5[0m - [91merror[0m[90m TS2717: [0mSubsequent property declarations must have the same type.  Property 'loadstart' must be of type 'ProgressEvent<XMLHttpRequestEventTarget>', but here has type 'ProgressEvent<EventTarget>'.
+
+[7m287[0m     loadstart: ProgressEvent;
+[7m   [0m [91m    ~~~~~~~~~[0m
+
+  [96mnode_modules/typescript/lib/lib.dom.d.ts[0m:[93m27604[0m:[93m5[0m
+    [7m27604[0m     "loadstart": ProgressEvent<XMLHttpRequestEventTarget>;
+    [7m     [0m [96m    ~~~~~~~~~~~[0m
+    'loadstart' was also declared here.
+
+[96mnode_modules/@types/react-native/modules/globals.d.ts[0m:[93m288[0m:[93m5[0m - [91merror[0m[90m TS2717: [0mSubsequent property declarations must have the same type.  Property 'progress' must be of type 'ProgressEvent<XMLHttpRequestEventTarget>', but here has type 'ProgressEvent<EventTarget>'.
+
+[7m288[0m     progress: ProgressEvent;
+[7m   [0m [91m    ~~~~~~~~[0m
+
+  [96mnode_modules/typescript/lib/lib.dom.d.ts[0m:[93m27605[0m:[93m5[0m
+    [7m27605[0m     "progress": ProgressEvent<XMLHttpRequestEventTarget>;
+    [7m     [0m [96m    ~~~~~~~~~~[0m
+    'progress' was also declared here.
+
+[96mnode_modules/@types/react-native/modules/globals.d.ts[0m:[93m289[0m:[93m5[0m - [91merror[0m[90m TS2717: [0mSubsequent property declarations must have the same type.  Property 'timeout' must be of type 'ProgressEvent<XMLHttpRequestEventTarget>', but here has type 'ProgressEvent<EventTarget>'.
+
+[7m289[0m     timeout: ProgressEvent;
+[7m   [0m [91m    ~~~~~~~[0m
+
+  [96mnode_modules/typescript/lib/lib.dom.d.ts[0m:[93m27606[0m:[93m5[0m
+    [7m27606[0m     "timeout": ProgressEvent<XMLHttpRequestEventTarget>;
+    [7m     [0m [96m    ~~~~~~~~~[0m
+    'timeout' was also declared here.
+
+[96mnode_modules/@types/react-native/modules/globals.d.ts[0m:[93m342[0m:[93m14[0m - [91merror[0m[90m TS2300: [0mDuplicate identifier 'XMLHttpRequestResponseType'.
+
+[7m342[0m declare type XMLHttpRequestResponseType =
+[7m   [0m [91m             ~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+  [96mnode_modules/typescript/lib/lib.dom.d.ts[0m:[93m29610[0m:[93m6[0m
+    [7m29610[0m type XMLHttpRequestResponseType = "" | "arraybuffer" | "blob" | "document" | "json" | "text";
+    [7m     [0m [96m     ~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+    'XMLHttpRequestResponseType' was also declared here.
+
+[96mnode_modules/@types/react-native/modules/globals.d.ts[0m:[93m355[0m:[93m15[0m - [91merror[0m[90m TS2300: [0mDuplicate identifier 'URL'.
+
+[7m355[0m declare class URL {
+[7m   [0m [91m              ~~~[0m
+
+  [96mnode_modules/typescript/lib/lib.dom.d.ts[0m:[93m23839[0m:[93m11[0m
+    [7m23839[0m interface URL {
+    [7m     [0m [96m          ~~~[0m
+    'URL' was also declared here.
+  [96mnode_modules/typescript/lib/lib.dom.d.ts[0m:[93m23869[0m:[93m13[0m
+    [7m23869[0m declare var URL: {
+    [7m     [0m [96m            ~~~[0m
+    and here.
+
+[96mnode_modules/@types/react-native/modules/globals.d.ts[0m:[93m380[0m:[93m15[0m - [91merror[0m[90m TS2300: [0mDuplicate identifier 'URLSearchParams'.
+
+[7m380[0m declare class URLSearchParams {
+[7m   [0m [91m              ~~~~~~~~~~~~~~~[0m
+
+  [96mnode_modules/typescript/lib/lib.dom.d.ts[0m:[93m23886[0m:[93m11[0m
+    [7m23886[0m interface URLSearchParams {
+    [7m     [0m [96m          ~~~~~~~~~~~~~~~[0m
+    'URLSearchParams' was also declared here.
+  [96mnode_modules/typescript/lib/lib.dom.d.ts[0m:[93m23932[0m:[93m13[0m
+    [7m23932[0m declare var URLSearchParams: {
+    [7m     [0m [96m            ~~~~~~~~~~~~~~~[0m
+    and here.
+
+[96mnode_modules/@types/react-native/modules/globals.d.ts[0m:[93m439[0m:[93m5[0m - [91merror[0m[90m TS2717: [0mSubsequent property declarations must have the same type.  Property 'onopen' must be of type '(this: WebSocket, ev: Event) => any', but here has type '() => void'.
+
+[7m439[0m     onopen: (() => void) | null;
+[7m   [0m [91m    ~~~~~~[0m
+
+  [96mnode_modules/typescript/lib/lib.dom.d.ts[0m:[93m26731[0m:[93m5[0m
+    [7m26731[0m     onopen: ((this: WebSocket, ev: Event) => any) | null;
+    [7m     [0m [96m    ~~~~~~[0m
+    'onopen' was also declared here.
+
+[96mnode_modules/@types/react-native/modules/globals.d.ts[0m:[93m440[0m:[93m5[0m - [91merror[0m[90m TS2717: [0mSubsequent property declarations must have the same type.  Property 'onmessage' must be of type '(this: WebSocket, ev: MessageEvent<any>) => any', but here has type '(event: WebSocketMessageEvent) => void'.
+
+[7m440[0m     onmessage: ((event: WebSocketMessageEvent) => void) | null;
+[7m   [0m [91m    ~~~~~~~~~[0m
+
+  [96mnode_modules/typescript/lib/lib.dom.d.ts[0m:[93m26729[0m:[93m5[0m
+    [7m26729[0m     onmessage: ((this: WebSocket, ev: MessageEvent) => any) | null;
+    [7m     [0m [96m    ~~~~~~~~~[0m
+    'onmessage' was also declared here.
+
+[96mnode_modules/@types/react-native/modules/globals.d.ts[0m:[93m441[0m:[93m5[0m - [91merror[0m[90m TS2717: [0mSubsequent property declarations must have the same type.  Property 'onerror' must be of type '(this: WebSocket, ev: Event) => any', but here has type '(event: WebSocketErrorEvent) => void'.
+
+[7m441[0m     onerror: ((event: WebSocketErrorEvent) => void) | null;
+[7m   [0m [91m    ~~~~~~~[0m
+
+  [96mnode_modules/typescript/lib/lib.dom.d.ts[0m:[93m26727[0m:[93m5[0m
+    [7m26727[0m     onerror: ((this: WebSocket, ev: Event) => any) | null;
+    [7m     [0m [96m    ~~~~~~~[0m
+    'onerror' was also declared here.
+
+[96mnode_modules/@types/react-native/modules/globals.d.ts[0m:[93m442[0m:[93m5[0m - [91merror[0m[90m TS2717: [0mSubsequent property declarations must have the same type.  Property 'onclose' must be of type '(this: WebSocket, ev: CloseEvent) => any', but here has type '(event: WebSocketCloseEvent) => void'.
+
+[7m442[0m     onclose: ((event: WebSocketCloseEvent) => void) | null;
+[7m   [0m [91m    ~~~~~~~[0m
+
+  [96mnode_modules/typescript/lib/lib.dom.d.ts[0m:[93m26725[0m:[93m5[0m
+    [7m26725[0m     onclose: ((this: WebSocket, ev: CloseEvent) => any) | null;
+    [7m     [0m [96m    ~~~~~~~[0m
+    'onclose' was also declared here.
+
+[96mnode_modules/@types/react-native/modules/globals.d.ts[0m:[93m443[0m:[93m5[0m - [91merror[0m[90m TS2717: [0mSubsequent property declarations must have the same type.  Property 'addEventListener' must be of type '{ <K extends keyof WebSocketEventMap>(type: K, listener: (this: WebSocket, ev: WebSocketEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void; (type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void; }', but here has type 'WebsocketEventListener'.
+
+[7m443[0m     addEventListener: WebsocketEventListener;
+[7m   [0m [91m    ~~~~~~~~~~~~~~~~[0m
+
+  [96mnode_modules/typescript/lib/lib.dom.d.ts[0m:[93m26766[0m:[93m5[0m
+    [7m26766[0m     addEventListener<K extends keyof WebSocketEventMap>(type: K, listener: (this: WebSocket, ev: WebSocketEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+    [7m     [0m [96m    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+    'addEventListener' was also declared here.
+
+[96mnode_modules/@types/react-native/modules/globals.d.ts[0m:[93m444[0m:[93m5[0m - [91merror[0m[90m TS2717: [0mSubsequent property declarations must have the same type.  Property 'removeEventListener' must be of type '{ <K extends keyof WebSocketEventMap>(type: K, listener: (this: WebSocket, ev: WebSocketEventMap[K]) => any, options?: boolean | EventListenerOptions): void; (type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void; }', but here has type 'WebsocketEventListener'.
+
+[7m444[0m     removeEventListener: WebsocketEventListener;
+[7m   [0m [91m    ~~~~~~~~~~~~~~~~~~~[0m
+
+  [96mnode_modules/typescript/lib/lib.dom.d.ts[0m:[93m26768[0m:[93m5[0m
+    [7m26768[0m     removeEventListener<K extends keyof WebSocketEventMap>(type: K, listener: (this: WebSocket, ev: WebSocketEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+    [7m     [0m [96m    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+    'removeEventListener' was also declared here.
+
+[96mnode_modules/@types/react-native/modules/globals.d.ts[0m:[93m447[0m:[93m13[0m - [91merror[0m[90m TS2403: [0mSubsequent variable declarations must have the same type.  Variable 'WebSocket' must be of type '{ new (url: string | URL, protocols?: string | string[]): WebSocket; prototype: WebSocket; readonly CONNECTING: 0; readonly OPEN: 1; readonly CLOSING: 2; readonly CLOSED: 3; }', but here has type '{ new (uri: string, protocols?: string | string[], options?: { [optionName: string]: any; headers: { [headerName: string]: string; }; }): WebSocket; prototype: WebSocket; readonly CLOSED: number; readonly CLOSING: number; readonly CONNECTING: number; readonly OPEN: number; }'.
+
+[7m447[0m declare var WebSocket: {
+[7m   [0m [91m            ~~~~~~~~~[0m
+
+  [96mnode_modules/typescript/lib/lib.dom.d.ts[0m:[93m26772[0m:[93m13[0m
+    [7m26772[0m declare var WebSocket: {
+    [7m     [0m [96m            ~~~~~~~~~[0m
+    'WebSocket' was also declared here.
+
+[96mnode_modules/@types/react-native/modules/globals.d.ts[0m:[93m471[0m:[93m15[0m - [91merror[0m[90m TS2300: [0mDuplicate identifier 'AbortSignal'.
+
+[7m471[0m declare class AbortSignal implements EventTarget {
+[7m   [0m [91m              ~~~~~~~~~~~[0m
+
+  [96mnode_modules/typescript/lib/lib.dom.d.ts[0m:[93m2587[0m:[93m11[0m
+    [7m2587[0m interface AbortSignal extends EventTarget {
+    [7m    [0m [96m          ~~~~~~~~~~~[0m
+    'AbortSignal' was also declared here.
+  [96mnode_modules/typescript/lib/lib.dom.d.ts[0m:[93m2606[0m:[93m13[0m
+    [7m2606[0m declare var AbortSignal: {
+    [7m    [0m [96m            ~~~~~~~~~~~[0m
+    and here.
+
+[96mnode_modules/@types/react-native/modules/globals.d.ts[0m:[93m471[0m:[93m15[0m - [91merror[0m[90m TS2420: [0mClass 'AbortSignal' incorrectly implements interface 'EventTarget'.
+  Property 'dispatchEvent' is missing in type 'AbortSignal' but required in type 'EventTarget'.
+
+[7m471[0m declare class AbortSignal implements EventTarget {
+[7m   [0m [91m              ~~~~~~~~~~~[0m
+
+  [96mnode_modules/typescript/lib/lib.dom.d.ts[0m:[93m8882[0m:[93m5[0m
+    [7m8882[0m     dispatchEvent(event: Event): boolean;
+    [7m    [0m [96m    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+    'dispatchEvent' is declared here.
+
+[96mnode_modules/@types/react-native/modules/globals.d.ts[0m:[93m506[0m:[93m15[0m - [91merror[0m[90m TS2300: [0mDuplicate identifier 'AbortController'.
+
+[7m506[0m declare class AbortController {
+[7m   [0m [91m              ~~~~~~~~~~~~~~~[0m
+
+  [96mnode_modules/typescript/lib/lib.dom.d.ts[0m:[93m2558[0m:[93m11[0m
+    [7m2558[0m interface AbortController {
+    [7m    [0m [96m          ~~~~~~~~~~~~~~~[0m
+    'AbortController' was also declared here.
+  [96mnode_modules/typescript/lib/lib.dom.d.ts[0m:[93m2573[0m:[93m13[0m
+    [7m2573[0m declare var AbortController: {
+    [7m    [0m [96m            ~~~~~~~~~~~~~~~[0m
+    and here.
+
+[96mnode_modules/@types/react-native/modules/globals.d.ts[0m:[93m531[0m:[93m14[0m - [91merror[0m[90m TS2717: [0mSubsequent property declarations must have the same type.  Property 'error' must be of type 'DOMException', but here has type 'Error'.
+
+[7m531[0m     readonly error: Error | null;
+[7m   [0m [91m             ~~~~~[0m
+
+  [96mnode_modules/typescript/lib/lib.dom.d.ts[0m:[93m8963[0m:[93m14[0m
+    [7m8963[0m     readonly error: DOMException | null;
+    [7m    [0m [96m             ~~~~~[0m
+    'error' was also declared here.
+
+[96mnode_modules/@types/react-native/modules/globals.d.ts[0m:[93m540[0m:[93m14[0m - [91merror[0m[90m TS2717: [0mSubsequent property declarations must have the same type.  Property 'readyState' must be of type '0 | 2 | 1', but here has type 'number'.
+
+[7m540[0m     readonly readyState: number;
+[7m   [0m [91m             ~~~~~~~~~~[0m
+
+  [96mnode_modules/typescript/lib/lib.dom.d.ts[0m:[93m8977[0m:[93m14[0m
+    [7m8977[0m     readonly readyState: typeof FileReader.EMPTY | typeof FileReader.LOADING | typeof FileReader.DONE;
+    [7m    [0m [96m             ~~~~~~~~~~[0m
+    'readyState' was also declared here.
+
+[96mnode_modules/@types/react-native/modules/LaunchScreen.d.ts[0m:[93m4[0m:[93m18[0m - [91merror[0m[90m TS2451: [0mCannot redeclare block-scoped variable 'Header'.
+
+[7m4[0m     export const Header: any;
+[7m [0m [91m                 ~~~~~~[0m
+
+  [96mnode_modules/react-native/types/modules/LaunchScreen.d.ts[0m:[93m13[0m:[93m16[0m
+    [7m13[0m   export const Header: any;
+    [7m  [0m [96m               ~~~~~~[0m
+    'Header' was also declared here.
+
+[96mnode_modules/@types/react-native/modules/LaunchScreen.d.ts[0m:[93m5[0m:[93m18[0m - [91merror[0m[90m TS2451: [0mCannot redeclare block-scoped variable 'LearnMoreLinks'.
+
+[7m5[0m     export const LearnMoreLinks: any;
+[7m [0m [91m                 ~~~~~~~~~~~~~~[0m
+
+  [96mnode_modules/react-native/types/modules/LaunchScreen.d.ts[0m:[93m14[0m:[93m16[0m
+    [7m14[0m   export const LearnMoreLinks: any;
+    [7m  [0m [96m               ~~~~~~~~~~~~~~[0m
+    'LearnMoreLinks' was also declared here.
+
+[96mnode_modules/@types/react-native/modules/LaunchScreen.d.ts[0m:[93m6[0m:[93m18[0m - [91merror[0m[90m TS2451: [0mCannot redeclare block-scoped variable 'Colors'.
+
+[7m6[0m     export const Colors: any;
+[7m [0m [91m                 ~~~~~~[0m
+
+  [96mnode_modules/react-native/types/modules/LaunchScreen.d.ts[0m:[93m15[0m:[93m16[0m
+    [7m15[0m   export const Colors: any;
+    [7m  [0m [96m               ~~~~~~[0m
+    'Colors' was also declared here.
+
+[96mnode_modules/@types/react-native/modules/LaunchScreen.d.ts[0m:[93m7[0m:[93m18[0m - [91merror[0m[90m TS2451: [0mCannot redeclare block-scoped variable 'DebugInstructions'.
+
+[7m7[0m     export const DebugInstructions: any;
+[7m [0m [91m                 ~~~~~~~~~~~~~~~~~[0m
+
+  [96mnode_modules/react-native/types/modules/LaunchScreen.d.ts[0m:[93m16[0m:[93m16[0m
+    [7m16[0m   export const DebugInstructions: any;
+    [7m  [0m [96m               ~~~~~~~~~~~~~~~~~[0m
+    'DebugInstructions' was also declared here.
+
+[96mnode_modules/@types/react-native/modules/LaunchScreen.d.ts[0m:[93m8[0m:[93m18[0m - [91merror[0m[90m TS2451: [0mCannot redeclare block-scoped variable 'ReloadInstructions'.
+
+[7m8[0m     export const ReloadInstructions: any;
+[7m [0m [91m                 ~~~~~~~~~~~~~~~~~~[0m
+
+  [96mnode_modules/react-native/types/modules/LaunchScreen.d.ts[0m:[93m17[0m:[93m16[0m
+    [7m17[0m   export const ReloadInstructions: any;
+    [7m  [0m [96m               ~~~~~~~~~~~~~~~~~~[0m
+    'ReloadInstructions' was also declared here.
+
+[96mnode_modules/@types/react/global.d.ts[0m:[93m154[0m:[93m11[0m - [91merror[0m[90m TS2300: [0mDuplicate identifier 'FormData'.
+
+[7m154[0m interface FormData {}
+[7m   [0m [91m          ~~~~~~~~[0m
+
+  [96mnode_modules/react-native/types/modules/globals.d.ts[0m:[93m113[0m:[93m15[0m
+    [7m113[0m declare class FormData {
+    [7m   [0m [96m              ~~~~~~~~[0m
+    'FormData' was also declared here.
+  [96mnode_modules/@types/react-native/modules/globals.d.ts[0m:[93m90[0m:[93m15[0m
+    [7m90[0m declare class FormData {
+    [7m  [0m [96m              ~~~~~~~~[0m
+    and here.
+
+[96mnode_modules/expo-constants/build/Constants.types.d.ts[0m:[93m2[0m:[93m326[0m - [91merror[0m[90m TS2307: [0mCannot find module 'expo-manifests' or its corresponding type declarations.
+
+[7m2[0m import type { EASConfig as ManifestsEASConfig, ExpoGoConfig as ManifestsExpoGoConfig, ExpoUpdatesManifest, EmbeddedManifest, ManifestAsset as ManifestAssetForReExport, ManifestExtra as ManifestExtraForReExport, ClientScopingConfig as ClientScopingConfigForReExport, ExpoGoPackagerOpts as ExpoGoPackagerOptsForReExport } from 'expo-manifests';
+[7m [0m [91m                                                                                                                                                                                                                                                                                                                                     ~~~~~~~~~~~~~~~~[0m
+
+[96mnode_modules/expo-modules-core/build/NativeViewManagerAdapter.d.ts[0m:[93m1[0m:[93m8[0m - [91merror[0m[90m TS1259: [0mModule '"C:/Senior dev/mvuvi-app/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+
+[7m1[0m import React from 'react';
+[7m [0m [91m       ~~~~~[0m
+
+  [96mnode_modules/@types/react/index.d.ts[0m:[93m46[0m:[93m1[0m
+    [7m46[0m export = React;
+    [7m  [0m [96m~~~~~~~~~~~~~~~[0m
+    This module is declared with 'export =', and can only be used with a default import when using the 'esModuleInterop' flag.
+
+[96mnode_modules/expo-modules-core/build/Refs.d.ts[0m:[93m1[0m:[93m8[0m - [91merror[0m[90m TS1259: [0mModule '"C:/Senior dev/mvuvi-app/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+
+[7m1[0m import React from 'react';
+[7m [0m [91m       ~~~~~[0m
+
+  [96mnode_modules/@types/react/index.d.ts[0m:[93m46[0m:[93m1[0m
+    [7m46[0m export = React;
+    [7m  [0m [96m~~~~~~~~~~~~~~~[0m
+    This module is declared with 'export =', and can only be used with a default import when using the 'esModuleInterop' flag.
+
+[96mnode_modules/react-native/types/index.d.ts[0m:[93m202[0m:[93m9[0m - [91merror[0m[90m TS2451: [0mCannot redeclare block-scoped variable 'originalXMLHttpRequest'.
+
+[7m202[0m   const originalXMLHttpRequest: any;
+[7m   [0m [91m        ~~~~~~~~~~~~~~~~~~~~~~[0m
+
+  [96mnode_modules/@types/react-native/index.d.ts[0m:[93m143[0m:[93m11[0m
+    [7m143[0m     const originalXMLHttpRequest: any;
+    [7m   [0m [96m          ~~~~~~~~~~~~~~~~~~~~~~[0m
+    'originalXMLHttpRequest' was also declared here.
+
+[96mnode_modules/react-native/types/index.d.ts[0m:[93m204[0m:[93m9[0m - [91merror[0m[90m TS2451: [0mCannot redeclare block-scoped variable '__BUNDLE_START_TIME__'.
+
+[7m204[0m   const __BUNDLE_START_TIME__: number;
+[7m   [0m [91m        ~~~~~~~~~~~~~~~~~~~~~[0m
+
+  [96mnode_modules/@types/react-native/index.d.ts[0m:[93m145[0m:[93m11[0m
+    [7m145[0m     const __BUNDLE_START_TIME__: number;
+    [7m   [0m [96m          ~~~~~~~~~~~~~~~~~~~~~[0m
+    '__BUNDLE_START_TIME__' was also declared here.
+
+[96mnode_modules/react-native/types/index.d.ts[0m:[93m205[0m:[93m9[0m - [91merror[0m[90m TS2451: [0mCannot redeclare block-scoped variable 'ErrorUtils'.
+
+[7m205[0m   const ErrorUtils: ErrorUtils;
+[7m   [0m [91m        ~~~~~~~~~~[0m
+
+  [96mnode_modules/@types/react-native/index.d.ts[0m:[93m146[0m:[93m11[0m
+    [7m146[0m     const ErrorUtils: ErrorUtils;
+    [7m   [0m [96m          ~~~~~~~~~~[0m
+    'ErrorUtils' was also declared here.
+
+[96mnode_modules/react-native/types/index.d.ts[0m:[93m212[0m:[93m9[0m - [91merror[0m[90m TS2451: [0mCannot redeclare block-scoped variable '__DEV__'.
+
+[7m212[0m   const __DEV__: boolean;
+[7m   [0m [91m        ~~~~~~~[0m
+
+  [96mnode_modules/@types/react-native/index.d.ts[0m:[93m153[0m:[93m11[0m
+    [7m153[0m     const __DEV__: boolean;
+    [7m   [0m [96m          ~~~~~~~[0m
+    '__DEV__' was also declared here.
+
+[96mnode_modules/react-native/types/index.d.ts[0m:[93m214[0m:[93m9[0m - [91merror[0m[90m TS2451: [0mCannot redeclare block-scoped variable 'HermesInternal'.
+
+[7m214[0m   const HermesInternal: null | {};
+[7m   [0m [91m        ~~~~~~~~~~~~~~[0m
+
+  [96mnode_modules/@types/react-native/index.d.ts[0m:[93m155[0m:[93m11[0m
+    [7m155[0m     const HermesInternal: null | {};
+    [7m   [0m [96m          ~~~~~~~~~~~~~~[0m
+    'HermesInternal' was also declared here.
+
+[96mnode_modules/react-native/types/modules/BatchedBridge.d.ts[0m:[93m17[0m:[93m15[0m - [91merror[0m[90m TS2300: [0mDuplicate identifier 'MessageQueue'.
+
+[7m17[0m declare class MessageQueue {
+[7m  [0m [91m              ~~~~~~~~~~~~[0m
+
+  [96mnode_modules/@types/react-native/modules/BatchedBridge.d.ts[0m:[93m8[0m:[93m15[0m
+    [7m8[0m declare class MessageQueue {
+    [7m [0m [96m              ~~~~~~~~~~~~[0m
+    'MessageQueue' was also declared here.
+  [96mnode_modules/@types/react-native/modules/BatchedBridge.d.ts[0m:[93m22[0m:[93m20[0m
+    [7m22[0m     export default MessageQueue;
+    [7m  [0m [96m                   ~~~~~~~~~~~~[0m
+    and here.
+
+[96mnode_modules/react-native/types/modules/BatchedBridge.d.ts[0m:[93m27[0m:[93m18[0m - [91merror[0m[90m TS2300: [0mDuplicate identifier 'BatchedBridge'.
+
+[7m27[0m   export default BatchedBridge;
+[7m  [0m [91m                 ~~~~~~~~~~~~~[0m
+
+  [96mnode_modules/@types/react-native/modules/BatchedBridge.d.ts[0m:[93m18[0m:[93m20[0m
+    [7m18[0m     export default BatchedBridge;
+    [7m  [0m [96m                   ~~~~~~~~~~~~~[0m
+    'BatchedBridge' was also declared here.
+
+[96mnode_modules/react-native/types/modules/BatchedBridge.d.ts[0m:[93m31[0m:[93m18[0m - [91merror[0m[90m TS2300: [0mDuplicate identifier 'MessageQueue'.
+
+[7m31[0m   export default MessageQueue;
+[7m  [0m [91m                 ~~~~~~~~~~~~[0m
+
+  [96mnode_modules/@types/react-native/modules/BatchedBridge.d.ts[0m:[93m8[0m:[93m15[0m
+    [7m8[0m declare class MessageQueue {
+    [7m [0m [96m              ~~~~~~~~~~~~[0m
+    'MessageQueue' was also declared here.
+  [96mnode_modules/@types/react-native/modules/BatchedBridge.d.ts[0m:[93m22[0m:[93m20[0m
+    [7m22[0m     export default MessageQueue;
+    [7m  [0m [96m                   ~~~~~~~~~~~~[0m
+    and here.
+
+[96mnode_modules/react-native/types/modules/Codegen.d.ts[0m:[93m10[0m:[93m1[0m - [91merror[0m[90m TS6200: [0mDefinitions of the following identifiers conflict with those in another file: codegenNativeCommands, NativeComponentType, codegenNativeComponent, BubblingEventHandler, DirectEventHandler, Double, Float, Int32, UnsafeObject, DefaultTypes, WithDefault
+
+[7m10[0m declare module 'react-native/Libraries/Utilities/codegenNativeCommands' {
+[7m  [0m [91m~~~~~~~[0m
+
+  [96mnode_modules/@types/react-native/modules/Codegen.d.ts[0m:[93m1[0m:[93m1[0m
+    [7m1[0m declare module "react-native/Libraries/Utilities/codegenNativeCommands" {
+    [7m [0m [96m~~~~~~~[0m
+    Conflicts are in this file.
+
+[96mnode_modules/react-native/types/modules/Devtools.d.ts[0m:[93m11[0m:[93m15[0m - [91merror[0m[90m TS2300: [0mDuplicate identifier 'StackFrame'.
+
+[7m11[0m   export type StackFrame = {
+[7m  [0m [91m              ~~~~~~~~~~[0m
+
+  [96mnode_modules/@types/react-native/modules/Devtools.d.ts[0m:[93m2[0m:[93m17[0m
+    [7m2[0m     export type StackFrame = {
+    [7m [0m [96m                ~~~~~~~~~~[0m
+    'StackFrame' was also declared here.
+
+[96mnode_modules/react-native/types/modules/globals.d.ts[0m:[93m19[0m:[93m1[0m - [91merror[0m[90m TS6200: [0mDefinitions of the following identifiers conflict with those in another file: FormDataValue, FormDataPart, BodyInit_, HeadersInit_, RequestCredentials_, RequestMode_, ResponseType_, WebsocketMessageEventListener, WebsocketErrorEventListener, WebsocketOpenEventListener, WebsocketCloseEventListener, WebsocketEventListener
+
+[7m19[0m declare function clearInterval(handle: number): void;
+[7m  [0m [91m~~~~~~~[0m
+
+  [96mnode_modules/@types/react-native/modules/globals.d.ts[0m:[93m10[0m:[93m1[0m
+    [7m10[0m declare function clearInterval(handle: number): void;
+    [7m  [0m [96m~~~~~~~[0m
+    Conflicts are in this file.
+
+[96mnode_modules/react-native/types/modules/globals.d.ts[0m:[93m78[0m:[93m13[0m - [91merror[0m[90m TS2403: [0mSubsequent variable declarations must have the same type.  Variable 'Blob' must be of type '{ new (blobParts?: BlobPart[], options?: BlobPropertyBag): Blob; prototype: Blob; }', but here has type '{ new (blobParts?: (string | Blob)[], options?: BlobOptions): Blob; prototype: Blob; }'.
+
+[7m78[0m declare var Blob: {
+[7m  [0m [91m            ~~~~[0m
+
+  [96mnode_modules/typescript/lib/lib.dom.d.ts[0m:[93m3514[0m:[93m13[0m
+    [7m3514[0m declare var Blob: {
+    [7m    [0m [96m            ~~~~[0m
+    'Blob' was also declared here.
+
+[96mnode_modules/react-native/types/modules/globals.d.ts[0m:[93m84[0m:[93m3[0m - [91merror[0m[90m TS2687: [0mAll declarations of 'name' must have identical modifiers.
+
+[7m84[0m   name: string;
+[7m  [0m [91m  ~~~~[0m
+
+[96mnode_modules/react-native/types/modules/globals.d.ts[0m:[93m85[0m:[93m3[0m - [91merror[0m[90m TS2687: [0mAll declarations of 'lastModified' must have identical modifiers.
+
+[7m85[0m   lastModified: number;
+[7m  [0m [91m  ~~~~~~~~~~~~[0m
+
+[96mnode_modules/react-native/types/modules/globals.d.ts[0m:[93m88[0m:[93m13[0m - [91merror[0m[90m TS2403: [0mSubsequent variable declarations must have the same type.  Variable 'File' must be of type '{ new (fileBits: BlobPart[], fileName: string, options?: FilePropertyBag): File; prototype: File; }', but here has type '{ new (fileParts?: (string | Blob)[], name?: string, options?: BlobOptions): File; prototype: File; }'.
+
+[7m88[0m declare var File: {
+[7m  [0m [91m            ~~~~[0m
+
+  [96mnode_modules/typescript/lib/lib.dom.d.ts[0m:[93m8924[0m:[93m13[0m
+    [7m8924[0m declare var File: {
+    [7m    [0m [96m            ~~~~[0m
+    'File' was also declared here.
+
+[96mnode_modules/react-native/types/modules/globals.d.ts[0m:[93m113[0m:[93m15[0m - [91merror[0m[90m TS2300: [0mDuplicate identifier 'FormData'.
+
+[7m113[0m declare class FormData {
+[7m   [0m [91m              ~~~~~~~~[0m
+
+  [96mnode_modules/typescript/lib/lib.dom.d.ts[0m:[93m9265[0m:[93m11[0m
+    [7m9265[0m interface FormData {
+    [7m    [0m [96m          ~~~~~~~~[0m
+    'FormData' was also declared here.
+  [96mnode_modules/typescript/lib/lib.dom.d.ts[0m:[93m9285[0m:[93m13[0m
+    [7m9285[0m declare var FormData: {
+    [7m    [0m [96m            ~~~~~~~~[0m
+    and here.
+  [96mnode_modules/@types/react/global.d.ts[0m:[93m154[0m:[93m11[0m
+    [7m154[0m interface FormData {}
+    [7m   [0m [96m          ~~~~~~~~[0m
+    and here.
+
+[96mnode_modules/react-native/types/modules/globals.d.ts[0m:[93m141[0m:[93m13[0m - [91merror[0m[90m TS2403: [0mSubsequent variable declarations must have the same type.  Variable 'Headers' must be of type '{ new (init?: HeadersInit): Headers; prototype: Headers; }', but here has type '{ new (init?: HeadersInit_): Headers; prototype: Headers; }'.
+
+[7m141[0m declare var Headers: {
+[7m   [0m [91m            ~~~~~~~[0m
+
+  [96mnode_modules/typescript/lib/lib.dom.d.ts[0m:[93m14300[0m:[93m13[0m
+    [7m14300[0m declare var Headers: {
+    [7m     [0m [96m            ~~~~~~~[0m
+    'Headers' was also declared here.
+
+[96mnode_modules/react-native/types/modules/globals.d.ts[0m:[93m153[0m:[93m3[0m - [91merror[0m[90m TS2374: [0mDuplicate index signature for type 'string'.
+
+[7m153[0m   [key: string]: any;
+[7m   [0m [91m  ~~~~~~~~~~~~~~~~~~~[0m
+
+[96mnode_modules/react-native/types/modules/globals.d.ts[0m:[93m175[0m:[93m3[0m - [91merror[0m[90m TS2717: [0mSubsequent property declarations must have the same type.  Property 'body' must be of type 'BodyInit', but here has type 'BodyInit_'.
+
+[7m175[0m   body?: BodyInit_ | undefined;
+[7m   [0m [91m  ~~~~[0m
+
+  [96mnode_modules/typescript/lib/lib.dom.d.ts[0m:[93m1922[0m:[93m5[0m
+    [7m1922[0m     body?: BodyInit | null;
+    [7m    [0m [96m    ~~~~[0m
+    'body' was also declared here.
+
+[96mnode_modules/react-native/types/modules/globals.d.ts[0m:[93m177[0m:[93m3[0m - [91merror[0m[90m TS2717: [0mSubsequent property declarations must have the same type.  Property 'headers' must be of type 'HeadersInit', but here has type 'HeadersInit_'.
+
+[7m177[0m   headers?: HeadersInit_ | undefined;
+[7m   [0m [91m  ~~~~~~~[0m
+
+  [96mnode_modules/typescript/lib/lib.dom.d.ts[0m:[93m1928[0m:[93m5[0m
+    [7m1928[0m     headers?: HeadersInit;
+    [7m    [0m [96m    ~~~~~~~[0m
+    'headers' was also declared here.
+
+[96mnode_modules/react-native/types/modules/globals.d.ts[0m:[93m183[0m:[93m3[0m - [91merror[0m[90m TS2717: [0mSubsequent property declarations must have the same type.  Property 'window' must be of type 'null', but here has type 'any'.
+
+[7m183[0m   window?: any | undefined;
+[7m   [0m [91m  ~~~~~~[0m
+
+  [96mnode_modules/typescript/lib/lib.dom.d.ts[0m:[93m1947[0m:[93m5[0m
+    [7m1947[0m     window?: null;
+    [7m    [0m [96m    ~~~~~~[0m
+    'window' was also declared here.
+
+[96mnode_modules/react-native/types/modules/globals.d.ts[0m:[93m198[0m:[93m13[0m - [91merror[0m[90m TS2403: [0mSubsequent variable declarations must have the same type.  Variable 'Request' must be of type '{ new (input: RequestInfo | URL, init?: RequestInit): Request; prototype: Request; }', but here has type '{ new (input: string | Request, init?: RequestInit): Request; prototype: Request; }'.
+
+[7m198[0m declare var Request: {
+[7m   [0m [91m            ~~~~~~~[0m
+
+  [96mnode_modules/typescript/lib/lib.dom.d.ts[0m:[93m19822[0m:[93m13[0m
+    [7m19822[0m declare var Request: {
+    [7m     [0m [96m            ~~~~~~~[0m
+    'Request' was also declared here.
+
+[96mnode_modules/react-native/types/modules/globals.d.ts[0m:[93m203[0m:[93m14[0m - [91merror[0m[90m TS2300: [0mDuplicate identifier 'RequestInfo'.
+
+[7m203[0m declare type RequestInfo = Request | string;
+[7m   [0m [91m             ~~~~~~~~~~~[0m
+
+  [96mnode_modules/typescript/lib/lib.dom.d.ts[0m:[93m29413[0m:[93m6[0m
+    [7m29413[0m type RequestInfo = Request | string;
+    [7m     [0m [96m     ~~~~~~~~~~~[0m
+    'RequestInfo' was also declared here.
+
+[96mnode_modules/react-native/types/modules/globals.d.ts[0m:[93m206[0m:[93m3[0m - [91merror[0m[90m TS2717: [0mSubsequent property declarations must have the same type.  Property 'headers' must be of type 'HeadersInit', but here has type 'HeadersInit_'.
+
+[7m206[0m   headers?: HeadersInit_ | undefined;
+[7m   [0m [91m  ~~~~~~~[0m
+
+  [96mnode_modules/typescript/lib/lib.dom.d.ts[0m:[93m1955[0m:[93m5[0m
+    [7m1955[0m     headers?: HeadersInit;
+    [7m    [0m [96m    ~~~~~~~[0m
+    'headers' was also declared here.
+
+[96mnode_modules/react-native/types/modules/globals.d.ts[0m:[93m222[0m:[93m13[0m - [91merror[0m[90m TS2403: [0mSubsequent variable declarations must have the same type.  Variable 'Response' must be of type '{ new (body?: BodyInit, init?: ResponseInit): Response; prototype: Response; error(): Response; json(data: any, init?: ResponseInit): Response; redirect(url: string | URL, status?: number): Response; }', but here has type '{ new (body?: BodyInit_, init?: ResponseInit): Response; prototype: Response; error: () => Response; redirect: (url: string, status?: number) => Response; }'.
+
+[7m222[0m declare var Response: {
+[7m   [0m [91m            ~~~~~~~~[0m
+
+  [96mnode_modules/typescript/lib/lib.dom.d.ts[0m:[93m19898[0m:[93m13[0m
+    [7m19898[0m declare var Response: {
+    [7m     [0m [96m            ~~~~~~~~[0m
+    'Response' was also declared here.
+
+[96mnode_modules/react-native/types/modules/globals.d.ts[0m:[93m312[0m:[93m3[0m - [91merror[0m[90m TS2717: [0mSubsequent property declarations must have the same type.  Property 'abort' must be of type 'ProgressEvent<XMLHttpRequestEventTarget>', but here has type 'ProgressEvent<EventTarget>'.
+
+[7m312[0m   abort: ProgressEvent;
+[7m   [0m [91m  ~~~~~[0m
+
+  [96mnode_modules/typescript/lib/lib.dom.d.ts[0m:[93m27600[0m:[93m5[0m
+    [7m27600[0m     "abort": ProgressEvent<XMLHttpRequestEventTarget>;
+    [7m     [0m [96m    ~~~~~~~[0m
+    'abort' was also declared here.
+
+[96mnode_modules/react-native/types/modules/globals.d.ts[0m:[93m313[0m:[93m3[0m - [91merror[0m[90m TS2717: [0mSubsequent property declarations must have the same type.  Property 'error' must be of type 'ProgressEvent<XMLHttpRequestEventTarget>', but here has type 'ProgressEvent<EventTarget>'.
+
+[7m313[0m   error: ProgressEvent;
+[7m   [0m [91m  ~~~~~[0m
+
+  [96mnode_modules/typescript/lib/lib.dom.d.ts[0m:[93m27601[0m:[93m5[0m
+    [7m27601[0m     "error": ProgressEvent<XMLHttpRequestEventTarget>;
+    [7m     [0m [96m    ~~~~~~~[0m
+    'error' was also declared here.
+
+[96mnode_modules/react-native/types/modules/globals.d.ts[0m:[93m314[0m:[93m3[0m - [91merror[0m[90m TS2717: [0mSubsequent property declarations must have the same type.  Property 'load' must be of type 'ProgressEvent<XMLHttpRequestEventTarget>', but here has type 'ProgressEvent<EventTarget>'.
+
+[7m314[0m   load: ProgressEvent;
+[7m   [0m [91m  ~~~~[0m
+
+  [96mnode_modules/typescript/lib/lib.dom.d.ts[0m:[93m27602[0m:[93m5[0m
+    [7m27602[0m     "load": ProgressEvent<XMLHttpRequestEventTarget>;
+    [7m     [0m [96m    ~~~~~~[0m
+    'load' was also declared here.
+
+[96mnode_modules/react-native/types/modules/globals.d.ts[0m:[93m315[0m:[93m3[0m - [91merror[0m[90m TS2717: [0mSubsequent property declarations must have the same type.  Property 'loadend' must be of type 'ProgressEvent<XMLHttpRequestEventTarget>', but here has type 'ProgressEvent<EventTarget>'.
+
+[7m315[0m   loadend: ProgressEvent;
+[7m   [0m [91m  ~~~~~~~[0m
+
+  [96mnode_modules/typescript/lib/lib.dom.d.ts[0m:[93m27603[0m:[93m5[0m
+    [7m27603[0m     "loadend": ProgressEvent<XMLHttpRequestEventTarget>;
+    [7m     [0m [96m    ~~~~~~~~~[0m
+    'loadend' was also declared here.
+
+[96mnode_modules/react-native/types/modules/globals.d.ts[0m:[93m316[0m:[93m3[0m - [91merror[0m[90m TS2717: [0mSubsequent property declarations must have the same type.  Property 'loadstart' must be of type 'ProgressEvent<XMLHttpRequestEventTarget>', but here has type 'ProgressEvent<EventTarget>'.
+
+[7m316[0m   loadstart: ProgressEvent;
+[7m   [0m [91m  ~~~~~~~~~[0m
+
+  [96mnode_modules/typescript/lib/lib.dom.d.ts[0m:[93m27604[0m:[93m5[0m
+    [7m27604[0m     "loadstart": ProgressEvent<XMLHttpRequestEventTarget>;
+    [7m     [0m [96m    ~~~~~~~~~~~[0m
+    'loadstart' was also declared here.
+
+[96mnode_modules/react-native/types/modules/globals.d.ts[0m:[93m317[0m:[93m3[0m - [91merror[0m[90m TS2717: [0mSubsequent property declarations must have the same type.  Property 'progress' must be of type 'ProgressEvent<XMLHttpRequestEventTarget>', but here has type 'ProgressEvent<EventTarget>'.
+
+[7m317[0m   progress: ProgressEvent;
+[7m   [0m [91m  ~~~~~~~~[0m
+
+  [96mnode_modules/typescript/lib/lib.dom.d.ts[0m:[93m27605[0m:[93m5[0m
+    [7m27605[0m     "progress": ProgressEvent<XMLHttpRequestEventTarget>;
+    [7m     [0m [96m    ~~~~~~~~~~[0m
+    'progress' was also declared here.
+
+[96mnode_modules/react-native/types/modules/globals.d.ts[0m:[93m318[0m:[93m3[0m - [91merror[0m[90m TS2717: [0mSubsequent property declarations must have the same type.  Property 'timeout' must be of type 'ProgressEvent<XMLHttpRequestEventTarget>', but here has type 'ProgressEvent<EventTarget>'.
+
+[7m318[0m   timeout: ProgressEvent;
+[7m   [0m [91m  ~~~~~~~[0m
+
+  [96mnode_modules/typescript/lib/lib.dom.d.ts[0m:[93m27606[0m:[93m5[0m
+    [7m27606[0m     "timeout": ProgressEvent<XMLHttpRequestEventTarget>;
+    [7m     [0m [96m    ~~~~~~~~~[0m
+    'timeout' was also declared here.
+
+[96mnode_modules/react-native/types/modules/globals.d.ts[0m:[93m371[0m:[93m14[0m - [91merror[0m[90m TS2300: [0mDuplicate identifier 'XMLHttpRequestResponseType'.
+
+[7m371[0m declare type XMLHttpRequestResponseType =
+[7m   [0m [91m             ~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+  [96mnode_modules/typescript/lib/lib.dom.d.ts[0m:[93m29610[0m:[93m6[0m
+    [7m29610[0m type XMLHttpRequestResponseType = "" | "arraybuffer" | "blob" | "document" | "json" | "text";
+    [7m     [0m [96m     ~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+    'XMLHttpRequestResponseType' was also declared here.
+
+[96mnode_modules/react-native/types/modules/globals.d.ts[0m:[93m384[0m:[93m15[0m - [91merror[0m[90m TS2300: [0mDuplicate identifier 'URL'.
+
+[7m384[0m declare class URL {
+[7m   [0m [91m              ~~~[0m
+
+  [96mnode_modules/typescript/lib/lib.dom.d.ts[0m:[93m23839[0m:[93m11[0m
+    [7m23839[0m interface URL {
+    [7m     [0m [96m          ~~~[0m
+    'URL' was also declared here.
+  [96mnode_modules/typescript/lib/lib.dom.d.ts[0m:[93m23869[0m:[93m13[0m
+    [7m23869[0m declare var URL: {
+    [7m     [0m [96m            ~~~[0m
+    and here.
+
+[96mnode_modules/react-native/types/modules/globals.d.ts[0m:[93m409[0m:[93m15[0m - [91merror[0m[90m TS2300: [0mDuplicate identifier 'URLSearchParams'.
+
+[7m409[0m declare class URLSearchParams {
+[7m   [0m [91m              ~~~~~~~~~~~~~~~[0m
+
+  [96mnode_modules/typescript/lib/lib.dom.d.ts[0m:[93m23886[0m:[93m11[0m
+    [7m23886[0m interface URLSearchParams {
+    [7m     [0m [96m          ~~~~~~~~~~~~~~~[0m
+    'URLSearchParams' was also declared here.
+  [96mnode_modules/typescript/lib/lib.dom.d.ts[0m:[93m23932[0m:[93m13[0m
+    [7m23932[0m declare var URLSearchParams: {
+    [7m     [0m [96m            ~~~~~~~~~~~~~~~[0m
+    and here.
+
+[96mnode_modules/react-native/types/modules/globals.d.ts[0m:[93m468[0m:[93m3[0m - [91merror[0m[90m TS2717: [0mSubsequent property declarations must have the same type.  Property 'onopen' must be of type '(this: WebSocket, ev: Event) => any', but here has type '() => void'.
+
+[7m468[0m   onopen: (() => void) | null;
+[7m   [0m [91m  ~~~~~~[0m
+
+  [96mnode_modules/typescript/lib/lib.dom.d.ts[0m:[93m26731[0m:[93m5[0m
+    [7m26731[0m     onopen: ((this: WebSocket, ev: Event) => any) | null;
+    [7m     [0m [96m    ~~~~~~[0m
+    'onopen' was also declared here.
+
+[96mnode_modules/react-native/types/modules/globals.d.ts[0m:[93m469[0m:[93m3[0m - [91merror[0m[90m TS2717: [0mSubsequent property declarations must have the same type.  Property 'onmessage' must be of type '(this: WebSocket, ev: MessageEvent<any>) => any', but here has type '(event: WebSocketMessageEvent) => void'.
+
+[7m469[0m   onmessage: ((event: WebSocketMessageEvent) => void) | null;
+[7m   [0m [91m  ~~~~~~~~~[0m
+
+  [96mnode_modules/typescript/lib/lib.dom.d.ts[0m:[93m26729[0m:[93m5[0m
+    [7m26729[0m     onmessage: ((this: WebSocket, ev: MessageEvent) => any) | null;
+    [7m     [0m [96m    ~~~~~~~~~[0m
+    'onmessage' was also declared here.
+
+[96mnode_modules/react-native/types/modules/globals.d.ts[0m:[93m470[0m:[93m3[0m - [91merror[0m[90m TS2717: [0mSubsequent property declarations must have the same type.  Property 'onerror' must be of type '(this: WebSocket, ev: Event) => any', but here has type '(event: WebSocketErrorEvent) => void'.
+
+[7m470[0m   onerror: ((event: WebSocketErrorEvent) => void) | null;
+[7m   [0m [91m  ~~~~~~~[0m
+
+  [96mnode_modules/typescript/lib/lib.dom.d.ts[0m:[93m26727[0m:[93m5[0m
+    [7m26727[0m     onerror: ((this: WebSocket, ev: Event) => any) | null;
+    [7m     [0m [96m    ~~~~~~~[0m
+    'onerror' was also declared here.
+
+[96mnode_modules/react-native/types/modules/globals.d.ts[0m:[93m471[0m:[93m3[0m - [91merror[0m[90m TS2717: [0mSubsequent property declarations must have the same type.  Property 'onclose' must be of type '(this: WebSocket, ev: CloseEvent) => any', but here has type '(event: WebSocketCloseEvent) => void'.
+
+[7m471[0m   onclose: ((event: WebSocketCloseEvent) => void) | null;
+[7m   [0m [91m  ~~~~~~~[0m
+
+  [96mnode_modules/typescript/lib/lib.dom.d.ts[0m:[93m26725[0m:[93m5[0m
+    [7m26725[0m     onclose: ((this: WebSocket, ev: CloseEvent) => any) | null;
+    [7m     [0m [96m    ~~~~~~~[0m
+    'onclose' was also declared here.
+
+[96mnode_modules/react-native/types/modules/globals.d.ts[0m:[93m472[0m:[93m3[0m - [91merror[0m[90m TS2717: [0mSubsequent property declarations must have the same type.  Property 'addEventListener' must be of type '{ <K extends keyof WebSocketEventMap>(type: K, listener: (this: WebSocket, ev: WebSocketEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void; (type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void; }', but here has type 'WebsocketEventListener'.
+
+[7m472[0m   addEventListener: WebsocketEventListener;
+[7m   [0m [91m  ~~~~~~~~~~~~~~~~[0m
+
+  [96mnode_modules/typescript/lib/lib.dom.d.ts[0m:[93m26766[0m:[93m5[0m
+    [7m26766[0m     addEventListener<K extends keyof WebSocketEventMap>(type: K, listener: (this: WebSocket, ev: WebSocketEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+    [7m     [0m [96m    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+    'addEventListener' was also declared here.
+
+[96mnode_modules/react-native/types/modules/globals.d.ts[0m:[93m473[0m:[93m3[0m - [91merror[0m[90m TS2717: [0mSubsequent property declarations must have the same type.  Property 'removeEventListener' must be of type '{ <K extends keyof WebSocketEventMap>(type: K, listener: (this: WebSocket, ev: WebSocketEventMap[K]) => any, options?: boolean | EventListenerOptions): void; (type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void; }', but here has type 'WebsocketEventListener'.
+
+[7m473[0m   removeEventListener: WebsocketEventListener;
+[7m   [0m [91m  ~~~~~~~~~~~~~~~~~~~[0m
+
+  [96mnode_modules/typescript/lib/lib.dom.d.ts[0m:[93m26768[0m:[93m5[0m
+    [7m26768[0m     removeEventListener<K extends keyof WebSocketEventMap>(type: K, listener: (this: WebSocket, ev: WebSocketEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+    [7m     [0m [96m    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+    'removeEventListener' was also declared here.
+
+[96mnode_modules/react-native/types/modules/globals.d.ts[0m:[93m476[0m:[93m13[0m - [91merror[0m[90m TS2403: [0mSubsequent variable declarations must have the same type.  Variable 'WebSocket' must be of type '{ new (url: string | URL, protocols?: string | string[]): WebSocket; prototype: WebSocket; readonly CONNECTING: 0; readonly OPEN: 1; readonly CLOSING: 2; readonly CLOSED: 3; }', but here has type '{ new (uri: string, protocols?: string | string[], options?: { [optionName: string]: any; headers: { [headerName: string]: string; }; }): WebSocket; prototype: WebSocket; readonly CLOSED: number; readonly CLOSING: number; readonly CONNECTING: number; readonly OPEN: number; }'.
+
+[7m476[0m declare var WebSocket: {
+[7m   [0m [91m            ~~~~~~~~~[0m
+
+  [96mnode_modules/typescript/lib/lib.dom.d.ts[0m:[93m26772[0m:[93m13[0m
+    [7m26772[0m declare var WebSocket: {
+    [7m     [0m [96m            ~~~~~~~~~[0m
+    'WebSocket' was also declared here.
+
+[96mnode_modules/react-native/types/modules/globals.d.ts[0m:[93m500[0m:[93m15[0m - [91merror[0m[90m TS2300: [0mDuplicate identifier 'AbortSignal'.
+
+[7m500[0m declare class AbortSignal implements EventTarget {
+[7m   [0m [91m              ~~~~~~~~~~~[0m
+
+  [96mnode_modules/typescript/lib/lib.dom.d.ts[0m:[93m2587[0m:[93m11[0m
+    [7m2587[0m interface AbortSignal extends EventTarget {
+    [7m    [0m [96m          ~~~~~~~~~~~[0m
+    'AbortSignal' was also declared here.
+  [96mnode_modules/typescript/lib/lib.dom.d.ts[0m:[93m2606[0m:[93m13[0m
+    [7m2606[0m declare var AbortSignal: {
+    [7m    [0m [96m            ~~~~~~~~~~~[0m
+    and here.
+
+[96mnode_modules/react-native/types/modules/globals.d.ts[0m:[93m500[0m:[93m15[0m - [91merror[0m[90m TS2420: [0mClass 'AbortSignal' incorrectly implements interface 'EventTarget'.
+  Property 'dispatchEvent' is missing in type 'AbortSignal' but required in type 'EventTarget'.
+
+[7m500[0m declare class AbortSignal implements EventTarget {
+[7m   [0m [91m              ~~~~~~~~~~~[0m
+
+  [96mnode_modules/typescript/lib/lib.dom.d.ts[0m:[93m8882[0m:[93m5[0m
+    [7m8882[0m     dispatchEvent(event: Event): boolean;
+    [7m    [0m [96m    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+    'dispatchEvent' is declared here.
+
+[96mnode_modules/react-native/types/modules/globals.d.ts[0m:[93m535[0m:[93m15[0m - [91merror[0m[90m TS2300: [0mDuplicate identifier 'AbortController'.
+
+[7m535[0m declare class AbortController {
+[7m   [0m [91m              ~~~~~~~~~~~~~~~[0m
+
+  [96mnode_modules/typescript/lib/lib.dom.d.ts[0m:[93m2558[0m:[93m11[0m
+    [7m2558[0m interface AbortController {
+    [7m    [0m [96m          ~~~~~~~~~~~~~~~[0m
+    'AbortController' was also declared here.
+  [96mnode_modules/typescript/lib/lib.dom.d.ts[0m:[93m2573[0m:[93m13[0m
+    [7m2573[0m declare var AbortController: {
+    [7m    [0m [96m            ~~~~~~~~~~~~~~~[0m
+    and here.
+
+[96mnode_modules/react-native/types/modules/globals.d.ts[0m:[93m560[0m:[93m12[0m - [91merror[0m[90m TS2717: [0mSubsequent property declarations must have the same type.  Property 'error' must be of type 'DOMException', but here has type 'Error'.
+
+[7m560[0m   readonly error: Error | null;
+[7m   [0m [91m           ~~~~~[0m
+
+  [96mnode_modules/typescript/lib/lib.dom.d.ts[0m:[93m8963[0m:[93m14[0m
+    [7m8963[0m     readonly error: DOMException | null;
+    [7m    [0m [96m             ~~~~~[0m
+    'error' was also declared here.
+
+[96mnode_modules/react-native/types/modules/globals.d.ts[0m:[93m569[0m:[93m12[0m - [91merror[0m[90m TS2717: [0mSubsequent property declarations must have the same type.  Property 'readyState' must be of type '0 | 2 | 1', but here has type 'number'.
+
+[7m569[0m   readonly readyState: number;
+[7m   [0m [91m           ~~~~~~~~~~[0m
+
+  [96mnode_modules/typescript/lib/lib.dom.d.ts[0m:[93m8977[0m:[93m14[0m
+    [7m8977[0m     readonly readyState: typeof FileReader.EMPTY | typeof FileReader.LOADING | typeof FileReader.DONE;
+    [7m    [0m [96m             ~~~~~~~~~~[0m
+    'readyState' was also declared here.
+
+[96mnode_modules/react-native/types/modules/LaunchScreen.d.ts[0m:[93m13[0m:[93m16[0m - [91merror[0m[90m TS2451: [0mCannot redeclare block-scoped variable 'Header'.
+
+[7m13[0m   export const Header: any;
+[7m  [0m [91m               ~~~~~~[0m
+
+  [96mnode_modules/@types/react-native/modules/LaunchScreen.d.ts[0m:[93m4[0m:[93m18[0m
+    [7m4[0m     export const Header: any;
+    [7m [0m [96m                 ~~~~~~[0m
+    'Header' was also declared here.
+
+[96mnode_modules/react-native/types/modules/LaunchScreen.d.ts[0m:[93m14[0m:[93m16[0m - [91merror[0m[90m TS2451: [0mCannot redeclare block-scoped variable 'LearnMoreLinks'.
+
+[7m14[0m   export const LearnMoreLinks: any;
+[7m  [0m [91m               ~~~~~~~~~~~~~~[0m
+
+  [96mnode_modules/@types/react-native/modules/LaunchScreen.d.ts[0m:[93m5[0m:[93m18[0m
+    [7m5[0m     export const LearnMoreLinks: any;
+    [7m [0m [96m                 ~~~~~~~~~~~~~~[0m
+    'LearnMoreLinks' was also declared here.
+
+[96mnode_modules/react-native/types/modules/LaunchScreen.d.ts[0m:[93m15[0m:[93m16[0m - [91merror[0m[90m TS2451: [0mCannot redeclare block-scoped variable 'Colors'.
+
+[7m15[0m   export const Colors: any;
+[7m  [0m [91m               ~~~~~~[0m
+
+  [96mnode_modules/@types/react-native/modules/LaunchScreen.d.ts[0m:[93m6[0m:[93m18[0m
+    [7m6[0m     export const Colors: any;
+    [7m [0m [96m                 ~~~~~~[0m
+    'Colors' was also declared here.
+
+[96mnode_modules/react-native/types/modules/LaunchScreen.d.ts[0m:[93m16[0m:[93m16[0m - [91merror[0m[90m TS2451: [0mCannot redeclare block-scoped variable 'DebugInstructions'.
+
+[7m16[0m   export const DebugInstructions: any;
+[7m  [0m [91m               ~~~~~~~~~~~~~~~~~[0m
+
+  [96mnode_modules/@types/react-native/modules/LaunchScreen.d.ts[0m:[93m7[0m:[93m18[0m
+    [7m7[0m     export const DebugInstructions: any;
+    [7m [0m [96m                 ~~~~~~~~~~~~~~~~~[0m
+    'DebugInstructions' was also declared here.
+
+[96mnode_modules/react-native/types/modules/LaunchScreen.d.ts[0m:[93m17[0m:[93m16[0m - [91merror[0m[90m TS2451: [0mCannot redeclare block-scoped variable 'ReloadInstructions'.
+
+[7m17[0m   export const ReloadInstructions: any;
+[7m  [0m [91m               ~~~~~~~~~~~~~~~~~~[0m
+
+  [96mnode_modules/@types/react-native/modules/LaunchScreen.d.ts[0m:[93m8[0m:[93m18[0m
+    [7m8[0m     export const ReloadInstructions: any;
+    [7m [0m [96m                 ~~~~~~~~~~~~~~~~~~[0m
+    'ReloadInstructions' was also declared here.
+
+[96mnode_modules/tamagui/types/views/Input.d.ts[0m:[93m1[0m:[93m8[0m - [91merror[0m[90m TS1259: [0mModule '"C:/Senior dev/mvuvi-app/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+
+[7m1[0m import React from 'react';
+[7m [0m [91m       ~~~~~[0m
+
+  [96mnode_modules/@types/react/index.d.ts[0m:[93m46[0m:[93m1[0m
+    [7m46[0m export = React;
+    [7m  [0m [96m~~~~~~~~~~~~~~~[0m
+    This module is declared with 'export =', and can only be used with a default import when using the 'esModuleInterop' flag.
+
+[96mnode_modules/typescript/lib/lib.dom.d.ts[0m:[93m2558[0m:[93m11[0m - [91merror[0m[90m TS2300: [0mDuplicate identifier 'AbortController'.
+
+[7m2558[0m interface AbortController {
+[7m    [0m [91m          ~~~~~~~~~~~~~~~[0m
+
+  [96mnode_modules/react-native/types/modules/globals.d.ts[0m:[93m535[0m:[93m15[0m
+    [7m535[0m declare class AbortController {
+    [7m   [0m [96m              ~~~~~~~~~~~~~~~[0m
+    'AbortController' was also declared here.
+  [96mnode_modules/@types/react-native/modules/globals.d.ts[0m:[93m506[0m:[93m15[0m
+    [7m506[0m declare class AbortController {
+    [7m   [0m [96m              ~~~~~~~~~~~~~~~[0m
+    and here.
+
+[96mnode_modules/typescript/lib/lib.dom.d.ts[0m:[93m2573[0m:[93m13[0m - [91merror[0m[90m TS2300: [0mDuplicate identifier 'AbortController'.
+
+[7m2573[0m declare var AbortController: {
+[7m    [0m [91m            ~~~~~~~~~~~~~~~[0m
+
+  [96mnode_modules/react-native/types/modules/globals.d.ts[0m:[93m535[0m:[93m15[0m
+    [7m535[0m declare class AbortController {
+    [7m   [0m [96m              ~~~~~~~~~~~~~~~[0m
+    'AbortController' was also declared here.
+  [96mnode_modules/@types/react-native/modules/globals.d.ts[0m:[93m506[0m:[93m15[0m
+    [7m506[0m declare class AbortController {
+    [7m   [0m [96m              ~~~~~~~~~~~~~~~[0m
+    and here.
+
+[96mnode_modules/typescript/lib/lib.dom.d.ts[0m:[93m2587[0m:[93m11[0m - [91merror[0m[90m TS2300: [0mDuplicate identifier 'AbortSignal'.
+
+[7m2587[0m interface AbortSignal extends EventTarget {
+[7m    [0m [91m          ~~~~~~~~~~~[0m
+
+  [96mnode_modules/react-native/types/modules/globals.d.ts[0m:[93m500[0m:[93m15[0m
+    [7m500[0m declare class AbortSignal implements EventTarget {
+    [7m   [0m [96m              ~~~~~~~~~~~[0m
+    'AbortSignal' was also declared here.
+  [96mnode_modules/@types/react-native/modules/globals.d.ts[0m:[93m471[0m:[93m15[0m
+    [7m471[0m declare class AbortSignal implements EventTarget {
+    [7m   [0m [96m              ~~~~~~~~~~~[0m
+    and here.
+
+[96mnode_modules/typescript/lib/lib.dom.d.ts[0m:[93m2606[0m:[93m13[0m - [91merror[0m[90m TS2300: [0mDuplicate identifier 'AbortSignal'.
+
+[7m2606[0m declare var AbortSignal: {
+[7m    [0m [91m            ~~~~~~~~~~~[0m
+
+  [96mnode_modules/react-native/types/modules/globals.d.ts[0m:[93m500[0m:[93m15[0m
+    [7m500[0m declare class AbortSignal implements EventTarget {
+    [7m   [0m [96m              ~~~~~~~~~~~[0m
+    'AbortSignal' was also declared here.
+  [96mnode_modules/@types/react-native/modules/globals.d.ts[0m:[93m471[0m:[93m15[0m
+    [7m471[0m declare class AbortSignal implements EventTarget {
+    [7m   [0m [96m              ~~~~~~~~~~~[0m
+    and here.
+
+[96mnode_modules/typescript/lib/lib.dom.d.ts[0m:[93m8917[0m:[93m14[0m - [91merror[0m[90m TS2687: [0mAll declarations of 'lastModified' must have identical modifiers.
+
+[7m8917[0m     readonly lastModified: number;
+[7m    [0m [91m             ~~~~~~~~~~~~[0m
+
+[96mnode_modules/typescript/lib/lib.dom.d.ts[0m:[93m8919[0m:[93m14[0m - [91merror[0m[90m TS2687: [0mAll declarations of 'name' must have identical modifiers.
+
+[7m8919[0m     readonly name: string;
+[7m    [0m [91m             ~~~~[0m
+
+[96mnode_modules/typescript/lib/lib.dom.d.ts[0m:[93m9265[0m:[93m11[0m - [91merror[0m[90m TS2300: [0mDuplicate identifier 'FormData'.
+
+[7m9265[0m interface FormData {
+[7m    [0m [91m          ~~~~~~~~[0m
+
+  [96mnode_modules/react-native/types/modules/globals.d.ts[0m:[93m113[0m:[93m15[0m
+    [7m113[0m declare class FormData {
+    [7m   [0m [96m              ~~~~~~~~[0m
+    'FormData' was also declared here.
+  [96mnode_modules/@types/react-native/modules/globals.d.ts[0m:[93m90[0m:[93m15[0m
+    [7m90[0m declare class FormData {
+    [7m  [0m [96m              ~~~~~~~~[0m
+    and here.
+
+[96mnode_modules/typescript/lib/lib.dom.d.ts[0m:[93m9285[0m:[93m13[0m - [91merror[0m[90m TS2300: [0mDuplicate identifier 'FormData'.
+
+[7m9285[0m declare var FormData: {
+[7m    [0m [91m            ~~~~~~~~[0m
+
+  [96mnode_modules/react-native/types/modules/globals.d.ts[0m:[93m113[0m:[93m15[0m
+    [7m113[0m declare class FormData {
+    [7m   [0m [96m              ~~~~~~~~[0m
+    'FormData' was also declared here.
+  [96mnode_modules/@types/react-native/modules/globals.d.ts[0m:[93m90[0m:[93m15[0m
+    [7m90[0m declare class FormData {
+    [7m  [0m [96m              ~~~~~~~~[0m
+    and here.
+
+[96mnode_modules/typescript/lib/lib.dom.d.ts[0m:[93m23839[0m:[93m11[0m - [91merror[0m[90m TS2300: [0mDuplicate identifier 'URL'.
+
+[7m23839[0m interface URL {
+[7m     [0m [91m          ~~~[0m
+
+  [96mnode_modules/react-native/types/modules/globals.d.ts[0m:[93m384[0m:[93m15[0m
+    [7m384[0m declare class URL {
+    [7m   [0m [96m              ~~~[0m
+    'URL' was also declared here.
+  [96mnode_modules/@types/react-native/modules/globals.d.ts[0m:[93m355[0m:[93m15[0m
+    [7m355[0m declare class URL {
+    [7m   [0m [96m              ~~~[0m
+    and here.
+
+[96mnode_modules/typescript/lib/lib.dom.d.ts[0m:[93m23869[0m:[93m13[0m - [91merror[0m[90m TS2300: [0mDuplicate identifier 'URL'.
+
+[7m23869[0m declare var URL: {
+[7m     [0m [91m            ~~~[0m
+
+  [96mnode_modules/react-native/types/modules/globals.d.ts[0m:[93m384[0m:[93m15[0m
+    [7m384[0m declare class URL {
+    [7m   [0m [96m              ~~~[0m
+    'URL' was also declared here.
+  [96mnode_modules/@types/react-native/modules/globals.d.ts[0m:[93m355[0m:[93m15[0m
+    [7m355[0m declare class URL {
+    [7m   [0m [96m              ~~~[0m
+    and here.
+
+[96mnode_modules/typescript/lib/lib.dom.d.ts[0m:[93m23886[0m:[93m11[0m - [91merror[0m[90m TS2300: [0mDuplicate identifier 'URLSearchParams'.
+
+[7m23886[0m interface URLSearchParams {
+[7m     [0m [91m          ~~~~~~~~~~~~~~~[0m
+
+  [96mnode_modules/react-native/types/modules/globals.d.ts[0m:[93m409[0m:[93m15[0m
+    [7m409[0m declare class URLSearchParams {
+    [7m   [0m [96m              ~~~~~~~~~~~~~~~[0m
+    'URLSearchParams' was also declared here.
+  [96mnode_modules/@types/react-native/modules/globals.d.ts[0m:[93m380[0m:[93m15[0m
+    [7m380[0m declare class URLSearchParams {
+    [7m   [0m [96m              ~~~~~~~~~~~~~~~[0m
+    and here.
+
+[96mnode_modules/typescript/lib/lib.dom.d.ts[0m:[93m23932[0m:[93m13[0m - [91merror[0m[90m TS2300: [0mDuplicate identifier 'URLSearchParams'.
+
+[7m23932[0m declare var URLSearchParams: {
+[7m     [0m [91m            ~~~~~~~~~~~~~~~[0m
+
+  [96mnode_modules/react-native/types/modules/globals.d.ts[0m:[93m409[0m:[93m15[0m
+    [7m409[0m declare class URLSearchParams {
+    [7m   [0m [96m              ~~~~~~~~~~~~~~~[0m
+    'URLSearchParams' was also declared here.
+  [96mnode_modules/@types/react-native/modules/globals.d.ts[0m:[93m380[0m:[93m15[0m
+    [7m380[0m declare class URLSearchParams {
+    [7m   [0m [96m              ~~~~~~~~~~~~~~~[0m
+    and here.
+
+[96mnode_modules/typescript/lib/lib.dom.d.ts[0m:[93m29413[0m:[93m6[0m - [91merror[0m[90m TS2300: [0mDuplicate identifier 'RequestInfo'.
+
+[7m29413[0m type RequestInfo = Request | string;
+[7m     [0m [91m     ~~~~~~~~~~~[0m
+
+  [96mnode_modules/react-native/types/modules/globals.d.ts[0m:[93m203[0m:[93m14[0m
+    [7m203[0m declare type RequestInfo = Request | string;
+    [7m   [0m [96m             ~~~~~~~~~~~[0m
+    'RequestInfo' was also declared here.
+  [96mnode_modules/@types/react-native/modules/globals.d.ts[0m:[93m175[0m:[93m14[0m
+    [7m175[0m declare type RequestInfo = Request | string;
+    [7m   [0m [96m             ~~~~~~~~~~~[0m
+    and here.
+
+[96mnode_modules/typescript/lib/lib.dom.d.ts[0m:[93m29610[0m:[93m6[0m - [91merror[0m[90m TS2300: [0mDuplicate identifier 'XMLHttpRequestResponseType'.
+
+[7m29610[0m type XMLHttpRequestResponseType = "" | "arraybuffer" | "blob" | "document" | "json" | "text";
+[7m     [0m [91m     ~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+  [96mnode_modules/react-native/types/modules/globals.d.ts[0m:[93m371[0m:[93m14[0m
+    [7m371[0m declare type XMLHttpRequestResponseType =
+    [7m   [0m [96m             ~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+    'XMLHttpRequestResponseType' was also declared here.
+  [96mnode_modules/@types/react-native/modules/globals.d.ts[0m:[93m342[0m:[93m14[0m
+    [7m342[0m declare type XMLHttpRequestResponseType =
+    [7m   [0m [96m             ~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+    and here.
+
+[96mnode_modules/zod/lib/types.d.ts[0m:[93m772[0m:[93m5[0m - [91merror[0m[90m TS18028: [0mPrivate identifiers are only available when targeting ECMAScript 2015 and higher.
+
+[7m772[0m     #private;
+[7m   [0m [91m    ~~~~~~~~[0m
+
+[96mnode_modules/zod/lib/types.d.ts[0m:[93m791[0m:[93m5[0m - [91merror[0m[90m TS18028: [0mPrivate identifiers are only available when targeting ECMAScript 2015 and higher.
+
+[7m791[0m     #private;
+[7m   [0m [91m    ~~~~~~~~[0m
+
+[96mscreens/catch-data/RecordCatchScreen.tsx[0m:[93m1[0m:[93m8[0m - [91merror[0m[90m TS1259: [0mModule '"C:/Senior dev/mvuvi-app/node_modules/@types/react/index"' can only be default-imported using the 'esModuleInterop' flag
+
+[7m1[0m import React, { useState, useEffect, ReactNode } from 'react';
+[7m [0m [91m       ~~~~~[0m
+
+  [96mnode_modules/@types/react/index.d.ts[0m:[93m46[0m:[93m1[0m
+    [7m46[0m export = React;
+    [7m  [0m [96m~~~~~~~~~~~~~~~[0m
+    This module is declared with 'export =', and can only be used with a default import when using the 'esModuleInterop' flag.
+
+[96mscreens/catch-data/RecordCatchScreen.tsx[0m:[93m192[0m:[93m5[0m - [91merror[0m[90m TS17004: [0mCannot use JSX unless the '--jsx' flag is provided.
+
+[7m192[0m     <SafeAreaView style={{ flex: 1, backgroundColor: '#fff' }}>
+[7m   [0m [91m    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96mscreens/catch-data/RecordCatchScreen.tsx[0m:[93m193[0m:[93m7[0m - [91merror[0m[90m TS17004: [0mCannot use JSX unless the '--jsx' flag is provided.
+
+[7m193[0m       <StatusBar barStyle="dark-content" backgroundColor="#fff" />
+[7m   [0m [91m      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96mscreens/catch-data/RecordCatchScreen.tsx[0m:[93m194[0m:[93m7[0m - [91merror[0m[90m TS17004: [0mCannot use JSX unless the '--jsx' flag is provided.
+
+[7m194[0m       <ScrollView>
+[7m   [0m [91m      ~~~~~~~~~~~~[0m
+
+[96mscreens/catch-data/RecordCatchScreen.tsx[0m:[93m195[0m:[93m9[0m - [91merror[0m[90m TS17004: [0mCannot use JSX unless the '--jsx' flag is provided.
+
+[7m195[0m         <YStack padding="$4">
+[7m   [0m [91m        ~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96mscreens/catch-data/RecordCatchScreen.tsx[0m:[93m196[0m:[93m11[0m - [91merror[0m[90m TS17004: [0mCannot use JSX unless the '--jsx' flag is provided.
+
+[7m196[0m           <H2>{t('catch.recordCatch')}</H2>
+[7m   [0m [91m          ~~~~[0m
+
+[96mscreens/catch-data/RecordCatchScreen.tsx[0m:[93m199[0m:[93m13[0m - [91merror[0m[90m TS17004: [0mCannot use JSX unless the '--jsx' flag is provided.
+
+[7m199[0m             <YStack backgroundColor="$green2" padding="$3" borderRadius="$2" marginTop="$2">
+[7m   [0m [91m            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96mscreens/catch-data/RecordCatchScreen.tsx[0m:[93m200[0m:[93m15[0m - [91merror[0m[90m TS17004: [0mCannot use JSX unless the '--jsx' flag is provided.
+
+[7m200[0m               <Paragraph color="$green9">{t('catch.recordSuccess')}</Paragraph>
+[7m   [0m [91m              ~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96mscreens/catch-data/RecordCatchScreen.tsx[0m:[93m205[0m:[93m13[0m - [91merror[0m[90m TS17004: [0mCannot use JSX unless the '--jsx' flag is provided.
+
+[7m205[0m             <YStack alignItems="center" padding="$4">
+[7m   [0m [91m            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96mscreens/catch-data/RecordCatchScreen.tsx[0m:[93m206[0m:[93m15[0m - [91merror[0m[90m TS17004: [0mCannot use JSX unless the '--jsx' flag is provided.
+
+[7m206[0m               <ActivityIndicator size="large" color="#0891b2" />
+[7m   [0m [91m              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96mscreens/catch-data/RecordCatchScreen.tsx[0m:[93m207[0m:[93m15[0m - [91merror[0m[90m TS17004: [0mCannot use JSX unless the '--jsx' flag is provided.
+
+[7m207[0m               <Text marginTop="$2">{t('catch.gettingLocation')}</Text>
+[7m   [0m [91m              ~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96mscreens/catch-data/RecordCatchScreen.tsx[0m:[93m210[0m:[93m13[0m - [91merror[0m[90m TS17004: [0mCannot use JSX unless the '--jsx' flag is provided.
+
+[7m210[0m             <Form onSubmit={handleSubmit}>
+[7m   [0m [91m            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96mscreens/catch-data/RecordCatchScreen.tsx[0m:[93m211[0m:[93m15[0m - [91merror[0m[90m TS17004: [0mCannot use JSX unless the '--jsx' flag is provided.
+
+[7m211[0m               <YStack marginTop="$4">
+[7m   [0m [91m              ~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96mscreens/catch-data/RecordCatchScreen.tsx[0m:[93m214[0m:[93m19[0m - [91merror[0m[90m TS17004: [0mCannot use JSX unless the '--jsx' flag is provided.
+
+[7m214[0m                   <YStack marginBottom="$4">
+[7m   [0m [91m                  ~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96mscreens/catch-data/RecordCatchScreen.tsx[0m:[93m215[0m:[93m21[0m - [91merror[0m[90m TS17004: [0mCannot use JSX unless the '--jsx' flag is provided.
+
+[7m215[0m                     <Text>{t('catch.mapLocation')}</Text>
+[7m   [0m [91m                    ~~~~~~[0m
+
+[96mscreens/catch-data/RecordCatchScreen.tsx[0m:[93m216[0m:[93m21[0m - [91merror[0m[90m TS17004: [0mCannot use JSX unless the '--jsx' flag is provided.
+
+[7m216[0m                     <MapView
+[7m   [0m [91m                    ~~~~~~~~[0m
+[7m217[0m                       style={{ height: 200, width: '100%', borderRadius: 8 }}
+[7m   [0m [91m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[7m...[0m 
+[7m219[0m                       onPress={handleMapPress}
+[7m   [0m [91m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[7m220[0m                     >
+[7m   [0m [91m~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96mscreens/catch-data/RecordCatchScreen.tsx[0m:[93m222[0m:[93m25[0m - [91merror[0m[90m TS17004: [0mCannot use JSX unless the '--jsx' flag is provided.
+
+[7m222[0m                         <Marker
+[7m   [0m [91m                        ~~~~~~~[0m
+[7m223[0m                           coordinate={{
+[7m   [0m [91m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[7m...[0m 
+[7m228[0m                           onDragEnd={(e) => handleMapPress(e)}
+[7m   [0m [91m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[7m229[0m                         />
+[7m   [0m [91m~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96mscreens/catch-data/RecordCatchScreen.tsx[0m:[93m232[0m:[93m21[0m - [91merror[0m[90m TS17004: [0mCannot use JSX unless the '--jsx' flag is provided.
+
+[7m232[0m                     <Text fontSize="$2" marginTop="$1">{t('catch.tapToSelectLocation')}</Text>
+[7m   [0m [91m                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96mscreens/catch-data/RecordCatchScreen.tsx[0m:[93m237[0m:[93m17[0m - [91merror[0m[90m TS17004: [0mCannot use JSX unless the '--jsx' flag is provided.
+
+[7m237[0m                 <YStack marginBottom="$4">
+[7m   [0m [91m                ~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96mscreens/catch-data/RecordCatchScreen.tsx[0m:[93m238[0m:[93m19[0m - [91merror[0m[90m TS17004: [0mCannot use JSX unless the '--jsx' flag is provided.
+
+[7m238[0m                   <Text>{t('catch.fishSpecies')}</Text>
+[7m   [0m [91m                  ~~~~~~[0m
+
+[96mscreens/catch-data/RecordCatchScreen.tsx[0m:[93m239[0m:[93m19[0m - [91merror[0m[90m TS17004: [0mCannot use JSX unless the '--jsx' flag is provided.
+
+[7m239[0m                   <Select
+[7m   [0m [91m                  ~~~~~~~[0m
+[7m240[0m                     value={formData.fishSpecies}
+[7m   [0m [91m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[7m241[0m                     onValueChange={(value: string) => setFormData({ ...formData, fishSpecies: value })}
+[7m   [0m [91m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[7m242[0m                   >
+[7m   [0m [91m~~~~~~~~~~~~~~~~~~~[0m
+
+[96mscreens/catch-data/RecordCatchScreen.tsx[0m:[93m243[0m:[93m21[0m - [91merror[0m[90m TS17004: [0mCannot use JSX unless the '--jsx' flag is provided.
+
+[7m243[0m                     <Select.Trigger>
+[7m   [0m [91m                    ~~~~~~~~~~~~~~~~[0m
+
+[96mscreens/catch-data/RecordCatchScreen.tsx[0m:[93m244[0m:[93m23[0m - [91merror[0m[90m TS17004: [0mCannot use JSX unless the '--jsx' flag is provided.
+
+[7m244[0m                       <Select.Value placeholder={t('catch.selectSpecies')} />
+[7m   [0m [91m                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96mscreens/catch-data/RecordCatchScreen.tsx[0m:[93m246[0m:[93m21[0m - [91merror[0m[90m TS17004: [0mCannot use JSX unless the '--jsx' flag is provided.
+
+[7m246[0m                     <Select.Content>
+[7m   [0m [91m                    ~~~~~~~~~~~~~~~~[0m
+
+[96mscreens/catch-data/RecordCatchScreen.tsx[0m:[93m247[0m:[93m23[0m - [91merror[0m[90m TS17004: [0mCannot use JSX unless the '--jsx' flag is provided.
+
+[7m247[0m                       <Select.ScrollUpButton />
+[7m   [0m [91m                      ~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96mscreens/catch-data/RecordCatchScreen.tsx[0m:[93m248[0m:[93m23[0m - [91merror[0m[90m TS17004: [0mCannot use JSX unless the '--jsx' flag is provided.
+
+[7m248[0m                       <Select.Viewport>
+[7m   [0m [91m                      ~~~~~~~~~~~~~~~~~[0m
+
+[96mscreens/catch-data/RecordCatchScreen.tsx[0m:[93m249[0m:[93m25[0m - [91merror[0m[90m TS17004: [0mCannot use JSX unless the '--jsx' flag is provided.
+
+[7m249[0m                         <Select.Group>
+[7m   [0m [91m                        ~~~~~~~~~~~~~~[0m
+
+[96mscreens/catch-data/RecordCatchScreen.tsx[0m:[93m251[0m:[93m29[0m - [91merror[0m[90m TS17004: [0mCannot use JSX unless the '--jsx' flag is provided.
+
+[7m251[0m                             <Select.Item key={species} value={species} index={index}>
+[7m   [0m [91m                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96mscreens/catch-data/RecordCatchScreen.tsx[0m:[93m252[0m:[93m31[0m - [91merror[0m[90m TS17004: [0mCannot use JSX unless the '--jsx' flag is provided.
+
+[7m252[0m                               <Select.ItemText>{species}</Select.ItemText>
+[7m   [0m [91m                              ~~~~~~~~~~~~~~~~~[0m
+
+[96mscreens/catch-data/RecordCatchScreen.tsx[0m:[93m257[0m:[93m23[0m - [91merror[0m[90m TS17004: [0mCannot use JSX unless the '--jsx' flag is provided.
+
+[7m257[0m                       <Select.ScrollDownButton />
+[7m   [0m [91m                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96mscreens/catch-data/RecordCatchScreen.tsx[0m:[93m261[0m:[93m21[0m - [91merror[0m[90m TS17004: [0mCannot use JSX unless the '--jsx' flag is provided.
+
+[7m261[0m                     <Text color="$red9" fontSize="$2">{validationErrors.fishSpecies}</Text>
+[7m   [0m [91m                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96mscreens/catch-data/RecordCatchScreen.tsx[0m:[93m266[0m:[93m17[0m - [91merror[0m[90m TS17004: [0mCannot use JSX unless the '--jsx' flag is provided.
+
+[7m266[0m                 <XStack marginBottom="$4">
+[7m   [0m [91m                ~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96mscreens/catch-data/RecordCatchScreen.tsx[0m:[93m267[0m:[93m19[0m - [91merror[0m[90m TS17004: [0mCannot use JSX unless the '--jsx' flag is provided.
+
+[7m267[0m                   <YStack flex={1} marginRight="$2">
+[7m   [0m [91m                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96mscreens/catch-data/RecordCatchScreen.tsx[0m:[93m268[0m:[93m21[0m - [91merror[0m[90m TS17004: [0mCannot use JSX unless the '--jsx' flag is provided.
+
+[7m268[0m                     <Text>{t('catch.quantity')}</Text>
+[7m   [0m [91m                    ~~~~~~[0m
+
+[96mscreens/catch-data/RecordCatchScreen.tsx[0m:[93m269[0m:[93m21[0m - [91merror[0m[90m TS17004: [0mCannot use JSX unless the '--jsx' flag is provided.
+
+[7m269[0m                     <Input
+[7m   [0m [91m                    ~~~~~~[0m
+[7m270[0m                       value={formData.quantity?.toString() || ''}
+[7m   [0m [91m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[7m...[0m 
+[7m276[0m                       placeholder="0"
+[7m   [0m [91m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[7m277[0m                     />
+[7m   [0m [91m~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96mscreens/catch-data/RecordCatchScreen.tsx[0m:[93m279[0m:[93m23[0m - [91merror[0m[90m TS17004: [0mCannot use JSX unless the '--jsx' flag is provided.
+
+[7m279[0m                       <Text color="$red9" fontSize="$2">{validationErrors.quantity}</Text>
+[7m   [0m [91m                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96mscreens/catch-data/RecordCatchScreen.tsx[0m:[93m283[0m:[93m19[0m - [91merror[0m[90m TS17004: [0mCannot use JSX unless the '--jsx' flag is provided.
+
+[7m283[0m                   <YStack flex={1}>
+[7m   [0m [91m                  ~~~~~~~~~~~~~~~~~[0m
+
+[96mscreens/catch-data/RecordCatchScreen.tsx[0m:[93m284[0m:[93m21[0m - [91merror[0m[90m TS17004: [0mCannot use JSX unless the '--jsx' flag is provided.
+
+[7m284[0m                     <Text>{t('catch.unit')}</Text>
+[7m   [0m [91m                    ~~~~~~[0m
+
+[96mscreens/catch-data/RecordCatchScreen.tsx[0m:[93m285[0m:[93m21[0m - [91merror[0m[90m TS17004: [0mCannot use JSX unless the '--jsx' flag is provided.
+
+[7m285[0m                     <Select
+[7m   [0m [91m                    ~~~~~~~[0m
+[7m286[0m                       value={formData.unit}
+[7m   [0m [91m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[7m287[0m                       onValueChange={(value: string) => setFormData({ ...formData, unit: value })}
+[7m   [0m [91m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[7m288[0m                     >
+[7m   [0m [91m~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96mscreens/catch-data/RecordCatchScreen.tsx[0m:[93m289[0m:[93m23[0m - [91merror[0m[90m TS17004: [0mCannot use JSX unless the '--jsx' flag is provided.
+
+[7m289[0m                       <Select.Trigger>
+[7m   [0m [91m                      ~~~~~~~~~~~~~~~~[0m
+
+[96mscreens/catch-data/RecordCatchScreen.tsx[0m:[93m290[0m:[93m25[0m - [91merror[0m[90m TS17004: [0mCannot use JSX unless the '--jsx' flag is provided.
+
+[7m290[0m                         <Select.Value placeholder={t('catch.selectUnit')} />
+[7m   [0m [91m                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96mscreens/catch-data/RecordCatchScreen.tsx[0m:[93m292[0m:[93m23[0m - [91merror[0m[90m TS17004: [0mCannot use JSX unless the '--jsx' flag is provided.
+
+[7m292[0m                       <Select.Content>
+[7m   [0m [91m                      ~~~~~~~~~~~~~~~~[0m
+
+[96mscreens/catch-data/RecordCatchScreen.tsx[0m:[93m293[0m:[93m25[0m - [91merror[0m[90m TS17004: [0mCannot use JSX unless the '--jsx' flag is provided.
+
+[7m293[0m                         <Select.ScrollUpButton />
+[7m   [0m [91m                        ~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96mscreens/catch-data/RecordCatchScreen.tsx[0m:[93m294[0m:[93m25[0m - [91merror[0m[90m TS17004: [0mCannot use JSX unless the '--jsx' flag is provided.
+
+[7m294[0m                         <Select.Viewport>
+[7m   [0m [91m                        ~~~~~~~~~~~~~~~~~[0m
+
+[96mscreens/catch-data/RecordCatchScreen.tsx[0m:[93m295[0m:[93m27[0m - [91merror[0m[90m TS17004: [0mCannot use JSX unless the '--jsx' flag is provided.
+
+[7m295[0m                           <Select.Group>
+[7m   [0m [91m                          ~~~~~~~~~~~~~~[0m
+
+[96mscreens/catch-data/RecordCatchScreen.tsx[0m:[93m297[0m:[93m31[0m - [91merror[0m[90m TS17004: [0mCannot use JSX unless the '--jsx' flag is provided.
+
+[7m297[0m                               <Select.Item key={unit} value={unit} index={index}>
+[7m   [0m [91m                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96mscreens/catch-data/RecordCatchScreen.tsx[0m:[93m298[0m:[93m33[0m - [91merror[0m[90m TS17004: [0mCannot use JSX unless the '--jsx' flag is provided.
+
+[7m298[0m                                 <Select.ItemText>{unit}</Select.ItemText>
+[7m   [0m [91m                                ~~~~~~~~~~~~~~~~~[0m
+
+[96mscreens/catch-data/RecordCatchScreen.tsx[0m:[93m303[0m:[93m25[0m - [91merror[0m[90m TS17004: [0mCannot use JSX unless the '--jsx' flag is provided.
+
+[7m303[0m                         <Select.ScrollDownButton />
+[7m   [0m [91m                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96mscreens/catch-data/RecordCatchScreen.tsx[0m:[93m307[0m:[93m23[0m - [91merror[0m[90m TS17004: [0mCannot use JSX unless the '--jsx' flag is provided.
+
+[7m307[0m                       <Text color="$red9" fontSize="$2">{validationErrors.unit}</Text>
+[7m   [0m [91m                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96mscreens/catch-data/RecordCatchScreen.tsx[0m:[93m313[0m:[93m17[0m - [91merror[0m[90m TS17004: [0mCannot use JSX unless the '--jsx' flag is provided.
+
+[7m313[0m                 <YStack marginBottom="$4">
+[7m   [0m [91m                ~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96mscreens/catch-data/RecordCatchScreen.tsx[0m:[93m314[0m:[93m19[0m - [91merror[0m[90m TS17004: [0mCannot use JSX unless the '--jsx' flag is provided.
+
+[7m314[0m                   <Text>{t('catch.location')}</Text>
+[7m   [0m [91m                  ~~~~~~[0m
+
+[96mscreens/catch-data/RecordCatchScreen.tsx[0m:[93m315[0m:[93m19[0m - [91merror[0m[90m TS17004: [0mCannot use JSX unless the '--jsx' flag is provided.
+
+[7m315[0m                   <Input
+[7m   [0m [91m                  ~~~~~~[0m
+[7m316[0m                     value={formData.location}
+[7m   [0m [91m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[7m...[0m 
+[7m318[0m                     placeholder={t('catch.locationPlaceholder')}
+[7m   [0m [91m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[7m319[0m                   />
+[7m   [0m [91m~~~~~~~~~~~~~~~~~~~~[0m
+
+[96mscreens/catch-data/RecordCatchScreen.tsx[0m:[93m321[0m:[93m21[0m - [91merror[0m[90m TS17004: [0mCannot use JSX unless the '--jsx' flag is provided.
+
+[7m321[0m                     <Text color="$red9" fontSize="$2">{validationErrors.location}</Text>
+[7m   [0m [91m                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96mscreens/catch-data/RecordCatchScreen.tsx[0m:[93m326[0m:[93m17[0m - [91merror[0m[90m TS17004: [0mCannot use JSX unless the '--jsx' flag is provided.
+
+[7m326[0m                 <YStack marginBottom="$4">
+[7m   [0m [91m                ~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96mscreens/catch-data/RecordCatchScreen.tsx[0m:[93m327[0m:[93m19[0m - [91merror[0m[90m TS17004: [0mCannot use JSX unless the '--jsx' flag is provided.
+
+[7m327[0m                   <Text>{t('catch.gearUsed')}</Text>
+[7m   [0m [91m                  ~~~~~~[0m
+
+[96mscreens/catch-data/RecordCatchScreen.tsx[0m:[93m328[0m:[93m19[0m - [91merror[0m[90m TS17004: [0mCannot use JSX unless the '--jsx' flag is provided.
+
+[7m328[0m                   <Select
+[7m   [0m [91m                  ~~~~~~~[0m
+[7m329[0m                     value={formData.gearUsed}
+[7m   [0m [91m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[7m330[0m                     onValueChange={(value: string) => setFormData({ ...formData, gearUsed: value })}
+[7m   [0m [91m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[7m331[0m                   >
+[7m   [0m [91m~~~~~~~~~~~~~~~~~~~[0m
+
+[96mscreens/catch-data/RecordCatchScreen.tsx[0m:[93m332[0m:[93m21[0m - [91merror[0m[90m TS17004: [0mCannot use JSX unless the '--jsx' flag is provided.
+
+[7m332[0m                     <Select.Trigger>
+[7m   [0m [91m                    ~~~~~~~~~~~~~~~~[0m
+
+[96mscreens/catch-data/RecordCatchScreen.tsx[0m:[93m333[0m:[93m23[0m - [91merror[0m[90m TS17004: [0mCannot use JSX unless the '--jsx' flag is provided.
+
+[7m333[0m                       <Select.Value placeholder={t('catch.selectGear')} />
+[7m   [0m [91m                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96mscreens/catch-data/RecordCatchScreen.tsx[0m:[93m335[0m:[93m21[0m - [91merror[0m[90m TS17004: [0mCannot use JSX unless the '--jsx' flag is provided.
+
+[7m335[0m                     <Select.Content>
+[7m   [0m [91m                    ~~~~~~~~~~~~~~~~[0m
+
+[96mscreens/catch-data/RecordCatchScreen.tsx[0m:[93m336[0m:[93m23[0m - [91merror[0m[90m TS17004: [0mCannot use JSX unless the '--jsx' flag is provided.
+
+[7m336[0m                       <Select.ScrollUpButton />
+[7m   [0m [91m                      ~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96mscreens/catch-data/RecordCatchScreen.tsx[0m:[93m337[0m:[93m23[0m - [91merror[0m[90m TS17004: [0mCannot use JSX unless the '--jsx' flag is provided.
+
+[7m337[0m                       <Select.Viewport>
+[7m   [0m [91m                      ~~~~~~~~~~~~~~~~~[0m
+
+[96mscreens/catch-data/RecordCatchScreen.tsx[0m:[93m338[0m:[93m25[0m - [91merror[0m[90m TS17004: [0mCannot use JSX unless the '--jsx' flag is provided.
+
+[7m338[0m                         <Select.Group>
+[7m   [0m [91m                        ~~~~~~~~~~~~~~[0m
+
+[96mscreens/catch-data/RecordCatchScreen.tsx[0m:[93m340[0m:[93m29[0m - [91merror[0m[90m TS17004: [0mCannot use JSX unless the '--jsx' flag is provided.
+
+[7m340[0m                             <Select.Item key={gear} value={gear} index={index}>
+[7m   [0m [91m                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96mscreens/catch-data/RecordCatchScreen.tsx[0m:[93m341[0m:[93m31[0m - [91merror[0m[90m TS17004: [0mCannot use JSX unless the '--jsx' flag is provided.
+
+[7m341[0m                               <Select.ItemText>{gear}</Select.ItemText>
+[7m   [0m [91m                              ~~~~~~~~~~~~~~~~~[0m
+
+[96mscreens/catch-data/RecordCatchScreen.tsx[0m:[93m346[0m:[93m23[0m - [91merror[0m[90m TS17004: [0mCannot use JSX unless the '--jsx' flag is provided.
+
+[7m346[0m                       <Select.ScrollDownButton />
+[7m   [0m [91m                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96mscreens/catch-data/RecordCatchScreen.tsx[0m:[93m350[0m:[93m21[0m - [91merror[0m[90m TS17004: [0mCannot use JSX unless the '--jsx' flag is provided.
+
+[7m350[0m                     <Text color="$red9" fontSize="$2">{validationErrors.gearUsed}</Text>
+[7m   [0m [91m                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96mscreens/catch-data/RecordCatchScreen.tsx[0m:[93m355[0m:[93m17[0m - [91merror[0m[90m TS17004: [0mCannot use JSX unless the '--jsx' flag is provided.
+
+[7m355[0m                 <YStack marginBottom="$4">
+[7m   [0m [91m                ~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96mscreens/catch-data/RecordCatchScreen.tsx[0m:[93m356[0m:[93m19[0m - [91merror[0m[90m TS17004: [0mCannot use JSX unless the '--jsx' flag is provided.
+
+[7m356[0m                   <Text>{t('catch.effortHours')}</Text>
+[7m   [0m [91m                  ~~~~~~[0m
+
+[96mscreens/catch-data/RecordCatchScreen.tsx[0m:[93m357[0m:[93m19[0m - [91merror[0m[90m TS17004: [0mCannot use JSX unless the '--jsx' flag is provided.
+
+[7m357[0m                   <Input
+[7m   [0m [91m                  ~~~~~~[0m
+[7m358[0m                     value={formData.effortHours?.toString() || ''}
+[7m   [0m [91m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[7m...[0m 
+[7m364[0m                     placeholder="0"
+[7m   [0m [91m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[7m365[0m                   />
+[7m   [0m [91m~~~~~~~~~~~~~~~~~~~~[0m
+
+[96mscreens/catch-data/RecordCatchScreen.tsx[0m:[93m367[0m:[93m21[0m - [91merror[0m[90m TS17004: [0mCannot use JSX unless the '--jsx' flag is provided.
+
+[7m367[0m                     <Text color="$red9" fontSize="$2">{validationErrors.effortHours}</Text>
+[7m   [0m [91m                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96mscreens/catch-data/RecordCatchScreen.tsx[0m:[93m372[0m:[93m17[0m - [91merror[0m[90m TS17004: [0mCannot use JSX unless the '--jsx' flag is provided.
+
+[7m372[0m                 <YStack marginBottom="$4">
+[7m   [0m [91m                ~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96mscreens/catch-data/RecordCatchScreen.tsx[0m:[93m373[0m:[93m19[0m - [91merror[0m[90m TS17004: [0mCannot use JSX unless the '--jsx' flag is provided.
+
+[7m373[0m                   <Text>{t('catch.notes')}</Text>
+[7m   [0m [91m                  ~~~~~~[0m
+
+[96mscreens/catch-data/RecordCatchScreen.tsx[0m:[93m374[0m:[93m19[0m - [91merror[0m[90m TS17004: [0mCannot use JSX unless the '--jsx' flag is provided.
+
+[7m374[0m                   <Input
+[7m   [0m [91m                  ~~~~~~[0m
+[7m375[0m                     value={formData.notes}
+[7m   [0m [91m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[7m...[0m 
+[7m380[0m                     height={80}
+[7m   [0m [91m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[7m381[0m                   />
+[7m   [0m [91m~~~~~~~~~~~~~~~~~~~~[0m
+
+[96mscreens/catch-data/RecordCatchScreen.tsx[0m:[93m385[0m:[93m17[0m - [91merror[0m[90m TS17004: [0mCannot use JSX unless the '--jsx' flag is provided.
+
+[7m385[0m                 <Button
+[7m   [0m [91m                ~~~~~~~[0m
+[7m386[0m                   type="submit"
+[7m   [0m [91m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[7m...[0m 
+[7m390[0m                   marginTop="$2"
+[7m   [0m [91m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[7m391[0m                 >
+[7m   [0m [91m~~~~~~~~~~~~~~~~~[0m
+
+[96mscreens/catch-data/RecordCatchScreen.tsx[0m:[93m386[0m:[93m19[0m - [91merror[0m[90m TS2322: [0mType '{ children: string | Element; type: string; disabled: boolean; backgroundColor: "$green9"; color: "white"; marginTop: "$2"; }' is not assignable to type 'IntrinsicAttributes & Omit<GetFinalProps<RNTamaguiViewNonStyleProps, StackStyleBase, { size?: number | SizeTokens; ... 16 more ...; chromeless?: boolean | "all"; }>, "icon" | ... 8 more ... | "scaleSpace"> & ... 4 more ... & RefAttributes<...>'.
+  Property 'type' does not exist on type 'IntrinsicAttributes & Omit<GetFinalProps<RNTamaguiViewNonStyleProps, StackStyleBase, { size?: number | SizeTokens; ... 16 more ...; chromeless?: boolean | "all"; }>, "icon" | ... 8 more ... | "scaleSpace"> & ... 4 more ... & RefAttributes<...>'.
+
+[7m386[0m                   type="submit"
+[7m   [0m [91m                  ~~~~[0m
+
+[96mscreens/catch-data/RecordCatchScreen.tsx[0m:[93m393[0m:[93m21[0m - [91merror[0m[90m TS17004: [0mCannot use JSX unless the '--jsx' flag is provided.
+
+[7m393[0m                     <ActivityIndicator color="white" />
+[7m   [0m [91m                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+
+Found 237 errors in 52 files.
+
+Errors  Files
+     1  node_modules/@expo/config-plugins/build/ios/Swift.d.ts[90m:1[0m
+     1  node_modules/@expo/config-plugins/build/ios/XcodeProjectFile.d.ts[90m:1[0m
+     3  node_modules/@react-navigation/core/lib/typescript/commonjs/src/StaticNavigation.d.ts[90m:35[0m
+     1  node_modules/@tamagui/adapt/types/Adapt.d.ts[90m:2[0m
+     1  node_modules/@tamagui/checkbox-headless/types/useCheckbox.d.ts[90m:1[0m
+     1  node_modules/@tamagui/checkbox/types/createCheckbox.d.ts[90m:1[0m
+     1  node_modules/@tamagui/dismissable/types/DismissableProps.d.ts[90m:1[0m
+     1  node_modules/@tamagui/floating/types/useFloating.d.ts[90m:1[0m
+     1  node_modules/@tamagui/focus-scope/types/FocusScopeProps.d.ts[90m:1[0m
+     1  node_modules/@tamagui/group/types/Group.d.ts[90m:3[0m
+     1  node_modules/@tamagui/image/types/Image.d.ts[90m:1[0m
+     1  node_modules/@tamagui/portal/types/GorhomPortal.d.ts[90m:2[0m
+     1  node_modules/@tamagui/radio-group/types/createRadioGroup.d.ts[90m:1[0m
+     1  node_modules/@tamagui/remove-scroll/types/RemoveScroll.d.ts[90m:1[0m
+     1  node_modules/@tamagui/sheet/types/contexts.d.ts[90m:1[0m
+     1  node_modules/@tamagui/sheet/types/SheetScrollView.d.ts[90m:1[0m
+     1  node_modules/@tamagui/sheet/types/types.d.ts[90m:6[0m
+     1  node_modules/@tamagui/sheet/types/useSheetController.d.ts[90m:1[0m
+     1  node_modules/@tamagui/sheet/types/useSheetProviderProps.d.ts[90m:1[0m
+     1  node_modules/@tamagui/stacks/types/NestingContext.d.ts[90m:1[0m
+     1  node_modules/@tamagui/text/types/wrapChildrenInText.d.ts[90m:2[0m
+     1  node_modules/@tamagui/toggle-group/types/ToggleGroup.d.ts[90m:4[0m
+     1  node_modules/@tamagui/web/types/_withStableStyle.d.ts[90m:1[0m
+     1  node_modules/@tamagui/web/types/createComponent.d.ts[90m:1[0m
+     1  node_modules/@tamagui/web/types/helpers/createShallowSetState.d.ts[90m:1[0m
+     1  node_modules/@tamagui/web/types/helpers/isTamaguiElement.d.ts[90m:1[0m
+     6  node_modules/@tamagui/web/types/types.d.ts[90m:689[0m
+     1  node_modules/@tamagui/web/types/views/Configuration.d.ts[90m:1[0m
+     1  node_modules/@tamagui/web/types/views/FontLanguage.types.d.ts[90m:1[0m
+     1  node_modules/@tamagui/web/types/views/Theme.d.ts[90m:2[0m
+     1  node_modules/@types/node/module.d.ts[90m:687[0m
+     5  node_modules/@types/react-native/index.d.ts[90m:143[0m
+     1  node_modules/@types/react-native/Libraries/Lists/SectionList.d.ts[90m:47[0m
+     3  node_modules/@types/react-native/modules/BatchedBridge.d.ts[90m:8[0m
+     1  node_modules/@types/react-native/modules/Codegen.d.ts[90m:1[0m
+     1  node_modules/@types/react-native/modules/Devtools.d.ts[90m:2[0m
+    34  node_modules/@types/react-native/modules/globals.d.ts[90m:10[0m
+     5  node_modules/@types/react-native/modules/LaunchScreen.d.ts[90m:4[0m
+     1  node_modules/@types/react/global.d.ts[90m:154[0m
+     1  node_modules/expo-constants/build/Constants.types.d.ts[90m:2[0m
+     1  node_modules/expo-modules-core/build/NativeViewManagerAdapter.d.ts[90m:1[0m
+     1  node_modules/expo-modules-core/build/Refs.d.ts[90m:1[0m
+     5  node_modules/react-native/types/index.d.ts[90m:202[0m
+     3  node_modules/react-native/types/modules/BatchedBridge.d.ts[90m:17[0m
+     1  node_modules/react-native/types/modules/Codegen.d.ts[90m:10[0m
+     1  node_modules/react-native/types/modules/Devtools.d.ts[90m:11[0m
+    37  node_modules/react-native/types/modules/globals.d.ts[90m:19[0m
+     5  node_modules/react-native/types/modules/LaunchScreen.d.ts[90m:13[0m
+     1  node_modules/tamagui/types/views/Input.d.ts[90m:1[0m
+    14  node_modules/typescript/lib/lib.dom.d.ts[90m:2558[0m
+     2  node_modules/zod/lib/types.d.ts[90m:772[0m
+    76  screens/catch-data/RecordCatchScreen.tsx[90m:1[0m

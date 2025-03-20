@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { SafeAreaView, StatusBar, Alert, ActivityIndicator } from 'react-native';
-import { YStack, H2, Text, Input, Button, Form, Paragraph, XStack, Select, ScrollView, View } from 'tamagui';
+import { YStack, H2, Text, Input, Button, Form, Paragraph, XStack, Select, ScrollView, View, Stack } from 'tamagui';
 import { useTranslation } from 'react-i18next';
 import MapView, { Marker } from 'react-native-maps';
 import { useCatchDataStore } from '../../services/catch-data/catchDataStore';
@@ -192,27 +192,27 @@ export function RecordCatchScreen({ navigation, route }: RecordCatchScreenProps)
     <SafeAreaView style={{ flex: 1, backgroundColor: '#fff' }}>
       <StatusBar barStyle="dark-content" backgroundColor="#fff" />
       <ScrollView>
-        <YStack padding="$4" space="$4">
-          <H2>{t('catch.recordCatch')}</H2>
+        <YStack padding={"$4" as any}>
+          <H2 unstyled>{t('catch.recordCatch')}</H2>
           
           {recordSuccess && (
-            <YStack backgroundColor="$green2" padding="$3" borderRadius="$2">
-              <Paragraph color="$green9">{t('catch.recordSuccess')}</Paragraph>
+            <YStack backgroundColor={"$green2" as any} padding={"$3" as any} borderRadius={"$2" as any} marginTop={"$2" as any}>
+              <Paragraph unstyled>{t('catch.recordSuccess')}</Paragraph>
             </YStack>
           )}
           
           {isLoadingLocation ? (
-            <YStack alignItems="center" padding="$4">
+            <YStack alignItems="center" padding={"$4" as any}>
               <ActivityIndicator size="large" color="#0891b2" />
-              <Text marginTop="$2">{t('catch.gettingLocation')}</Text>
+              <Text unstyled marginTop={"$2" as any}>{t('catch.gettingLocation')}</Text>
             </YStack>
           ) : (
-            <Form onSubmit={handleSubmit}>
-              <YStack space="$4">
+            <Form>
+              <YStack marginTop={"$4" as any}>
                 {/* Map for location selection */}
                 {mapLocation && (
-                  <YStack>
-                    <Text>{t('catch.mapLocation')}</Text>
+                  <YStack marginBottom={"$4" as any}>
+                    <Text unstyled>{t('catch.mapLocation')}</Text>
                     <MapView
                       style={{ height: 200, width: '100%', borderRadius: 8 }}
                       region={mapRegion}
@@ -229,13 +229,13 @@ export function RecordCatchScreen({ navigation, route }: RecordCatchScreenProps)
                         />
                       )}
                     </MapView>
-                    <Text fontSize="$2" marginTop="$1">{t('catch.tapToSelectLocation')}</Text>
+                    <Text unstyled fontSize={"$2" as any} marginTop={"$1" as any}>{t('catch.tapToSelectLocation')}</Text>
                   </YStack>
                 )}
 
                 {/* Species Selection */}
-                <YStack space="$2">
-                  <Text>{t('catch.fishSpecies')}</Text>
+                <YStack marginBottom={"$4" as any}>
+                  <Text unstyled>{t('catch.fishSpecies')}</Text>
                   <Select
                     value={formData.fishSpecies}
                     onValueChange={(value: string) => setFormData({ ...formData, fishSpecies: value })}
@@ -258,14 +258,14 @@ export function RecordCatchScreen({ navigation, route }: RecordCatchScreenProps)
                     </Select.Content>
                   </Select>
                   {validationErrors.fishSpecies && (
-                    <Text color="$red9" fontSize="$2">{validationErrors.fishSpecies}</Text>
+                    <Text unstyled color={"$red9" as any} fontSize={"$2" as any}>{validationErrors.fishSpecies}</Text>
                   )}
                 </YStack>
 
                 {/* Quantity and Units */}
-                <XStack space="$2">
-                  <YStack flex={1} space="$2">
-                    <Text>{t('catch.quantity')}</Text>
+                <XStack marginBottom={"$4" as any}>
+                  <YStack flex={1} marginRight={"$2" as any}>
+                    <Text unstyled>{t('catch.quantity')}</Text>
                     <Input
                       value={formData.quantity?.toString() || ''}
                       onChangeText={(text: string) => {
@@ -276,12 +276,12 @@ export function RecordCatchScreen({ navigation, route }: RecordCatchScreenProps)
                       placeholder="0"
                     />
                     {validationErrors.quantity && (
-                      <Text color="$red9" fontSize="$2">{validationErrors.quantity}</Text>
+                      <Text unstyled color={"$red9" as any} fontSize={"$2" as any}>{validationErrors.quantity}</Text>
                     )}
                   </YStack>
 
-                  <YStack flex={1} space="$2">
-                    <Text>{t('catch.unit')}</Text>
+                  <YStack flex={1}>
+                    <Text unstyled>{t('catch.unit')}</Text>
                     <Select
                       value={formData.unit}
                       onValueChange={(value: string) => setFormData({ ...formData, unit: value })}
@@ -304,27 +304,27 @@ export function RecordCatchScreen({ navigation, route }: RecordCatchScreenProps)
                       </Select.Content>
                     </Select>
                     {validationErrors.unit && (
-                      <Text color="$red9" fontSize="$2">{validationErrors.unit}</Text>
+                      <Text unstyled color={"$red9" as any} fontSize={"$2" as any}>{validationErrors.unit}</Text>
                     )}
                   </YStack>
                 </XStack>
 
                 {/* Location Name */}
-                <YStack space="$2">
-                  <Text>{t('catch.location')}</Text>
+                <YStack marginBottom={"$4" as any}>
+                  <Text unstyled>{t('catch.location')}</Text>
                   <Input
                     value={formData.location}
                     onChangeText={(text: string) => setFormData({ ...formData, location: text })}
                     placeholder={t('catch.locationPlaceholder')}
                   />
                   {validationErrors.location && (
-                    <Text color="$red9" fontSize="$2">{validationErrors.location}</Text>
+                    <Text unstyled color={"$red9" as any} fontSize={"$2" as any}>{validationErrors.location}</Text>
                   )}
                 </YStack>
 
                 {/* Gear Used */}
-                <YStack space="$2">
-                  <Text>{t('catch.gearUsed')}</Text>
+                <YStack marginBottom={"$4" as any}>
+                  <Text unstyled>{t('catch.gearUsed')}</Text>
                   <Select
                     value={formData.gearUsed}
                     onValueChange={(value: string) => setFormData({ ...formData, gearUsed: value })}
@@ -347,13 +347,13 @@ export function RecordCatchScreen({ navigation, route }: RecordCatchScreenProps)
                     </Select.Content>
                   </Select>
                   {validationErrors.gearUsed && (
-                    <Text color="$red9" fontSize="$2">{validationErrors.gearUsed}</Text>
+                    <Text unstyled color={"$red9" as any} fontSize={"$2" as any}>{validationErrors.gearUsed}</Text>
                   )}
                 </YStack>
 
                 {/* Effort Hours */}
-                <YStack space="$2">
-                  <Text>{t('catch.effortHours')}</Text>
+                <YStack marginBottom={"$4" as any}>
+                  <Text unstyled>{t('catch.effortHours')}</Text>
                   <Input
                     value={formData.effortHours?.toString() || ''}
                     onChangeText={(text: string) => {
@@ -364,13 +364,13 @@ export function RecordCatchScreen({ navigation, route }: RecordCatchScreenProps)
                     placeholder="0"
                   />
                   {validationErrors.effortHours && (
-                    <Text color="$red9" fontSize="$2">{validationErrors.effortHours}</Text>
+                    <Text unstyled color={"$red9" as any} fontSize={"$2" as any}>{validationErrors.effortHours}</Text>
                   )}
                 </YStack>
 
                 {/* Notes */}
-                <YStack space="$2">
-                  <Text>{t('catch.notes')}</Text>
+                <YStack marginBottom={"$4" as any}>
+                  <Text unstyled>{t('catch.notes')}</Text>
                   <Input
                     value={formData.notes}
                     onChangeText={(text: string) => setFormData({ ...formData, notes: text })}
@@ -383,16 +383,15 @@ export function RecordCatchScreen({ navigation, route }: RecordCatchScreenProps)
 
                 {/* Submit Button */}
                 <Button
-                  type="submit"
+                  onPress={() => handleSubmit()}
                   disabled={isAddingRecord}
-                  backgroundColor="$green9"
-                  color="white"
-                  marginTop="$2"
+                  backgroundColor={"$green9" as any}
+                  marginTop={"$2" as any}
                 >
                   {isAddingRecord ? (
                     <ActivityIndicator color="white" />
                   ) : (
-                    t('catch.submit')
+                    <Text unstyled color="white">{t('catch.submit')}</Text>
                   )}
                 </Button>
               </YStack>
