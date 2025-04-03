@@ -183,6 +183,12 @@ mvuvi-app/
 - [x] Fish species guide implementation
 - [x] Fishing regulations information
 - [x] Seasonal fishing calendar
+- [x] Fixed component error in FishingRegulationsScreen
+- [x] Added ReportViolation screen for reporting fishing violations
+- [x] Updated react-native from 0.76.8 to 0.76.9 for better Expo compatibility
+- [x] Created platform-specific MapView component for web compatibility
+- [x] Added web-specific version of the app with proper fallback UI
+- [x] Fixed Tamagui CSS loading issues for web platform
 
 ### Pending Tasks
 - [ ] Weather API integration
@@ -212,6 +218,10 @@ mvuvi-app/
    ```
    yarn install
    ```
+   or
+   ```
+   npm install
+   ```
 3. Set up environment variables
    ```
    cp .env.example .env
@@ -220,16 +230,27 @@ mvuvi-app/
    ```
    yarn start
    ```
+   or
+   ```
+   npx expo start
+   ```
 
 ### Development Commands
 
-- Start the development server: `yarn start`
-- Run on Android: `yarn android`
-- Run on iOS: `yarn ios`
-- Run on web: `yarn web`
-- Run TypeScript type checking: `yarn tsc`
-- Run linting: `yarn lint`
-- Fix linting issues: `yarn lint:fix`
+- Start the development server: `yarn start` or `npx expo start`
+- Run on Android: `yarn android` or `npx expo start --android`
+- Run on iOS: `yarn ios` or `npx expo start --ios`
+- Run on web: `yarn web` or `npx expo start --web`
+- Run TypeScript type checking: `yarn tsc` or `npx tsc`
+- Run linting: `yarn lint` or `npx eslint . --ext .js,.jsx,.ts,.tsx`
+- Fix linting issues: `yarn lint:fix` or `npx eslint . --ext .js,.jsx,.ts,.tsx --fix`
+
+### Web Development Notes
+
+When running the app on web, some native-only features like maps will display fallback components. The app uses platform-specific code to handle these differences:
+
+- `components/maps/MapView.tsx` provides a cross-platform map component that works on both native and web platforms
+- Native-only modules are conditionally imported based on the platform
 
 ## Implementation Plan
 
@@ -248,6 +269,7 @@ The following GitHub issues have been created to track the implementation of the
 7. [Conduct Testing Across Different Devices](https://github.com/arnoldadero/mvuvi-app/issues/8)
 8. [Optimize App Performance](https://github.com/arnoldadero/mvuvi-app/issues/9)
 9. [Prepare App for Deployment to App Stores](https://github.com/arnoldadero/mvuvi-app/issues/10)
+10. [Fix undefined component error in FishingRegulationsScreen](https://github.com/arnoldadero/mvuvi-app/issues/11)
 
 All these issues are part of the [MVP Release](https://github.com/arnoldadero/mvuvi-app/milestone/1) milestone.
 

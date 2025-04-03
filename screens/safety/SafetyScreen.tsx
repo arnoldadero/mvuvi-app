@@ -3,7 +3,7 @@ import { SafeAreaView, StatusBar, Alert, ActivityIndicator, Linking, Platform } 
 import { YStack, H2, Text, Card, Button, XStack, Paragraph, ScrollView, View, Circle } from 'tamagui';
 import { useTranslation } from 'react-i18next';
 import * as Location from 'expo-location';
-import MapView, { Marker } from 'react-native-maps';
+import MapView, { Marker } from '../../components/maps/MapView';
 import { useSafetyStore } from '../../services/safety/safetyStore';
 
 interface SafetyScreenProps {

@@ -1,31 +1,22 @@
 import React, { useEffect, useState } from 'react';
 import { SafeAreaView, StatusBar, ActivityIndicator } from 'react-native';
-import { YStack, H2, Text, Card, Button, XStack, Paragraph, ScrollView, Select, View } from 'tamagui';
+import { YStack, H2, Text, Card, Button, XStack, Paragraph, ScrollView, Select, View, TamaguiComponent } from 'tamagui';
 import { useTranslation } from 'react-i18next';
 import { useMarketPricesStore } from '../../services/market-prices/marketPricesStore';
-import MapView, { Marker, Callout } from 'react-native-maps';
+import MapView, { Marker, Callout } from '../../components/maps/MapView';
 
 interface MarketPricesScreenProps {
   navigation: any;
 }
 
-// Type aliases for Tamagui components
-const Y: any = YStack;
-const H: any = H2;
-const T: any = Text;
-const C: any = Card;
-const B: any = Button;
-const X: any = XStack;
-const P: any = Paragraph;
-const S: any = ScrollView;
-const Se: any = Select;
-const V: any = View;
+// Import directly without aliases to avoid Tamagui optimization issues
+import { Y, H, T, C, B, X, P, S, Se, V } from 'tamagui';
 
 export function MarketPricesScreen({ navigation }: MarketPricesScreenProps) {
   const { t } = useTranslation();
-  const { 
-    prices, 
-    locations, 
+  const {
+    prices,
+    locations,
     selectedLocation,
     isLoadingPrices,
     isLoadingLocations,
@@ -46,7 +37,7 @@ export function MarketPricesScreen({ navigation }: MarketPricesScreenProps) {
       await fetchMarketLocations();
       await fetchMarketPrices();
     };
-    
+
     loadData();
   }, [fetchMarketLocations, fetchMarketPrices]);
 
@@ -56,7 +47,7 @@ export function MarketPricesScreen({ navigation }: MarketPricesScreenProps) {
       // Calculate the center of all locations
       const totalLat = locations.reduce((sum, loc) => sum + loc.latitude, 0);
       const totalLng = locations.reduce((sum, loc) => sum + loc.longitude, 0);
-      
+
       setMapRegion({
         latitude: totalLat / locations.length,
         longitude: totalLng / locations.length,
@@ -69,7 +60,7 @@ export function MarketPricesScreen({ navigation }: MarketPricesScreenProps) {
   const handleLocationChange = async (locationId: string) => {
     setSelectedLocation(locationId);
     await fetchMarketPrices(locationId);
-    
+
     // Update map region to focus on selected location
     const location = locations.find(loc => loc.id === locationId);
     if (location) {
@@ -89,12 +80,12 @@ export function MarketPricesScreen({ navigation }: MarketPricesScreenProps) {
   const handleViewAllPrices = async () => {
     setSelectedLocation(null);
     await fetchMarketPrices();
-    
+
     // Reset map view to show all locations
     if (locations.length > 0) {
       const totalLat = locations.reduce((sum, loc) => sum + loc.latitude, 0);
       const totalLng = locations.reduce((sum, loc) => sum + loc.longitude, 0);
-      
+
       setMapRegion({
         latitude: totalLat / locations.length,
         longitude: totalLng / locations.length,
@@ -106,14 +97,14 @@ export function MarketPricesScreen({ navigation }: MarketPricesScreenProps) {
 
   const groupPricesBySpecies = () => {
     const grouped: Record<string, typeof prices> = {};
-    
+
     prices.forEach(price => {
       if (!grouped[price.fishSpecies]) {
         grouped[price.fishSpecies] = [];
       }
       grouped[price.fishSpecies].push(price);
     });
-    
+
     return grouped;
   };
 
@@ -126,10 +117,10 @@ export function MarketPricesScreen({ navigation }: MarketPricesScreenProps) {
         <Y padding="$4" space="$4">
           <H>{t('marketPrices.title')}</H>
           <P>{t('marketPrices.description')}</P>
-          
+
           {/* Map View */}
           <V height={250} borderRadius="$4" overflow="hidden">
-            <MapView 
+            <MapView
               style={{ width: '100%', height: '100%' }}
               region={mapRegion}
             >
@@ -153,12 +144,12 @@ export function MarketPricesScreen({ navigation }: MarketPricesScreenProps) {
               ))}
             </MapView>
           </V>
-          
+
           {/* Location Selector */}
           <C borderRadius="$4">
             <Y padding="$4" space="$3">
               <T fontWeight="bold">{t('marketPrices.selectLocation')}</T>
-              
+
               {isLoadingLocations ? (
                 <ActivityIndicator size="small" color="#0000ff" />
               ) : (
@@ -167,8 +158,8 @@ export function MarketPricesScreen({ navigation }: MarketPricesScreenProps) {
                   onValueChange={handleLocationChange}
                 >
                   <Se.Trigger>
-                    <Se.Value 
-                      placeholder={t('marketPrices.selectLocationPlaceholder')} 
+                    <Se.Value
+                      placeholder={t('marketPrices.selectLocationPlaceholder')}
                     />
                   </Se.Trigger>
                   <Se.Content>
@@ -186,7 +177,7 @@ export function MarketPricesScreen({ navigation }: MarketPricesScreenProps) {
                   </Se.Content>
                 </Se>
               )}
-              
+
               <X space="$2">
                 <B
                   flex={1}
@@ -206,18 +197,18 @@ export function MarketPricesScreen({ navigation }: MarketPricesScreenProps) {
               </X>
             </Y>
           </C>
-          
+
           {/* Market Prices */}
           <Y space="$2">
             <T fontWeight="bold" fontSize="$5">
-              {selectedLocation 
-                ? t('marketPrices.pricesForLocation', { 
-                    location: locations.find(l => l.id === selectedLocation)?.name || '' 
+              {selectedLocation
+                ? t('marketPrices.pricesForLocation', {
+                    location: locations.find(l => l.id === selectedLocation)?.name || ''
                   })
                 : t('marketPrices.allPrices')
               }
             </T>
-            
+
             {isLoadingPrices ? (
               <Y padding="$4" alignItems="center">
                 <ActivityIndicator size="large" color="#0000ff" />
@@ -232,7 +223,7 @@ export function MarketPricesScreen({ navigation }: MarketPricesScreenProps) {
                   <C key={species} borderRadius="$4" bordered>
                     <Y padding="$4" space="$3">
                       <T fontWeight="bold" fontSize="$4">{species}</T>
-                      
+
                       {groupedPrices[species].map((price) => {
                         const location = locations.find(l => l.id === price.location);
                         return (
@@ -255,7 +246,7 @@ export function MarketPricesScreen({ navigation }: MarketPricesScreenProps) {
               </Y>
             )}
           </Y>
-          
+
           {/* Call to Action */}
           <C backgroundColor="$blue2" borderRadius="$4">
             <Y padding="$4" space="$2">

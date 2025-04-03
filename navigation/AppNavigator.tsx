@@ -15,6 +15,7 @@ import { SafetyChecklistScreen } from '../screens/safety/SafetyChecklistScreen';
 import { FishSpeciesGuideScreen } from '../screens/sustainable-fishing/FishSpeciesGuideScreen';
 import { FishingRegulationsScreen } from '../screens/sustainable-fishing/FishingRegulationsScreen';
 import { FishingSeasonalCalendarScreen } from '../screens/sustainable-fishing/FishingSeasonalCalendarScreen';
+import { ReportViolationScreen } from '../screens/sustainable-fishing/ReportViolationScreen';
 import { CatchRecordDetailsScreen } from '../screens/catch-data/CatchRecordDetailsScreen';
 import { UserProfileScreen } from '../screens/profile/UserProfileScreen';
 import { SettingsScreen } from '../screens/profile/SettingsScreen';
@@ -32,28 +33,29 @@ export type RootStackParamList = {
   Login: undefined;
   Register: undefined;
   ForgotPassword: undefined;
-  
+
   // Main app
   MainTabs: undefined;
-  
+
   // Weather screens
   MoonPhase: undefined;
-  
+
   // Market Prices screens
   ReportMarketPrice: undefined;
-  
+
   // Safety screens
   EmergencyContacts: undefined;
   SafetyChecklist: undefined;
-  
+
   // Sustainable Fishing screens
   FishSpeciesGuide: undefined;
   FishingRegulations: undefined;
   FishingSeasonalCalendar: undefined;
-  
+  ReportViolation: undefined;
+
   // Catch Data screens
   CatchRecordDetails: { catchId: string };
-  
+
   // Profile and Settings screens
   UserProfile: undefined;
   Settings: undefined;
@@ -61,7 +63,7 @@ export type RootStackParamList = {
 };
 
 // Define screen props types
-export type RootStackScreenProps<T extends keyof RootStackParamList> = 
+export type RootStackScreenProps<T extends keyof RootStackParamList> =
   NativeStackScreenProps<RootStackParamList, T>;
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -80,130 +82,138 @@ export function AppNavigator() {
         {!isAuthenticated ? (
           // Auth screens
           <>
-            <Stack.Screen 
-              name="Login" 
-              component={LoginScreen} 
-              options={{ headerShown: false }} 
+            <Stack.Screen
+              name="Login"
+              component={LoginScreen}
+              options={{ headerShown: false }}
             />
-            <Stack.Screen 
-              name="Register" 
-              component={RegisterScreen} 
-              options={{ title: t('auth.register') }} 
+            <Stack.Screen
+              name="Register"
+              component={RegisterScreen}
+              options={{ title: t('auth.register') }}
             />
-            <Stack.Screen 
-              name="ForgotPassword" 
-              component={ForgotPasswordScreen} 
-              options={{ title: t('auth.forgotPassword') }} 
+            <Stack.Screen
+              name="ForgotPassword"
+              component={ForgotPasswordScreen}
+              options={{ title: t('auth.forgotPassword') }}
             />
           </>
         ) : (
           // Main app screens
           <>
-            <Stack.Screen 
-              name="MainTabs" 
-              component={TabNavigator} 
-              options={{ 
+            <Stack.Screen
+              name="MainTabs"
+              component={TabNavigator}
+              options={{
                 headerShown: false,
                 // Add profile button to header right
                 headerRight: () => <ProfileButton />,
-              }} 
+              }}
             />
-            
+
             {/* Weather related screens */}
-            <Stack.Screen 
-              name="MoonPhase" 
-              component={MoonPhaseScreen} 
-              options={{ 
+            <Stack.Screen
+              name="MoonPhase"
+              component={MoonPhaseScreen}
+              options={{
                 title: t('moonPhase.title'),
                 headerRight: () => <ProfileButton mini />,
-              }} 
+              }}
             />
-            
+
             {/* Market Prices related screens */}
-            <Stack.Screen 
-              name="ReportMarketPrice" 
-              component={ReportMarketPriceScreen} 
-              options={{ 
+            <Stack.Screen
+              name="ReportMarketPrice"
+              component={ReportMarketPriceScreen}
+              options={{
                 title: t('marketPrices.reportPrice'),
                 headerRight: () => <ProfileButton mini />,
-              }} 
+              }}
             />
-            
+
             {/* Safety related screens */}
-            <Stack.Screen 
-              name="EmergencyContacts" 
-              component={EmergencyContactsScreen} 
-              options={{ 
+            <Stack.Screen
+              name="EmergencyContacts"
+              component={EmergencyContactsScreen}
+              options={{
                 title: t('safety.emergencyContacts'),
                 headerRight: () => <ProfileButton mini />,
-              }} 
+              }}
             />
-            <Stack.Screen 
-              name="SafetyChecklist" 
-              component={SafetyChecklistScreen} 
-              options={{ 
+            <Stack.Screen
+              name="SafetyChecklist"
+              component={SafetyChecklistScreen}
+              options={{
                 title: t('safety.checklist'),
                 headerRight: () => <ProfileButton mini />,
-              }} 
+              }}
             />
-            
+
             {/* Sustainable Fishing related screens */}
-            <Stack.Screen 
-              name="FishSpeciesGuide" 
-              component={FishSpeciesGuideScreen} 
-              options={{ 
+            <Stack.Screen
+              name="FishSpeciesGuide"
+              component={FishSpeciesGuideScreen}
+              options={{
                 title: t('sustainableFishing.speciesGuide'),
                 headerRight: () => <ProfileButton mini />,
-              }} 
+              }}
             />
-            <Stack.Screen 
-              name="FishingRegulations" 
-              component={FishingRegulationsScreen} 
-              options={{ 
+            <Stack.Screen
+              name="FishingRegulations"
+              component={FishingRegulationsScreen}
+              options={{
                 title: t('sustainableFishing.regulations'),
                 headerRight: () => <ProfileButton mini />,
-              }} 
+              }}
             />
-            <Stack.Screen 
-              name="FishingSeasonalCalendar" 
-              component={FishingSeasonalCalendarScreen} 
-              options={{ 
+            <Stack.Screen
+              name="FishingSeasonalCalendar"
+              component={FishingSeasonalCalendarScreen}
+              options={{
                 title: t('sustainableFishing.seasonalCalendar'),
                 headerRight: () => <ProfileButton mini />,
-              }} 
+              }}
             />
-            
+            <Stack.Screen
+              name="ReportViolation"
+              component={ReportViolationScreen}
+              options={{
+                title: t('regulations.reportViolation'),
+                headerRight: () => <ProfileButton mini />,
+              }}
+            />
+
             {/* Catch Data related screens */}
-            <Stack.Screen 
-              name="CatchRecordDetails" 
-              component={CatchRecordDetailsScreen} 
-              options={{ 
+            <Stack.Screen
+              name="CatchRecordDetails"
+              component={CatchRecordDetailsScreen}
+              options={{
                 title: t('catchData.recordDetails'),
                 headerRight: () => <ProfileButton mini />,
-              }} 
+              }}
             />
-            
+
             {/* Profile and Settings screens */}
-            <Stack.Screen 
-              name="UserProfile" 
-              component={UserProfileScreen} 
-              options={{ 
+            <Stack.Screen
+              name="UserProfile"
+              component={UserProfileScreen}
+              options={{
                 title: t('profile.userProfile'),
-              }} 
+              }}
             />
-            <Stack.Screen 
-              name="Settings" 
-              component={SettingsScreen} 
-              options={{ 
+            <Stack.Screen
+              name="Settings"
+              component={SettingsScreen}
+              options={{
                 title: t('profile.settings'),
-              }} 
+              }}
             />
-            <Stack.Screen 
-              name="Help" 
-              component={HelpScreen} 
-              options={{ 
+            <Stack.Screen
+              name="Help"
+              component={HelpScreen}
+              options={{
                 title: t('help.helpAndSupport'),
-              }} 
+              }}
             />
           </>
         )}

@@ -1,75 +1,50 @@
-/* tamagui-web.css */
+/* Web-specific CSS for Tamagui */
+._ovs-contain {overscroll-behavior:contain;}
+.is_Text .is_Text {display:inline-flex;}
+._dsp_contents {display:contents;}
+
 :root {
-  /* Base font size */
-  font-size: 16px;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-heading: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 }
 
-html, body {
+/* Base styles */
+body {
+  font-family: var(--font-body);
   margin: 0;
   padding: 0;
-  height: 100%;
-  width: 100%;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-#root {
+/* Ensure proper sizing */
+* {
+  box-sizing: border-box;
+}
+
+/* Tamagui components */
+.tamagui-Text {
+  display: inline-flex;
+}
+
+.tamagui-View {
   display: flex;
   flex-direction: column;
-  height: 100%;
-  width: 100%;
 }
 
-/* Tamagui web specific styles */
-.t_dark {
-  color-scheme: dark;
+.tamagui-Stack {
+  display: flex;
 }
 
-.t_light {
-  color-scheme: light;
+.tamagui-YStack {
+  display: flex;
+  flex-direction: column;
 }
 
-/* Fix for React Native Web */
-input, button, textarea, select {
-  -webkit-appearance: none;
-  appearance: none;
-  outline: none;
-  font-family: inherit;
+.tamagui-XStack {
+  display: flex;
+  flex-direction: row;
 }
 
-/* Ensure images don't overflow */
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-/* Scrollbar styling */
-::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: rgba(0, 0, 0, 0.05);
-}
-
-::-webkit-scrollbar-thumb {
-  background: rgba(0, 0, 0, 0.2);
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: rgba(0, 0, 0, 0.3);
-}
-
-/* Dark mode scrollbar */
-.t_dark ::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0.05);
-}
-
-.t_dark ::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.2);
-}
-
-.t_dark ::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.3);
+.tamagui-ZStack {
+  display: flex;
+  position: relative;
 }

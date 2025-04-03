@@ -147,6 +147,17 @@ const tamaguiConfig = createTamagui({
       margin: undefined,
     },
   },
+  // Add optimization settings
+  shouldAddPrefersColorThemes: true,
+  themeClassNameOnRoot: true,
+  // Improve performance
+  disableRootThemeClass: false,
+  // Avoid circular dependencies
+  disableExtractInlineMedia: process.env.NODE_ENV === 'development',
+  // Disable certain features that might cause issues
+  disableExtractInlineProps: process.env.NODE_ENV === 'development',
+  // Disable CSS injection for web
+  disableInjectCSS: process.env.EXPO_PUBLIC_PLATFORM === 'web',
 });
 
 // Enable type checking for the design system

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { SafeAreaView, StatusBar, Image } from 'react-native';
-import { YStack, H2, Text, Card, Button, XStack, Paragraph, ScrollView, Accordion } from 'tamagui';
+import { YStack, H2, Text, Card, Button, XStack, Paragraph, ScrollView, Accordion, Square } from 'tamagui';
 import { useTranslation } from 'react-i18next';
 import { ArrowLeft, AlertTriangle, Calendar, MapPin, FileText, Download } from '@tamagui/lucide-icons';
 
@@ -33,6 +33,7 @@ const X: any = XStack;
 const P: any = Paragraph;
 const S: any = ScrollView;
 const A: any = Accordion;
+const Sq: any = Square;
 
 export function FishingRegulationsScreen({ navigation }: FishingRegulationsScreenProps) {
   const { t } = useTranslation();
@@ -151,7 +152,7 @@ export function FishingRegulationsScreen({ navigation }: FishingRegulationsScree
             >
               {t('common.back')}
             </B>
-            
+
             <B
               icon={<Download size={"$1" as any} color={"$gray9" as any} />}
               variant="outlined"
@@ -160,10 +161,10 @@ export function FishingRegulationsScreen({ navigation }: FishingRegulationsScree
               {t('regulations.download')}
             </B>
           </X>
-          
+
           <H>{t('regulations.title')}</H>
           <P>{t('regulations.description')}</P>
-          
+
           <C borderRadius="$4" backgroundColor="$blue2">
             <Y padding="$4" space="$2">
               <T fontWeight="bold">{t('regulations.disclaimer')}</T>
@@ -172,7 +173,7 @@ export function FishingRegulationsScreen({ navigation }: FishingRegulationsScree
               </P>
             </Y>
           </C>
-          
+
           <A
             type="multiple"
             value={expandedValue ? [expandedValue] : []}
@@ -185,9 +186,11 @@ export function FishingRegulationsScreen({ navigation }: FishingRegulationsScree
                     {category.icon}
                     <T fontWeight="bold">{category.title}</T>
                   </X>
-                  <A.Indicator />
+                  <Sq animation="quick" rotate={expandedValue === category.id ? '180deg' : '0deg'}>
+                    <ArrowLeft size={"$1" as any} color={"$gray9" as any} style={{ transform: [{ rotate: '270deg' }] }} />
+                  </Sq>
                 </A.Trigger>
-                
+
                 <A.Content>
                   <Y space="$3" paddingVertical="$2">
                     {category.regulations.map((regulation) => (
@@ -196,7 +199,7 @@ export function FishingRegulationsScreen({ navigation }: FishingRegulationsScree
                         <P fontSize="$2" marginTop="$1">
                           {regulation.description}
                         </P>
-                        
+
                         {regulation.penalty && (
                           <X marginTop="$2" space="$2" alignItems="center">
                             <AlertTriangle size={"$1" as any} color={"$red9" as any} />
@@ -205,7 +208,7 @@ export function FishingRegulationsScreen({ navigation }: FishingRegulationsScree
                             </T>
                           </X>
                         )}
-                        
+
                         <T fontSize="$2" color="$gray9" marginTop="$1">
                           {t('regulations.enforcedBy')}: {regulation.authority}
                         </T>
@@ -216,20 +219,20 @@ export function FishingRegulationsScreen({ navigation }: FishingRegulationsScree
               </A.Item>
             ))}
           </A>
-          
+
           <C borderRadius="$4" bordered>
             <Y padding="$4" space="$3">
               <T fontWeight="bold">{t('regulations.reportViolations')}</T>
               <P fontSize="$2">
                 {t('regulations.reportViolationsDescription')}
               </P>
-              
+
               <X space="$2" marginTop="$2">
                 <B flex={1} backgroundColor="$green9" color="white">
                   {t('regulations.callHotline')}
                 </B>
-                <B 
-                  flex={1} 
+                <B
+                  flex={1}
                   variant="outlined"
                   onPress={() => navigation.navigate('ReportViolation')}
                 >
@@ -238,7 +241,7 @@ export function FishingRegulationsScreen({ navigation }: FishingRegulationsScree
               </X>
             </Y>
           </C>
-          
+
           <B
             marginTop="$2"
             onPress={() => navigation.navigate('FishingLicense')}

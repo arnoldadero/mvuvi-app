@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { SafeAreaView, StatusBar, Alert, ActivityIndicator } from 'react-native';
 import { YStack, H2, Text, Input, Button, Form, Paragraph, XStack, Select, ScrollView, View, Stack } from 'tamagui';
 import { useTranslation } from 'react-i18next';
-import MapView, { Marker } from 'react-native-maps';
+import MapView, { Marker } from '../../components/maps/MapView';
 import { useCatchDataStore } from '../../services/catch-data/catchDataStore';
 import { locationService } from '../../services/location/locationService';
 import { z } from 'zod';
@@ -36,7 +36,7 @@ const St: any = Stack;
 
 // Fish species options - these could be moved to a separate config file
 const fishSpecies = [
-  'Nile Perch', 'Tilapia', 'Dagaa', 'Catfish', 'Lungfish', 
+  'Nile Perch', 'Tilapia', 'Dagaa', 'Catfish', 'Lungfish',
   'Nile Tilapia', 'Mudfish', 'Omena', 'Other'
 ];
 
@@ -98,17 +98,17 @@ export function RecordCatchScreen({ navigation, route }: RecordCatchScreenProps)
   const getCurrentLocation = async () => {
     try {
       setIsLoadingLocation(true);
-      
+
       const result = await locationService.getCurrentLocation();
-      
+
       if (result.error) {
         Alert.alert(t('common.error'), t('catch.locationError'));
         return;
       }
-      
+
       if (result.coordinates) {
         setMapLocation(result.coordinates);
-        
+
         setFormData(prev => ({
           ...prev,
           latitude: result.coordinates?.latitude,
@@ -125,7 +125,7 @@ export function RecordCatchScreen({ navigation, route }: RecordCatchScreenProps)
 
   const handleMapPress = (e: any) => {
     const { coordinate } = e.nativeEvent;
-    
+
     setMapLocation(coordinate);
     setFormData(prev => ({
       ...prev,
@@ -170,7 +170,7 @@ export function RecordCatchScreen({ navigation, route }: RecordCatchScreenProps)
         latitude: formData.latitude,
         longitude: formData.longitude,
       });
-      
+
       // Reset form and show success message
       setFormData({
         fishSpecies: '',
@@ -183,10 +183,10 @@ export function RecordCatchScreen({ navigation, route }: RecordCatchScreenProps)
         latitude: mapLocation?.latitude,
         longitude: mapLocation?.longitude,
       });
-      
+
       setRecordSuccess(true);
       fetchCatchRecords(); // Refresh the catch records
-      
+
       setTimeout(() => {
         setRecordSuccess(false);
       }, 3000);
@@ -208,13 +208,13 @@ export function RecordCatchScreen({ navigation, route }: RecordCatchScreenProps)
       <Sc>
         <Y padding="$4">
           <H>{t('catch.recordCatch')}</H>
-          
+
           {recordSuccess && (
             <Y backgroundColor="$green2" padding="$3" borderRadius="$2" marginTop="$2">
               <P>{t('catch.recordSuccess')}</P>
             </Y>
           )}
-          
+
           {isLoadingLocation ? (
             <Y alignItems="center" padding="$4">
               <ActivityIndicator size="large" color="#0891b2" />
@@ -253,8 +253,8 @@ export function RecordCatchScreen({ navigation, route }: RecordCatchScreenProps)
               {/* Species Selection */}
               <Y marginBottom="$4">
                 <T>{t('catch.fishSpecies')}</T>
-                <Se 
-                  value={formData.fishSpecies} 
+                <Se
+                  value={formData.fishSpecies}
                   onValueChange={(value: string) => setFormData({ ...formData, fishSpecies: value })}
                 >
                   <Se.Trigger>
@@ -299,8 +299,8 @@ export function RecordCatchScreen({ navigation, route }: RecordCatchScreenProps)
 
                 <Y flex={1}>
                   <T>{t('catch.unit')}</T>
-                  <Se 
-                    value={formData.unit} 
+                  <Se
+                    value={formData.unit}
                     onValueChange={(value: string) => setFormData({ ...formData, unit: value })}
                   >
                     <Se.Trigger>
@@ -342,8 +342,8 @@ export function RecordCatchScreen({ navigation, route }: RecordCatchScreenProps)
               {/* Gear Used */}
               <Y marginBottom="$4">
                 <T>{t('catch.gearUsed')}</T>
-                <Se 
-                  value={formData.gearUsed} 
+                <Se
+                  value={formData.gearUsed}
                   onValueChange={(value: string) => setFormData({ ...formData, gearUsed: value })}
                 >
                   <Se.Trigger>
