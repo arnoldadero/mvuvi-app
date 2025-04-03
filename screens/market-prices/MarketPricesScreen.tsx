@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { SafeAreaView, StatusBar, ActivityIndicator } from 'react-native';
-import { YStack, H2, Text, Card, Button, XStack, Paragraph, ScrollView, Select, View, TamaguiComponent } from 'tamagui';
+import { YStack, H2, Text, Card, Button, XStack, Paragraph, ScrollView, Select, View } from 'tamagui';
 import { useTranslation } from 'react-i18next';
 import { useMarketPricesStore } from '../../services/market-prices/marketPricesStore';
 import MapView, { Marker, Callout } from '../../components/maps/MapView';
@@ -9,8 +9,17 @@ interface MarketPricesScreenProps {
   navigation: any;
 }
 
-// Import directly without aliases to avoid Tamagui optimization issues
-import { Y, H, T, C, B, X, P, S, Se, V } from 'tamagui';
+// Define type aliases for Tamagui components to fix TypeScript errors
+const Y = YStack as any;
+const H = H2 as any;
+const T = Text as any;
+const C = Card as any;
+const B = Button as any;
+const X = XStack as any;
+const P = Paragraph as any;
+const S = ScrollView as any;
+const Se = Select as any;
+const V = View as any;
 
 export function MarketPricesScreen({ navigation }: MarketPricesScreenProps) {
   const { t } = useTranslation();
