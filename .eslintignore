@@ -1,0 +1,19 @@
+# Node modules
+node_modules/
+
+# Build files
+dist/
+build/
+web-build/
+.expo/
+
+# Configuration files
+*.config.js
+metro.config.js
+babel.config.js
+
+# Environment files
+.env*
+
+# Generated files
+expo-env.d.ts

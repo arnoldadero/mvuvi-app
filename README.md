@@ -176,19 +176,22 @@ mvuvi-app/
 - [x] Improved project structure
 - [x] Zustand store implementation
 - [x] API service structure
+- [x] Catch data logging system
+- [x] Localization setup (Swahili and English)
+- [x] User profile and settings
+- [x] Sustainable fishing information database
+- [x] Fish species guide implementation
+- [x] Fishing regulations information
+- [x] Seasonal fishing calendar
 
 ### Pending Tasks
-- [ ] Localization setup (Swahili and English)
 - [ ] Weather API integration
 - [ ] Market price data collection system
 - [ ] Agent network setup for price data
-- [ ] Sustainable fishing information database
-- [ ] Catch data logging system
-- [ ] User profile and settings
 - [ ] Offline data caching
 - [ ] Push notification system
 - [ ] Interactive onboarding tutorial
-- [ ] Help/FAQ section
+- [ ] Help/FAQ section content
 - [ ] Testing across different devices
 - [ ] Performance optimization
 - [ ] Deployment to app stores
@@ -218,6 +221,36 @@ mvuvi-app/
    yarn start
    ```
 
+### Development Commands
+
+- Start the development server: `yarn start`
+- Run on Android: `yarn android`
+- Run on iOS: `yarn ios`
+- Run on web: `yarn web`
+- Run TypeScript type checking: `yarn tsc`
+- Run linting: `yarn lint`
+- Fix linting issues: `yarn lint:fix`
+
+## Implementation Plan
+
+A detailed implementation plan for the remaining features is available in the [docs/implementation-plan.md](docs/implementation-plan.md) file. This document outlines the step-by-step approach for each feature, including technical requirements, dependencies, and estimated timelines.
+
+### GitHub Issues
+
+The following GitHub issues have been created to track the implementation of the remaining features:
+
+1. [Implement Weather API Integration](https://github.com/arnoldadero/mvuvi-app/issues/2)
+2. [Implement Market Price Data Collection System](https://github.com/arnoldadero/mvuvi-app/issues/3)
+3. [Implement Offline Data Caching](https://github.com/arnoldadero/mvuvi-app/issues/4)
+4. [Implement Push Notification System](https://github.com/arnoldadero/mvuvi-app/issues/5)
+5. [Create Interactive Onboarding Tutorial](https://github.com/arnoldadero/mvuvi-app/issues/6)
+6. [Develop Help/FAQ Section](https://github.com/arnoldadero/mvuvi-app/issues/7)
+7. [Conduct Testing Across Different Devices](https://github.com/arnoldadero/mvuvi-app/issues/8)
+8. [Optimize App Performance](https://github.com/arnoldadero/mvuvi-app/issues/9)
+9. [Prepare App for Deployment to App Stores](https://github.com/arnoldadero/mvuvi-app/issues/10)
+
+All these issues are part of the [MVP Release](https://github.com/arnoldadero/mvuvi-app/milestone/1) milestone.
+
 ## Best Practices
 
 ### Code Organization
@@ -237,6 +270,13 @@ mvuvi-app/
 - Use React.memo for expensive components
 - Cache API responses with React Query
 - Optimize images for mobile devices
+
+### Code Quality
+- Use ESLint for code linting
+- Follow TypeScript best practices
+- Write clean, self-documenting code
+- Use consistent naming conventions
+- Document complex logic with comments
 
 ## Contributing
 
