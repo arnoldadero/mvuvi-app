@@ -23,6 +23,17 @@ interface Regulation {
   authority: string;
 }
 
+// Type aliases for Tamagui components
+const Y: any = YStack;
+const H: any = H2;
+const T: any = Text;
+const C: any = Card;
+const B: any = Button;
+const X: any = XStack;
+const P: any = Paragraph;
+const S: any = ScrollView;
+const A: any = Accordion;
+
 export function FishingRegulationsScreen({ navigation }: FishingRegulationsScreenProps) {
   const { t } = useTranslation();
   const [expandedValue, setExpandedValue] = useState<string | undefined>(undefined);
@@ -31,7 +42,7 @@ export function FishingRegulationsScreen({ navigation }: FishingRegulationsScree
     {
       id: 'gear',
       title: t('regulations.gearRestrictions'),
-      icon: <AlertTriangle size="$1" color="$orange9" />,
+      icon: <AlertTriangle size={"$1" as any} color={"$orange9" as any} />,
       regulations: [
         {
           id: 'gear1',
@@ -59,7 +70,7 @@ export function FishingRegulationsScreen({ navigation }: FishingRegulationsScree
     {
       id: 'seasons',
       title: t('regulations.closedSeasons'),
-      icon: <Calendar size="$1" color="$red9" />,
+      icon: <Calendar size={"$1" as any} color={"$red9" as any} />,
       regulations: [
         {
           id: 'season1',
@@ -80,7 +91,7 @@ export function FishingRegulationsScreen({ navigation }: FishingRegulationsScree
     {
       id: 'areas',
       title: t('regulations.protectedAreas'),
-      icon: <MapPin size="$1" color="$green9" />,
+      icon: <MapPin size={"$1" as any} color={"$green9" as any} />,
       regulations: [
         {
           id: 'area1',
@@ -101,7 +112,7 @@ export function FishingRegulationsScreen({ navigation }: FishingRegulationsScree
     {
       id: 'size',
       title: t('regulations.sizeLimits'),
-      icon: <FileText size="$1" color="$blue9" />,
+      icon: <FileText size={"$1" as any} color={"$blue9" as any} />,
       regulations: [
         {
           id: 'size1',
@@ -130,112 +141,112 @@ export function FishingRegulationsScreen({ navigation }: FishingRegulationsScree
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: '#fff' }}>
       <StatusBar barStyle="dark-content" backgroundColor="#fff" />
-      <ScrollView>
-        <YStack padding="$4" space="$4">
-          <XStack justifyContent="space-between" alignItems="center">
-            <Button
-              icon={<ArrowLeft />}
+      <S>
+        <Y padding="$4" space="$4">
+          <X justifyContent="space-between" alignItems="center">
+            <B
+              icon={<ArrowLeft size={"$1" as any} color={"$gray9" as any} />}
               variant="outlined"
               onPress={() => navigation.goBack()}
             >
               {t('common.back')}
-            </Button>
+            </B>
             
-            <Button
-              icon={<Download />}
+            <B
+              icon={<Download size={"$1" as any} color={"$gray9" as any} />}
               variant="outlined"
               onPress={handleDownloadRegulations}
             >
               {t('regulations.download')}
-            </Button>
-          </XStack>
+            </B>
+          </X>
           
-          <H2>{t('regulations.title')}</H2>
-          <Paragraph>{t('regulations.description')}</Paragraph>
+          <H>{t('regulations.title')}</H>
+          <P>{t('regulations.description')}</P>
           
-          <Card borderRadius="$4" backgroundColor="$blue2">
-            <YStack padding="$4" space="$2">
-              <Text fontWeight="bold">{t('regulations.disclaimer')}</Text>
-              <Paragraph fontSize="$2">
+          <C borderRadius="$4" backgroundColor="$blue2">
+            <Y padding="$4" space="$2">
+              <T fontWeight="bold">{t('regulations.disclaimer')}</T>
+              <P fontSize="$2">
                 {t('regulations.disclaimerContent')}
-              </Paragraph>
-            </YStack>
-          </Card>
+              </P>
+            </Y>
+          </C>
           
-          <Accordion
+          <A
             type="multiple"
             value={expandedValue ? [expandedValue] : []}
-            onValueChange={(value) => setExpandedValue(value[0])}
+            onValueChange={(value: string[]) => setExpandedValue(value[0])}
           >
             {regulationCategories.map((category) => (
-              <Accordion.Item key={category.id} value={category.id}>
-                <Accordion.Trigger>
-                  <XStack flex={1} alignItems="center" space="$2">
+              <A.Item key={category.id} value={category.id}>
+                <A.Trigger>
+                  <X flex={1} alignItems="center" space="$2">
                     {category.icon}
-                    <Text fontWeight="bold">{category.title}</Text>
-                  </XStack>
-                  <Accordion.Indicator />
-                </Accordion.Trigger>
+                    <T fontWeight="bold">{category.title}</T>
+                  </X>
+                  <A.Indicator />
+                </A.Trigger>
                 
-                <Accordion.Content>
-                  <YStack space="$3" paddingVertical="$2">
+                <A.Content>
+                  <Y space="$3" paddingVertical="$2">
                     {category.regulations.map((regulation) => (
-                      <Card key={regulation.id} bordered padding="$3" space="$2">
-                        <Text fontWeight="bold">{regulation.title}</Text>
-                        <Paragraph fontSize="$2" marginTop="$1">
+                      <C key={regulation.id} bordered padding="$3" space="$2">
+                        <T fontWeight="bold">{regulation.title}</T>
+                        <P fontSize="$2" marginTop="$1">
                           {regulation.description}
-                        </Paragraph>
+                        </P>
                         
                         {regulation.penalty && (
-                          <XStack marginTop="$2" space="$2" alignItems="center">
-                            <AlertTriangle size="$1" color="$red9" />
-                            <Text fontSize="$2" color="$red9">
+                          <X marginTop="$2" space="$2" alignItems="center">
+                            <AlertTriangle size={"$1" as any} color={"$red9" as any} />
+                            <T fontSize="$2" color="$red9">
                               {t('regulations.penalty')}: {regulation.penalty}
-                            </Text>
-                          </XStack>
+                            </T>
+                          </X>
                         )}
                         
-                        <Text fontSize="$2" color="$gray9" marginTop="$1">
+                        <T fontSize="$2" color="$gray9" marginTop="$1">
                           {t('regulations.enforcedBy')}: {regulation.authority}
-                        </Text>
-                      </Card>
+                        </T>
+                      </C>
                     ))}
-                  </YStack>
-                </Accordion.Content>
-              </Accordion.Item>
+                  </Y>
+                </A.Content>
+              </A.Item>
             ))}
-          </Accordion>
+          </A>
           
-          <Card borderRadius="$4" bordered>
-            <YStack padding="$4" space="$3">
-              <Text fontWeight="bold">{t('regulations.reportViolations')}</Text>
-              <Paragraph fontSize="$2">
+          <C borderRadius="$4" bordered>
+            <Y padding="$4" space="$3">
+              <T fontWeight="bold">{t('regulations.reportViolations')}</T>
+              <P fontSize="$2">
                 {t('regulations.reportViolationsDescription')}
-              </Paragraph>
+              </P>
               
-              <XStack space="$2" marginTop="$2">
-                <Button flex={1} backgroundColor="$green9" color="white">
+              <X space="$2" marginTop="$2">
+                <B flex={1} backgroundColor="$green9" color="white">
                   {t('regulations.callHotline')}
-                </Button>
-                <Button 
+                </B>
+                <B 
                   flex={1} 
                   variant="outlined"
                   onPress={() => navigation.navigate('ReportViolation')}
                 >
                   {t('regulations.reportInApp')}
-                </Button>
-              </XStack>
-            </YStack>
-          </Card>
+                </B>
+              </X>
+            </Y>
+          </C>
           
-          <Button
+          <B
             marginTop="$2"
             onPress={() => navigation.navigate('FishingLicense')}
           >
             {t('regulations.applyForLicense')}
-          </Button>
-        </YStack>
-      </ScrollView>
+          </B>
+        </Y>
+      </S>
     </SafeAreaView>
   );
 }

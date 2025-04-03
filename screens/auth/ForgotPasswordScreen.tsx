@@ -8,6 +8,11 @@ interface ForgotPasswordScreenProps {
   navigation: any;
 }
 
+const Y: any = YStack;
+const H: any = H2;
+const P: any = Paragraph;
+const T: any = Text;
+
 export function ForgotPasswordScreen({ navigation }: ForgotPasswordScreenProps) {
   const { t } = useTranslation();
   const [email, setEmail] = useState('');
@@ -49,16 +54,16 @@ export function ForgotPasswordScreen({ navigation }: ForgotPasswordScreenProps) 
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: '#fff' }}>
       <StatusBar barStyle="dark-content" backgroundColor="#fff" />
-      <YStack padding="$4" space="$4" flex={1} justifyContent="center">
-        <YStack space="$2" alignItems="center" marginBottom="$4">
-          <H2>{t('auth.forgotPassword')}</H2>
-          <Paragraph>{t('auth.forgotPasswordDescription')}</Paragraph>
-        </YStack>
+      <Y $padding={"$4" as any} $space={"$4" as any} $flex={1} $justifyContent="center">
+        <Y $space={"$2" as any} $alignItems="center" $marginBottom={"$4" as any}>
+          <H>{t('auth.forgotPassword')}</H>
+          <P>{t('auth.forgotPasswordDescription')}</P>
+        </Y>
 
         <Form onSubmit={handleResetPassword}>
-          <YStack space="$4">
-            <YStack space="$2">
-              <Text>{t('auth.email')}</Text>
+          <Y $space={"$4" as any}>
+            <Y $space={"$2" as any}>
+              <T>{t('auth.email')}</T>
               <Input
                 placeholder={t('auth.emailPlaceholder')}
                 value={email}
@@ -66,14 +71,15 @@ export function ForgotPasswordScreen({ navigation }: ForgotPasswordScreenProps) 
                 autoCapitalize="none"
                 keyboardType="email-address"
               />
-            </YStack>
+            </Y>
 
             <Button
               onPress={handleResetPassword}
               disabled={loading}
-              backgroundColor="$blue9"
-              color="white"
-              marginTop="$2"
+              theme="blue"
+              themeInverse
+              size={"$4" as any}
+              $marginTop={"$2" as any}
             >
               {loading ? <ActivityIndicator color="white" /> : t('auth.resetPassword')}
             </Button>
@@ -81,13 +87,13 @@ export function ForgotPasswordScreen({ navigation }: ForgotPasswordScreenProps) 
             <Button
               variant="outlined"
               onPress={() => navigation.goBack()}
-              marginTop="$2"
+              $marginTop={"$2" as any}
             >
               {t('common.back')}
             </Button>
-          </YStack>
+          </Y>
         </Form>
-      </YStack>
+      </Y>
     </SafeAreaView>
   );
 }

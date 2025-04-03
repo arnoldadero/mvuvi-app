@@ -3,8 +3,28 @@ import { SafeAreaView, StatusBar, ActivityIndicator, Alert, Share } from 'react-
 import { YStack, H2, Text, Card, Button, XStack, Paragraph, ScrollView, Separator } from 'tamagui';
 import { useTranslation } from 'react-i18next';
 import { useCatchDataStore, CatchRecord } from '../../services/catch-data/catchDataStore';
-import { ArrowLeft, Share2, Edit, Trash } from '@tamagui/lucide-icons';
+import { ArrowLeft, Share2, Edit3, Trash } from '@tamagui/lucide-icons';
 import { format } from 'date-fns';
+
+interface CatchRecordDetailsScreenProps {
+  navigation: any;
+  route: {
+    params: {
+      catchId: string;
+    };
+  };
+}
+
+// Type aliases for Tamagui components
+const Y: any = YStack;
+const H: any = H2;
+const T: any = Text;
+const C: any = Card;
+const B: any = Button;
+const X: any = XStack;
+const P: any = Paragraph;
+const S: any = ScrollView;
+const Sep: any = Separator;
 
 interface CatchRecordDetailsScreenProps {
   navigation: any;
@@ -114,9 +134,9 @@ ${t('app.name')} - ${t('app.slogan')}`;
     return (
       <SafeAreaView style={{ flex: 1, backgroundColor: '#fff' }}>
         <StatusBar barStyle="dark-content" backgroundColor="#fff" />
-        <YStack flex={1} justifyContent="center" alignItems="center">
+        <Y flex={1} justifyContent="center" alignItems="center">
           <ActivityIndicator size="large" color="#0000ff" />
-        </YStack>
+        </Y>
       </SafeAreaView>
     );
   }
@@ -125,18 +145,18 @@ ${t('app.name')} - ${t('app.slogan')}`;
     return (
       <SafeAreaView style={{ flex: 1, backgroundColor: '#fff' }}>
         <StatusBar barStyle="dark-content" backgroundColor="#fff" />
-        <YStack padding="$4" space="$4">
-          <Button
-            icon={<ArrowLeft />}
+        <Y padding="$4" space="$4">
+          <B
+            icon={<ArrowLeft size={"$4" as any} />}
             variant="outlined"
             onPress={() => navigation.goBack()}
           >
             {t('common.back')}
-          </Button>
-          <YStack flex={1} justifyContent="center" alignItems="center" paddingVertical="$10">
-            <Text>{t('catchData.recordNotFound')}</Text>
-          </YStack>
-        </YStack>
+          </B>
+          <Y flex={1} justifyContent="center" alignItems="center" paddingVertical="$10">
+            <T>{t('catchData.recordNotFound')}</T>
+          </Y>
+        </Y>
       </SafeAreaView>
     );
   }
@@ -144,118 +164,115 @@ ${t('app.name')} - ${t('app.slogan')}`;
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: '#fff' }}>
       <StatusBar barStyle="dark-content" backgroundColor="#fff" />
-      <ScrollView>
-        <YStack padding="$4" space="$4">
-          <XStack justifyContent="space-between" alignItems="center">
-            <Button
-              icon={<ArrowLeft />}
+      <S>
+        <Y padding="$4" space="$4">
+          <X justifyContent="space-between" alignItems="center">
+            <B
+              icon={<ArrowLeft size={"$4" as any} />}
               variant="outlined"
               onPress={() => navigation.goBack()}
             >
               {t('common.back')}
-            </Button>
+            </B>
             
-            <Button
-              icon={<Share2 />}
+            <B
+              icon={<Share2 size={"$4" as any} />}
               variant="outlined"
               onPress={handleShare}
             >
               {t('common.share')}
-            </Button>
-          </XStack>
+            </B>
+          </X>
           
-          <H2>{catchRecord.fishSpecies}</H2>
-          <Paragraph>{formatDate(catchRecord.date)}</Paragraph>
+          <H>{catchRecord.fishSpecies}</H>
+          <P>{formatDate(catchRecord.date)}</P>
           
-          <Card borderRadius="$4" bordered>
-            <YStack padding="$4" space="$3">
-              <Text fontWeight="bold" fontSize="$5">{t('catchData.catchDetails')}</Text>
+          <C borderRadius="$4" bordered>
+            <Y padding="$4" space="$3">
+              <T fontWeight="bold" fontSize="$5">{t('catchData.catchDetails')}</T>
               
-              <YStack space="$3">
-                <XStack justifyContent="space-between">
-                  <Text>{t('catchData.quantity')}</Text>
-                  <Text fontWeight="bold">
+              <Y space="$3">
+                <X justifyContent="space-between">
+                  <T>{t('catchData.quantity')}</T>
+                  <T fontWeight="bold">
                     {catchRecord.quantity} {catchRecord.unit}
-                  </Text>
-                </XStack>
+                  </T>
+                </X>
                 
-                <Separator />
+                <Sep />
                 
-                <XStack justifyContent="space-between">
-                  <Text>{t('catchData.location')}</Text>
-                  <Text>{catchRecord.location}</Text>
-                </XStack>
+                <X justifyContent="space-between">
+                  <T>{t('catchData.location')}</T>
+                  <T>{catchRecord.location}</T>
+                </X>
                 
-                <Separator />
+                <Sep />
                 
-                <XStack justifyContent="space-between">
-                  <Text>{t('catchData.gearUsed')}</Text>
-                  <Text>{catchRecord.gearUsed}</Text>
-                </XStack>
+                <X justifyContent="space-between">
+                  <T>{t('catchData.gearUsed')}</T>
+                  <T>{catchRecord.gearUsed}</T>
+                </X>
                 
-                <Separator />
+                <Sep />
                 
-                <XStack justifyContent="space-between">
-                  <Text>{t('catchData.effortHours')}</Text>
-                  <Text>{catchRecord.effortHours} {t('catchData.hours')}</Text>
-                </XStack>
+                <X justifyContent="space-between">
+                  <T>{t('catchData.effortHours')}</T>
+                  <T>{catchRecord.effortHours} {t('catchData.hours')}</T>
+                </X>
                 
                 {catchRecord.notes && (
                   <>
-                    <Separator />
-                    <YStack>
-                      <Text>{t('catchData.notes')}</Text>
-                      <Text paddingTop="$2">{catchRecord.notes}</Text>
-                    </YStack>
+                    <Sep />
+                    <Y space="$2">
+                      <T>{t('catchData.notes')}</T>
+                      <T>{catchRecord.notes}</T>
+                    </Y>
                   </>
                 )}
-              </YStack>
-            </YStack>
-          </Card>
+              </Y>
+            </Y>
+          </C>
           
-          {/* Action Buttons */}
-          <XStack space="$2">
-            <Button
-              flex={1}
-              icon={<Edit />}
+          {/* Map section if coordinates are available */}
+          {catchRecord.latitude && catchRecord.longitude && (
+            <C borderRadius="$4" bordered>
+              <Y padding="$4" space="$3">
+                <T fontWeight="bold" fontSize="$5">{t('catchData.location')}</T>
+                {/* Map component would go here */}
+                <Y 
+                  height={200} 
+                  backgroundColor="$gray3" 
+                  justifyContent="center" 
+                  alignItems="center"
+                  borderRadius="$2"
+                >
+                  <T>{t('catchData.mapUnavailable')}</T>
+                </Y>
+              </Y>
+            </C>
+          )}
+          
+          <X space="$4" justifyContent="center" marginTop="$4">
+            <B
+              icon={<Edit3 size={"$4" as any} />}
+              variant="outlined"
               onPress={handleEdit}
             >
               {t('common.edit')}
-            </Button>
+            </B>
             
-            <Button
-              flex={1}
-              icon={<Trash />}
-              color="$red9"
+            <B
+              icon={<Trash size={"$4" as any} />}
               variant="outlined"
+              theme="red"
               onPress={handleDelete}
               disabled={isDeletingRecord}
             >
-              {isDeletingRecord ? (
-                <ActivityIndicator size="small" color="$red9" />
-              ) : (
-                t('common.delete')
-              )}
-            </Button>
-          </XStack>
-          
-          {/* Catch Insights */}
-          <Card borderRadius="$4" backgroundColor="$blue2">
-            <YStack padding="$4" space="$2">
-              <Text fontWeight="bold">{t('catchData.insights')}</Text>
-              <Paragraph fontSize="$2">
-                {t('catchData.insightsDescription')}
-              </Paragraph>
-              <Button
-                marginTop="$2"
-                onPress={() => navigation.navigate('CatchInsights', { catchId })}
-              >
-                {t('catchData.viewInsights')}
-              </Button>
-            </YStack>
-          </Card>
-        </YStack>
-      </ScrollView>
+              {isDeletingRecord ? t('common.deleting') : t('common.delete')}
+            </B>
+          </X>
+        </Y>
+      </S>
     </SafeAreaView>
   );
 }

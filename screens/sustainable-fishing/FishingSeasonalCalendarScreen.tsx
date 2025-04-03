@@ -20,6 +20,17 @@ interface FishSeason {
   notes: string;
 }
 
+// Type aliases for Tamagui components
+const Y: any = YStack;
+const H: any = H2;
+const T: any = Text;
+const C: any = Card;
+const B: any = Button;
+const X: any = XStack;
+const P: any = Paragraph;
+const S: any = ScrollView;
+const V: any = View;
+
 export function FishingSeasonalCalendarScreen({ navigation }: FishingSeasonalCalendarScreenProps) {
   const { t } = useTranslation();
   const [currentMonth, setCurrentMonth] = useState<number>(0);
@@ -207,82 +218,82 @@ export function FishingSeasonalCalendarScreen({ navigation }: FishingSeasonalCal
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: '#fff' }}>
       <StatusBar barStyle="dark-content" backgroundColor="#fff" />
-      <ScrollView>
-        <YStack padding="$4" space="$4">
-          <Button
-            icon={<ArrowLeft />}
+      <S>
+        <Y padding="$4" space="$4">
+          <B
+            icon={<ArrowLeft size={"$1" as any} />}
             variant="outlined"
             alignSelf="flex-start"
             onPress={() => navigation.goBack()}
           >
             {t('common.back')}
-          </Button>
+          </B>
           
-          <H2>{t('seasonalCalendar.title')}</H2>
-          <Paragraph>{t('seasonalCalendar.description')}</Paragraph>
+          <H>{t('seasonalCalendar.title')}</H>
+          <P>{t('seasonalCalendar.description')}</P>
           
           {/* Current Month Summary */}
-          <Card borderRadius="$4" bordered backgroundColor="$blue2">
-            <YStack padding="$4" space="$3">
-              <Text fontWeight="bold" fontSize="$5">
+          <C borderRadius="$4" bordered backgroundColor="$blue2">
+            <Y padding="$4" space="$3">
+              <T fontWeight="bold" fontSize="$5">
                 {months[currentMonth].name} {t('seasonalCalendar.summary')}
-              </Text>
+              </T>
               
-              <XStack space="$2" alignItems="center">
-                <Calendar size="$1" color="$blue9" />
-                <Text fontWeight="bold">{t('seasonalCalendar.bestSpecies')}:</Text>
-                <Text>{getBestSpeciesForCurrentMonth()}</Text>
-              </XStack>
+              <X space="$2" alignItems="center">
+                <Calendar size={"$1" as any} color={"$blue9" as any} />
+                <T fontWeight="bold">{t('seasonalCalendar.bestSpecies')}:</T>
+                <T>{getBestSpeciesForCurrentMonth()}</T>
+              </X>
               
-              <XStack space="$2" alignItems="center">
-                <AlertTriangle size="$1" color="$red9" />
-                <Text fontWeight="bold">{t('seasonalCalendar.closedSeasons')}:</Text>
-                <Text>{getClosedSpeciesForCurrentMonth()}</Text>
-              </XStack>
-            </YStack>
-          </Card>
+              <X space="$2" alignItems="center">
+                <AlertTriangle size={"$1" as any} color={"$red9" as any} />
+                <T fontWeight="bold">{t('seasonalCalendar.closedSeasons')}:</T>
+                <T>{getClosedSpeciesForCurrentMonth()}</T>
+              </X>
+            </Y>
+          </C>
           
           {/* Legend */}
-          <Card borderRadius="$4" bordered>
-            <YStack padding="$4" space="$2">
-              <Text fontWeight="bold">{t('seasonalCalendar.legend')}</Text>
+          <C borderRadius="$4" bordered>
+            <Y padding="$4" space="$2">
+              <T fontWeight="bold">{t('seasonalCalendar.legend')}</T>
               
-              <XStack flexWrap="wrap" gap="$2">
-                <XStack space="$1" alignItems="center">
-                  <View width={12} height={12} borderRadius={6} backgroundColor="$green9" />
-                  <Text fontSize="$2">{t('seasonalCalendar.good')}</Text>
-                </XStack>
+              <X flexWrap="wrap" gap="$2">
+                <X space="$1" alignItems="center">
+                  <V width={12} height={12} borderRadius={6} backgroundColor="#4CAF50" />
+                  <T fontSize="$2">{t('seasonalCalendar.good')}</T>
+                </X>
                 
-                <XStack space="$1" alignItems="center">
-                  <View width={12} height={12} borderRadius={6} backgroundColor="$yellow9" />
-                  <Text fontSize="$2">{t('seasonalCalendar.moderate')}</Text>
-                </XStack>
+                <X space="$1" alignItems="center">
+                  <V width={12} height={12} borderRadius={6} backgroundColor="#FFC107" />
+                  <T fontSize="$2">{t('seasonalCalendar.moderate')}</T>
+                </X>
                 
-                <XStack space="$1" alignItems="center">
-                  <View width={12} height={12} borderRadius={6} backgroundColor="$orange9" />
-                  <Text fontSize="$2">{t('seasonalCalendar.poor')}</Text>
-                </XStack>
+                <X space="$1" alignItems="center">
+                  <V width={12} height={12} borderRadius={6} backgroundColor="#FF9800" />
+                  <T fontSize="$2">{t('seasonalCalendar.poor')}</T>
+                </X>
                 
-                <XStack space="$1" alignItems="center">
-                  <View width={12} height={12} borderRadius={6} backgroundColor="$red9" />
-                  <Text fontSize="$2">{t('seasonalCalendar.closed')}</Text>
-                </XStack>
-              </XStack>
-            </YStack>
-          </Card>
+                <X space="$1" alignItems="center">
+                  <V width={12} height={12} borderRadius={6} backgroundColor="#F44336" />
+                  <T fontSize="$2">{t('seasonalCalendar.closed')}</T>
+                </X>
+              </X>
+            </Y>
+          </C>
           
           {/* Calendar */}
-          <YStack space="$4">
+          <Y space="$4">
             {fishSeasons.map((season) => (
-              <Card 
+              <C 
                 key={season.id} 
                 borderRadius="$4" 
                 bordered
                 pressStyle={{ opacity: 0.8 }}
                 onPress={() => handleSpeciesSelect(season.id)}
               >
-                <YStack>
-                  <XStack 
+                <Y>
+                  <X 
                     padding="$3"
                     backgroundColor={selectedSpecies === season.id ? '$blue2' : 'transparent'}
                     borderBottomWidth={1}
@@ -290,44 +301,44 @@ export function FishingSeasonalCalendarScreen({ navigation }: FishingSeasonalCal
                     justifyContent="space-between"
                     alignItems="center"
                   >
-                    <YStack>
-                      <Text fontWeight="bold">{season.species}</Text>
-                      <Text fontSize="$2">{season.localName}</Text>
-                    </YStack>
+                    <Y>
+                      <T fontWeight="bold">{season.species}</T>
+                      <T fontSize="$2">{season.localName}</T>
+                    </Y>
                     
-                    <XStack space="$1" alignItems="center">
-                      <View 
+                    <X space="$1" alignItems="center">
+                      <V 
                         width={12} 
                         height={12} 
                         borderRadius={6} 
                         backgroundColor={getStatusColor(season.months[currentMonth].status)} 
                       />
-                      <Text fontSize="$2">
+                      <T fontSize="$2">
                         {getStatusText(season.months[currentMonth].status)}
-                      </Text>
-                    </XStack>
-                  </XStack>
+                      </T>
+                    </X>
+                  </X>
                   
                   {selectedSpecies === season.id && (
-                    <YStack padding="$3" space="$3">
-                      <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-                        <XStack>
+                    <Y padding="$3" space="$3">
+                      <S horizontal showsHorizontalScrollIndicator={false}>
+                        <X>
                           {season.months.map((month, index) => {
                             const cellWidth = (screenWidth - 32) / 6; // 6 months visible at a time, 32px for padding
                             return (
-                              <YStack 
+                              <Y 
                                 key={index} 
                                 width={cellWidth} 
                                 alignItems="center"
                                 opacity={index === currentMonth ? 1 : 0.7}
                               >
-                                <Text 
+                                <T 
                                   fontSize="$2" 
                                   fontWeight={index === currentMonth ? 'bold' : 'normal'}
                                 >
                                   {month.abbreviation}
-                                </Text>
-                                <View 
+                                </T>
+                                <V 
                                   width={cellWidth - 8} 
                                   height={30} 
                                   backgroundColor={getStatusColor(month.status)}
@@ -336,39 +347,39 @@ export function FishingSeasonalCalendarScreen({ navigation }: FishingSeasonalCal
                                   justifyContent="center"
                                   alignItems="center"
                                 >
-                                  <Text 
+                                  <T 
                                     color="white" 
                                     fontSize="$1"
                                     fontWeight="bold"
                                   >
                                     {month.status === 'closed' ? 'X' : ''}
-                                  </Text>
-                                </View>
-                              </YStack>
+                                  </T>
+                                </V>
+                              </Y>
                             );
                           })}
-                        </XStack>
-                      </ScrollView>
+                        </X>
+                      </S>
                       
-                      <XStack space="$2" alignItems="flex-start">
-                        <Info size="$1" color="$blue9" />
-                        <Text fontSize="$2" flex={1}>{season.notes}</Text>
-                      </XStack>
-                    </YStack>
+                      <X space="$2" alignItems="flex-start">
+                        <Info size={"$1" as any} color={"$blue9" as any} />
+                        <T fontSize="$2" flex={1}>{season.notes}</T>
+                      </X>
+                    </Y>
                   )}
-                </YStack>
-              </Card>
+                </Y>
+              </C>
             ))}
-          </YStack>
+          </Y>
           
-          <Button
+          <B
             marginTop="$2"
             onPress={() => navigation.navigate('FishingRegulations')}
           >
             {t('seasonalCalendar.viewRegulations')}
-          </Button>
-        </YStack>
-      </ScrollView>
+          </B>
+        </Y>
+      </S>
     </SafeAreaView>
   );
 }

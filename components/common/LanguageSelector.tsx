@@ -65,22 +65,22 @@ export function LanguageSelector({ minimal = false }: LanguageSelectorProps) {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    padding: 8,
-  },
-  minimalContainer: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginVertical: 8,
-  },
   buttonContainer: {
     flexDirection: 'row',
     marginTop: 8,
+  },
+  container: {
+    padding: 8,
   },
   label: {
     fontSize: 16,
     fontWeight: '500',
     marginBottom: 8,
+  },
+  minimalContainer: {
+    alignItems: 'center',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    marginVertical: 8,
   }
 });

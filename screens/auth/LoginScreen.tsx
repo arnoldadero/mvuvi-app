@@ -9,12 +9,22 @@ interface LoginScreenProps {
   navigation: any;
 }
 
+// Type aliases for Tamagui components
+const Y: any = YStack;
+const H: any = H2;
+const T: any = Text;
+const I: any = Input;
+const B: any = Button;
+const F: any = Form;
+const P: any = Paragraph;
+const X: any = XStack;
+
 export function LoginScreen({ navigation }: LoginScreenProps) {
   const { t } = useTranslation();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
-  const setUser = useAuthStore((state) => state.setUser);
+  const signIn = useAuthStore((state) => state.signIn);
 
   const handleLogin = async () => {
     if (!email || !password) {
@@ -24,15 +34,10 @@ export function LoginScreen({ navigation }: LoginScreenProps) {
 
     setLoading(true);
     try {
-      const { data, error } = await supabase.auth.signInWithPassword({
-        email,
-        password,
-      });
-
-      if (error) {
-        Alert.alert(t('common.error'), error.message);
-      } else if (data?.user) {
-        setUser(data.user);
+      await signIn(email, password);
+      const user = useAuthStore.getState().user;
+      
+      if (user) {
         Alert.alert(t('common.success'), t('auth.loginSuccess'));
         navigation.navigate('Weather');
       }
@@ -46,66 +51,66 @@ export function LoginScreen({ navigation }: LoginScreenProps) {
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: '#fff' }}>
       <StatusBar barStyle="dark-content" backgroundColor="#fff" />
-      <YStack padding="$4" space="$4" flex={1} justifyContent="center">
-        <YStack space="$2" alignItems="center" marginBottom="$4">
-          <H2>{t('auth.login')}</H2>
-          <Paragraph>{t('auth.loginDescription')}</Paragraph>
-        </YStack>
+      <Y padding="$4" space="$4" flex={1} justifyContent="center">
+        <Y space="$2" alignItems="center" marginBottom="$4">
+          <H>{t('auth.login')}</H>
+          <P>{t('auth.loginDescription')}</P>
+        </Y>
 
-        <Form onSubmit={handleLogin}>
-          <YStack space="$4">
-            <YStack space="$2">
-              <Text>{t('auth.email')}</Text>
-              <Input
+        <F onSubmit={handleLogin}>
+          <Y space="$4">
+            <Y space="$2">
+              <T>{t('auth.email')}</T>
+              <I
                 placeholder={t('auth.emailPlaceholder')}
                 value={email}
                 onChangeText={setEmail}
                 autoCapitalize="none"
                 keyboardType="email-address"
               />
-            </YStack>
+            </Y>
 
-            <YStack space="$2">
-              <Text>{t('auth.password')}</Text>
-              <Input
+            <Y space="$2">
+              <T>{t('auth.password')}</T>
+              <I
                 placeholder={t('auth.passwordPlaceholder')}
                 value={password}
                 onChangeText={setPassword}
                 secureTextEntry
               />
-            </YStack>
+            </Y>
 
-            <Button
+            <B
               onPress={handleLogin}
               disabled={loading}
               backgroundColor="$blue9"
               color="white"
               marginTop="$2"
             >
-              {loading ? <ActivityIndicator color="white" /> : t('auth.login')}
-            </Button>
+              {loading ? <ActivityIndicator color="white" size={24} /> : t('auth.login')}
+            </B>
 
-            <Button
+            <B
               variant="outlined"
               onPress={() => navigation.navigate('ForgotPassword')}
               marginTop="$2"
             >
               {t('auth.forgotPassword')}
-            </Button>
-          </YStack>
-        </Form>
+            </B>
+          </Y>
+        </F>
 
-        <XStack justifyContent="center" marginTop="$4">
-          <Text>{t('auth.dontHaveAccount')} </Text>
-          <Text
+        <X justifyContent="center" marginTop="$4">
+          <T>{t('auth.dontHaveAccount')} </T>
+          <T
             color="$blue9"
             onPress={() => navigation.navigate('Register')}
             fontWeight="bold"
           >
             {t('auth.register')}
-          </Text>
-        </XStack>
-      </YStack>
+          </T>
+        </X>
+      </Y>
     </SafeAreaView>
   );
 }

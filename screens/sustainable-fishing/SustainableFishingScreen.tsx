@@ -20,6 +20,18 @@ interface SustainableFishingScreenProps {
   navigation: any;
 }
 
+// Type aliases for Tamagui components
+const Y: any = YStack;
+const H: any = H2;
+const T: any = Text;
+const C: any = Card;
+const B: any = Button;
+const X: any = XStack;
+const P: any = Paragraph;
+const S: any = ScrollView;
+const TB: any = Tabs;
+const ST: any = Stack;
+
 export function SustainableFishingScreen({ navigation }: SustainableFishingScreenProps) {
   const { t } = useTranslation();
   const [activeTab, setActiveTab] = useState('overview');
@@ -43,15 +55,15 @@ export function SustainableFishingScreen({ navigation }: SustainableFishingScree
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar barStyle="dark-content" backgroundColor="#fff" />
-      <ScrollView>
-        <YStack padding="$4" space="$4">
-          <XStack justifyContent="space-between" alignItems="center">
-            <H2>{t('sustainableFishing.title')}</H2>
+      <S>
+        <Y padding="$4" space="$4">
+          <X justifyContent="space-between" alignItems="center">
+            <H>{t('sustainableFishing.title')}</H>
             <LanguageSelector minimal />
-          </XStack>
-          <Paragraph>{t('sustainableFishing.description')}</Paragraph>
+          </X>
+          <P>{t('sustainableFishing.description')}</P>
           
-          <Tabs
+          <TB
             defaultValue="overview"
             value={activeTab}
             onValueChange={setActiveTab}
@@ -62,258 +74,258 @@ export function SustainableFishingScreen({ navigation }: SustainableFishingScree
             borderColor="$gray5"
             overflow="hidden"
           >
-            <Tabs.List>
-              <Tabs.Tab name="overview">
-                <Info color="$color" />
-                <Text>{t('sustainableFishing.overview')}</Text>
-              </Tabs.Tab>
-              <Tabs.Tab name="practices">
-                <Fish color="$color" />
-                <Text>{t('sustainableFishing.practices')}</Text>
-              </Tabs.Tab>
-              <Tabs.Tab name="resources">
-                <Book color="$color" />
-                <Text>{t('sustainableFishing.resources')}</Text>
-              </Tabs.Tab>
-            </Tabs.List>
+            <TB.List>
+              <TB.Tab name="overview">
+                <Info size={"$1" as any} color={"$color" as any} />
+                <T>{t('sustainableFishing.overview')}</T>
+              </TB.Tab>
+              <TB.Tab name="practices">
+                <Fish size={"$1" as any} color={"$color" as any} />
+                <T>{t('sustainableFishing.practices')}</T>
+              </TB.Tab>
+              <TB.Tab name="resources">
+                <Book size={"$1" as any} color={"$color" as any} />
+                <T>{t('sustainableFishing.resources')}</T>
+              </TB.Tab>
+            </TB.List>
             
-            <Tabs.Content value="overview">
-              <YStack padding="$4" gap="$4">
+            <TB.Content value="overview">
+              <Y padding="$4" gap="$4">
                 <Image
                   source={require('../../assets/images/sustainable-fishing.png')}
                   style={styles.fullWidthImage}
                   resizeMode="cover"
                 />
                 
-                <Paragraph>
+                <P>
                   {t('sustainableFishing.overviewContent')}
-                </Paragraph>
+                </P>
                 
-                <Card style={styles.blueCard}>
-                  <YStack padding="$4" gap="$2">
-                    <Text>{t('sustainableFishing.whySustainable')}</Text>
-                    <Paragraph size="$2">
+                <C style={styles.blueCard}>
+                  <Y padding="$4" gap="$2">
+                    <T>{t('sustainableFishing.whySustainable')}</T>
+                    <P size="$2">
                       {t('sustainableFishing.whySustainableContent')}
-                    </Paragraph>
-                  </YStack>
-                </Card>
+                    </P>
+                  </Y>
+                </C>
                 
-                <Button
+                <B
                   backgroundColor="$green9"
                   color="white"
                   onPress={() => setActiveTab('practices')}
                 >
                   {t('sustainableFishing.exploreGuidelines')}
-                </Button>
-              </YStack>
-            </Tabs.Content>
+                </B>
+              </Y>
+            </TB.Content>
             
-            <Tabs.Content value="practices">
-              <YStack padding="$4" gap="$4">
-                <Text size="$5">
+            <TB.Content value="practices">
+              <Y padding="$4" gap="$4">
+                <T size="$5">
                   {t('sustainableFishing.bestPractices')}
-                </Text>
+                </T>
                 
-                <YStack gap="$3">
+                <Y gap="$3">
                   {/* Sustainable Fishing Categories */}
-                  <Card 
+                  <C 
                     style={styles.cardWithRadius}
                     bordered
                     pressStyle={{ opacity: 0.8 }}
                     onPress={() => handleCategoryPress('gear')}
                   >
-                    <XStack padding="$4" alignItems="center" space="$3">
+                    <X padding="$4" alignItems="center" space="$3">
                       <Image
                         source={require('../../assets/images/fishing-gear.png')}
                         style={styles.categoryIcon}
                       />
-                      <YStack style={styles.flexOne}>
-                        <Text>{t('sustainableFishing.gearSelection')}</Text>
-                        <Paragraph size="$2">
+                      <Y style={styles.flexOne}>
+                        <T>{t('sustainableFishing.gearSelection')}</T>
+                        <P size="$2">
                           {t('sustainableFishing.gearSelectionDescription')}
-                        </Paragraph>
-                      </YStack>
-                    </XStack>
-                  </Card>
+                        </P>
+                      </Y>
+                    </X>
+                  </C>
                   
-                  <Card 
+                  <C 
                     style={styles.cardWithRadius}
                     bordered
                     pressStyle={{ opacity: 0.8 }}
                     onPress={() => handleCategoryPress('bycatch')}
                   >
-                    <XStack padding="$4" alignItems="center" space="$3">
+                    <X padding="$4" alignItems="center" space="$3">
                       <Image
                         source={require('../../assets/images/bycatch.png')}
                         style={styles.categoryIcon}
                       />
-                      <YStack style={styles.flexOne}>
-                        <Text>{t('sustainableFishing.bycatchReduction')}</Text>
-                        <Paragraph size="$2">
+                      <Y style={styles.flexOne}>
+                        <T>{t('sustainableFishing.bycatchReduction')}</T>
+                        <P size="$2">
                           {t('sustainableFishing.bycatchReductionDescription')}
-                        </Paragraph>
-                      </YStack>
-                    </XStack>
-                  </Card>
+                        </P>
+                      </Y>
+                    </X>
+                  </C>
                   
-                  <Card 
+                  <C 
                     style={styles.cardWithRadius}
                     bordered
                     pressStyle={{ opacity: 0.8 }}
                     onPress={() => handleCategoryPress('habitat')}
                   >
-                    <XStack padding="$4" alignItems="center" space="$3">
+                    <X padding="$4" alignItems="center" space="$3">
                       <Image
                         source={require('../../assets/images/bycatch.png')}
                         style={styles.categoryIcon}
                       />
-                      <YStack style={styles.flexOne}>
-                        <Text>{t('sustainableFishing.habitatProtection')}</Text>
-                        <Paragraph size="$2">
+                      <Y style={styles.flexOne}>
+                        <T>{t('sustainableFishing.habitatProtection')}</T>
+                        <P size="$2">
                           {t('sustainableFishing.habitatProtectionDescription')}
-                        </Paragraph>
-                      </YStack>
-                    </XStack>
-                  </Card>
+                        </P>
+                      </Y>
+                    </X>
+                  </C>
                   
-                  <Card 
+                  <C 
                     style={styles.cardWithRadius}
                     bordered
                     pressStyle={{ opacity: 0.8 }}
                     onPress={() => handleCategoryPress('juvenile')}
                   >
-                    <XStack padding="$4" alignItems="center" space="$3">
+                    <X padding="$4" alignItems="center" space="$3">
                       <Image
                         source={require('../../assets/images/bycatch.png')}
                         style={styles.categoryIcon}
                       />
-                      <YStack style={styles.flexOne}>
-                        <Text>{t('sustainableFishing.juvenileProtection')}</Text>
-                        <Paragraph size="$2">
+                      <Y style={styles.flexOne}>
+                        <T>{t('sustainableFishing.juvenileProtection')}</T>
+                        <P size="$2">
                           {t('sustainableFishing.juvenileProtectionDescription')}
-                        </Paragraph>
-                      </YStack>
-                    </XStack>
-                  </Card>
-                </YStack>
+                        </P>
+                      </Y>
+                    </X>
+                  </C>
+                </Y>
                 
-                <XStack space="$2">
-                  <Button
+                <X space="$2">
+                  <B
                     style={styles.flexOne}
                     onPress={handleSeasonalCalendarPress}
                   >
-                    <Calendar color="$color" />
-                    <Text>{t('sustainableFishing.seasonalCalendar')}</Text>
-                  </Button>
+                    <Calendar size={"$1" as any} color={"$color" as any} />
+                    <T>{t('sustainableFishing.seasonalCalendar')}</T>
+                  </B>
                   
-                  <Button
+                  <B
                     style={styles.flexOne}
                     onPress={handleRegulationsPress}
                   >
-                    <Ruler color="$color" />
-                    <Text>{t('sustainableFishing.regulations')}</Text>
-                  </Button>
-                </XStack>
-              </YStack>
-            </Tabs.Content>
+                    <Ruler size={"$1" as any} color={"$color" as any} />
+                    <T>{t('sustainableFishing.regulations')}</T>
+                  </B>
+                </X>
+              </Y>
+            </TB.Content>
             
-            <Tabs.Content value="resources">
-              <YStack padding="$4" space="$4">
-                <Text size="$5">
+            <TB.Content value="resources">
+              <Y padding="$4" space="$4">
+                <T size="$5">
                   {t('sustainableFishing.resources')}
-                </Text>
+                </T>
                 
-                <Card
+                <C
                   style={styles.cardWithRadius}
                   bordered
                   pressStyle={{ opacity: 0.8 }}
                   onPress={handleSpeciesGuidePress}
                 >
-                  <YStack padding="$4" space="$2">
-                    <Text>{t('sustainableFishing.fishSpeciesGuide')}</Text>
-                    <Paragraph size="$2">
+                  <Y padding="$4" space="$2">
+                    <T>{t('sustainableFishing.fishSpeciesGuide')}</T>
+                    <P size="$2">
                       {t('sustainableFishing.fishSpeciesGuideDescription')}
-                    </Paragraph>
+                    </P>
                     <Image
                       source={require('../../assets/images/bycatch.png')}
                       style={styles.resourceImage}
                       resizeMode="cover"
                     />
-                  </YStack>
-                </Card>
+                  </Y>
+                </C>
                 
-                <Card
+                <C
                   style={[styles.cardWithRadius, styles.blueCard]}
                   bordered
                 >
-                  <YStack padding="$4" space="$2">
-                    <Text>{t('sustainableFishing.educationalVideos')}</Text>
-                    <Paragraph size="$2">
+                  <Y padding="$4" space="$2">
+                    <T>{t('sustainableFishing.educationalVideos')}</T>
+                    <P size="$2">
                       {t('sustainableFishing.educationalVideosDescription')}
-                    </Paragraph>
-                    <Button
+                    </P>
+                    <B
                       marginTop="$2"
                       onPress={() => navigation.navigate('EducationalVideos')}
                     >
                       {t('sustainableFishing.watchVideos')}
-                    </Button>
-                  </YStack>
-                </Card>
+                    </B>
+                  </Y>
+                </C>
                 
-                <Card
+                <C
                   style={styles.cardWithRadius}
                   bordered
                 >
-                  <YStack padding="$4" space="$2">
-                    <Text>{t('sustainableFishing.communityForums')}</Text>
-                    <Paragraph size="$2">
+                  <Y padding="$4" space="$2">
+                    <T>{t('sustainableFishing.communityForums')}</T>
+                    <P size="$2">
                       {t('sustainableFishing.communityForumsDescription')}
-                    </Paragraph>
-                    <Button
+                    </P>
+                    <B
                       marginTop="$2"
                       onPress={() => navigation.navigate('CommunityForums')}
                     >
                       {t('sustainableFishing.joinDiscussion')}
-                    </Button>
-                  </YStack>
-                </Card>
-              </YStack>
-            </Tabs.Content>
-          </Tabs>
-        </YStack>
-      </ScrollView>
+                    </B>
+                  </Y>
+                </C>
+              </Y>
+            </TB.Content>
+          </TB>
+        </Y>
+      </S>
     </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
+  blueCard: {
+    backgroundColor: '#E6F7FF'
+  },
+  cardWithRadius: {
+    borderRadius: 16
+  },
+  categoryIcon: {
+    borderRadius: 30,
+    height: 60,
+    width: 60
+  },
   container: {
-    flex: 1,
-    backgroundColor: '#fff'
+    backgroundColor: '#fff',
+    flex: 1
   },
   flexOne: {
     flex: 1
   },
   fullWidthImage: {
-    width: '100%',
+    borderRadius: 8,
     height: 200,
-    borderRadius: 8
-  },
-  categoryIcon: {
-    width: 60,
-    height: 60,
-    borderRadius: 30
+    width: '100%'
   },
   resourceImage: {
-    width: '100%',
-    height: 120,
     borderRadius: 8,
-    marginTop: 8
-  },
-  cardWithRadius: {
-    borderRadius: 16
-  },
-  blueCard: {
-    backgroundColor: '#E6F7FF'
+    height: 120,
+    marginTop: 8,
+    width: '100%'
   }
 });

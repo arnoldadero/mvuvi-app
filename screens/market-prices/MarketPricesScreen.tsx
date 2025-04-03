@@ -9,6 +9,18 @@ interface MarketPricesScreenProps {
   navigation: any;
 }
 
+// Type aliases for Tamagui components
+const Y: any = YStack;
+const H: any = H2;
+const T: any = Text;
+const C: any = Card;
+const B: any = Button;
+const X: any = XStack;
+const P: any = Paragraph;
+const S: any = ScrollView;
+const Se: any = Select;
+const V: any = View;
+
 export function MarketPricesScreen({ navigation }: MarketPricesScreenProps) {
   const { t } = useTranslation();
   const { 
@@ -110,13 +122,13 @@ export function MarketPricesScreen({ navigation }: MarketPricesScreenProps) {
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: '#fff' }}>
       <StatusBar barStyle="dark-content" backgroundColor="#fff" />
-      <ScrollView>
-        <YStack padding="$4" space="$4">
-          <H2>{t('marketPrices.title')}</H2>
-          <Paragraph>{t('marketPrices.description')}</Paragraph>
+      <S>
+        <Y padding="$4" space="$4">
+          <H>{t('marketPrices.title')}</H>
+          <P>{t('marketPrices.description')}</P>
           
           {/* Map View */}
-          <View height={250} borderRadius="$4" overflow="hidden">
+          <V height={250} borderRadius="$4" overflow="hidden">
             <MapView 
               style={{ width: '100%', height: '100%' }}
               region={mapRegion}
@@ -132,154 +144,137 @@ export function MarketPricesScreen({ navigation }: MarketPricesScreenProps) {
                   onPress={() => handleLocationChange(location.id)}
                 >
                   <Callout>
-                    <YStack padding="$2" width={150}>
-                      <Text fontWeight="bold">{location.name}</Text>
-                      <Text fontSize="$2">{location.region}</Text>
-                    </YStack>
+                    <Y padding="$2" width={150}>
+                      <T fontWeight="bold">{location.name}</T>
+                      <T fontSize="$2">{location.region}</T>
+                    </Y>
                   </Callout>
                 </Marker>
               ))}
             </MapView>
-          </View>
+          </V>
           
           {/* Location Selector */}
-          <Card borderRadius="$4">
-            <YStack padding="$4" space="$3">
-              <Text fontWeight="bold">{t('marketPrices.selectLocation')}</Text>
+          <C borderRadius="$4">
+            <Y padding="$4" space="$3">
+              <T fontWeight="bold">{t('marketPrices.selectLocation')}</T>
               
               {isLoadingLocations ? (
                 <ActivityIndicator size="small" color="#0000ff" />
               ) : (
-                <Select
+                <Se
                   value={selectedLocation || ''}
                   onValueChange={handleLocationChange}
                 >
-                  <Select.Trigger>
-                    <Select.Value 
+                  <Se.Trigger>
+                    <Se.Value 
                       placeholder={t('marketPrices.selectLocationPlaceholder')} 
                     />
-                  </Select.Trigger>
-                  <Select.Content>
-                    <Select.ScrollUpButton />
-                    <Select.Viewport>
-                      <Select.Group>
+                  </Se.Trigger>
+                  <Se.Content>
+                    <Se.ScrollUpButton />
+                    <Se.Viewport>
+                      <Se.Group>
                         {locations.map((location) => (
-                          <Select.Item key={location.id} value={location.id}>
-                            <Select.ItemText>{location.name}</Select.ItemText>
-                          </Select.Item>
+                          <Se.Item key={location.id} value={location.id}>
+                            <Se.ItemText>{location.name}</Se.ItemText>
+                          </Se.Item>
                         ))}
-                      </Select.Group>
-                    </Select.Viewport>
-                    <Select.ScrollDownButton />
-                  </Select.Content>
-                </Select>
+                      </Se.Group>
+                    </Se.Viewport>
+                    <Se.ScrollDownButton />
+                  </Se.Content>
+                </Se>
               )}
               
-              <XStack space="$2">
-                <Button
+              <X space="$2">
+                <B
                   flex={1}
                   onPress={handleViewAllPrices}
                   disabled={isLoadingPrices}
                 >
                   {t('marketPrices.viewAllLocations')}
-                </Button>
-                <Button
+                </B>
+                <B
                   flex={1}
                   backgroundColor="$blue9"
                   color="white"
                   onPress={handleReportPrice}
                 >
                   {t('marketPrices.reportPrice')}
-                </Button>
-              </XStack>
-            </YStack>
-          </Card>
+                </B>
+              </X>
+            </Y>
+          </C>
           
           {/* Market Prices */}
-          <YStack space="$2">
-            <Text fontWeight="bold" fontSize="$5">
+          <Y space="$2">
+            <T fontWeight="bold" fontSize="$5">
               {selectedLocation 
                 ? t('marketPrices.pricesForLocation', { 
-                    location: locations.find(loc => loc.id === selectedLocation)?.name 
+                    location: locations.find(l => l.id === selectedLocation)?.name || '' 
                   })
                 : t('marketPrices.allPrices')
               }
-            </Text>
+            </T>
             
             {isLoadingPrices ? (
-              <YStack alignItems="center" padding="$4">
-                <ActivityIndicator size="small" color="#0000ff" />
-              </YStack>
+              <Y padding="$4" alignItems="center">
+                <ActivityIndicator size="large" color="#0000ff" />
+              </Y>
             ) : prices.length === 0 ? (
-              <Card padding="$4" marginTop="$2">
-                <Text textAlign="center">{t('marketPrices.noPricesAvailable')}</Text>
-              </Card>
+              <Y padding="$4" alignItems="center">
+                <T>{t('marketPrices.noPricesAvailable')}</T>
+              </Y>
             ) : (
-              <YStack space="$3">
-                {Object.entries(groupedPrices).map(([species, speciesPrices]) => (
-                  <Card key={species} borderRadius="$4" bordered>
-                    <YStack>
-                      <XStack 
-                        backgroundColor="$blue2" 
-                        padding="$3"
-                        borderBottomWidth={1}
-                        borderBottomColor="$gray5"
-                      >
-                        <Text fontWeight="bold">{species}</Text>
-                      </XStack>
+              <Y space="$4">
+                {Object.keys(groupedPrices).map((species) => (
+                  <C key={species} borderRadius="$4" bordered>
+                    <Y padding="$4" space="$3">
+                      <T fontWeight="bold" fontSize="$4">{species}</T>
                       
-                      <YStack padding="$2">
-                        {speciesPrices.map((price, index) => (
-                          <XStack 
-                            key={price.id} 
-                            justifyContent="space-between" 
-                            padding="$2"
-                            borderBottomWidth={index < speciesPrices.length - 1 ? 1 : 0}
-                            borderBottomColor="$gray3"
-                          >
-                            <Text>{price.location}</Text>
-                            <Text fontWeight="bold">
-                              KES {price.price}/{price.unit}
-                            </Text>
-                          </XStack>
-                        ))}
-                      </YStack>
-                      
-                      <XStack 
-                        backgroundColor="$gray1" 
-                        padding="$2"
-                        justifyContent="flex-end"
-                      >
-                        <Text fontSize="$2" color="$gray9">
-                          {t('marketPrices.lastUpdated')}: {new Date(
-                            Math.max(...speciesPrices.map(p => new Date(p.date).getTime()))
-                          ).toLocaleDateString()}
-                        </Text>
-                      </XStack>
-                    </YStack>
-                  </Card>
+                      {groupedPrices[species].map((price) => {
+                        const location = locations.find(l => l.id === price.location);
+                        return (
+                          <Y key={price.id} space="$1">
+                            <X justifyContent="space-between">
+                              <T>{location?.name || t('marketPrices.unknownLocation')}</T>
+                              <T fontWeight="bold">
+                                KES {price.price.toFixed(2)} / {price.unit}
+                              </T>
+                            </X>
+                            <T fontSize="$2" color="$gray9">
+                              {new Date(price.date).toLocaleDateString()}
+                            </T>
+                          </Y>
+                        );
+                      })}
+                    </Y>
+                  </C>
                 ))}
-              </YStack>
+              </Y>
             )}
-          </YStack>
+          </Y>
           
-          {/* Price Trends */}
-          <Card borderRadius="$4" backgroundColor="$blue2">
-            <YStack padding="$4" space="$2">
-              <Text fontWeight="bold">{t('marketPrices.priceTrends')}</Text>
-              <Paragraph fontSize="$2">
-                {t('marketPrices.priceTrendsDescription')}
-              </Paragraph>
-              <Button
+          {/* Call to Action */}
+          <C backgroundColor="$blue2" borderRadius="$4">
+            <Y padding="$4" space="$2">
+              <T fontWeight="bold">{t('marketPrices.helpImprove')}</T>
+              <P fontSize="$2">
+                {t('marketPrices.helpImproveDescription')}
+              </P>
+              <B
                 marginTop="$2"
-                onPress={() => navigation.navigate('PriceTrends')}
+                backgroundColor="$blue9"
+                color="white"
+                onPress={handleReportPrice}
               >
-                {t('marketPrices.viewTrends')}
-              </Button>
-            </YStack>
-          </Card>
-        </YStack>
-      </ScrollView>
+                {t('marketPrices.reportPrice')}
+              </B>
+            </Y>
+          </C>
+        </Y>
+      </S>
     </SafeAreaView>
   );
 }

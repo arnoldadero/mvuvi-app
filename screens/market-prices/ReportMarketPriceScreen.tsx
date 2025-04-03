@@ -9,6 +9,18 @@ interface ReportMarketPriceScreenProps {
   navigation: any;
 }
 
+// Type aliases for Tamagui components
+const Y: any = YStack;
+const H: any = H2;
+const T: any = Text;
+const I: any = Input;
+const B: any = Button;
+const F: any = Form;
+const P: any = Paragraph;
+const X: any = XStack;
+const Se: any = Select;
+const S: any = ScrollView;
+
 // Define fish species options
 const fishSpecies = [
   'Nile Perch', 'Tilapia', 'Dagaa', 'Catfish', 'Lungfish', 
@@ -106,84 +118,84 @@ export function ReportMarketPriceScreen({ navigation }: ReportMarketPriceScreenP
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: '#fff' }}>
       <StatusBar barStyle="dark-content" backgroundColor="#fff" />
-      <ScrollView>
-        <YStack padding="$4" space="$4">
-          <H2>{t('marketPrices.reportPrice')}</H2>
-          <Paragraph>{t('marketPrices.reportPriceDescription')}</Paragraph>
+      <S>
+        <Y padding="$4" space="$4">
+          <H>{t('marketPrices.reportPrice')}</H>
+          <P>{t('marketPrices.reportPriceDescription')}</P>
           
-          <Form onSubmit={handleSubmit}>
-            <YStack space="$4">
+          <F onSubmit={handleSubmit}>
+            <Y space="$4">
               {/* Fish Species Selection */}
-              <YStack space="$2">
-                <Text>{t('marketPrices.fishSpecies')}</Text>
-                <Select
+              <Y space="$2">
+                <T>{t('marketPrices.fishSpecies')}</T>
+                <Se
                   value={formData.fishSpecies}
-                  onValueChange={(value) => setFormData({ ...formData, fishSpecies: value })}
+                  onValueChange={(value: string) => setFormData({ ...formData, fishSpecies: value })}
                 >
-                  <Select.Trigger>
-                    <Select.Value placeholder={t('marketPrices.selectSpecies')} />
-                  </Select.Trigger>
-                  <Select.Content>
-                    <Select.ScrollUpButton />
-                    <Select.Viewport>
-                      <Select.Group>
+                  <Se.Trigger>
+                    <Se.Value placeholder={t('marketPrices.selectSpecies')} />
+                  </Se.Trigger>
+                  <Se.Content>
+                    <Se.ScrollUpButton />
+                    <Se.Viewport>
+                      <Se.Group>
                         {fishSpecies.map((species) => (
-                          <Select.Item key={species} value={species}>
-                            <Select.ItemText>{species}</Select.ItemText>
-                          </Select.Item>
+                          <Se.Item key={species} value={species}>
+                            <Se.ItemText>{species}</Se.ItemText>
+                          </Se.Item>
                         ))}
-                      </Select.Group>
-                    </Select.Viewport>
-                    <Select.ScrollDownButton />
-                  </Select.Content>
-                </Select>
+                      </Se.Group>
+                    </Se.Viewport>
+                    <Se.ScrollDownButton />
+                  </Se.Content>
+                </Se>
                 {validationErrors.fishSpecies && (
-                  <Text color="$red9" fontSize="$2">{validationErrors.fishSpecies}</Text>
+                  <T color="$red9" fontSize="$2">{validationErrors.fishSpecies}</T>
                 )}
-              </YStack>
+              </Y>
               
               {/* Location Selection */}
-              <YStack space="$2">
-                <Text>{t('marketPrices.location')}</Text>
+              <Y space="$2">
+                <T>{t('marketPrices.location')}</T>
                 {isLoadingLocations ? (
                   <ActivityIndicator size="small" color="#0000ff" />
                 ) : (
-                  <Select
+                  <Se
                     value={formData.location}
-                    onValueChange={(value) => setFormData({ ...formData, location: value })}
+                    onValueChange={(value: string) => setFormData({ ...formData, location: value })}
                   >
-                    <Select.Trigger>
-                      <Select.Value placeholder={t('marketPrices.selectLocation')} />
-                    </Select.Trigger>
-                    <Select.Content>
-                      <Select.ScrollUpButton />
-                      <Select.Viewport>
-                        <Select.Group>
+                    <Se.Trigger>
+                      <Se.Value placeholder={t('marketPrices.selectLocation')} />
+                    </Se.Trigger>
+                    <Se.Content>
+                      <Se.ScrollUpButton />
+                      <Se.Viewport>
+                        <Se.Group>
                           {locations.map((location) => (
-                            <Select.Item key={location.id} value={location.id}>
-                              <Select.ItemText>{location.name}</Select.ItemText>
-                            </Select.Item>
+                            <Se.Item key={location.id} value={location.id}>
+                              <Se.ItemText>{location.name}</Se.ItemText>
+                            </Se.Item>
                           ))}
-                        </Select.Group>
-                      </Select.Viewport>
-                      <Select.ScrollDownButton />
-                    </Select.Content>
-                  </Select>
+                        </Se.Group>
+                      </Se.Viewport>
+                      <Se.ScrollDownButton />
+                    </Se.Content>
+                  </Se>
                 )}
                 {validationErrors.location && (
-                  <Text color="$red9" fontSize="$2">{validationErrors.location}</Text>
+                  <T color="$red9" fontSize="$2">{validationErrors.location}</T>
                 )}
-              </YStack>
+              </Y>
               
               {/* Price Input */}
-              <YStack space="$2">
-                <Text>{t('marketPrices.price')}</Text>
-                <XStack space="$2" alignItems="center">
-                  <Text>KES</Text>
-                  <Input
+              <Y space="$2">
+                <T>{t('marketPrices.price')}</T>
+                <X space="$2" alignItems="center">
+                  <T>KES</T>
+                  <I
                     flex={1}
                     value={formData.price?.toString() || ''}
-                    onChangeText={(text) => {
+                    onChangeText={(text: string) => {
                       const numValue = parseFloat(text);
                       setFormData({ 
                         ...formData, 
@@ -193,73 +205,65 @@ export function ReportMarketPriceScreen({ navigation }: ReportMarketPriceScreenP
                     placeholder="0.00"
                     keyboardType="numeric"
                   />
-                  <Text>per</Text>
-                  <Select
+                  <T>per</T>
+                  <Se
                     value={formData.unit}
-                    onValueChange={(value) => setFormData({ ...formData, unit: value })}
+                    onValueChange={(value: string) => setFormData({ ...formData, unit: value })}
                   >
-                    <Select.Trigger width={100}>
-                      <Select.Value placeholder={t('marketPrices.selectUnit')} />
-                    </Select.Trigger>
-                    <Select.Content>
-                      <Select.ScrollUpButton />
-                      <Select.Viewport>
-                        <Select.Group>
+                    <Se.Trigger width={100}>
+                      <Se.Value placeholder={t('marketPrices.unit')} />
+                    </Se.Trigger>
+                    <Se.Content>
+                      <Se.ScrollUpButton />
+                      <Se.Viewport>
+                        <Se.Group>
                           {unitOptions.map((unit) => (
-                            <Select.Item key={unit} value={unit}>
-                              <Select.ItemText>{unit}</Select.ItemText>
-                            </Select.Item>
+                            <Se.Item key={unit} value={unit}>
+                              <Se.ItemText>{unit}</Se.ItemText>
+                            </Se.Item>
                           ))}
-                        </Select.Group>
-                      </Select.Viewport>
-                      <Select.ScrollDownButton />
-                    </Select.Content>
-                  </Select>
-                </XStack>
+                        </Se.Group>
+                      </Se.Viewport>
+                      <Se.ScrollDownButton />
+                    </Se.Content>
+                  </Se>
+                </X>
                 {validationErrors.price && (
-                  <Text color="$red9" fontSize="$2">{validationErrors.price}</Text>
+                  <T color="$red9" fontSize="$2">{validationErrors.price}</T>
                 )}
-              </YStack>
+              </Y>
               
               {/* Notes */}
-              <YStack space="$2">
-                <Text>{t('marketPrices.notes')}</Text>
-                <Input
-                  value={formData.notes}
-                  onChangeText={(text) => setFormData({ ...formData, notes: text })}
-                  placeholder={t('marketPrices.notesPlaceholder')}
+              <Y space="$2">
+                <T>{t('marketPrices.notes')}</T>
+                <I
                   multiline
                   numberOfLines={3}
                   height={80}
+                  value={formData.notes}
+                  onChangeText={(text: string) => setFormData({ ...formData, notes: text })}
+                  placeholder={t('marketPrices.notesPlaceholder')}
                 />
-              </YStack>
+              </Y>
               
               {/* Submit Button */}
-              <Button
-                onPress={handleSubmit}
-                disabled={isAddingPrice}
+              <B
+                marginTop="$2"
                 backgroundColor="$blue9"
                 color="white"
-                marginTop="$2"
+                onPress={handleSubmit}
+                disabled={isAddingPrice}
               >
                 {isAddingPrice ? (
                   <ActivityIndicator color="white" />
                 ) : (
-                  t('marketPrices.submitPrice')
+                  t('common.submit')
                 )}
-              </Button>
-              
-              <Button
-                variant="outlined"
-                onPress={() => navigation.goBack()}
-                marginTop="$2"
-              >
-                {t('common.cancel')}
-              </Button>
-            </YStack>
-          </Form>
-        </YStack>
-      </ScrollView>
+              </B>
+            </Y>
+          </F>
+        </Y>
+      </S>
     </SafeAreaView>
   );
 }

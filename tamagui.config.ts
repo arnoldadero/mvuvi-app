@@ -2,6 +2,7 @@ import { createTamagui } from 'tamagui';
 import { createInterFont } from '@tamagui/font-inter';
 import { shorthands } from '@tamagui/shorthands';
 import { themes, tokens } from '@tamagui/themes';
+import { createMedia } from '@tamagui/react-native-media-driver';
 
 const headingFont = createInterFont({
   size: {
@@ -102,7 +103,26 @@ const customTokens = {
   },
 };
 
-const config = createTamagui({
+// Create media queries
+const media = createMedia({
+  xs: { maxWidth: 660 },
+  sm: { maxWidth: 800 },
+  md: { maxWidth: 1020 },
+  lg: { maxWidth: 1280 },
+  xl: { maxWidth: 1420 },
+  xxl: { maxWidth: 1600 },
+  gtXs: { minWidth: 660 + 1 },
+  gtSm: { minWidth: 800 + 1 },
+  gtMd: { minWidth: 1020 + 1 },
+  gtLg: { minWidth: 1280 + 1 },
+  short: { maxHeight: 820 },
+  tall: { minHeight: 820 },
+  hoverNone: { hover: 'none' },
+  pointerCoarse: { pointer: 'coarse' },
+});
+
+// Create the Tamagui configuration
+const tamaguiConfig = createTamagui({
   defaultFont: 'body',
   fonts: {
     heading: headingFont,
@@ -111,28 +131,29 @@ const config = createTamagui({
   tokens: customTokens,
   themes,
   shorthands,
-  // Add media queries for responsive design
-  media: {
-    xs: { maxWidth: 660 },
-    sm: { maxWidth: 800 },
-    md: { maxWidth: 1020 },
-    lg: { maxWidth: 1280 },
-    xl: { maxWidth: 1420 },
-    xxl: { maxWidth: 1600 },
-    gtXs: { minWidth: 660 + 1 },
-    gtSm: { minWidth: 800 + 1 },
-    gtMd: { minWidth: 1020 + 1 },
-    gtLg: { minWidth: 1280 + 1 },
-    short: { maxHeight: 820 },
-    tall: { minHeight: 820 },
-    hoverNone: { hover: 'none' },
-    pointerCoarse: { pointer: 'coarse' },
+  media,
+  // Ensure proper Tamagui component props
+  defaultProps: {
+    Text: {
+      // Fix children type issues
+      children: undefined,
+    },
+    YStack: {
+      padding: undefined,
+      margin: undefined,
+    },
+    XStack: {
+      padding: undefined,
+      margin: undefined,
+    },
   },
 });
 
 // Enable type checking for the design system
 declare module 'tamagui' {
+  // eslint-disable-next-line @typescript-eslint/no-empty-interface
   interface TamaguiCustomConfig extends ReturnType<typeof createTamagui> {}
 }
 
-export default config;
+// Export the configuration
+export default tamaguiConfig;

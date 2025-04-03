@@ -8,6 +8,16 @@ interface RegisterScreenProps {
   navigation: any;
 }
 
+// Type aliases for Tamagui components
+const Y: any = YStack;
+const H: any = H2;
+const T: any = Text;
+const I: any = Input;
+const B: any = Button;
+const F: any = Form;
+const P: any = Paragraph;
+const X: any = XStack;
+
 export function RegisterScreen({ navigation }: RegisterScreenProps) {
   const { t } = useTranslation();
   const [email, setEmail] = useState('');
@@ -63,78 +73,79 @@ export function RegisterScreen({ navigation }: RegisterScreenProps) {
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: '#fff' }}>
       <StatusBar barStyle="dark-content" backgroundColor="#fff" />
-      <YStack padding="$4" space="$4" flex={1} justifyContent="center">
-        <YStack space="$2" alignItems="center" marginBottom="$4">
-          <H2>{t('auth.register')}</H2>
-          <Paragraph>{t('auth.registerDescription')}</Paragraph>
-        </YStack>
+      <Y padding="$4" space="$4" flex={1} justifyContent="center">
+        <Y space="$2" alignItems="center" marginBottom="$4">
+          <H>{t('auth.register')}</H>
+          <P>{t('auth.registerDescription')}</P>
+        </Y>
 
-        <Form onSubmit={handleRegister}>
-          <YStack space="$4">
-            <YStack space="$2">
-              <Text>{t('auth.email')}</Text>
-              <Input
+        <F onSubmit={handleRegister}>
+          <Y space="$4">
+            <Y space="$2">
+              <T>{t('auth.email')}</T>
+              <I
                 placeholder={t('auth.emailPlaceholder')}
                 value={email}
                 onChangeText={setEmail}
                 autoCapitalize="none"
                 keyboardType="email-address"
               />
-            </YStack>
+            </Y>
 
-            <YStack space="$2">
-              <Text>{t('auth.phoneNumber')}</Text>
-              <Input
+            <Y space="$2">
+              <T>{t('auth.phoneNumber')}</T>
+              <I
                 placeholder={t('auth.phoneNumberPlaceholder')}
                 value={phoneNumber}
                 onChangeText={setPhoneNumber}
                 keyboardType="phone-pad"
               />
-            </YStack>
+            </Y>
 
-            <YStack space="$2">
-              <Text>{t('auth.password')}</Text>
-              <Input
+            <Y space="$2">
+              <T>{t('auth.password')}</T>
+              <I
                 placeholder={t('auth.passwordPlaceholder')}
                 value={password}
                 onChangeText={setPassword}
                 secureTextEntry
               />
-            </YStack>
+            </Y>
 
-            <YStack space="$2">
-              <Text>{t('auth.confirmPassword')}</Text>
-              <Input
+            <Y space="$2">
+              <T>{t('auth.confirmPassword')}</T>
+              <I
                 placeholder={t('auth.confirmPasswordPlaceholder')}
                 value={confirmPassword}
                 onChangeText={setConfirmPassword}
                 secureTextEntry
               />
-            </YStack>
+            </Y>
 
-            <Button
+            <B
               onPress={handleRegister}
               disabled={loading}
-              backgroundColor="$blue9"
-              color="white"
+              theme="blue"
+              themeInverse
+              size="$4"
               marginTop="$2"
             >
               {loading ? <ActivityIndicator color="white" /> : t('auth.createAccount')}
-            </Button>
-          </YStack>
-        </Form>
+            </B>
+          </Y>
+        </F>
 
-        <XStack justifyContent="center" marginTop="$4">
-          <Text>{t('auth.alreadyHaveAccount')} </Text>
-          <Text
-            color="$blue9"
+        <X justifyContent="center" marginTop="$4">
+          <T>{t('auth.alreadyHaveAccount')} </T>
+          <T
+            theme="blue"
             onPress={() => navigation.navigate('Login')}
             fontWeight="bold"
           >
             {t('auth.login')}
-          </Text>
-        </XStack>
-      </YStack>
+          </T>
+        </X>
+      </Y>
     </SafeAreaView>
   );
 }

@@ -21,7 +21,12 @@ export default function App() {
   const colorScheme = useColorScheme();
   
   return (
-    <TamaguiProvider config={config} defaultTheme={colorScheme || 'light'}>
+    <TamaguiProvider 
+      config={config}
+      defaultTheme={colorScheme === 'dark' ? 'dark' : 'light'}
+      disableInjectCSS
+      disableRootThemeClass
+    >
       <SafeAreaProvider>
         <QueryClientProvider client={queryClient}>
           <AppNavigator />

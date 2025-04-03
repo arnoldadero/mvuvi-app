@@ -8,6 +8,18 @@ interface FishSpeciesGuideScreenProps {
   navigation: any;
 }
 
+// Type aliases for Tamagui components
+const Y: any = YStack;
+const H: any = H2;
+const T: any = Text;
+const C: any = Card;
+const B: any = Button;
+const X: any = XStack;
+const P: any = Paragraph;
+const I: any = Input;
+const S: any = ScrollView;
+const V: any = View;
+
 // Fish species data
 const fishSpeciesData = [
   {
@@ -117,39 +129,39 @@ export function FishSpeciesGuideScreen({ navigation }: FishSpeciesGuideScreenPro
   };
 
   const renderSpeciesItem = ({ item }: { item: typeof fishSpeciesData[0] }) => (
-    <Card 
+    <C 
       borderRadius="$4" 
       bordered
       marginBottom="$3"
       pressStyle={{ opacity: 0.8 }}
       onPress={() => handleSpeciesPress(item)}
     >
-      <XStack padding="$4" alignItems="center" space="$3">
+      <X padding="$4" alignItems="center" space="$3">
         <Image
           source={item.image}
           style={{ width: 80, height: 80, borderRadius: 8 }}
           resizeMode="cover"
         />
-        <YStack flex={1}>
-          <Text fontWeight="bold">{item.name}</Text>
-          <Text fontSize="$2" fontStyle="italic">{item.scientificName}</Text>
-          <Text fontSize="$2">{t('sustainableFishing.localName')}: {item.localName}</Text>
-          <XStack alignItems="center" space="$1" marginTop="$1">
-            <View 
+        <Y flex={1}>
+          <T fontWeight="bold">{item.name}</T>
+          <T fontSize="$2" fontStyle="italic">{item.scientificName}</T>
+          <T fontSize="$2">{t('sustainableFishing.localName')}: {item.localName}</T>
+          <X alignItems="center" space="$1" marginTop="$1">
+            <V 
               width={10} 
               height={10} 
               borderRadius={5} 
               backgroundColor={
-                item.status === 'Vulnerable' ? '$orange9' : 
-                item.status === 'Near Threatened' ? '$yellow9' : 
-                '$green9'
+                item.status === 'Vulnerable' ? '#FF9900' : 
+                item.status === 'Near Threatened' ? '#FFFF00' : 
+                '#00FF00'
               } 
             />
-            <Text fontSize="$2">{item.status}</Text>
-          </XStack>
-        </YStack>
-      </XStack>
-    </Card>
+            <T fontSize="$2">{item.status}</T>
+          </X>
+        </Y>
+      </X>
+    </C>
   );
 
   return (
@@ -158,16 +170,16 @@ export function FishSpeciesGuideScreen({ navigation }: FishSpeciesGuideScreenPro
       
       {selectedSpecies ? (
         // Species details view
-        <ScrollView>
-          <YStack padding="$4" space="$4">
-            <Button
-              icon={<ArrowLeft />}
+        <S>
+          <Y padding="$4" space="$4">
+            <B
+              icon={<ArrowLeft size={"$4" as any} />}
               variant="outlined"
               alignSelf="flex-start"
               onPress={handleBackPress}
             >
               {t('common.back')}
-            </Button>
+            </B>
             
             <Image
               source={selectedSpecies.image}
@@ -175,86 +187,86 @@ export function FishSpeciesGuideScreen({ navigation }: FishSpeciesGuideScreenPro
               resizeMode="cover"
             />
             
-            <YStack space="$2">
-              <H2>{selectedSpecies.name}</H2>
-              <Text fontStyle="italic">{selectedSpecies.scientificName}</Text>
-              <Text>{t('sustainableFishing.localName')}: {selectedSpecies.localName}</Text>
+            <Y space="$2">
+              <H>{selectedSpecies.name}</H>
+              <T fontStyle="italic">{selectedSpecies.scientificName}</T>
+              <T>{t('sustainableFishing.localName')}: {selectedSpecies.localName}</T>
               
-              <XStack alignItems="center" space="$1" marginTop="$1">
-                <View 
+              <X alignItems="center" space="$1" marginTop="$1">
+                <V 
                   width={12} 
                   height={12} 
                   borderRadius={6} 
                   backgroundColor={
-                    selectedSpecies.status === 'Vulnerable' ? '$orange9' : 
-                    selectedSpecies.status === 'Near Threatened' ? '$yellow9' : 
-                    '$green9'
+                    selectedSpecies.status === 'Vulnerable' ? '#FF9900' : 
+                    selectedSpecies.status === 'Near Threatened' ? '#FFFF00' : 
+                    '#00FF00'
                   } 
                 />
-                <Text>{t('sustainableFishing.conservationStatus')}: {selectedSpecies.status}</Text>
-              </XStack>
-            </YStack>
+                <T>{t('sustainableFishing.conservationStatus')}: {selectedSpecies.status}</T>
+              </X>
+            </Y>
             
-            <Paragraph>{selectedSpecies.description}</Paragraph>
+            <P>{selectedSpecies.description}</P>
             
-            <Card borderRadius="$4" bordered>
-              <YStack padding="$4" space="$3">
-                <Text fontWeight="bold">{t('sustainableFishing.sizeLimits')}</Text>
+            <C borderRadius="$4" bordered>
+              <Y padding="$4" space="$3">
+                <T fontWeight="bold">{t('sustainableFishing.sizeLimits')}</T>
                 
-                <XStack space="$4" justifyContent="space-around">
-                  <YStack alignItems="center">
-                    <Text fontSize="$6" fontWeight="bold">{selectedSpecies.minSize} cm</Text>
-                    <Text fontSize="$2">{t('sustainableFishing.minimumSize')}</Text>
-                  </YStack>
+                <X space="$4" justifyContent="space-around">
+                  <Y alignItems="center">
+                    <T fontSize="$6" fontWeight="bold">{selectedSpecies.minSize} cm</T>
+                    <T fontSize="$2">{t('sustainableFishing.minimumSize')}</T>
+                  </Y>
                   
-                  <YStack alignItems="center">
-                    <Text fontSize="$6" fontWeight="bold">{selectedSpecies.maturitySize} cm</Text>
-                    <Text fontSize="$2">{t('sustainableFishing.maturitySize')}</Text>
-                  </YStack>
-                </XStack>
-              </YStack>
-            </Card>
+                  <Y alignItems="center">
+                    <T fontSize="$6" fontWeight="bold">{selectedSpecies.maturitySize} cm</T>
+                    <T fontSize="$2">{t('sustainableFishing.maturitySize')}</T>
+                  </Y>
+                </X>
+              </Y>
+            </C>
             
-            <Card borderRadius="$4" bordered backgroundColor="$blue2">
-              <YStack padding="$4" space="$3">
-                <Text fontWeight="bold">{t('sustainableFishing.bestPractices')}</Text>
+            <C borderRadius="$4" bordered backgroundColor="#ADD8E6">
+              <Y padding="$4" space="$3">
+                <T fontWeight="bold">{t('sustainableFishing.bestPractices')}</T>
                 
                 {selectedSpecies.bestPractices.map((practice, index) => (
-                  <XStack key={index} space="$2" alignItems="flex-start">
-                    <Info size="$1" color="$blue9" />
-                    <Text flex={1}>{practice}</Text>
-                  </XStack>
+                  <X key={index} space="$2" alignItems="flex-start">
+                    <Info size={"$4" as any} color={"$blue10" as any} />
+                    <T flex={1}>{practice}</T>
+                  </X>
                 ))}
-              </YStack>
-            </Card>
+              </Y>
+            </C>
             
-            <Button
-              backgroundColor="$green9"
-              color="white"
+            <B
+              backgroundColor="#00FF00"
+              color="#FFFFFF"
               onPress={() => navigation.navigate('FishingRegulations')}
             >
               {t('sustainableFishing.viewRegulations')}
-            </Button>
-          </YStack>
-        </ScrollView>
+            </B>
+          </Y>
+        </S>
       ) : (
         // Species list view
-        <YStack flex={1} padding="$4">
-          <XStack justifyContent="space-between" alignItems="center" marginBottom="$4">
-            <Button
-              icon={<ArrowLeft />}
+        <Y flex={1} padding="$4">
+          <X justifyContent="space-between" alignItems="center" marginBottom="$4">
+            <B
+              icon={<ArrowLeft size={"$4" as any} />}
               variant="outlined"
               onPress={handleBackPress}
             >
               {t('common.back')}
-            </Button>
+            </B>
             
-            <H2>{t('sustainableFishing.fishSpeciesGuide')}</H2>
-          </XStack>
+            <H>{t('sustainableFishing.fishSpeciesGuide')}</H>
+          </X>
           
-          <XStack 
+          <X 
             borderWidth={1}
-            borderColor="$gray5"
+            borderColor="#CCCCCC"
             borderRadius="$4"
             paddingHorizontal="$3"
             paddingVertical="$2"
@@ -262,15 +274,15 @@ export function FishSpeciesGuideScreen({ navigation }: FishSpeciesGuideScreenPro
             alignItems="center"
             space="$2"
           >
-            <Search size="$1" color="$gray9" />
-            <Input
+            <Search size={"$4" as any} color={"$gray10" as any} />
+            <I
               flex={1}
               placeholder={t('sustainableFishing.searchSpecies')}
               value={searchQuery}
               onChangeText={setSearchQuery}
               borderWidth={0}
             />
-          </XStack>
+          </X>
           
           <FlatList
             data={filteredSpecies}
@@ -278,12 +290,12 @@ export function FishSpeciesGuideScreen({ navigation }: FishSpeciesGuideScreenPro
             keyExtractor={(item) => item.id}
             showsVerticalScrollIndicator={false}
             ListEmptyComponent={
-              <Card padding="$4" marginTop="$2">
-                <Text textAlign="center">{t('sustainableFishing.noSpeciesFound')}</Text>
-              </Card>
+              <C padding="$4" marginTop="$2">
+                <T textAlign="center">{t('sustainableFishing.noSpeciesFound')}</T>
+              </C>
             }
           />
-        </YStack>
+        </Y>
       )}
     </SafeAreaView>
   );

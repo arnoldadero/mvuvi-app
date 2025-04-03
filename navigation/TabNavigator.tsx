@@ -11,6 +11,9 @@ import { SafetyScreen } from '../screens/safety/SafetyScreen';
 import { SustainableFishingScreen } from '../screens/sustainable-fishing/SustainableFishingScreen';
 import { RecordCatchScreen } from '../screens/catch-data/RecordCatchScreen';
 
+// Import ProfileButton component
+import { ProfileButton } from '../components/profile/ProfileButton';
+
 // Define the tab navigator param list
 export type TabParamList = {
   Weather: undefined;
@@ -52,6 +55,8 @@ export function TabNavigator() {
           fontSize: 12,
         },
         headerShown: true,
+        // Add profile button to the header right of all tab screens
+        headerRight: () => <ProfileButton />,
       })}
     >
       <Tab.Screen 

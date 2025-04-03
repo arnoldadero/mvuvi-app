@@ -13,6 +13,16 @@ interface ChecklistItem {
   description: string;
 }
 
+// Type aliases for Tamagui components
+const Y: any = YStack;
+const H: any = H2;
+const T: any = Text;
+const P: any = Paragraph;
+const X: any = XStack;
+const C: any = Card;
+const B: any = Button;
+const Ch: any = Checkbox;
+
 export function SafetyChecklistScreen({ navigation }: SafetyChecklistScreenProps) {
   const { t } = useTranslation();
   
@@ -94,105 +104,105 @@ export function SafetyChecklistScreen({ navigation }: SafetyChecklistScreenProps
     <SafeAreaView style={{ flex: 1, backgroundColor: '#fff' }}>
       <StatusBar barStyle="dark-content" backgroundColor="#fff" />
       <ScrollView>
-        <YStack padding="$4" space="$4">
-          <H2>{t('safety.safetyChecklist')}</H2>
-          <Paragraph>{t('safety.safetyChecklistScreenDescription')}</Paragraph>
+        <Y $padding={"$4" as any} $space={"$4" as any}>
+          <H>{t('safety.safetyChecklist')}</H>
+          <P>{t('safety.safetyChecklistScreenDescription')}</P>
           
           {/* Completion Progress */}
-          <Card borderRadius="$4" backgroundColor="$blue2">
-            <YStack padding="$4" space="$2">
-              <Text fontWeight="bold">{t('safety.completion')}: {getCompletionPercentage()}%</Text>
-              <XStack height={10} backgroundColor="$gray5" borderRadius="$full" overflow="hidden">
-                <YStack 
-                  backgroundColor="$blue9" 
-                  width={`${getCompletionPercentage()}%`} 
+          <C borderRadius={"$4" as any} backgroundColor={"$blue2" as any}>
+            <Y $padding={"$4" as any} $space={"$2" as any}>
+              <T fontWeight="bold">{t('safety.completion')}: {getCompletionPercentage()}%</T>
+              <X height={10} backgroundColor={"$gray5" as any} borderRadius={"$full" as any} overflow="hidden">
+                <Y 
+                  backgroundColor={"$blue9" as any} 
+                  width={`${getCompletionPercentage()}%` as any} 
                   height="100%" 
                 />
-              </XStack>
-              <Button 
-                marginTop="$2" 
+              </X>
+              <B 
+                $marginTop={"$2" as any} 
                 variant="outlined" 
                 onPress={resetChecklist}
                 disabled={getCompletionPercentage() === 0}
               >
                 {t('safety.resetChecklist')}
-              </Button>
-            </YStack>
-          </Card>
+              </B>
+            </Y>
+          </C>
           
           {/* Checklist Items */}
-          <YStack space="$3">
+          <Y $space={"$3" as any}>
             {checklistItems.map((item) => (
-              <Card key={item.id} borderRadius="$4" bordered>
-                <YStack padding="$3">
-                  <XStack alignItems="center" space="$2">
-                    <Checkbox
+              <C key={item.id} borderRadius={"$4" as any} bordered>
+                <Y $padding={"$3" as any}>
+                  <X $alignItems="center" $space={"$2" as any}>
+                    <Ch
                       checked={checkedItems[item.id] || false}
                       onCheckedChange={() => handleToggleItem(item.id)}
-                      size="$4"
+                      size={"$4" as any}
                     >
                       <Checkbox.Indicator>
-                        <Text>✓</Text>
+                        <T>✓</T>
                       </Checkbox.Indicator>
-                    </Checkbox>
-                    <Text 
+                    </Ch>
+                    <T 
                       fontWeight="bold" 
                       textDecorationLine={checkedItems[item.id] ? 'line-through' : 'none'}
                     >
                       {item.title}
-                    </Text>
-                  </XStack>
-                  <Paragraph 
-                    marginTop="$1" 
-                    marginLeft="$6" 
-                    fontSize="$2"
+                    </T>
+                  </X>
+                  <P 
+                    $marginTop={"$1" as any} 
+                    $marginLeft={"$6" as any} 
+                    fontSize={"$2" as any}
                     opacity={checkedItems[item.id] ? 0.6 : 1}
                   >
                     {item.description}
-                  </Paragraph>
-                </YStack>
-              </Card>
+                  </P>
+                </Y>
+              </C>
             ))}
-          </YStack>
+          </Y>
           
           {/* Safety Tips */}
-          <Card borderRadius="$4" backgroundColor="$yellow2">
-            <YStack padding="$4" space="$2">
-              <Text fontWeight="bold">{t('safety.additionalTips')}</Text>
-              <Paragraph fontSize="$2">{t('safety.additionalTipsContent')}</Paragraph>
-            </YStack>
-          </Card>
+          <C borderRadius={"$4" as any} backgroundColor={"$yellow2" as any}>
+            <Y $padding={"$4" as any} $space={"$2" as any}>
+              <T fontWeight="bold">{t('safety.additionalTips')}</T>
+              <P fontSize={"$2" as any}>{t('safety.additionalTipsContent')}</P>
+            </Y>
+          </C>
           
           {/* Emergency Numbers */}
-          <Card borderRadius="$4" backgroundColor="$red2">
-            <YStack padding="$4" space="$2">
-              <Text fontWeight="bold">{t('safety.emergencyNumbers')}</Text>
-              <YStack space="$1">
-                <XStack justifyContent="space-between">
-                  <Text>{t('safety.coastGuard')}</Text>
-                  <Text fontWeight="bold">999</Text>
-                </XStack>
-                <XStack justifyContent="space-between">
-                  <Text>{t('safety.police')}</Text>
-                  <Text fontWeight="bold">999</Text>
-                </XStack>
-                <XStack justifyContent="space-between">
-                  <Text>{t('safety.ambulance')}</Text>
-                  <Text fontWeight="bold">999</Text>
-                </XStack>
-              </YStack>
-            </YStack>
-          </Card>
+          <C borderRadius={"$4" as any} backgroundColor={"$red2" as any}>
+            <Y $padding={"$4" as any} $space={"$2" as any}>
+              <T fontWeight="bold">{t('safety.emergencyNumbers')}</T>
+              <Y $space={"$1" as any}>
+                <X $justifyContent="space-between">
+                  <T>{t('safety.coastGuard')}</T>
+                  <T fontWeight="bold">999</T>
+                </X>
+                <X $justifyContent="space-between">
+                  <T>{t('safety.police')}</T>
+                  <T fontWeight="bold">999</T>
+                </X>
+                <X $justifyContent="space-between">
+                  <T>{t('safety.ambulance')}</T>
+                  <T fontWeight="bold">999</T>
+                </X>
+              </Y>
+            </Y>
+          </C>
           
           {/* Back Button */}
-          <Button
+          <B
             variant="outlined"
             onPress={() => navigation.goBack()}
-            marginTop="$2"
+            $marginTop={"$2" as any}
           >
             {t('common.back')}
-          </Button>
-        </YStack>
+          </B>
+        </Y>
       </ScrollView>
     </SafeAreaView>
   );

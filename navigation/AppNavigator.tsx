@@ -16,9 +16,15 @@ import { FishSpeciesGuideScreen } from '../screens/sustainable-fishing/FishSpeci
 import { FishingRegulationsScreen } from '../screens/sustainable-fishing/FishingRegulationsScreen';
 import { FishingSeasonalCalendarScreen } from '../screens/sustainable-fishing/FishingSeasonalCalendarScreen';
 import { CatchRecordDetailsScreen } from '../screens/catch-data/CatchRecordDetailsScreen';
+import { UserProfileScreen } from '../screens/profile/UserProfileScreen';
+import { SettingsScreen } from '../screens/profile/SettingsScreen';
+import { HelpScreen } from '../screens/profile/HelpScreen';
 
 // Import TabNavigator
 import { TabNavigator } from './TabNavigator';
+
+// Import UI components
+import { ProfileButton } from '../components/profile/ProfileButton';
 
 // Define the navigator type
 export type RootStackParamList = {
@@ -47,6 +53,11 @@ export type RootStackParamList = {
   
   // Catch Data screens
   CatchRecordDetails: { catchId: string };
+  
+  // Profile and Settings screens
+  UserProfile: undefined;
+  Settings: undefined;
+  Help: undefined;
 };
 
 // Define screen props types
@@ -91,57 +102,108 @@ export function AppNavigator() {
             <Stack.Screen 
               name="MainTabs" 
               component={TabNavigator} 
-              options={{ headerShown: false }} 
+              options={{ 
+                headerShown: false,
+                // Add profile button to header right
+                headerRight: () => <ProfileButton />,
+              }} 
             />
             
             {/* Weather related screens */}
             <Stack.Screen 
               name="MoonPhase" 
               component={MoonPhaseScreen} 
-              options={{ title: t('moonPhase.title') }} 
+              options={{ 
+                title: t('moonPhase.title'),
+                headerRight: () => <ProfileButton mini />,
+              }} 
             />
             
             {/* Market Prices related screens */}
             <Stack.Screen 
               name="ReportMarketPrice" 
               component={ReportMarketPriceScreen} 
-              options={{ title: t('marketPrices.reportPrice') }} 
+              options={{ 
+                title: t('marketPrices.reportPrice'),
+                headerRight: () => <ProfileButton mini />,
+              }} 
             />
             
             {/* Safety related screens */}
             <Stack.Screen 
               name="EmergencyContacts" 
               component={EmergencyContactsScreen} 
-              options={{ title: t('safety.emergencyContacts') }} 
+              options={{ 
+                title: t('safety.emergencyContacts'),
+                headerRight: () => <ProfileButton mini />,
+              }} 
             />
             <Stack.Screen 
               name="SafetyChecklist" 
               component={SafetyChecklistScreen} 
-              options={{ title: t('safety.checklist') }} 
+              options={{ 
+                title: t('safety.checklist'),
+                headerRight: () => <ProfileButton mini />,
+              }} 
             />
             
             {/* Sustainable Fishing related screens */}
             <Stack.Screen 
               name="FishSpeciesGuide" 
               component={FishSpeciesGuideScreen} 
-              options={{ title: t('sustainableFishing.speciesGuide') }} 
+              options={{ 
+                title: t('sustainableFishing.speciesGuide'),
+                headerRight: () => <ProfileButton mini />,
+              }} 
             />
             <Stack.Screen 
               name="FishingRegulations" 
               component={FishingRegulationsScreen} 
-              options={{ title: t('sustainableFishing.regulations') }} 
+              options={{ 
+                title: t('sustainableFishing.regulations'),
+                headerRight: () => <ProfileButton mini />,
+              }} 
             />
             <Stack.Screen 
               name="FishingSeasonalCalendar" 
               component={FishingSeasonalCalendarScreen} 
-              options={{ title: t('sustainableFishing.seasonalCalendar') }} 
+              options={{ 
+                title: t('sustainableFishing.seasonalCalendar'),
+                headerRight: () => <ProfileButton mini />,
+              }} 
             />
             
             {/* Catch Data related screens */}
             <Stack.Screen 
               name="CatchRecordDetails" 
               component={CatchRecordDetailsScreen} 
-              options={{ title: t('catchData.recordDetails') }} 
+              options={{ 
+                title: t('catchData.recordDetails'),
+                headerRight: () => <ProfileButton mini />,
+              }} 
+            />
+            
+            {/* Profile and Settings screens */}
+            <Stack.Screen 
+              name="UserProfile" 
+              component={UserProfileScreen} 
+              options={{ 
+                title: t('profile.userProfile'),
+              }} 
+            />
+            <Stack.Screen 
+              name="Settings" 
+              component={SettingsScreen} 
+              options={{ 
+                title: t('profile.settings'),
+              }} 
+            />
+            <Stack.Screen 
+              name="Help" 
+              component={HelpScreen} 
+              options={{ 
+                title: t('help.helpAndSupport'),
+              }} 
             />
           </>
         )}
