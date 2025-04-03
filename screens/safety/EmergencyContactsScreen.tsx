@@ -18,11 +18,22 @@ const contactSchema = z.object({
 
 type ContactFormData = z.infer<typeof contactSchema>;
 
+// Type aliases for Tamagui components
+const Y: any = YStack;
+const H: any = H2;
+const P: any = Paragraph;
+const T: any = Text;
+const X: any = XStack;
+const C: any = Card;
+const I: any = Input;
+const B: any = Button;
+const F: any = Form;
+
 export function EmergencyContactsScreen({ navigation }: EmergencyContactsScreenProps) {
   const { t } = useTranslation();
-  const { 
-    emergencyContacts, 
-    isLoadingContacts, 
+  const {
+    emergencyContacts,
+    isLoadingContacts,
     isAddingContact,
     isRemovingContact,
     fetchEmergencyContacts,
@@ -72,7 +83,7 @@ export function EmergencyContactsScreen({ navigation }: EmergencyContactsScreenP
         ...formData,
         id: editingContactId || undefined,
       });
-      
+
       // Reset form
       setFormData({
         name: '',
@@ -81,18 +92,18 @@ export function EmergencyContactsScreen({ navigation }: EmergencyContactsScreenP
       });
       setIsEditing(false);
       setEditingContactId(null);
-      
+
       Alert.alert(
         t('common.success'),
-        isEditing 
-          ? t('safety.contactUpdated') 
+        isEditing
+          ? t('safety.contactUpdated')
           : t('safety.contactAdded')
       );
     } catch (error) {
       Alert.alert(
         t('common.error'),
-        isEditing 
-          ? t('safety.updateContactError') 
+        isEditing
+          ? t('safety.updateContactError')
           : t('safety.addContactError')
       );
     }
@@ -151,62 +162,62 @@ export function EmergencyContactsScreen({ navigation }: EmergencyContactsScreenP
     <SafeAreaView style={{ flex: 1, backgroundColor: '#fff' }}>
       <StatusBar barStyle="dark-content" backgroundColor="#fff" />
       <ScrollView>
-        <YStack padding="$4" space="$4">
-          <H2>{t('safety.emergencyContacts')}</H2>
-          <Paragraph>{t('safety.emergencyContactsDescription')}</Paragraph>
-          
+        <Y padding="$4" space="$4">
+          <H>{t('safety.emergencyContacts')}</H>
+          <P>{t('safety.emergencyContactsDescription')}</P>
+
           {/* Contact Form */}
-          <Card borderRadius="$4">
-            <YStack padding="$4" space="$3">
-              <Text fontWeight="bold">
+          <C borderRadius="$4">
+            <Y padding="$4" space="$3">
+              <T fontWeight="bold">
                 {isEditing ? t('safety.editContact') : t('safety.addContact')}
-              </Text>
-              
-              <Form onSubmit={handleSubmit}>
-                <YStack space="$3">
+              </T>
+
+              <F onSubmit={handleSubmit}>
+                <Y space="$3">
                   {/* Name Input */}
-                  <YStack space="$1">
-                    <Text>{t('safety.contactName')}</Text>
-                    <Input
+                  <Y space="$1">
+                    <T>{t('safety.contactName')}</T>
+                    <I
                       value={formData.name}
-                      onChangeText={(text) => setFormData({ ...formData, name: text })}
+                      onChangeText={(text: string) => setFormData({ ...formData, name: text })}
                       placeholder={t('safety.contactNamePlaceholder')}
                     />
                     {validationErrors.name && (
-                      <Text color="$red9" fontSize="$2">{validationErrors.name}</Text>
+                      <T color="$red9" fontSize="$2">{validationErrors.name}</T>
                     )}
-                  </YStack>
-                  
+                  </Y>
+
                   {/* Phone Number Input */}
-                  <YStack space="$1">
-                    <Text>{t('safety.phoneNumber')}</Text>
-                    <Input
+                  <Y space="$1">
+                    <T>{t('safety.phoneNumber')}</T>
+                    <I
                       value={formData.phoneNumber}
-                      onChangeText={(text) => setFormData({ ...formData, phoneNumber: text })}
+                      onChangeText={(text: string) => setFormData({ ...formData, phoneNumber: text })}
                       placeholder={t('safety.phoneNumberPlaceholder')}
                       keyboardType="phone-pad"
                     />
                     {validationErrors.phoneNumber && (
-                      <Text color="$red9" fontSize="$2">{validationErrors.phoneNumber}</Text>
+                      <T color="$red9" fontSize="$2">{validationErrors.phoneNumber}</T>
                     )}
-                  </YStack>
-                  
+                  </Y>
+
                   {/* Relationship Input */}
-                  <YStack space="$1">
-                    <Text>{t('safety.relationship')}</Text>
-                    <Input
+                  <Y space="$1">
+                    <T>{t('safety.relationship')}</T>
+                    <I
                       value={formData.relationship}
-                      onChangeText={(text) => setFormData({ ...formData, relationship: text })}
+                      onChangeText={(text: string) => setFormData({ ...formData, relationship: text })}
                       placeholder={t('safety.relationshipPlaceholder')}
                     />
                     {validationErrors.relationship && (
-                      <Text color="$red9" fontSize="$2">{validationErrors.relationship}</Text>
+                      <T color="$red9" fontSize="$2">{validationErrors.relationship}</T>
                     )}
-                  </YStack>
-                  
+                  </Y>
+
                   {/* Submit Button */}
-                  <XStack space="$2" marginTop="$2">
-                    <Button
+                  <X space="$2" marginTop="$2">
+                    <B
                       flex={1}
                       backgroundColor="$blue9"
                       color="white"
@@ -220,55 +231,55 @@ export function EmergencyContactsScreen({ navigation }: EmergencyContactsScreenP
                       ) : (
                         t('common.add')
                       )}
-                    </Button>
-                    
+                    </B>
+
                     {isEditing && (
-                      <Button
+                      <B
                         flex={1}
                         variant="outlined"
                         onPress={handleCancel}
                       >
                         {t('common.cancel')}
-                      </Button>
+                      </B>
                     )}
-                  </XStack>
-                </YStack>
-              </Form>
-            </YStack>
-          </Card>
-          
+                  </X>
+                </Y>
+              </F>
+            </Y>
+          </C>
+
           {/* Contact List */}
-          <YStack space="$2">
-            <Text fontWeight="bold" fontSize="$5">{t('safety.yourContacts')}</Text>
-            
+          <Y space="$2">
+            <T fontWeight="bold" fontSize="$5">{t('safety.yourContacts')}</T>
+
             {isLoadingContacts ? (
-              <YStack alignItems="center" padding="$4">
+              <Y alignItems="center" padding="$4">
                 <ActivityIndicator size="small" color="#0000ff" />
-              </YStack>
+              </Y>
             ) : emergencyContacts.length === 0 ? (
-              <Card padding="$4" marginTop="$2">
-                <Text textAlign="center">{t('safety.noContactsAdded')}</Text>
-              </Card>
+              <C padding="$4" marginTop="$2">
+                <T textAlign="center">{t('safety.noContactsAdded')}</T>
+              </C>
             ) : (
-              <YStack space="$2">
+              <Y space="$2">
                 {emergencyContacts.map((contact) => (
-                  <Card key={contact.id} borderRadius="$4" bordered>
-                    <YStack padding="$3">
-                      <XStack justifyContent="space-between">
-                        <Text fontWeight="bold">{contact.name}</Text>
-                        <Text fontSize="$2" color="$gray9">{contact.relationship}</Text>
-                      </XStack>
-                      <Text>{contact.phoneNumber}</Text>
-                      
-                      <XStack space="$2" marginTop="$2">
-                        <Button
+                  <C key={contact.id} borderRadius="$4" bordered>
+                    <Y padding="$3">
+                      <X justifyContent="space-between">
+                        <T fontWeight="bold">{contact.name}</T>
+                        <T fontSize="$2" color="$gray9">{contact.relationship}</T>
+                      </X>
+                      <T>{contact.phoneNumber}</T>
+
+                      <X space="$2" marginTop="$2">
+                        <B
                           size="$2"
                           flex={1}
                           onPress={() => handleEdit(contact.id)}
                         >
                           {t('common.edit')}
-                        </Button>
-                        <Button
+                        </B>
+                        <B
                           size="$2"
                           flex={1}
                           backgroundColor="$red9"
@@ -281,24 +292,24 @@ export function EmergencyContactsScreen({ navigation }: EmergencyContactsScreenP
                           ) : (
                             t('common.delete')
                           )}
-                        </Button>
-                      </XStack>
-                    </YStack>
-                  </Card>
+                        </B>
+                      </X>
+                    </Y>
+                  </C>
                 ))}
-              </YStack>
+              </Y>
             )}
-          </YStack>
-          
+          </Y>
+
           {/* Back Button */}
-          <Button
+          <B
             variant="outlined"
             onPress={() => navigation.goBack()}
             marginTop="$2"
           >
             {t('common.back')}
-          </Button>
-        </YStack>
+          </B>
+        </Y>
       </ScrollView>
     </SafeAreaView>
   );

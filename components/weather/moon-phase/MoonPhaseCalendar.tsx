@@ -4,10 +4,22 @@ import { XStack, YStack, Text, Card, Image, H3, H4, Paragraph, ScrollView } from
 import { MoonPhase, MoonPhaseData, getMoonPhaseCalendar, translateMoonPhaseToSwahili } from '../../../services/moon/moonPhaseService';
 import { useTranslation } from 'react-i18next';
 
+// Type aliases for Tamagui components
+const X: any = XStack;
+const Y: any = YStack;
+const T: any = Text;
+const C: any = Card;
+const I: any = Image;
+const H3C: any = H3;
+const H4C: any = H4;
+const P: any = Paragraph;
+const S: any = ScrollView;
+
 interface MoonPhaseCalendarProps {
   days?: number;
   onDaySelected?: (day: MoonPhaseData) => void;
   isCompact?: boolean;
+  children?: React.ReactNode;
 }
 
 // Create styled components for consistent styling
@@ -90,97 +102,97 @@ const moonPhaseIcons: Record<MoonPhase, any> = {
 };
 
 const formatDate = (date: Date, locale: string): string => {
-  const options: Intl.DateTimeFormatOptions = { 
-    month: 'short', 
+  const options: Intl.DateTimeFormatOptions = {
+    month: 'short',
     day: 'numeric',
     weekday: 'short'
   };
   return date.toLocaleDateString(locale, options);
 };
 
-export function MoonPhaseCalendar({ 
-  days = 7, 
+export function MoonPhaseCalendar({
+  days = 7,
   onDaySelected,
-  isCompact = false
+  isCompact = false,
+  children,
 }: MoonPhaseCalendarProps) {
   const [moonPhases, setMoonPhases] = useState<MoonPhaseData[]>([]);
   const [selectedDay, setSelectedDay] = useState<MoonPhaseData | null>(null);
   const { t, i18n } = useTranslation();
-  
+
   useEffect(() => {
     // Get moon phases for the next specified days
     const phases = getMoonPhaseCalendar(new Date(), days);
     setMoonPhases(phases);
-    
+
     // Set today as the default selected day
     setSelectedDay(phases[0]);
   }, [days]);
-  
+
   const handleDayPress = (day: MoonPhaseData) => {
     setSelectedDay(day);
     if (onDaySelected) {
       onDaySelected(day);
     }
   };
-  
+
   // Display loading state if data isn't ready
   if (moonPhases.length === 0) {
     return (
       <LoadingContainer>
-        <Text>{t('loading')}</Text>
+        <T>{t('loading')}</T>
       </LoadingContainer>
     );
   }
-  
+
   // Render compact version (for dashboard widgets, etc.)
   if (isCompact) {
     return (
-      <Card>
-        <Card.Header>
-          <H4>{t('moonPhase.title')}</H4>
-        </Card.Header>
+      <C>
+        <C.Header>
+          <H4C>{t('moonPhase.title')}</H4C>
+        </C.Header>
         <CompactContainer>
-          <Image 
+          <I
             source={moonPhaseIcons[moonPhases[0].phase]}
             width={50}
             height={50}
             alt={t(`moonPhase.phases.${moonPhases[0].phase}`)}
           />
-          <Text marginTop="$1">
-            {i18n.language === 'sw' 
+          <T marginTop="$1">
+            {i18n.language === 'sw'
               ? translateMoonPhaseToSwahili(moonPhases[0].phase)
               : t(`moonPhase.phases.${moonPhases[0].phase}`)}
-          </Text>
-          <Text 
-            marginTop="$1" 
+          </T>
+          <T
+            marginTop="$1"
             fontWeight="bold"
             color={moonPhases[0].isFishingFavorable ? "$green9" : "$yellow9"}
           >
-            {moonPhases[0].isFishingFavorable 
-              ? t('moonPhase.favorable') 
+            {moonPhases[0].isFishingFavorable
+              ? t('moonPhase.favorable')
               : t('moonPhase.unfavorable')}
-          </Text>
+          </T>
+          {children}
         </CompactContainer>
-      </Card>
+      </C>
     );
   }
-  
+
   // Full calendar view
   return (
-    <YStack>
-      <CalendarTitle>
-        {t('moonPhase.title')}
-      </CalendarTitle>
-      
+    <Y>
+      <CalendarTitle>{t('moonPhase.title')}</CalendarTitle>
+
       {/* Calendar strip */}
-      <ScrollView
+      <S
         horizontal
         showsHorizontalScrollIndicator={false}
         contentInset={{ left: 8, right: 8 }}
       >
-        <CalendarStrip>
+        <CalendarStrip space="$2">
           {moonPhases.map((day, index) => (
-            <Card
+            <C
               key={String(index)}
               pressStyle={{ scale: 0.98 }}
               onPress={() => handleDayPress(day)}
@@ -193,74 +205,68 @@ export function MoonPhaseCalendar({
                 <DayText>
                   {formatDate(day.date, i18n.language === 'sw' ? 'sw-KE' : 'en-US')}
                 </DayText>
-                <Image 
+                <I
                   source={moonPhaseIcons[day.phase]}
-                  width={40} 
+                  width={40}
                   height={40}
                   marginVertical="$1"
                   alt={t(`moonPhase.phases.${day.phase}`)}
                 />
                 <PhaseText numberOfLines={1}>
-                  {i18n.language === 'sw' 
+                  {i18n.language === 'sw'
                     ? translateMoonPhaseToSwahili(day.phase).split(' ')[0]
                     : t(`moonPhase.phases.${day.phase}`).split(' ')[0]}
                 </PhaseText>
               </DayCardContent>
-            </Card>
+            </C>
           ))}
         </CalendarStrip>
-      </ScrollView>
-      
+      </S>
+
       {/* Selected day details */}
       {selectedDay && (
         <DetailsCard>
           <DetailsHeader>
-            <Image 
+            <I
               source={moonPhaseIcons[selectedDay.phase]}
-              width={80} 
+              width={80}
               height={80}
               alt={t(`moonPhase.phases.${selectedDay.phase}`)}
             />
             <DetailsContent>
-              <H4>
-                {i18n.language === 'sw' 
+              <H4C>
+                {i18n.language === 'sw'
                   ? translateMoonPhaseToSwahili(selectedDay.phase)
                   : t(`moonPhase.phases.${selectedDay.phase}`)}
-              </H4>
-              <Text marginTop="$1">
+              </H4C>
+              <T marginTop="$1">
                 {formatDate(selectedDay.date, i18n.language === 'sw' ? 'sw-KE' : 'en-US')}
-              </Text>
-              <Text 
-                marginTop="$1" 
+              </T>
+              <T
+                marginTop="$1"
                 fontWeight="bold"
                 color={selectedDay.isFishingFavorable ? "$green9" : "$yellow9"}
               >
-                {selectedDay.isFishingFavorable 
-                  ? t('moonPhase.favorable') 
+                {selectedDay.isFishingFavorable
+                  ? t('moonPhase.favorable')
                   : t('moonPhase.unfavorable')}
-              </Text>
+              </T>
             </DetailsContent>
           </DetailsHeader>
-          
+
           <InfoSection>
-            <Text fontWeight="bold">
-              {t('moonPhase.recommendation')}:
-            </Text>
-            <Paragraph marginTop="$1">
-              {selectedDay.fishingRecommendation}
-            </Paragraph>
+            <T fontWeight="bold">{`${t('moonPhase.recommendation')}:`}</T>
+            <P marginTop="$1">{selectedDay.fishingRecommendation}</P>
           </InfoSection>
-          
+
           <StatsSection>
-            <Text>
-              {t('moonPhase.illumination')}: {Math.round(selectedDay.illumination * 100)}%
-            </Text>
-            <Text>
-              {t('moonPhase.moonAge')}: {Math.round(selectedDay.age * 10) / 10} {t('moonPhase.days')}
-            </Text>
+            <T>{`${t('moonPhase.illumination')}: ${Math.round(selectedDay.illumination * 100)}%`}</T>
+            <T>{`${t('moonPhase.moonAge')}: ${Math.round(selectedDay.age * 10) / 10} ${t('moonPhase.days')}`}</T>
           </StatsSection>
+          {children}
         </DetailsCard>
       )}
-    </YStack>
+      {children}
+    </Y>
   );
 }

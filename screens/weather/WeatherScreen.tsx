@@ -9,10 +9,17 @@ interface WeatherScreenProps {
   navigation?: any;
 }
 
+const Y: any = YStack;
+const X: any = XStack;
+const H: any = H2;
+const T: any = Text;
+const C: any = Card;
+const B: any = Button;
+
 export function WeatherScreen({ navigation }: WeatherScreenProps) {
   const { t } = useTranslation();
   const [currentMoonPhase, setCurrentMoonPhase] = useState(getMoonPhaseData());
-  
+
   // Mock weather data - in a real app, this would come from a weather API
   const mockWeatherData = {
     temperature: 28,
@@ -23,113 +30,113 @@ export function WeatherScreen({ navigation }: WeatherScreenProps) {
     humidity: '65%',
     warnings: [],
   };
-  
+
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: '#fff' }}>
       <StatusBar barStyle="dark-content" backgroundColor="#fff" />
       <ScrollView>
-        <YStack padding="$4" space="$4">
-          <H2>{t('weather.title')}</H2>
-          
+        <Y padding="$4" space="$4">
+          <H>{t('weather.title')}</H>
+
           {/* Current Weather Conditions */}
-          <Card borderRadius="$4">
-            <Card.Header padded>
-              <Text fontWeight="bold">{t('weather.currentConditions')}</Text>
-            </Card.Header>
-            <YStack padding="$4" space="$2">
-              <XStack justifyContent="space-between">
-                <Text>{t('weather.temperature')}</Text>
-                <Text fontWeight="bold">{mockWeatherData.temperature}°C</Text>
-              </XStack>
-              
-              <XStack justifyContent="space-between">
-                <Text>{t('weather.windSpeed')}</Text>
-                <Text>{mockWeatherData.windSpeed} km/h {mockWeatherData.windDirection}</Text>
-              </XStack>
-              
-              <XStack justifyContent="space-between">
-                <Text>{t('weather.precipitation')}</Text>
-                <Text>{mockWeatherData.precipitation}</Text>
-              </XStack>
-              
-              <XStack justifyContent="space-between">
-                <Text>{t('weather.humidity')}</Text>
-                <Text>{mockWeatherData.humidity}</Text>
-              </XStack>
-              
+          <C borderRadius="$4">
+            <C.Header padded>
+              <T fontWeight="bold">{t('weather.currentConditions')}</T>
+            </C.Header>
+            <Y padding="$4" space="$2">
+              <X justifyContent="space-between">
+                <T>{t('weather.temperature')}</T>
+                <T fontWeight="bold">{mockWeatherData.temperature}°C</T>
+              </X>
+
+              <X justifyContent="space-between">
+                <T>{t('weather.windSpeed')}</T>
+                <T>{mockWeatherData.windSpeed} km/h {mockWeatherData.windDirection}</T>
+              </X>
+
+              <X justifyContent="space-between">
+                <T>{t('weather.precipitation')}</T>
+                <T>{mockWeatherData.precipitation}</T>
+              </X>
+
+              <X justifyContent="space-between">
+                <T>{t('weather.humidity')}</T>
+                <T>{mockWeatherData.humidity}</T>
+              </X>
+
               {mockWeatherData.warnings.length > 0 && (
-                <YStack marginTop="$2" backgroundColor="$red2" padding="$2" borderRadius="$2">
-                  <Text fontWeight="bold" color="$red9">{t('weather.warnings')}</Text>
+                <Y marginTop="$2" backgroundColor="$red2" padding="$2" borderRadius="$2">
+                  <T fontWeight="bold" color="$red9">{t('weather.warnings')}</T>
                   {mockWeatherData.warnings.map((warning, index) => (
-                    <Text key={index} color="$red9">{warning}</Text>
+                    <T key={index} color="$red9">{warning}</T>
                   ))}
-                </YStack>
+                </Y>
               )}
-            </YStack>
-          </Card>
-          
+            </Y>
+          </C>
+
           {/* Moon Phase Widget */}
-          <YStack>
-            <XStack justifyContent="space-between" alignItems="center" marginBottom="$2">
-              <Text fontWeight="bold" fontSize="$5">{t('moonPhase.title')}</Text>
-              <Button 
-                size="$3" 
+          <Y>
+            <X justifyContent="space-between" alignItems="center" marginBottom="$2">
+              <T fontWeight="bold" fontSize="$5">{t('moonPhase.title')}</T>
+              <B
+                size="$3"
                 variant="outlined"
                 onPress={() => navigation?.navigate('MoonPhase')}
               >
                 {t('common.learnMore')}
-              </Button>
-            </XStack>
-            
+              </B>
+            </X>
+
             <MoonPhaseCalendar isCompact={true} />
-            
-            <Card borderRadius="$4" marginTop="$3">
-              <YStack padding="$3">
-                <XStack space="$2" alignItems="center">
-                  <Text fontSize="$3" flex={1}>
+
+            <C borderRadius="$4" marginTop="$3">
+              <Y padding="$3">
+                <X space="$2" alignItems="center">
+                  <T fontSize="$3" flex={1}>
                     {currentMoonPhase.fishingRecommendation}
-                  </Text>
-                </XStack>
-              </YStack>
-            </Card>
-          </YStack>
-          
+                  </T>
+                </X>
+              </Y>
+            </C>
+          </Y>
+
           {/* Weather Forecast Section */}
-          <Card borderRadius="$4">
-            <Card.Header padded>
-              <XStack justifyContent="space-between" alignItems="center" width="100%">
-                <Text fontWeight="bold">{t('weather.forecast')}</Text>
+          <C borderRadius="$4">
+            <C.Header padded>
+              <X justifyContent="space-between" alignItems="center" width="100%">
+                <T fontWeight="bold">{t('weather.forecast')}</T>
                 {/* This could link to a detailed forecast screen */}
-                <Button 
-                  size="$2" 
+                <B
+                  size="$2"
                   variant="outlined"
                   onPress={() => {/* Navigate to detailed forecast */}}
                 >
                   {t('common.learnMore')}
-                </Button>
-              </XStack>
-            </Card.Header>
-            <YStack padding="$4">
+                </B>
+              </X>
+            </C.Header>
+            <Y padding="$4">
               {/* Simplified forecast - would be populated from API data */}
               {[1, 2, 3].map((day) => (
-                <XStack 
+                <X
                   key={day}
-                  justifyContent="space-between" 
+                  justifyContent="space-between"
                   alignItems="center"
                   paddingVertical="$2"
                   borderBottomWidth={day < 3 ? 1 : 0}
                   borderBottomColor="$borderColor"
                 >
-                  <Text>Day {day}</Text>
-                  <Text>27°C - 29°C</Text>
-                  <Text>Sunny</Text>
-                </XStack>
+                  <T>Day {day}</T>
+                  <T>27°C - 29°C</T>
+                  <T>Sunny</T>
+                </X>
               ))}
-            </YStack>
-          </Card>
-          
+            </Y>
+          </C>
+
           {/* Local water conditions or other weather-related info could go here */}
-        </YStack>
+        </Y>
       </ScrollView>
     </SafeAreaView>
   );

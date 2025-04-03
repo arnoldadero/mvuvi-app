@@ -10,14 +10,24 @@ interface SafetyScreenProps {
   navigation: any;
 }
 
+// Type aliases for Tamagui components
+const Y: any = YStack;
+const H: any = H2;
+const T: any = Text;
+const P: any = Paragraph;
+const X: any = XStack;
+const C: any = Card;
+const B: any = Button;
+const Ci: any = Circle;
+
 export function SafetyScreen({ navigation }: SafetyScreenProps) {
   const { t } = useTranslation();
   const [location, setLocation] = useState<Location.LocationObject | null>(null);
   const [isLoadingLocation, setIsLoadingLocation] = useState(false);
   const [sosActive, setSosActive] = useState(false);
-  
-  const { 
-    emergencyContacts, 
+
+  const {
+    emergencyContacts,
     isLocationSharingEnabled,
     isLoadingContacts,
     toggleLocationSharing,
@@ -35,12 +45,12 @@ export function SafetyScreen({ navigation }: SafetyScreenProps) {
     try {
       setIsLoadingLocation(true);
       const { status } = await Location.requestForegroundPermissionsAsync();
-      
+
       if (status !== 'granted') {
         Alert.alert(t('common.error'), t('safety.locationPermissionDenied'));
         return;
       }
-      
+
       const currentLocation = await Location.getCurrentPositionAsync({});
       setLocation(currentLocation);
     } catch (error) {
@@ -75,11 +85,11 @@ export function SafetyScreen({ navigation }: SafetyScreenProps) {
     }
 
     setSosActive(true);
-    
+
     // Create SOS message with location
     const locationUrl = `https://maps.google.com/?q=${location.coords.latitude},${location.coords.longitude}`;
     const message = `${t('safety.sosMessage')} ${locationUrl}`;
-    
+
     // Send SMS to all emergency contacts
     for (const contact of emergencyContacts) {
       try {
@@ -92,7 +102,7 @@ export function SafetyScreen({ navigation }: SafetyScreenProps) {
         console.error('Error sending SMS:', error);
       }
     }
-    
+
     // Show alert that SOS has been activated
     Alert.alert(
       t('safety.sosActivated'),
@@ -113,20 +123,20 @@ export function SafetyScreen({ navigation }: SafetyScreenProps) {
   const handleToggleLocationSharing = async () => {
     if (!isLocationSharingEnabled) {
       const { status } = await Location.requestForegroundPermissionsAsync();
-      
+
       if (status !== 'granted') {
         Alert.alert(t('common.error'), t('safety.locationPermissionDenied'));
         return;
       }
-      
+
       await getCurrentLocation();
     }
-    
+
     toggleLocationSharing();
-    
+
     Alert.alert(
       t('common.success'),
-      isLocationSharingEnabled 
+      isLocationSharingEnabled
         ? t('safety.locationSharingDisabled')
         : t('safety.locationSharingEnabled')
     );
@@ -143,58 +153,58 @@ export function SafetyScreen({ navigation }: SafetyScreenProps) {
     <SafeAreaView style={{ flex: 1, backgroundColor: '#fff' }}>
       <StatusBar barStyle="dark-content" backgroundColor="#fff" />
       <ScrollView>
-        <YStack padding="$4" space="$4">
-          <H2>{t('safety.title')}</H2>
-          <Paragraph>{t('safety.description')}</Paragraph>
-          
+        <Y padding="$4" space="$4">
+          <H>{t('safety.title')}</H>
+          <P>{t('safety.description')}</P>
+
           {/* SOS Button */}
-          <YStack alignItems="center" marginVertical="$4">
-            <Circle
+          <Y alignItems="center" marginVertical="$4">
+            <Ci
               size={150}
               backgroundColor={sosActive ? '$red9' : '$red5'}
               pressStyle={{ scale: 0.97 }}
               onPress={handleSOS}
               animation="bouncy"
             >
-              <Text 
-                color="white" 
-                fontWeight="bold" 
+              <T
+                color="white"
+                fontWeight="bold"
                 fontSize="$8"
               >
                 SOS
-              </Text>
-            </Circle>
-            <Text marginTop="$2">
+              </T>
+            </Ci>
+            <T marginTop="$2">
               {sosActive ? t('safety.sosActive') : t('safety.tapForSOS')}
-            </Text>
-          </YStack>
-          
+            </T>
+          </Y>
+
           {/* Location Sharing */}
-          <Card borderRadius="$4">
-            <YStack padding="$4" space="$3">
-              <XStack justifyContent="space-between" alignItems="center">
-                <Text fontWeight="bold">{t('safety.locationSharing')}</Text>
-                <Button
+          <C borderRadius="$4">
+            <Y padding="$4" space="$3">
+              <X justifyContent="space-between" alignItems="center">
+                <T fontWeight="bold">{t('safety.locationSharing')}</T>
+                <B
                   backgroundColor={isLocationSharingEnabled ? '$green9' : '$gray9'}
                   onPress={handleToggleLocationSharing}
                 >
                   {isLocationSharingEnabled ? t('common.enabled') : t('common.disabled')}
-                </Button>
-              </XStack>
-              
-              <Paragraph fontSize="$2">
+                </B>
+              </X>
+
+              <P fontSize="$2">
                 {t('safety.locationSharingDescription')}
-              </Paragraph>
-              
+              </P>
+
               {isLocationSharingEnabled && (
                 <>
                   {isLoadingLocation ? (
-                    <YStack alignItems="center" padding="$2">
+                    <Y alignItems="center" padding="$2">
                       <ActivityIndicator size="small" color="#0000ff" />
-                      <Text marginTop="$1">{t('safety.gettingLocation')}</Text>
-                    </YStack>
+                      <T marginTop="$1">{t('safety.gettingLocation')}</T>
+                    </Y>
                   ) : location ? (
-                    <YStack height={200} borderRadius="$4" overflow="hidden" marginTop="$2">
+                    <Y height={200} borderRadius="$4" overflow="hidden" marginTop="$2">
                       <MapView
                         style={{ width: '100%', height: '100%' }}
                         region={mapRegion}
@@ -208,89 +218,89 @@ export function SafetyScreen({ navigation }: SafetyScreenProps) {
                           }}
                         />
                       </MapView>
-                      <Text fontSize="$2" marginTop="$1">
+                      <T fontSize="$2" marginTop="$1">
                         {t('safety.lastKnownLocation')}: {new Date().toLocaleTimeString()}
-                      </Text>
-                    </YStack>
+                      </T>
+                    </Y>
                   ) : (
-                    <Text color="$red9">{t('safety.noLocationAvailable')}</Text>
+                    <T color="$red9">{t('safety.noLocationAvailable')}</T>
                   )}
                 </>
               )}
-            </YStack>
-          </Card>
-          
+            </Y>
+          </C>
+
           {/* Emergency Contacts */}
-          <Card borderRadius="$4">
-            <YStack padding="$4" space="$3">
-              <XStack justifyContent="space-between" alignItems="center">
-                <Text fontWeight="bold">{t('safety.emergencyContacts')}</Text>
-                <Button
+          <C borderRadius="$4">
+            <Y padding="$4" space="$3">
+              <X justifyContent="space-between" alignItems="center">
+                <T fontWeight="bold">{t('safety.emergencyContacts')}</T>
+                <B
                   size="$3"
                   backgroundColor="$blue9"
                   color="white"
                   onPress={() => navigation.navigate('EmergencyContacts')}
                 >
                   {t('safety.manageContacts')}
-                </Button>
-              </XStack>
-              
+                </B>
+              </X>
+
               {isLoadingContacts ? (
-                <YStack alignItems="center" padding="$2">
+                <Y alignItems="center" padding="$2">
                   <ActivityIndicator size="small" color="#0000ff" />
-                </YStack>
+                </Y>
               ) : emergencyContacts.length === 0 ? (
-                <Text textAlign="center" marginTop="$2">
+                <T textAlign="center" marginTop="$2">
                   {t('safety.noEmergencyContactsAdded')}
-                </Text>
+                </T>
               ) : (
-                <YStack space="$2" marginTop="$2">
+                <Y space="$2" marginTop="$2">
                   {emergencyContacts.map((contact, index) => (
-                    <Card key={contact.id} bordered padding="$3">
-                      <XStack justifyContent="space-between">
-                        <Text fontWeight="bold">{contact.name}</Text>
-                      </XStack>
-                      <Text>{contact.phoneNumber}</Text>
-                      <Text fontSize="$2" color="$gray9">{contact.relationship}</Text>
-                    </Card>
+                    <C key={contact.id} bordered padding="$3">
+                      <X justifyContent="space-between">
+                        <T fontWeight="bold">{contact.name}</T>
+                      </X>
+                      <T>{contact.phoneNumber}</T>
+                      <T fontSize="$2" color="$gray9">{contact.relationship}</T>
+                    </C>
                   ))}
-                </YStack>
+                </Y>
               )}
-            </YStack>
-          </Card>
-          
+            </Y>
+          </C>
+
           {/* Safety Checklist */}
-          <Card borderRadius="$4">
-            <YStack padding="$4" space="$2">
-              <Text fontWeight="bold">{t('safety.safetyChecklist')}</Text>
-              <Paragraph fontSize="$2">
+          <C borderRadius="$4">
+            <Y padding="$4" space="$2">
+              <T fontWeight="bold">{t('safety.safetyChecklist')}</T>
+              <P fontSize="$2">
                 {t('safety.safetyChecklistDescription')}
-              </Paragraph>
-              <Button
+              </P>
+              <B
                 marginTop="$2"
                 onPress={() => navigation.navigate('SafetyChecklist')}
               >
                 {t('safety.viewChecklist')}
-              </Button>
-            </YStack>
-          </Card>
-          
+              </B>
+            </Y>
+          </C>
+
           {/* Weather Alerts */}
-          <Card borderRadius="$4">
-            <YStack padding="$4" space="$2">
-              <Text fontWeight="bold">{t('safety.weatherAlerts')}</Text>
-              <Paragraph fontSize="$2">
+          <C borderRadius="$4">
+            <Y padding="$4" space="$2">
+              <T fontWeight="bold">{t('safety.weatherAlerts')}</T>
+              <P fontSize="$2">
                 {t('safety.weatherAlertsDescription')}
-              </Paragraph>
-              <Button
+              </P>
+              <B
                 marginTop="$2"
                 onPress={() => navigation.navigate('Weather')}
               >
                 {t('safety.checkWeather')}
-              </Button>
-            </YStack>
-          </Card>
-        </YStack>
+              </B>
+            </Y>
+          </C>
+        </Y>
       </ScrollView>
     </SafeAreaView>
   );

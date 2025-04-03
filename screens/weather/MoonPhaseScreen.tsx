@@ -1,13 +1,13 @@
 import React from 'react';
 import { SafeAreaView, StatusBar } from 'react-native';
-import { 
-  ScrollView, 
-  YStack, 
-  H2, 
-  Text, 
-  Card, 
-  Button, 
-  XStack, 
+import {
+  ScrollView,
+  YStack,
+  H2,
+  Text,
+  Card,
+  Button,
+  XStack,
   Paragraph,
   SizableText,
   Stack
@@ -20,42 +20,46 @@ interface MoonPhaseScreenProps {
   navigation?: any; // For navigation if needed
 }
 
+const Y: any = YStack;
+const X: any = XStack;
+const H: any = H2;
+const P: any = Paragraph;
+const T: any = Text;
+const S: any = SizableText;
+const C: any = Card;
+const B: any = Button;
+const Sc: any = ScrollView;
+
 export function MoonPhaseScreen({ navigation }: MoonPhaseScreenProps) {
   const { t } = useTranslation();
   const favorableDays = getNextFavorableFishingDays();
-  
+
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: '#fff' }}>
       <StatusBar barStyle="dark-content" backgroundColor="#fff" />
-      <ScrollView>
-        <Stack space="$4" padding="$4">
-          <H2>{t('moonPhase.screenTitle')}</H2>
-          
-          <Paragraph>
-            {t('moonPhase.description')}
-          </Paragraph>
-          
+      <Sc>
+        <Y space="$4" padding="$4">
+          <H>{t('moonPhase.screenTitle')}</H>
+
+          <P>{t('moonPhase.description')}</P>
+
           {/* Moon Phase Calendar */}
           <MoonPhaseCalendar days={14} />
-          
+
           {/* Educational Information Card */}
-          <Card>
-            <Card.Header padded>
-              <SizableText fontWeight="bold">
+          <C>
+            <C.Header padded>
+              <S fontWeight="bold">
                 {t('moonPhase.howItAffectsFishing')}
-              </SizableText>
-            </Card.Header>
-            <Card.Footer padded>
-              <Stack space="$2">
-                <Paragraph>
-                  {t('moonPhase.educationalInfo1')}
-                </Paragraph>
-                <Paragraph>
-                  {t('moonPhase.educationalInfo2')}
-                </Paragraph>
-                <Stack space="$2" marginTop="$2" flexDirection="row">
-                  <Button 
-                    flex={1} 
+              </S>
+            </C.Header>
+            <C.Footer padded>
+              <Y space="$2">
+                <P>{t('moonPhase.educationalInfo1')}</P>
+                <P>{t('moonPhase.educationalInfo2')}</P>
+                <X space="$2" marginTop="$2">
+                  <B
+                    flex={1}
                     variant="outlined"
                     onPress={() => {
                       // Navigate to detailed educational content
@@ -65,51 +69,50 @@ export function MoonPhaseScreen({ navigation }: MoonPhaseScreenProps) {
                     }}
                   >
                     {t('common.learnMore')}
-                  </Button>
-                </Stack>
-              </Stack>
-            </Card.Footer>
-          </Card>
-          
+                  </B>
+                </X>
+              </Y>
+            </C.Footer>
+          </C>
+
           {/* Next Favorable Fishing Days Summary */}
-          <Card>
-            <Card.Header padded>
-              <SizableText fontWeight="bold">
+          <C>
+            <C.Header padded>
+              <S fontWeight="bold">
                 {t('moonPhase.nextFavorableDays')}
-              </SizableText>
-            </Card.Header>
-            <Card.Footer padded>
-              <Stack space="$2">
+              </S>
+            </C.Header>
+            <C.Footer padded>
+              <Y space="$2">
                 {favorableDays.map((day, index) => {
                   const isLastItem = index === favorableDays.length - 1;
                   return (
-                    <Stack 
+                    <X
                       key={`day-${index}`}
-                      flexDirection="row"
-                      justifyContent="space-between" 
+                      justifyContent="space-between"
                       alignItems="center"
                       paddingVertical="$2"
                       borderBottomWidth={isLastItem ? 0 : 1}
                       borderBottomColor="$borderColor"
                     >
-                      <SizableText>
-                        {day.date.toLocaleDateString(undefined, { 
+                      <S>
+                        {day.date.toLocaleDateString(undefined, {
                           weekday: 'short',
-                          month: 'short', 
-                          day: 'numeric' 
+                          month: 'short',
+                          day: 'numeric'
                         })}
-                      </SizableText>
-                      <SizableText color="$green9">
+                      </S>
+                      <S color="$green9">
                         {t('moonPhase.favorable')}
-                      </SizableText>
-                    </Stack>
+                      </S>
+                    </X>
                   );
                 })}
-              </Stack>
-            </Card.Footer>
-          </Card>
-        </Stack>
-      </ScrollView>
+              </Y>
+            </C.Footer>
+          </C>
+        </Y>
+      </Sc>
     </SafeAreaView>
   );
 }
