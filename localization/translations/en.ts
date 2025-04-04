@@ -63,6 +63,9 @@ export default {
     illumination: 'Moon Illumination',
     moonAge: 'Moon Age',
     days: 'days',
+    ofCycle: 'of lunar cycle',
+    distance: 'Distance to Earth',
+    imageUsed: 'Image',
     phases: {
       NEW_MOON: 'New Moon',
       WAXING_CRESCENT: 'Waxing Crescent',

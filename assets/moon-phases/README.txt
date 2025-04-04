@@ -13,3 +13,4 @@ Required moon phase images:
 - waning-crescent.png
 
 For best results, use PNG images with transparency, sized at 256x256 pixels.
+

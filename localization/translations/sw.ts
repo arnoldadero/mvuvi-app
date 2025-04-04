@@ -57,6 +57,9 @@ export default {
     illumination: 'Mwangaza wa Mwezi',
     moonAge: 'Umri wa Mwezi',
     days: 'siku',
+    ofCycle: 'ya mzunguko wa mwezi',
+    distance: 'Umbali kutoka Dunia',
+    imageUsed: 'Picha',
     phases: {
       NEW_MOON: 'Mwezi Mchanga',
       WAXING_CRESCENT: 'Mwezi Unaongezeka (Hilali)',

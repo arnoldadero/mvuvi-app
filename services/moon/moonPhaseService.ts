@@ -11,6 +11,7 @@ export interface MoonPhaseData {
   distance: number; // Distance to earth in km
   isFishingFavorable: boolean;
   fishingRecommendation: string;
+  imageFile?: string; // Path to the specific moon phase image file
 }
 
 export enum MoonPhase {
@@ -34,13 +35,13 @@ const LUNAR_MONTH = 29.53059; // Days in a lunar month
 function calculateMoonAge(date: Date): number {
   // Known new moon reference date: January 6, 2000
   const knownNewMoon = new Date(Date.UTC(2000, 0, 6, 18, 14, 0));
-  
+
   // Calculate days since known new moon
   const daysSinceKnownNewMoon = (date.getTime() - knownNewMoon.getTime()) / (1000 * 60 * 60 * 24);
-  
+
   // Calculate moon age in current cycle (0-29.53 days)
   const age = daysSinceKnownNewMoon % LUNAR_MONTH;
-  
+
   return age >= 0 ? age : age + LUNAR_MONTH;
 }
 
@@ -117,11 +118,14 @@ export function getMoonPhaseData(date: Date = new Date()): MoonPhaseData {
   const phase = getMoonPhase(age);
   const illumination = calculateIllumination(age);
   const fishingRecommendation = getFishingRecommendation(phase, age);
-  
+
   // Approximate distance calculation - simplified for this implementation
   // In a real app, would use more precise astronomical calculations
   const distance = 384400; // Average distance in km
-  
+
+  // Get the appropriate image file for this moon phase and illumination
+  const imageFile = getMoonPhaseImageFile(phase, illumination);
+
   return {
     date,
     phase,
@@ -130,6 +134,7 @@ export function getMoonPhaseData(date: Date = new Date()): MoonPhaseData {
     distance,
     isFishingFavorable: fishingRecommendation.isFavorable,
     fishingRecommendation: fishingRecommendation.recommendation,
+    imageFile,
   };
 }
 
@@ -140,17 +145,17 @@ export function getMoonPhaseData(date: Date = new Date()): MoonPhaseData {
  */
 export function getMoonPhaseCalendar(startDate: Date = new Date(), days: number = 30): MoonPhaseData[] {
   const calendar: MoonPhaseData[] = [];
-  
+
   const currentDate = new Date(startDate);
-  
+
   for (let i = 0; i < days; i++) {
     const dayDate = new Date(currentDate);
     calendar.push(getMoonPhaseData(dayDate));
-    
+
     // Move to next day
     currentDate.setDate(currentDate.getDate() + 1);
   }
-  
+
   return calendar;
 }
 
@@ -161,12 +166,12 @@ export function getMoonPhaseCalendar(startDate: Date = new Date(), days: number 
  * @param limit Maximum number of favorable days to return
  */
 export function getNextFavorableFishingDays(
-  startDate: Date = new Date(), 
+  startDate: Date = new Date(),
   daysToCheck: number = 30,
   limit: number = 5
 ): MoonPhaseData[] {
   const calendar = getMoonPhaseCalendar(startDate, daysToCheck);
-  
+
   // Filter to only favorable days and limit results
   return calendar
     .filter(day => day.isFishingFavorable)
@@ -174,7 +179,65 @@ export function getNextFavorableFishingDays(
 }
 
 /**
- * Translate moon phase to Swahili 
+ * Get the appropriate moon phase image file based on phase and illumination percentage
+ * @param phase The moon phase
+ * @param illumination The illumination value (0-1)
+ * @returns The image file name
+ */
+export function getMoonPhaseImageFile(phase: MoonPhase, illumination: number): string {
+  // Convert illumination from 0-1 to 0-100 percentage
+  const percentage = Math.round(illumination * 100);
+
+  // Select the appropriate image based on phase and percentage
+  switch (phase) {
+    case MoonPhase.NEW_MOON:
+      return percentage <= 0 ? 'new-moon-0%' : 'new-moon-1%';
+
+    case MoonPhase.WAXING_CRESCENT:
+      if (percentage <= 6) return 'waxing-crescent-6%';
+      if (percentage <= 13) return 'waxing-crescent-13%';
+      if (percentage <= 22) return 'waxing-crescent-22%';
+      return 'waxing-crescent-33%';
+
+    case MoonPhase.FIRST_QUARTER:
+      return percentage <= 40 ? 'first-quarter-40%' : 'first-quarter-54%';
+
+    case MoonPhase.WAXING_GIBBOUS:
+      if (percentage <= 65) return 'waxing-gibbous-65%';
+      if (percentage <= 74) return 'waxing-gibbous-74%';
+      if (percentage <= 82) return 'waxing-gibbous-82%';
+      if (percentage <= 89) return 'waxing-gibbous-89%';
+      if (percentage <= 94) return 'waxing-gibbous-94%';
+      return 'waxing-gibbous-98%';
+
+    case MoonPhase.FULL_MOON:
+      return percentage >= 100 ? 'full-moon-100%' : 'full-moon-99%';
+
+    case MoonPhase.WANING_GIBBOUS:
+      if (percentage <= 66) return 'waning-gibbous-66%';
+      if (percentage <= 75) return 'waning-gibbous-75%';
+      if (percentage <= 83) return 'waning-gibbous-83%';
+      if (percentage <= 89) return 'waning-gibbous-89%';
+      if (percentage <= 94) return 'waning-gibbous-94%';
+      return 'waning-gibbous-98%';
+
+    case MoonPhase.LAST_QUARTER:
+      return percentage <= 46 ? 'third-quarter-46%' : 'third-quarter-56%';
+
+    case MoonPhase.WANING_CRESCENT:
+      if (percentage <= 3) return 'waning-crescent-3%';
+      if (percentage <= 8) return 'waning-crescent-8%';
+      if (percentage <= 16) return 'waning-crescent-16%';
+      if (percentage <= 25) return 'waning-crescent-25%';
+      return 'waning-crescent-35%';
+
+    default:
+      return 'new-moon-0%';
+  }
+}
+
+/**
+ * Translate moon phase to Swahili
  * For integration with the app's localization system
  */
 export function translateMoonPhaseToSwahili(phase: MoonPhase): string {
