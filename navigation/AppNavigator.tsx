@@ -17,6 +17,8 @@ import { FishingRegulationsScreen } from '../screens/sustainable-fishing/Fishing
 import { FishingSeasonalCalendarScreen } from '../screens/sustainable-fishing/FishingSeasonalCalendarScreen';
 import { ReportViolationScreen } from '../screens/sustainable-fishing/ReportViolationScreen';
 import { SustainableFishingCategoryScreen } from '../screens/sustainable-fishing/SustainableFishingCategoryScreen';
+import { EducationalVideosScreen } from '../screens/sustainable-fishing/EducationalVideosScreen';
+import { CommunityForumsScreen } from '../screens/sustainable-fishing/CommunityForumsScreen';
 import { CatchRecordDetailsScreen } from '../screens/catch-data/CatchRecordDetailsScreen';
 import { UserProfileScreen } from '../screens/profile/UserProfileScreen';
 import { SettingsScreen } from '../screens/profile/SettingsScreen';
@@ -54,6 +56,8 @@ export type RootStackParamList = {
   FishingSeasonalCalendar: undefined;
   ReportViolation: undefined;
   SustainableFishingCategory: { category: string };
+  EducationalVideos: undefined;
+  CommunityForums: undefined;
 
   // Catch Data screens
   CatchRecordDetails: { catchId: string };
@@ -189,6 +193,22 @@ export function AppNavigator() {
               component={SustainableFishingCategoryScreen}
               options={{
                 title: t('sustainableFishing.category'),
+                headerRight: () => <ProfileButton mini />,
+              }}
+            />
+            <Stack.Screen
+              name="EducationalVideos"
+              component={EducationalVideosScreen}
+              options={{
+                title: t('sustainableFishing.educationalVideos'),
+                headerRight: () => <ProfileButton mini />,
+              }}
+            />
+            <Stack.Screen
+              name="CommunityForums"
+              component={CommunityForumsScreen}
+              options={{
+                title: t('sustainableFishing.communityForums'),
                 headerRight: () => <ProfileButton mini />,
               }}
             />

@@ -3,14 +3,14 @@ import { SafeAreaView, StatusBar, Image, StyleSheet } from 'react-native';
 import {
   YStack,
   H2,
-  Text, 
-  Card, 
-  Button, 
-  XStack, 
-  Paragraph, 
-  ScrollView, 
-  Tabs, 
-  Stack 
+  Text,
+  Card,
+  Button,
+  XStack,
+  Paragraph,
+  ScrollView,
+  Tabs,
+  Stack
 } from 'tamagui';
 import { useTranslation } from 'react-i18next';
 import { Info, Fish, Calendar, Ruler, Book } from '@tamagui/lucide-icons';
@@ -56,13 +56,13 @@ export function SustainableFishingScreen({ navigation }: SustainableFishingScree
     <SafeAreaView style={styles.container}>
       <StatusBar barStyle="dark-content" backgroundColor="#fff" />
       <S>
-        <Y padding="$4" space="$4">
+        <Y padding="$4" gap="$4">
           <X justifyContent="space-between" alignItems="center">
             <H>{t('sustainableFishing.title')}</H>
             <LanguageSelector minimal />
           </X>
           <P>{t('sustainableFishing.description')}</P>
-          
+
           <TB
             defaultValue="overview"
             value={activeTab}
@@ -75,20 +75,20 @@ export function SustainableFishingScreen({ navigation }: SustainableFishingScree
             overflow="hidden"
           >
             <TB.List>
-              <TB.Tab name="overview">
+              <TB.Tab value="overview">
                 <Info size={"$1" as any} color={"$color" as any} />
                 <T>{t('sustainableFishing.overview')}</T>
               </TB.Tab>
-              <TB.Tab name="practices">
+              <TB.Tab value="practices">
                 <Fish size={"$1" as any} color={"$color" as any} />
                 <T>{t('sustainableFishing.practices')}</T>
               </TB.Tab>
-              <TB.Tab name="resources">
+              <TB.Tab value="resources">
                 <Book size={"$1" as any} color={"$color" as any} />
                 <T>{t('sustainableFishing.resources')}</T>
               </TB.Tab>
             </TB.List>
-            
+
             <TB.Content value="overview">
               <Y padding="$4" gap="$4">
                 <Image
@@ -96,11 +96,11 @@ export function SustainableFishingScreen({ navigation }: SustainableFishingScree
                   style={styles.fullWidthImage}
                   resizeMode="cover"
                 />
-                
+
                 <P>
                   {t('sustainableFishing.overviewContent')}
                 </P>
-                
+
                 <C style={styles.blueCard}>
                   <Y padding="$4" gap="$2">
                     <T>{t('sustainableFishing.whySustainable')}</T>
@@ -109,7 +109,7 @@ export function SustainableFishingScreen({ navigation }: SustainableFishingScree
                     </P>
                   </Y>
                 </C>
-                
+
                 <B
                   backgroundColor="$green9"
                   color="white"
@@ -119,22 +119,22 @@ export function SustainableFishingScreen({ navigation }: SustainableFishingScree
                 </B>
               </Y>
             </TB.Content>
-            
+
             <TB.Content value="practices">
               <Y padding="$4" gap="$4">
                 <T size="$5">
                   {t('sustainableFishing.bestPractices')}
                 </T>
-                
+
                 <Y gap="$3">
                   {/* Sustainable Fishing Categories */}
-                  <C 
+                  <C
                     style={styles.cardWithRadius}
                     bordered
                     pressStyle={{ opacity: 0.8 }}
                     onPress={() => handleCategoryPress('gear')}
                   >
-                    <X padding="$4" alignItems="center" space="$3">
+                    <X padding="$4" alignItems="center" gap="$3">
                       <Image
                         source={require('../../assets/images/fishing-gear.png')}
                         style={styles.categoryIcon}
@@ -147,14 +147,14 @@ export function SustainableFishingScreen({ navigation }: SustainableFishingScree
                       </Y>
                     </X>
                   </C>
-                  
-                  <C 
+
+                  <C
                     style={styles.cardWithRadius}
                     bordered
                     pressStyle={{ opacity: 0.8 }}
                     onPress={() => handleCategoryPress('bycatch')}
                   >
-                    <X padding="$4" alignItems="center" space="$3">
+                    <X padding="$4" alignItems="center" gap="$3">
                       <Image
                         source={require('../../assets/images/bycatch.png')}
                         style={styles.categoryIcon}
@@ -167,14 +167,14 @@ export function SustainableFishingScreen({ navigation }: SustainableFishingScree
                       </Y>
                     </X>
                   </C>
-                  
-                  <C 
+
+                  <C
                     style={styles.cardWithRadius}
                     bordered
                     pressStyle={{ opacity: 0.8 }}
                     onPress={() => handleCategoryPress('habitat')}
                   >
-                    <X padding="$4" alignItems="center" space="$3">
+                    <X padding="$4" alignItems="center" gap="$3">
                       <Image
                         source={require('../../assets/images/bycatch.png')}
                         style={styles.categoryIcon}
@@ -187,14 +187,14 @@ export function SustainableFishingScreen({ navigation }: SustainableFishingScree
                       </Y>
                     </X>
                   </C>
-                  
-                  <C 
+
+                  <C
                     style={styles.cardWithRadius}
                     bordered
                     pressStyle={{ opacity: 0.8 }}
                     onPress={() => handleCategoryPress('juvenile')}
                   >
-                    <X padding="$4" alignItems="center" space="$3">
+                    <X padding="$4" alignItems="center" gap="$3">
                       <Image
                         source={require('../../assets/images/bycatch.png')}
                         style={styles.categoryIcon}
@@ -208,8 +208,8 @@ export function SustainableFishingScreen({ navigation }: SustainableFishingScree
                     </X>
                   </C>
                 </Y>
-                
-                <X space="$2">
+
+                <X gap="$2">
                   <B
                     style={styles.flexOne}
                     onPress={handleSeasonalCalendarPress}
@@ -217,7 +217,7 @@ export function SustainableFishingScreen({ navigation }: SustainableFishingScree
                     <Calendar size={"$1" as any} color={"$color" as any} />
                     <T>{t('sustainableFishing.seasonalCalendar')}</T>
                   </B>
-                  
+
                   <B
                     style={styles.flexOne}
                     onPress={handleRegulationsPress}
@@ -228,20 +228,20 @@ export function SustainableFishingScreen({ navigation }: SustainableFishingScree
                 </X>
               </Y>
             </TB.Content>
-            
+
             <TB.Content value="resources">
-              <Y padding="$4" space="$4">
+              <Y padding="$4" gap="$4">
                 <T size="$5">
                   {t('sustainableFishing.resources')}
                 </T>
-                
+
                 <C
                   style={styles.cardWithRadius}
                   bordered
                   pressStyle={{ opacity: 0.8 }}
                   onPress={handleSpeciesGuidePress}
                 >
-                  <Y padding="$4" space="$2">
+                  <Y padding="$4" gap="$2">
                     <T>{t('sustainableFishing.fishSpeciesGuide')}</T>
                     <P size="$2">
                       {t('sustainableFishing.fishSpeciesGuideDescription')}
@@ -253,12 +253,12 @@ export function SustainableFishingScreen({ navigation }: SustainableFishingScree
                     />
                   </Y>
                 </C>
-                
+
                 <C
                   style={[styles.cardWithRadius, styles.blueCard]}
                   bordered
                 >
-                  <Y padding="$4" space="$2">
+                  <Y padding="$4" gap="$2">
                     <T>{t('sustainableFishing.educationalVideos')}</T>
                     <P size="$2">
                       {t('sustainableFishing.educationalVideosDescription')}
@@ -271,12 +271,12 @@ export function SustainableFishingScreen({ navigation }: SustainableFishingScree
                     </B>
                   </Y>
                 </C>
-                
+
                 <C
                   style={styles.cardWithRadius}
                   bordered
                 >
-                  <Y padding="$4" space="$2">
+                  <Y padding="$4" gap="$2">
                     <T>{t('sustainableFishing.communityForums')}</T>
                     <P size="$2">
                       {t('sustainableFishing.communityForumsDescription')}
