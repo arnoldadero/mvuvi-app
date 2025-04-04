@@ -16,6 +16,7 @@ import { FishSpeciesGuideScreen } from '../screens/sustainable-fishing/FishSpeci
 import { FishingRegulationsScreen } from '../screens/sustainable-fishing/FishingRegulationsScreen';
 import { FishingSeasonalCalendarScreen } from '../screens/sustainable-fishing/FishingSeasonalCalendarScreen';
 import { ReportViolationScreen } from '../screens/sustainable-fishing/ReportViolationScreen';
+import { SustainableFishingCategoryScreen } from '../screens/sustainable-fishing/SustainableFishingCategoryScreen';
 import { CatchRecordDetailsScreen } from '../screens/catch-data/CatchRecordDetailsScreen';
 import { UserProfileScreen } from '../screens/profile/UserProfileScreen';
 import { SettingsScreen } from '../screens/profile/SettingsScreen';
@@ -52,6 +53,7 @@ export type RootStackParamList = {
   FishingRegulations: undefined;
   FishingSeasonalCalendar: undefined;
   ReportViolation: undefined;
+  SustainableFishingCategory: { category: string };
 
   // Catch Data screens
   CatchRecordDetails: { catchId: string };
@@ -179,6 +181,14 @@ export function AppNavigator() {
               component={ReportViolationScreen}
               options={{
                 title: t('regulations.reportViolation'),
+                headerRight: () => <ProfileButton mini />,
+              }}
+            />
+            <Stack.Screen
+              name="SustainableFishingCategory"
+              component={SustainableFishingCategoryScreen}
+              options={{
+                title: t('sustainableFishing.category'),
                 headerRight: () => <ProfileButton mini />,
               }}
             />
