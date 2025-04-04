@@ -6,6 +6,7 @@ import { NativeStackScreenProps } from '@react-navigation/native-stack';
 
 // Import screens
 import { MoonPhaseScreen } from '../screens/weather/MoonPhaseScreen';
+import { DetailedForecastScreen } from '../screens/weather/DetailedForecastScreen';
 import { LoginScreen } from '../screens/auth/LoginScreen';
 import { RegisterScreen } from '../screens/auth/RegisterScreen';
 import { ForgotPasswordScreen } from '../screens/auth/ForgotPasswordScreen';
@@ -44,6 +45,7 @@ export type RootStackParamList = {
 
   // Weather screens
   MoonPhase: undefined;
+  DetailedForecast: undefined;
 
   // Market Prices screens
   ReportMarketPrice: undefined;
@@ -127,6 +129,14 @@ export function AppNavigator() {
               component={MoonPhaseScreen}
               options={{
                 title: t('moonPhase.title'),
+                headerRight: () => <ProfileButton mini />,
+              }}
+            />
+            <Stack.Screen
+              name="DetailedForecast"
+              component={DetailedForecastScreen}
+              options={{
+                title: t('weather.forecast'),
                 headerRight: () => <ProfileButton mini />,
               }}
             />
