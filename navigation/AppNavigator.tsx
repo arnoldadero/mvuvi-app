@@ -3,6 +3,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { useTranslation } from 'react-i18next';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
+import { useAuthStore } from '../store/auth/auth-store';
 
 // Import screens
 import { MoonPhaseScreen } from '../screens/weather/MoonPhaseScreen';
@@ -13,9 +14,12 @@ import { ForgotPasswordScreen } from '../screens/auth/ForgotPasswordScreen';
 import { ReportMarketPriceScreen } from '../screens/market-prices/ReportMarketPriceScreen';
 import { EmergencyContactsScreen } from '../screens/safety/EmergencyContactsScreen';
 import { SafetyChecklistScreen } from '../screens/safety/SafetyChecklistScreen';
+import { SafetyTipsScreen } from '../screens/safety/SafetyTipsScreen';
 import { FishSpeciesGuideScreen } from '../screens/sustainable-fishing/FishSpeciesGuideScreen';
+import { FishSpeciesScreen } from '../screens/sustainable-fishing/FishSpeciesScreen';
 import { FishingRegulationsScreen } from '../screens/sustainable-fishing/FishingRegulationsScreen';
 import { FishingSeasonalCalendarScreen } from '../screens/sustainable-fishing/FishingSeasonalCalendarScreen';
+import { SeasonalCalendarScreen } from '../screens/sustainable-fishing/SeasonalCalendarScreen';
 import { ReportViolationScreen } from '../screens/sustainable-fishing/ReportViolationScreen';
 import { SustainableFishingCategoryScreen } from '../screens/sustainable-fishing/SustainableFishingCategoryScreen';
 import { EducationalVideosScreen } from '../screens/sustainable-fishing/EducationalVideosScreen';
@@ -27,14 +31,26 @@ import { UserProfileScreen } from '../screens/profile/UserProfileScreen';
 import { SettingsScreen } from '../screens/profile/SettingsScreen';
 import { HelpScreen } from '../screens/profile/HelpScreen';
 
+// Import business screens
+import { VesselDashboardScreen } from '../screens/business/VesselDashboardScreen';
+import { InventoryScreen } from '../screens/business/InventoryScreen';
+import { DistributionScreen } from '../screens/business/DistributionScreen';
+
+// Import admin screens
+import { AdminDashboardScreen } from '../screens/admin/AdminDashboardScreen';
+
 // Import TabNavigator
 import { TabNavigator } from './TabNavigator';
+import { PublicTabNavigator } from './PublicTabNavigator';
 
 // Import UI components
 import { ProfileButton } from '../components/profile/ProfileButton';
 
 // Define the navigator type
 export type RootStackParamList = {
+  // Public tab navigator for unauthenticated users
+  PublicTabs: undefined;
+
   // Auth screens
   Login: undefined;
   Register: undefined;
@@ -53,11 +69,14 @@ export type RootStackParamList = {
   // Safety screens
   EmergencyContacts: undefined;
   SafetyChecklist: undefined;
+  SafetyTips: undefined;
 
   // Sustainable Fishing screens
   FishSpeciesGuide: undefined;
+  FishSpecies: undefined;
   FishingRegulations: undefined;
   FishingSeasonalCalendar: undefined;
+  SeasonalCalendar: undefined;
   ReportViolation: undefined;
   SustainableFishingCategory: { category: string };
   EducationalVideos: undefined;
@@ -72,6 +91,14 @@ export type RootStackParamList = {
   UserProfile: undefined;
   Settings: undefined;
   Help: undefined;
+
+  // Business screens
+  VesselDashboard: undefined;
+  Inventory: undefined;
+  Distribution: undefined;
+
+  // Admin screens
+  AdminDashboard: undefined;
 };
 
 // Define screen props types
@@ -85,15 +112,27 @@ const Stack = createNativeStackNavigator<RootStackParamList>();
  */
 export function AppNavigator() {
   const { t } = useTranslation();
-  // Mock authentication state - in a real app, this would come from a auth store
-  const [isAuthenticated, setIsAuthenticated] = useState(true); // Set to true for development
+  const { user, isAuthenticated } = useAuthStore();
+
+  // Set initial route name based on authentication status
+  const initialRouteName = isAuthenticated ? 'MainTabs' : 'PublicTabs';
 
   return (
     <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator initialRouteName={initialRouteName}>
         {!isAuthenticated ? (
-          // Auth screens
+          // Public and Auth screens for unauthenticated users
           <>
+            {/* Public Tab Navigator for unauthenticated users */}
+            <Stack.Screen
+              name="PublicTabs"
+              component={PublicTabNavigator}
+              options={{
+                headerShown: false,
+              }}
+            />
+
+            {/* Auth screens */}
             <Stack.Screen
               name="Login"
               component={LoginScreen}
@@ -108,6 +147,68 @@ export function AppNavigator() {
               name="ForgotPassword"
               component={ForgotPasswordScreen}
               options={{ title: t('auth.forgotPassword') }}
+            />
+
+            {/* Public Weather related screens */}
+            <Stack.Screen
+              name="MoonPhase"
+              component={MoonPhaseScreen}
+              options={{
+                title: t('moonPhase.title'),
+              }}
+            />
+            <Stack.Screen
+              name="DetailedForecast"
+              component={DetailedForecastScreen}
+              options={{
+                title: t('weather.forecast'),
+              }}
+            />
+
+            {/* Public Safety related screens */}
+            <Stack.Screen
+              name="SafetyChecklist"
+              component={SafetyChecklistScreen}
+              options={{
+                title: t('safety.checklist'),
+              }}
+            />
+            <Stack.Screen
+              name="SafetyTips"
+              component={SafetyTipsScreen}
+              options={{
+                title: t('safety.tips'),
+              }}
+            />
+
+            {/* Public Sustainable Fishing screens */}
+            <Stack.Screen
+              name="FishingRegulations"
+              component={FishingRegulationsScreen}
+              options={{
+                title: t('sustainableFishing.regulations'),
+              }}
+            />
+            <Stack.Screen
+              name="FishSpecies"
+              component={FishSpeciesScreen}
+              options={{
+                title: t('sustainableFishing.fishSpecies'),
+              }}
+            />
+            <Stack.Screen
+              name="SeasonalCalendar"
+              component={SeasonalCalendarScreen}
+              options={{
+                title: t('sustainableFishing.seasonalCalendar'),
+              }}
+            />
+            <Stack.Screen
+              name="ReportViolation"
+              component={ReportViolationScreen}
+              options={{
+                title: t('sustainableFishing.reportViolation'),
+              }}
             />
           </>
         ) : (
@@ -273,6 +374,38 @@ export function AppNavigator() {
               component={HelpScreen}
               options={{
                 title: t('help.helpAndSupport'),
+              }}
+            />
+
+            {/* Business screens */}
+            <Stack.Screen
+              name="VesselDashboard"
+              component={VesselDashboardScreen}
+              options={{
+                title: t('vessel.dashboard'),
+              }}
+            />
+            <Stack.Screen
+              name="Inventory"
+              component={InventoryScreen}
+              options={{
+                title: t('inventory.dashboard'),
+              }}
+            />
+            <Stack.Screen
+              name="Distribution"
+              component={DistributionScreen}
+              options={{
+                title: t('distribution.dashboard'),
+              }}
+            />
+
+            {/* Admin screens */}
+            <Stack.Screen
+              name="AdminDashboard"
+              component={AdminDashboardScreen}
+              options={{
+                title: t('admin.dashboard'),
               }}
             />
           </>

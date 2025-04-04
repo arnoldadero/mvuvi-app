@@ -1,0 +1,10 @@
+This directory contains fish species images used in the app.
+
+The following images should be placed here:
+- nile-perch.jpg
+- tilapia.jpg
+- omena.jpg
+- catfish.jpg
+- tuna.jpg
+
+For development purposes, you can use placeholder images or download appropriate images with proper licensing.

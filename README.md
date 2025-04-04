@@ -49,6 +49,11 @@ Small-scale fishermen in Kenya, particularly those operating around Lake Victori
 - Private data control with opt-in sharing options
 
 ### 7. User Profile & Settings
+- Comprehensive user profile system with three account types:
+  - Personal Account (Customer): For individual fishers and consumers
+  - Business Account: For boat owners and distributors
+  - Admin Account: For system administrators
+- Role-based access control with tailored features for each account type
 - Language selection (Swahili, English)
 - Emergency contact management
 - Notification preferences
@@ -191,6 +196,13 @@ mvuvi-app/
 - [x] Fixed Tamagui CSS loading issues for web platform
 - [x] Renamed moon phase images to use day-based naming convention instead of illumination percentage
 - [x] Added Omena/Dagaa fishing recommendations to moon phase calendar based on lunar cycle research
+- [x] Implemented comprehensive user profile system with three distinct account types (Personal, Business, Admin)
+- [x] Created role-based access control for different user types
+- [x] Implemented business-specific features (vessel management, inventory tracking, distribution management)
+- [x] Added admin dashboard with user management capabilities
+- [x] Made Weather, Sustainable Fishing, and Safety screens accessible without login
+- [x] Fixed missing screen components in navigation (SafetyTipsScreen, FishSpeciesScreen, SeasonalCalendarScreen)
+- [x] Fixed syntax errors caused by special apostrophes in string literals
 
 ### Pending Tasks
 - [ ] Weather API integration
@@ -272,6 +284,10 @@ The following GitHub issues have been created to track the implementation of the
 8. [Optimize App Performance](https://github.com/arnoldadero/mvuvi-app/issues/9)
 9. [Prepare App for Deployment to App Stores](https://github.com/arnoldadero/mvuvi-app/issues/10)
 10. [Fix undefined component error in FishingRegulationsScreen](https://github.com/arnoldadero/mvuvi-app/issues/11)
+11. [Implement Comprehensive User Profile System with Three Account Types](https://github.com/arnoldadero/mvuvi-app/issues/12)
+12. [Make Weather, Sustainable Fishing, and Safety Screens Accessible Without Login](https://github.com/arnoldadero/mvuvi-app/issues/13)
+13. [Fix missing screen components in navigation](https://github.com/arnoldadero/mvuvi-app/issues/14)
+14. [Fix syntax errors caused by special apostrophes in string literals](https://github.com/arnoldadero/mvuvi-app/issues/15)
 
 All these issues are part of the [MVP Release](https://github.com/arnoldadero/mvuvi-app/milestone/1) milestone.
 
