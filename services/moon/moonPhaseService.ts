@@ -123,8 +123,8 @@ export function getMoonPhaseData(date: Date = new Date()): MoonPhaseData {
   // In a real app, would use more precise astronomical calculations
   const distance = 384400; // Average distance in km
 
-  // Get the appropriate image file for this moon phase and illumination
-  const imageFile = getMoonPhaseImageFile(phase, illumination);
+  // Get the appropriate image file for this moon phase based on moon age
+  const imageFile = getMoonPhaseImageFile(phase, illumination, date);
 
   return {
     date,
@@ -179,61 +179,47 @@ export function getNextFavorableFishingDays(
 }
 
 /**
- * Get the appropriate moon phase image file based on phase and illumination percentage
+ * Get the appropriate moon phase image file based on moon age in days
  * @param phase The moon phase
- * @param illumination The illumination value (0-1)
+ * @param illumination The illumination value (0-1) - used for backward compatibility
+ * @param date Optional date to calculate moon age (defaults to current date)
  * @returns The image file name
  */
-export function getMoonPhaseImageFile(phase: MoonPhase, illumination: number): string {
-  // Convert illumination from 0-1 to 0-100 percentage
-  const percentage = Math.round(illumination * 100);
+export function getMoonPhaseImageFile(phase: MoonPhase, illumination: number, date: Date = new Date()): string {
+  // Get the moon age directly - this is more accurate than using illumination
+  const age = calculateMoonAge(date);
 
-  // Select the appropriate image based on phase and percentage
-  switch (phase) {
-    case MoonPhase.NEW_MOON:
-      return percentage <= 0 ? 'new-moon-0%' : 'new-moon-1%';
-
-    case MoonPhase.WAXING_CRESCENT:
-      if (percentage <= 6) return 'waxing-crescent-6%';
-      if (percentage <= 13) return 'waxing-crescent-13%';
-      if (percentage <= 22) return 'waxing-crescent-22%';
-      return 'waxing-crescent-33%';
-
-    case MoonPhase.FIRST_QUARTER:
-      return percentage <= 40 ? 'first-quarter-40%' : 'first-quarter-54%';
-
-    case MoonPhase.WAXING_GIBBOUS:
-      if (percentage <= 65) return 'waxing-gibbous-65%';
-      if (percentage <= 74) return 'waxing-gibbous-74%';
-      if (percentage <= 82) return 'waxing-gibbous-82%';
-      if (percentage <= 89) return 'waxing-gibbous-89%';
-      if (percentage <= 94) return 'waxing-gibbous-94%';
-      return 'waxing-gibbous-98%';
-
-    case MoonPhase.FULL_MOON:
-      return percentage >= 100 ? 'full-moon-100%' : 'full-moon-99%';
-
-    case MoonPhase.WANING_GIBBOUS:
-      if (percentage <= 66) return 'waning-gibbous-66%';
-      if (percentage <= 75) return 'waning-gibbous-75%';
-      if (percentage <= 83) return 'waning-gibbous-83%';
-      if (percentage <= 89) return 'waning-gibbous-89%';
-      if (percentage <= 94) return 'waning-gibbous-94%';
-      return 'waning-gibbous-98%';
-
-    case MoonPhase.LAST_QUARTER:
-      return percentage <= 46 ? 'third-quarter-46%' : 'third-quarter-56%';
-
-    case MoonPhase.WANING_CRESCENT:
-      if (percentage <= 3) return 'waning-crescent-3%';
-      if (percentage <= 8) return 'waning-crescent-8%';
-      if (percentage <= 16) return 'waning-crescent-16%';
-      if (percentage <= 25) return 'waning-crescent-25%';
-      return 'waning-crescent-35%';
-
-    default:
-      return 'new-moon-0%';
-  }
+  // Select the appropriate image based on moon age in days
+  if (age < 1) return 'new-moon-day-0';
+  if (age < 2) return 'new-moon-day-1';
+  if (age < 3) return 'waxing-crescent-day-2';
+  if (age < 5) return 'waxing-crescent-day-4';
+  if (age < 6) return 'waxing-crescent-day-5';
+  if (age < 7) return 'waxing-crescent-day-6';
+  if (age < 8) return 'first-quarter-day-7';
+  if (age < 9) return 'first-quarter-day-8';
+  if (age < 11) return 'waxing-gibbous-day-10';
+  if (age < 12) return 'waxing-gibbous-day-11';
+  if (age < 13) return 'waxing-gibbous-day-12';
+  if (age < 14) return 'waxing-gibbous-day-13';
+  if (age < 14.5) return 'waxing-gibbous-day-14';
+  if (age < 15) return 'waxing-gibbous-day-14.5';
+  if (age < 15.5) return 'full-moon-day-15';
+  if (age < 16) return 'full-moon-day-15.5';
+  if (age < 17) return 'waning-gibbous-day-16';
+  if (age < 18) return 'waning-gibbous-day-17';
+  if (age < 19) return 'waning-gibbous-day-18';
+  if (age < 20) return 'waning-gibbous-day-19';
+  if (age < 21) return 'waning-gibbous-day-20';
+  if (age < 22) return 'waning-gibbous-day-21';
+  if (age < 23) return 'last-quarter-day-22';
+  if (age < 24) return 'last-quarter-day-23';
+  if (age < 25) return 'waning-crescent-day-24';
+  if (age < 26) return 'waning-crescent-day-25';
+  if (age < 27) return 'waning-crescent-day-26';
+  if (age < 28) return 'waning-crescent-day-27';
+  if (age < 29) return 'waning-crescent-day-28';
+  return 'new-moon-day-0';
 }
 
 /**

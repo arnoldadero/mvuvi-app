@@ -8,50 +8,84 @@ import { useTranslation } from 'react-i18next';
 const LUNAR_MONTH = 29.53059; // Days in a lunar month
 
 // Import all moon phase images statically to avoid bundling issues
-// New moon images
-const newMoon0 = require('../../../assets/moon-phases/new-moon-0%.png');
-const newMoon1 = require('../../../assets/moon-phases/new-moon-1%.png');
+// Create a mapping of image names to their require statements
+const moonPhaseImages = {
+  // New moon images
+  'new-moon-day-0': require('../../../assets/moon-phases/new_moon_day_0.png'),
+  'new-moon-day-1': require('../../../assets/moon-phases/new_moon_day_1.png'),
 
-// Waxing crescent images
-const waxingCrescent6 = require('../../../assets/moon-phases/waxing-crescent-6%.png');
-const waxingCrescent13 = require('../../../assets/moon-phases/waxing-crescent-13%.png');
-const waxingCrescent22 = require('../../../assets/moon-phases/waxing-crescent-22%.png');
-const waxingCrescent33 = require('../../../assets/moon-phases/waxing-crescent-33%.png');
+  // Waxing crescent images
+  'waxing-crescent-day-2': require('../../../assets/moon-phases/waxing_crescent_day_2.png'),
+  'waxing-crescent-day-4': require('../../../assets/moon-phases/waxing_crescent_day_4.png'),
+  'waxing-crescent-day-5': require('../../../assets/moon-phases/waxing_crescent_day_5.png'),
+  'waxing-crescent-day-6': require('../../../assets/moon-phases/waxing_crescent_day_6.png'),
 
-// First quarter images
-const firstQuarter40 = require('../../../assets/moon-phases/first-quarter-40%.png');
-const firstQuarter54 = require('../../../assets/moon-phases/first-quarter-54%.png');
+  // First quarter images
+  'first-quarter-day-7': require('../../../assets/moon-phases/first_quarter_day_7.png'),
+  'first-quarter-day-8': require('../../../assets/moon-phases/first_quarter_day_8.png'),
 
-// Waxing gibbous images
-const waxingGibbous65 = require('../../../assets/moon-phases/waxing-gibbous-65%.png');
-const waxingGibbous74 = require('../../../assets/moon-phases/waxing-gibbous-74%.png');
-const waxingGibbous82 = require('../../../assets/moon-phases/waxing-gibbous-82%.png');
-const waxingGibbous89 = require('../../../assets/moon-phases/waxing-gibbous-89%.png');
-const waxingGibbous94 = require('../../../assets/moon-phases/waxing-gibbous-94%.png');
-const waxingGibbous98 = require('../../../assets/moon-phases/waxing-gibbous-98%.png');
+  // Waxing gibbous images
+  'waxing-gibbous-day-10': require('../../../assets/moon-phases/waxing_gibbous_day_10.png'),
+  'waxing-gibbous-day-11': require('../../../assets/moon-phases/waxing_gibbous_day_11.png'),
+  'waxing-gibbous-day-12': require('../../../assets/moon-phases/waxing_gibbous_day_12.png'),
+  'waxing-gibbous-day-13': require('../../../assets/moon-phases/waxing_gibbous_day_13.png'),
+  'waxing-gibbous-day-14': require('../../../assets/moon-phases/waxing_gibbous_day_14.png'),
+  'waxing-gibbous-day-14.5': require('../../../assets/moon-phases/waxing_gibbous_day_14_5.png'),
 
-// Full moon images
-const fullMoon99 = require('../../../assets/moon-phases/full-moon-99%.png');
-const fullMoon100 = require('../../../assets/moon-phases/full-moon-100%.png');
+  // Full moon images
+  'full-moon-day-15': require('../../../assets/moon-phases/full_moon_day_15.png'),
+  'full-moon-day-15.5': require('../../../assets/moon-phases/full_moon_day_15_5.png'),
 
-// Waning gibbous images
-const waningGibbous98 = require('../../../assets/moon-phases/waning-gibbous-98%.png');
-const waningGibbous94 = require('../../../assets/moon-phases/waning-gibbous-94%.png');
-const waningGibbous89 = require('../../../assets/moon-phases/waning-gibbous-89%.png');
-const waningGibbous83 = require('../../../assets/moon-phases/waning-gibbous-83%.png');
-const waningGibbous75 = require('../../../assets/moon-phases/waning-gibbous-75%.png');
-const waningGibbous66 = require('../../../assets/moon-phases/waning-gibbous-66%.png');
+  // Waning gibbous images
+  'waning-gibbous-day-16': require('../../../assets/moon-phases/waning_gibbous_day_16.png'),
+  'waning-gibbous-day-17': require('../../../assets/moon-phases/waning_gibbous_day_17.png'),
+  'waning-gibbous-day-18': require('../../../assets/moon-phases/waning_gibbous_day_18.png'),
+  'waning-gibbous-day-19': require('../../../assets/moon-phases/waning_gibbous_day_19.png'),
+  'waning-gibbous-day-20': require('../../../assets/moon-phases/waning_gibbous_day_20.png'),
+  'waning-gibbous-day-21': require('../../../assets/moon-phases/waning_gibbous_day_21.png'),
 
-// Third quarter images
-const thirdQuarter56 = require('../../../assets/moon-phases/third-quarter-56%.png');
-const thirdQuarter46 = require('../../../assets/moon-phases/third-quarter-46%.png');
+  // Last quarter images
+  'last-quarter-day-22': require('../../../assets/moon-phases/last_quarter_day_22.png'),
+  'last-quarter-day-23': require('../../../assets/moon-phases/last_quarter_day_23.png'),
 
-// Waning crescent images
-const waningCrescent35 = require('../../../assets/moon-phases/waning-crescent-35%.png');
-const waningCrescent25 = require('../../../assets/moon-phases/waning-crescent-25%.png');
-const waningCrescent16 = require('../../../assets/moon-phases/waning-crescent-16%.png');
-const waningCrescent8 = require('../../../assets/moon-phases/waning-crescent-8%.png');
-const waningCrescent3 = require('../../../assets/moon-phases/waning-crescent-3%.png');
+  // Waning crescent images
+  'waning-crescent-day-24': require('../../../assets/moon-phases/waning_crescent_day_24.png'),
+  'waning-crescent-day-25': require('../../../assets/moon-phases/waning_crescent_day_25.png'),
+  'waning-crescent-day-26': require('../../../assets/moon-phases/waning_crescent_day_26.png'),
+  'waning-crescent-day-27': require('../../../assets/moon-phases/waning_crescent_day_27.png'),
+  'waning-crescent-day-28': require('../../../assets/moon-phases/waning_crescent_day_28.png'),
+
+  // Legacy percentage-based filenames for backward compatibility
+  'new-moon-0%': require('../../../assets/moon-phases/new_moon_day_0.png'),
+  'new-moon-1%': require('../../../assets/moon-phases/new_moon_day_1.png'),
+  'waxing-crescent-6%': require('../../../assets/moon-phases/waxing_crescent_day_2.png'),
+  'waxing-crescent-13%': require('../../../assets/moon-phases/waxing_crescent_day_4.png'),
+  'waxing-crescent-22%': require('../../../assets/moon-phases/waxing_crescent_day_5.png'),
+  'waxing-crescent-33%': require('../../../assets/moon-phases/waxing_crescent_day_6.png'),
+  'first-quarter-40%': require('../../../assets/moon-phases/first_quarter_day_7.png'),
+  'first-quarter-54%': require('../../../assets/moon-phases/first_quarter_day_8.png'),
+  'waxing-gibbous-65%': require('../../../assets/moon-phases/waxing_gibbous_day_10.png'),
+  'waxing-gibbous-74%': require('../../../assets/moon-phases/waxing_gibbous_day_11.png'),
+  'waxing-gibbous-82%': require('../../../assets/moon-phases/waxing_gibbous_day_12.png'),
+  'waxing-gibbous-89%': require('../../../assets/moon-phases/waxing_gibbous_day_13.png'),
+  'waxing-gibbous-94%': require('../../../assets/moon-phases/waxing_gibbous_day_14.png'),
+  'waxing-gibbous-98%': require('../../../assets/moon-phases/waxing_gibbous_day_14_5.png'),
+  'full-moon-99%': require('../../../assets/moon-phases/full_moon_day_15.png'),
+  'full-moon-100%': require('../../../assets/moon-phases/full_moon_day_15_5.png'),
+  'waning-gibbous-98%': require('../../../assets/moon-phases/waning_gibbous_day_16.png'),
+  'waning-gibbous-94%': require('../../../assets/moon-phases/waning_gibbous_day_17.png'),
+  'waning-gibbous-89%': require('../../../assets/moon-phases/waning_gibbous_day_18.png'),
+  'waning-gibbous-83%': require('../../../assets/moon-phases/waning_gibbous_day_19.png'),
+  'waning-gibbous-75%': require('../../../assets/moon-phases/waning_gibbous_day_20.png'),
+  'waning-gibbous-66%': require('../../../assets/moon-phases/waning_gibbous_day_21.png'),
+  'third-quarter-56%': require('../../../assets/moon-phases/last_quarter_day_22.png'),
+  'third-quarter-46%': require('../../../assets/moon-phases/last_quarter_day_23.png'),
+  'waning-crescent-35%': require('../../../assets/moon-phases/waning_crescent_day_24.png'),
+  'waning-crescent-25%': require('../../../assets/moon-phases/waning_crescent_day_25.png'),
+  'waning-crescent-16%': require('../../../assets/moon-phases/waning_crescent_day_26.png'),
+  'waning-crescent-8%': require('../../../assets/moon-phases/waning_crescent_day_27.png'),
+  'waning-crescent-3%': require('../../../assets/moon-phases/waning_crescent_day_28.png')
+};
 
 // Type aliases for Tamagui components
 const X: any = XStack;
@@ -137,70 +171,25 @@ const StatsSection = styled(YStack, {
 
 /**
  * Function to get the appropriate moon phase image based on the moon phase data
- * This uses the new percentage-based moon phase images
+ * This uses the new day-based moon phase images
  */
 const getMoonPhaseImage = (moonPhaseData: MoonPhaseData) => {
   // Get the image based on the imageFile property
-  if (moonPhaseData.imageFile) {
-    switch (moonPhaseData.imageFile) {
-      // New moon
-      case 'new-moon-0%': return newMoon0;
-      case 'new-moon-1%': return newMoon1;
-
-      // Waxing crescent
-      case 'waxing-crescent-6%': return waxingCrescent6;
-      case 'waxing-crescent-13%': return waxingCrescent13;
-      case 'waxing-crescent-22%': return waxingCrescent22;
-      case 'waxing-crescent-33%': return waxingCrescent33;
-
-      // First quarter
-      case 'first-quarter-40%': return firstQuarter40;
-      case 'first-quarter-54%': return firstQuarter54;
-
-      // Waxing gibbous
-      case 'waxing-gibbous-65%': return waxingGibbous65;
-      case 'waxing-gibbous-74%': return waxingGibbous74;
-      case 'waxing-gibbous-82%': return waxingGibbous82;
-      case 'waxing-gibbous-89%': return waxingGibbous89;
-      case 'waxing-gibbous-94%': return waxingGibbous94;
-      case 'waxing-gibbous-98%': return waxingGibbous98;
-
-      // Full moon
-      case 'full-moon-99%': return fullMoon99;
-      case 'full-moon-100%': return fullMoon100;
-
-      // Waning gibbous
-      case 'waning-gibbous-98%': return waningGibbous98;
-      case 'waning-gibbous-94%': return waningGibbous94;
-      case 'waning-gibbous-89%': return waningGibbous89;
-      case 'waning-gibbous-83%': return waningGibbous83;
-      case 'waning-gibbous-75%': return waningGibbous75;
-      case 'waning-gibbous-66%': return waningGibbous66;
-
-      // Third quarter
-      case 'third-quarter-56%': return thirdQuarter56;
-      case 'third-quarter-46%': return thirdQuarter46;
-
-      // Waning crescent
-      case 'waning-crescent-35%': return waningCrescent35;
-      case 'waning-crescent-25%': return waningCrescent25;
-      case 'waning-crescent-16%': return waningCrescent16;
-      case 'waning-crescent-8%': return waningCrescent8;
-      case 'waning-crescent-3%': return waningCrescent3;
-    }
+  if (moonPhaseData.imageFile && moonPhaseImages[moonPhaseData.imageFile]) {
+    return moonPhaseImages[moonPhaseData.imageFile];
   }
 
   // Fallback to basic phase images if needed
   switch (moonPhaseData.phase) {
-    case MoonPhase.NEW_MOON: return newMoon0;
-    case MoonPhase.WAXING_CRESCENT: return waxingCrescent22;
-    case MoonPhase.FIRST_QUARTER: return firstQuarter54;
-    case MoonPhase.WAXING_GIBBOUS: return waxingGibbous82;
-    case MoonPhase.FULL_MOON: return fullMoon100;
-    case MoonPhase.WANING_GIBBOUS: return waningGibbous83;
-    case MoonPhase.LAST_QUARTER: return thirdQuarter56;
-    case MoonPhase.WANING_CRESCENT: return waningCrescent25;
-    default: return newMoon0;
+    case MoonPhase.NEW_MOON: return moonPhaseImages['new-moon-day-0'];
+    case MoonPhase.WAXING_CRESCENT: return moonPhaseImages['waxing-crescent-day-4'];
+    case MoonPhase.FIRST_QUARTER: return moonPhaseImages['first-quarter-day-7'];
+    case MoonPhase.WAXING_GIBBOUS: return moonPhaseImages['waxing-gibbous-day-12'];
+    case MoonPhase.FULL_MOON: return moonPhaseImages['full-moon-day-15'];
+    case MoonPhase.WANING_GIBBOUS: return moonPhaseImages['waning-gibbous-day-19'];
+    case MoonPhase.LAST_QUARTER: return moonPhaseImages['last-quarter-day-22'];
+    case MoonPhase.WANING_CRESCENT: return moonPhaseImages['waning-crescent-day-26'];
+    default: return moonPhaseImages['new-moon-day-0'];
   }
 };
 
@@ -268,7 +257,7 @@ export function MoonPhaseCalendar({
               : t(`moonPhase.phases.${moonPhases[0].phase}`)}
           </T>
           <T fontSize={12} color="$gray10">
-            {Math.round(moonPhases[0].illumination * 100)}%
+            {t('moonPhase.age')}: {Math.round(moonPhases[0].age)} {t('moonPhase.days')}
           </T>
           <T
             marginTop="$1"
@@ -324,7 +313,7 @@ export function MoonPhaseCalendar({
                     : t(`moonPhase.phases.${day.phase}`).split(' ')[0]}
                 </PhaseText>
                 <PhaseText fontSize={9} color="$gray10">
-                  {Math.round(day.illumination * 100)}%
+                  {t('moonPhase.day')} {Math.round(day.age)}
                 </PhaseText>
               </DayCardContent>
             </C>
@@ -347,7 +336,7 @@ export function MoonPhaseCalendar({
                 {i18n.language === 'sw'
                   ? translateMoonPhaseToSwahili(selectedDay.phase)
                   : t(`moonPhase.phases.${selectedDay.phase}`)}
-                <T fontSize={14} color="$gray10"> ({Math.round(selectedDay.illumination * 100)}%)</T>
+                <T fontSize={14} color="$gray10"> ({t('moonPhase.day')} {Math.round(selectedDay.age)})</T>
               </H4C>
               <T marginTop="$1">
                 {formatDate(selectedDay.date, i18n.language === 'sw' ? 'sw-KE' : 'en-US')}
