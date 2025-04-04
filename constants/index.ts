@@ -28,8 +28,8 @@ export const SCREENS = {
   },
   SAFETY: {
     MAIN: 'Safety',
-    SOS: 'SOS',
     CONTACTS: 'EmergencyContacts',
+    CHECKLIST: 'SafetyChecklist',
   },
   CATCH_DATA: {
     LOG: 'LogCatch',
