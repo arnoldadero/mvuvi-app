@@ -3,8 +3,10 @@ import { SafeAreaView, StatusBar, ActivityIndicator, Alert, Share } from 'react-
 import { YStack, H2, Text, Card, Button, XStack, Paragraph, ScrollView, Separator } from 'tamagui';
 import { useTranslation } from 'react-i18next';
 import { useCatchDataStore, CatchRecord } from '../../services/catch-data/catchDataStore';
-import { ArrowLeft, Share2, Edit3, Trash } from '@tamagui/lucide-icons';
+import { ArrowLeft, Share2, Edit3, Trash, Calendar, MapPin } from '@tamagui/lucide-icons';
 import { format } from 'date-fns';
+import MapView, { Marker } from '../../components/maps/MapView';
+import { MoonPhaseIndicator } from '../../components/catch-data/MoonPhaseIndicator';
 
 interface CatchRecordDetailsScreenProps {
   navigation: any;
@@ -38,8 +40,8 @@ interface CatchRecordDetailsScreenProps {
 export function CatchRecordDetailsScreen({ navigation, route }: CatchRecordDetailsScreenProps) {
   const { catchId } = route.params;
   const { t } = useTranslation();
-  const { 
-    catchRecords, 
+  const {
+    catchRecords,
     isLoadingRecords,
     isDeletingRecord,
     error,
@@ -55,11 +57,11 @@ export function CatchRecordDetailsScreen({ navigation, route }: CatchRecordDetai
       if (catchRecords.length === 0) {
         await fetchCatchRecords();
       }
-      
+
       const record = catchRecords.find(r => r.id === catchId);
       setCatchRecord(record || null);
     };
-    
+
     loadData();
   }, [catchId, catchRecords, fetchCatchRecords]);
 
@@ -98,12 +100,12 @@ export function CatchRecordDetailsScreen({ navigation, route }: CatchRecordDetai
 
   const handleShare = async () => {
     if (!catchRecord) return;
-    
+
     try {
       const formattedDate = formatDate(catchRecord.date);
-      
+
       const message = `${t('catchData.shareMessage')}
-      
+
 ${t('catchData.fishSpecies')}: ${catchRecord.fishSpecies}
 ${t('catchData.quantity')}: ${catchRecord.quantity} ${catchRecord.unit}
 ${t('catchData.location')}: ${catchRecord.location}
@@ -113,7 +115,7 @@ ${t('catchData.effortHours')}: ${catchRecord.effortHours} ${t('catchData.hours')
 ${catchRecord.notes ? `${t('catchData.notes')}: ${catchRecord.notes}` : ''}
 
 ${t('app.name')} - ${t('app.slogan')}`;
-      
+
       await Share.share({
         message,
       });
@@ -174,7 +176,7 @@ ${t('app.name')} - ${t('app.slogan')}`;
             >
               {t('common.back')}
             </B>
-            
+
             <B
               icon={<Share2 size={"$4" as any} />}
               variant="outlined"
@@ -183,14 +185,19 @@ ${t('app.name')} - ${t('app.slogan')}`;
               {t('common.share')}
             </B>
           </X>
-          
-          <H>{catchRecord.fishSpecies}</H>
-          <P>{formatDate(catchRecord.date)}</P>
-          
+
+          <X justifyContent="space-between" alignItems="center">
+            <Y>
+              <H>{catchRecord.fishSpecies}</H>
+              <P>{formatDate(catchRecord.date)}</P>
+            </Y>
+            <MoonPhaseIndicator date={new Date(catchRecord.date)} size={50} showLabel />
+          </X>
+
           <C borderRadius="$4" bordered>
             <Y padding="$4" space="$3">
               <T fontWeight="bold" fontSize="$5">{t('catchData.catchDetails')}</T>
-              
+
               <Y space="$3">
                 <X justifyContent="space-between">
                   <T>{t('catchData.quantity')}</T>
@@ -198,28 +205,28 @@ ${t('app.name')} - ${t('app.slogan')}`;
                     {catchRecord.quantity} {catchRecord.unit}
                   </T>
                 </X>
-                
+
                 <Sep />
-                
+
                 <X justifyContent="space-between">
                   <T>{t('catchData.location')}</T>
                   <T>{catchRecord.location}</T>
                 </X>
-                
+
                 <Sep />
-                
+
                 <X justifyContent="space-between">
                   <T>{t('catchData.gearUsed')}</T>
                   <T>{catchRecord.gearUsed}</T>
                 </X>
-                
+
                 <Sep />
-                
+
                 <X justifyContent="space-between">
                   <T>{t('catchData.effortHours')}</T>
                   <T>{catchRecord.effortHours} {t('catchData.hours')}</T>
                 </X>
-                
+
                 {catchRecord.notes && (
                   <>
                     <Sep />
@@ -232,26 +239,51 @@ ${t('app.name')} - ${t('app.slogan')}`;
               </Y>
             </Y>
           </C>
-          
+
+          {/* Moon Phase Information */}
+          <C borderRadius="$4" bordered>
+            <Y padding="$4" space="$3">
+              <X space="$2" alignItems="center" marginBottom="$2">
+                <Calendar size={18} color="#0891b2" />
+                <T fontWeight="bold" fontSize="$5">{t('weather.moonPhase')}</T>
+              </X>
+              <P fontSize="$3" marginBottom="$2">
+                {t('catch.moonPhaseInfo')}
+              </P>
+              <X justifyContent="center" marginTop="$2">
+                <MoonPhaseIndicator date={new Date(catchRecord.date)} size={80} showLabel />
+              </X>
+            </Y>
+          </C>
+
           {/* Map section if coordinates are available */}
           {catchRecord.latitude && catchRecord.longitude && (
             <C borderRadius="$4" bordered>
               <Y padding="$4" space="$3">
-                <T fontWeight="bold" fontSize="$5">{t('catchData.location')}</T>
-                {/* Map component would go here */}
-                <Y 
-                  height={200} 
-                  backgroundColor="$gray3" 
-                  justifyContent="center" 
-                  alignItems="center"
-                  borderRadius="$2"
+                <X space="$2" alignItems="center" marginBottom="$2">
+                  <MapPin size={18} color="#0891b2" />
+                  <T fontWeight="bold" fontSize="$5">{t('catchData.location')}</T>
+                </X>
+                <MapView
+                  style={{ height: 200, width: '100%', borderRadius: 8 }}
+                  region={{
+                    latitude: catchRecord.latitude,
+                    longitude: catchRecord.longitude,
+                    latitudeDelta: 0.0922,
+                    longitudeDelta: 0.0421,
+                  }}
                 >
-                  <T>{t('catchData.mapUnavailable')}</T>
-                </Y>
+                  <Marker
+                    coordinate={{
+                      latitude: catchRecord.latitude,
+                      longitude: catchRecord.longitude,
+                    }}
+                  />
+                </MapView>
               </Y>
             </C>
           )}
-          
+
           <X space="$4" justifyContent="center" marginTop="$4">
             <B
               icon={<Edit3 size={"$4" as any} />}
@@ -260,7 +292,7 @@ ${t('app.name')} - ${t('app.slogan')}`;
             >
               {t('common.edit')}
             </B>
-            
+
             <B
               icon={<Trash size={"$4" as any} />}
               variant="outlined"

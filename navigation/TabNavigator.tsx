@@ -9,7 +9,7 @@ import { WeatherScreen } from '../screens/weather/WeatherScreen';
 import { MarketPricesScreen } from '../screens/market-prices/MarketPricesScreen';
 import { SafetyScreen } from '../screens/safety/SafetyScreen';
 import { SustainableFishingScreen } from '../screens/sustainable-fishing/SustainableFishingScreen';
-import { RecordCatchScreen } from '../screens/catch-data/RecordCatchScreen';
+import { CatchDataScreen } from '../screens/catch-data/CatchDataScreen';
 
 // Import ProfileButton component
 import { ProfileButton } from '../components/profile/ProfileButton';
@@ -59,39 +59,39 @@ export function TabNavigator() {
         headerRight: () => <ProfileButton />,
       })}
     >
-      <Tab.Screen 
-        name="Weather" 
-        component={WeatherScreen} 
-        options={{ 
+      <Tab.Screen
+        name="Weather"
+        component={WeatherScreen}
+        options={{
           title: t('weather.title'),
         }}
       />
-      <Tab.Screen 
-        name="MarketPrices" 
-        component={MarketPricesScreen} 
-        options={{ 
+      <Tab.Screen
+        name="MarketPrices"
+        component={MarketPricesScreen}
+        options={{
           title: t('marketPrices.title'),
         }}
       />
-      <Tab.Screen 
-        name="Safety" 
-        component={SafetyScreen} 
-        options={{ 
+      <Tab.Screen
+        name="Safety"
+        component={SafetyScreen}
+        options={{
           title: t('safety.title'),
         }}
       />
-      <Tab.Screen 
-        name="SustainableFishing" 
-        component={SustainableFishingScreen} 
-        options={{ 
+      <Tab.Screen
+        name="SustainableFishing"
+        component={SustainableFishingScreen}
+        options={{
           title: t('sustainableFishing.title'),
         }}
       />
-      <Tab.Screen 
-        name="CatchData" 
-        component={RecordCatchScreen} 
-        options={{ 
-          title: t('catch.recordCatch'),
+      <Tab.Screen
+        name="CatchData"
+        component={CatchDataScreen}
+        options={{
+          title: t('catchData.title'),
         }}
       />
     </Tab.Navigator>

@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { SafeAreaView, StatusBar, Alert, ActivityIndicator } from 'react-native';
-import { YStack, H2, Text, Input, Button, Form, Paragraph, XStack, Select, ScrollView, View, Stack } from 'tamagui';
+import { YStack, H2, Text, Input, Button, Form, Paragraph, XStack, Select, ScrollView, View, Stack, Card } from 'tamagui';
 import { useTranslation } from 'react-i18next';
 import MapView, { Marker } from '../../components/maps/MapView';
 import { useCatchDataStore } from '../../services/catch-data/catchDataStore';
 import { locationService } from '../../services/location/locationService';
 import { z } from 'zod';
 import { useNavigation } from '@react-navigation/native';
+import { MoonPhaseIndicator } from '../../components/catch-data/MoonPhaseIndicator';
+import { Calendar, Camera } from '@tamagui/lucide-icons';
 
 interface RecordCatchScreenProps {
   navigation?: any;
@@ -33,6 +35,7 @@ const Se: any = Select;
 const Sc: any = ScrollView;
 const V: any = View;
 const St: any = Stack;
+const C: any = Card;
 
 // Fish species options - these could be moved to a separate config file
 const fishSpecies = [
@@ -71,6 +74,7 @@ export function RecordCatchScreen({ navigation, route }: RecordCatchScreenProps)
   const initialLocation = route?.params?.initialLocation;
   const { addCatchRecord, isAddingRecord, fetchCatchRecords } = useCatchDataStore();
 
+  const [currentDate] = useState(new Date());
   const [formData, setFormData] = useState<Partial<CatchFormData>>({
     fishSpecies: '',
     quantity: 0,
@@ -203,11 +207,12 @@ export function RecordCatchScreen({ navigation, route }: RecordCatchScreenProps)
   } : undefined;
 
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: '#fff' }}>
-      <StatusBar barStyle="dark-content" backgroundColor="#fff" />
-      <Sc>
-        <Y padding="$4">
-          <H>{t('catch.recordCatch')}</H>
+    <Sc style={{ flex: 1, backgroundColor: '#fff' }}>
+      <Y padding="$4">
+          <X justifyContent="space-between" alignItems="center" marginBottom="$4">
+            <H>{t('catch.recordCatch')}</H>
+            <MoonPhaseIndicator date={currentDate} size={40} showLabel />
+          </X>
 
           {recordSuccess && (
             <Y backgroundColor="$green2" padding="$3" borderRadius="$2" marginTop="$2">
@@ -254,16 +259,24 @@ export function RecordCatchScreen({ navigation, route }: RecordCatchScreenProps)
               <Y marginBottom="$4">
                 <T>{t('catch.fishSpecies')}</T>
                 <Se
-                  value={formData.fishSpecies}
-                  onValueChange={(value: string) => setFormData({ ...formData, fishSpecies: value })}
+                  id="fish-species-select"
+                  value={formData.fishSpecies || ''}
+                  onValueChange={(value: string) => {
+                    console.log('Selected species:', value);
+                    setFormData({ ...formData, fishSpecies: value });
+                  }}
+                  native
                 >
-                  <Se.Trigger>
+                  <Se.Trigger id="fish-species-trigger">
                     <Se.Value placeholder={t('catch.selectSpecies')} />
                   </Se.Trigger>
                   <Se.Content>
                     <Se.ScrollUpButton />
                     <Se.Viewport>
                       <Se.Group>
+                        <Se.Item key="placeholder" value="" index={-1}>
+                          <Se.ItemText>{t('catch.selectSpecies')}</Se.ItemText>
+                        </Se.Item>
                         {fishSpecies.map((species, index) => (
                           <Se.Item key={species} value={species} index={index}>
                             <Se.ItemText>{species}</Se.ItemText>
@@ -300,16 +313,24 @@ export function RecordCatchScreen({ navigation, route }: RecordCatchScreenProps)
                 <Y flex={1}>
                   <T>{t('catch.unit')}</T>
                   <Se
-                    value={formData.unit}
-                    onValueChange={(value: string) => setFormData({ ...formData, unit: value })}
+                    id="unit-select"
+                    value={formData.unit || ''}
+                    onValueChange={(value: string) => {
+                      console.log('Selected unit:', value);
+                      setFormData({ ...formData, unit: value });
+                    }}
+                    native
                   >
-                    <Se.Trigger>
+                    <Se.Trigger id="unit-trigger">
                       <Se.Value placeholder={t('catch.selectUnit')} />
                     </Se.Trigger>
                     <Se.Content>
                       <Se.ScrollUpButton />
                       <Se.Viewport>
                         <Se.Group>
+                          <Se.Item key="placeholder" value="" index={-1}>
+                            <Se.ItemText>{t('catch.selectUnit')}</Se.ItemText>
+                          </Se.Item>
                           {unitOptions.map((unit, index) => (
                             <Se.Item key={unit} value={unit} index={index}>
                               <Se.ItemText>{unit}</Se.ItemText>
@@ -343,16 +364,24 @@ export function RecordCatchScreen({ navigation, route }: RecordCatchScreenProps)
               <Y marginBottom="$4">
                 <T>{t('catch.gearUsed')}</T>
                 <Se
-                  value={formData.gearUsed}
-                  onValueChange={(value: string) => setFormData({ ...formData, gearUsed: value })}
+                  id="gear-select"
+                  value={formData.gearUsed || ''}
+                  onValueChange={(value: string) => {
+                    console.log('Selected gear:', value);
+                    setFormData({ ...formData, gearUsed: value });
+                  }}
+                  native
                 >
-                  <Se.Trigger>
+                  <Se.Trigger id="gear-trigger">
                     <Se.Value placeholder={t('catch.selectGear')} />
                   </Se.Trigger>
                   <Se.Content>
                     <Se.ScrollUpButton />
                     <Se.Viewport>
                       <Se.Group>
+                        <Se.Item key="placeholder" value="" index={-1}>
+                          <Se.ItemText>{t('catch.selectGear')}</Se.ItemText>
+                        </Se.Item>
                         {gearOptions.map((gear, index) => (
                           <Se.Item key={gear} value={gear} index={index}>
                             <Se.ItemText>{gear}</Se.ItemText>
@@ -385,6 +414,20 @@ export function RecordCatchScreen({ navigation, route }: RecordCatchScreenProps)
                 )}
               </Y>
 
+              {/* Moon Phase Information */}
+              <C marginBottom="$4" bordered padding="$3">
+                <X space="$2" alignItems="center" marginBottom="$2">
+                  <Calendar size={18} color="#0891b2" />
+                  <T fontWeight="bold">{t('weather.moonPhase')}</T>
+                </X>
+                <P fontSize="$3" marginBottom="$2">
+                  {t('catch.moonPhaseHelp')}
+                </P>
+                <X justifyContent="center" marginTop="$2">
+                  <MoonPhaseIndicator date={currentDate} size={60} showLabel />
+                </X>
+              </C>
+
               {/* Notes */}
               <Y marginBottom="$4">
                 <T>{t('catch.notes')}</T>
@@ -397,6 +440,16 @@ export function RecordCatchScreen({ navigation, route }: RecordCatchScreenProps)
                   height={80}
                 />
               </Y>
+
+              {/* Photo Button - Placeholder for future implementation */}
+              <B
+                marginBottom="$4"
+                icon={<Camera size={18} />}
+                variant="outlined"
+                onPress={() => Alert.alert(t('common.comingSoon'), t('catch.photoFeatureComingSoon'))}
+              >
+                {t('catch.addPhoto')}
+              </B>
 
               {/* Submit Button */}
               <B
@@ -415,6 +468,5 @@ export function RecordCatchScreen({ navigation, route }: RecordCatchScreenProps)
           )}
         </Y>
       </Sc>
-    </SafeAreaView>
   );
 }

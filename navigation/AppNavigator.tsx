@@ -20,6 +20,8 @@ import { SustainableFishingCategoryScreen } from '../screens/sustainable-fishing
 import { EducationalVideosScreen } from '../screens/sustainable-fishing/EducationalVideosScreen';
 import { CommunityForumsScreen } from '../screens/sustainable-fishing/CommunityForumsScreen';
 import { CatchRecordDetailsScreen } from '../screens/catch-data/CatchRecordDetailsScreen';
+import { CatchHistoryScreen } from '../screens/catch-data/CatchHistoryScreen';
+import { CatchStatisticsScreen } from '../screens/catch-data/CatchStatisticsScreen';
 import { UserProfileScreen } from '../screens/profile/UserProfileScreen';
 import { SettingsScreen } from '../screens/profile/SettingsScreen';
 import { HelpScreen } from '../screens/profile/HelpScreen';
@@ -61,6 +63,8 @@ export type RootStackParamList = {
 
   // Catch Data screens
   CatchRecordDetails: { catchId: string };
+  CatchHistory: undefined;
+  CatchStatistics: undefined;
 
   // Profile and Settings screens
   UserProfile: undefined;
@@ -219,6 +223,22 @@ export function AppNavigator() {
               component={CatchRecordDetailsScreen}
               options={{
                 title: t('catchData.recordDetails'),
+                headerRight: () => <ProfileButton mini />,
+              }}
+            />
+            <Stack.Screen
+              name="CatchHistory"
+              component={CatchHistoryScreen}
+              options={{
+                title: t('catchData.catchHistory'),
+                headerRight: () => <ProfileButton mini />,
+              }}
+            />
+            <Stack.Screen
+              name="CatchStatistics"
+              component={CatchStatisticsScreen}
+              options={{
+                title: t('catchData.statistics'),
                 headerRight: () => <ProfileButton mini />,
               }}
             />
