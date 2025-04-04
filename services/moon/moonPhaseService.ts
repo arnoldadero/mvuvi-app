@@ -11,6 +11,7 @@ export interface MoonPhaseData {
   distance: number; // Distance to earth in km
   isFishingFavorable: boolean;
   fishingRecommendation: string;
+  omenaDagaaRecommendation?: string; // Specific recommendations for Omena/Dagaa fishing
   imageFile?: string; // Path to the specific moon phase image file
 }
 
@@ -71,8 +72,86 @@ function calculateIllumination(age: number): number {
 /**
  * Determine if fishing conditions are favorable based on moon phase
  * and provide recommendations specific to Kenyan fishing contexts
+ * @param phase The moon phase
+ * @param age The age of the moon in days
+ * @param fishType Optional parameter to get recommendations for specific fish types
  */
-function getFishingRecommendation(phase: MoonPhase, age: number): { isFavorable: boolean; recommendation: string } {
+function getFishingRecommendation(
+  phase: MoonPhase,
+  age: number,
+  fishType: string = 'general'
+): { isFavorable: boolean; recommendation: string; omenaDagaaSpecific?: string } {
+  // Get the current month (0-11)
+  const currentMonth = new Date().getMonth();
+
+  // Check if we're in the optimal Omena/Dagaa fishing season (November through April)
+  const isOmenaDagaaSeason = currentMonth >= 10 || currentMonth <= 3;
+
+  // Special recommendations for Omena/Dagaa fishing
+  if (fishType === 'omena' || fishType === 'dagaa' || fishType === 'general') {
+    // Dark moon phases are best for Omena/Dagaa fishing
+    const isDarkMoonPhase = phase === MoonPhase.NEW_MOON ||
+                           phase === MoonPhase.WANING_CRESCENT ||
+                           phase === MoonPhase.WAXING_CRESCENT;
+
+    // Omena/Dagaa specific recommendation
+    let omenaDagaaSpecific = '';
+
+    if (isDarkMoonPhase) {
+      omenaDagaaSpecific = isOmenaDagaaSeason
+        ? "Excellent conditions for Omena/Dagaa fishing. Dark moon provides optimal contrast for light attraction methods."
+        : "Good darkness for Omena/Dagaa fishing, but outside peak season. Check local conditions.";
+    } else if (phase === MoonPhase.FULL_MOON) {
+      omenaDagaaSpecific = "Poor conditions for Omena/Dagaa fishing. Bright moonlight interferes with light attraction methods. Consider fishing near sunrise/sunset only.";
+    } else {
+      omenaDagaaSpecific = "Moderate conditions for Omena/Dagaa fishing. Best results near dawn or dusk when light contrast is higher.";
+    }
+
+    // General fishing recommendations based on moon phase
+    switch (phase) {
+      case MoonPhase.NEW_MOON:
+        return {
+          isFavorable: true,
+          recommendation: "Excellent for night fishing. Fish are actively feeding due to darkness.",
+          omenaDagaaSpecific
+        };
+      case MoonPhase.FULL_MOON:
+        return {
+          isFavorable: false,
+          recommendation: "Bad for night fishing. The bright moon helps visibility and fish are more cautious.",
+          omenaDagaaSpecific
+        };
+      case MoonPhase.FIRST_QUARTER:
+      case MoonPhase.LAST_QUARTER:
+        return {
+          isFavorable: true,
+          recommendation: "Good fishing, especially during dusk and dawn. Moderate tidal influence.",
+          omenaDagaaSpecific
+        };
+      case MoonPhase.WAXING_CRESCENT:
+      case MoonPhase.WANING_CRESCENT:
+        return {
+          isFavorable: isDarkMoonPhase, // Favorable for Omena/Dagaa
+          recommendation: "Average fishing. Focus on early morning or late evening fishing.",
+          omenaDagaaSpecific
+        };
+      case MoonPhase.WAXING_GIBBOUS:
+      case MoonPhase.WANING_GIBBOUS:
+        return {
+          isFavorable: false,
+          recommendation: "Below average fishing. Fish are less active except around dawn/dusk periods.",
+          omenaDagaaSpecific
+        };
+      default:
+        return {
+          isFavorable: false,
+          recommendation: "Check local conditions and traditional knowledge.",
+          omenaDagaaSpecific
+        };
+    }
+  }
+
+  // Default recommendations for other fish types
   switch (phase) {
     case MoonPhase.NEW_MOON:
       return {
@@ -112,12 +191,14 @@ function getFishingRecommendation(phase: MoonPhase, age: number): { isFavorable:
 
 /**
  * Get moon phase data for a specific date
+ * @param date The date to calculate moon phase for
+ * @param fishType Optional parameter to get recommendations for specific fish types
  */
-export function getMoonPhaseData(date: Date = new Date()): MoonPhaseData {
+export function getMoonPhaseData(date: Date = new Date(), fishType: string = 'general'): MoonPhaseData {
   const age = calculateMoonAge(date);
   const phase = getMoonPhase(age);
   const illumination = calculateIllumination(age);
-  const fishingRecommendation = getFishingRecommendation(phase, age);
+  const fishingRecommendation = getFishingRecommendation(phase, age, fishType);
 
   // Approximate distance calculation - simplified for this implementation
   // In a real app, would use more precise astronomical calculations
@@ -134,6 +215,7 @@ export function getMoonPhaseData(date: Date = new Date()): MoonPhaseData {
     distance,
     isFishingFavorable: fishingRecommendation.isFavorable,
     fishingRecommendation: fishingRecommendation.recommendation,
+    omenaDagaaRecommendation: fishingRecommendation.omenaDagaaSpecific,
     imageFile,
   };
 }

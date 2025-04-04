@@ -10,7 +10,8 @@ import {
   XStack,
   Paragraph,
   SizableText,
-  Stack
+  Stack,
+  Separator
 } from 'tamagui';
 import { useTranslation } from 'react-i18next';
 import { MoonPhaseCalendar } from '../../components/weather/moon-phase/MoonPhaseCalendar';
@@ -94,6 +95,15 @@ export function MoonPhaseScreen({ navigation }: MoonPhaseScreenProps) {
                     </T>
                   </X>
                   <P marginTop="$2">{selectedDay.fishingRecommendation}</P>
+
+                  {/* Omena/Dagaa specific recommendations */}
+                  {selectedDay.omenaDagaaRecommendation && (
+                    <>
+                      <Separator marginVertical="$2" />
+                      <S fontWeight="bold" marginBottom="$1">{t('moonPhase.omenaDagaaTitle')}</S>
+                      <P>{selectedDay.omenaDagaaRecommendation}</P>
+                    </>
+                  )}
                 </Y>
               </C.Footer>
             </C>
@@ -179,6 +189,36 @@ export function MoonPhaseScreen({ navigation }: MoonPhaseScreenProps) {
                 <P>{t('moonPhase.fishingTip1')}</P>
                 <P>{t('moonPhase.fishingTip2')}</P>
                 <P>{t('moonPhase.fishingTip3')}</P>
+              </Y>
+            </C.Footer>
+          </C>
+
+          {/* Omena/Dagaa Fishing Information Card */}
+          <C borderRadius="$4">
+            <C.Header padded>
+              <S fontWeight="bold">
+                {t('moonPhase.omenaDagaaTitle')}
+              </S>
+            </C.Header>
+            <C.Footer padded>
+              <Y space="$2">
+                <P>{t('moonPhase.omenaDagaaInfo1')}</P>
+                <P>{t('moonPhase.omenaDagaaInfo2')}</P>
+                <P>{t('moonPhase.omenaDagaaInfo3')}</P>
+                <X space="$2" marginTop="$2">
+                  <B
+                    flex={1}
+                    variant="outlined"
+                    onPress={() => {
+                      // Navigate to detailed educational content about Omena/Dagaa fishing
+                      if (navigation) {
+                        navigation.navigate('SustainableFishing');
+                      }
+                    }}
+                  >
+                    {t('common.learnMore')}
+                  </B>
+                </X>
               </Y>
             </C.Footer>
           </C>

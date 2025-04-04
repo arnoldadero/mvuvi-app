@@ -279,6 +279,18 @@ export function MoonPhaseCalendar({
     <Y>
       <CalendarTitle>{t('moonPhase.title')}</CalendarTitle>
 
+      {/* Legend for Omena/Dagaa fishing */}
+      <XStack marginBottom="$2" alignItems="center" justifyContent="center">
+        <XStack alignItems="center" marginRight="$4">
+          <YStack width={12} height={12} backgroundColor="$green2" marginRight="$1" />
+          <T fontSize={10}>{t('moonPhase.favorable')}</T>
+        </XStack>
+        <XStack alignItems="center">
+          <YStack width={12} height={12} borderWidth={1} borderColor="$blue9" borderStyle="dashed" marginRight="$1" />
+          <T fontSize={10}>{t('moonPhase.omenaDagaaTitle')}</T>
+        </XStack>
+      </XStack>
+
       {/* Calendar strip */}
       <S
         horizontal
@@ -295,6 +307,9 @@ export function MoonPhaseCalendar({
               height={110}
               backgroundColor={day.isFishingFavorable ? "$green2" : "$background"}
               borderWidth={selectedDay?.date.toDateString() === day.date.toDateString() ? 1 : 0}
+              // Add a special border for days that are good for Omena/Dagaa fishing
+              borderColor={day.omenaDagaaRecommendation?.includes("Excellent") ? "$blue9" : undefined}
+              borderStyle={day.omenaDagaaRecommendation?.includes("Excellent") ? "dashed" : undefined}
             >
               <DayCardContent>
                 <DayText>
@@ -315,6 +330,12 @@ export function MoonPhaseCalendar({
                 <PhaseText fontSize={9} color="$gray10">
                   {t('moonPhase.day')} {Math.round(day.age)}
                 </PhaseText>
+                {/* Omena/Dagaa indicator */}
+                {day.omenaDagaaRecommendation?.includes("Excellent") && (
+                  <PhaseText fontSize={8} color="$blue9" fontWeight="bold" marginTop="$1">
+                    ✓ Omena/Dagaa
+                  </PhaseText>
+                )}
               </DayCardContent>
             </C>
           ))}
@@ -356,6 +377,14 @@ export function MoonPhaseCalendar({
           <InfoSection>
             <T fontWeight="bold">{`${t('moonPhase.recommendation')}:`}</T>
             <P marginTop="$1">{selectedDay.fishingRecommendation}</P>
+
+            {/* Omena/Dagaa specific recommendations */}
+            {selectedDay.omenaDagaaRecommendation && (
+              <YStack marginTop="$2">
+                <T fontWeight="bold">{`${t('moonPhase.omenaDagaaTitle')}:`}</T>
+                <P marginTop="$1">{selectedDay.omenaDagaaRecommendation}</P>
+              </YStack>
+            )}
           </InfoSection>
 
           <StatsSection>

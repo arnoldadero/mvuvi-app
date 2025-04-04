@@ -77,6 +77,10 @@ export default {
     fishingTip1: 'During full and new moons, fish tend to feed more actively due to stronger tidal movements.',
     fishingTip2: 'First and last quarter phases often have less tidal movement, but can still be good for certain species.',
     fishingTip3: 'Early morning and late evening are generally the best times to fish, regardless of moon phase.',
+    omenaDagaaTitle: 'Omena/Dagaa Fishing Guide',
+    omenaDagaaInfo1: 'Omena/Dagaa fishing is most productive during the darkest phases of the lunar cycle when there is minimal moonlight.',
+    omenaDagaaInfo2: 'The optimal season for Omena/Dagaa fishing extends from November through April, with dark moon periods providing the best conditions.',
+    omenaDagaaInfo3: 'During full moon periods, fishing activity decreases significantly as bright ambient light diminishes the effectiveness of artificial lights used to attract the fish.',
     phases: {
       NEW_MOON: 'New Moon',
       WAXING_CRESCENT: 'Waxing Crescent',

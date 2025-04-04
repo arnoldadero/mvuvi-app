@@ -71,6 +71,10 @@ export default {
     fishingTip1: 'Wakati wa mwezi mpevu na mwezi mchanga, samaki huwa na tabia ya kula zaidi kutokana na mawimbi makubwa zaidi.',
     fishingTip2: 'Vipindi vya mwezi wa kwanza na wa mwisho mara nyingi huwa na mawimbi machache, lakini bado yanaweza kuwa mazuri kwa aina fulani za samaki.',
     fishingTip3: 'Asubuhi na mapema na jioni ni nyakati nzuri zaidi kwa uvuvi, bila kujali hali ya mwezi.',
+    omenaDagaaTitle: 'Mwongozo wa Uvuvi wa Omena/Dagaa',
+    omenaDagaaInfo1: 'Uvuvi wa Omena/Dagaa hufanikiwa zaidi wakati wa vipindi vya giza vya mzunguko wa mwezi wakati kuna mwangaza mdogo wa mwezi.',
+    omenaDagaaInfo2: 'Msimu bora wa uvuvi wa Omena/Dagaa huanzia Novemba hadi Aprili, na vipindi vya mwezi wa giza hutoa hali bora zaidi.',
+    omenaDagaaInfo3: 'Wakati wa vipindi vya mwezi mpevu, shughuli za uvuvi hupungua sana kwani mwangaza mkali wa mazingira hupunguza ufanisi wa taa za bandia zinazotumika kuvutia samaki.',
     phases: {
       NEW_MOON: 'Mwezi Mchanga',
       WAXING_CRESCENT: 'Mwezi Unaongezeka (Hilali)',
