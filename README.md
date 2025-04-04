@@ -190,6 +190,7 @@ mvuvi-app/
 - [x] Added web-specific version of the app with proper fallback UI
 - [x] Fixed Tamagui CSS loading issues for web platform
 - [x] Renamed moon phase images to use day-based naming convention instead of illumination percentage
+- [x] Added Omena/Dagaa fishing recommendations to moon phase calendar based on lunar cycle research
 
 ### Pending Tasks
 - [ ] Weather API integration
