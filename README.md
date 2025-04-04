@@ -203,6 +203,7 @@ mvuvi-app/
 - [x] Made Weather, Sustainable Fishing, and Safety screens accessible without login
 - [x] Fixed missing screen components in navigation (SafetyTipsScreen, FishSpeciesScreen, SeasonalCalendarScreen)
 - [x] Fixed syntax errors caused by special apostrophes in string literals
+- [x] Fixed navigation errors for missing screen routes
 
 ### Pending Tasks
 - [ ] Weather API integration
@@ -288,6 +289,7 @@ The following GitHub issues have been created to track the implementation of the
 12. [Make Weather, Sustainable Fishing, and Safety Screens Accessible Without Login](https://github.com/arnoldadero/mvuvi-app/issues/13)
 13. [Fix missing screen components in navigation](https://github.com/arnoldadero/mvuvi-app/issues/14)
 14. [Fix syntax errors caused by special apostrophes in string literals](https://github.com/arnoldadero/mvuvi-app/issues/15)
+15. [Fix navigation errors for missing screen routes](https://github.com/arnoldadero/mvuvi-app/issues/16)
 
 All these issues are part of the [MVP Release](https://github.com/arnoldadero/mvuvi-app/milestone/1) milestone.
 

@@ -24,6 +24,7 @@ import { ReportViolationScreen } from '../screens/sustainable-fishing/ReportViol
 import { SustainableFishingCategoryScreen } from '../screens/sustainable-fishing/SustainableFishingCategoryScreen';
 import { EducationalVideosScreen } from '../screens/sustainable-fishing/EducationalVideosScreen';
 import { CommunityForumsScreen } from '../screens/sustainable-fishing/CommunityForumsScreen';
+import { FishingLicenseScreen } from '../screens/sustainable-fishing/FishingLicenseScreen';
 import { CatchRecordDetailsScreen } from '../screens/catch-data/CatchRecordDetailsScreen';
 import { CatchHistoryScreen } from '../screens/catch-data/CatchHistoryScreen';
 import { CatchStatisticsScreen } from '../screens/catch-data/CatchStatisticsScreen';
@@ -204,10 +205,45 @@ export function AppNavigator() {
               }}
             />
             <Stack.Screen
+              name="FishingSeasonalCalendar"
+              component={FishingSeasonalCalendarScreen}
+              options={{
+                title: t('sustainableFishing.seasonalCalendar'),
+              }}
+            />
+            <Stack.Screen
               name="ReportViolation"
               component={ReportViolationScreen}
               options={{
                 title: t('sustainableFishing.reportViolation'),
+              }}
+            />
+            <Stack.Screen
+              name="SustainableFishingCategory"
+              component={SustainableFishingCategoryScreen}
+              options={{
+                title: t('sustainableFishing.category'),
+              }}
+            />
+            <Stack.Screen
+              name="EducationalVideos"
+              component={EducationalVideosScreen}
+              options={{
+                title: t('sustainableFishing.educationalVideos'),
+              }}
+            />
+            <Stack.Screen
+              name="CommunityForums"
+              component={CommunityForumsScreen}
+              options={{
+                title: t('sustainableFishing.communityForums'),
+              }}
+            />
+            <Stack.Screen
+              name="FishingLicense"
+              component={FishingLicenseScreen}
+              options={{
+                title: t('sustainableFishing.fishingLicense'),
               }}
             />
           </>
@@ -324,6 +360,14 @@ export function AppNavigator() {
               component={CommunityForumsScreen}
               options={{
                 title: t('sustainableFishing.communityForums'),
+                headerRight: () => <ProfileButton mini />,
+              }}
+            />
+            <Stack.Screen
+              name="FishingLicense"
+              component={FishingLicenseScreen}
+              options={{
+                title: t('sustainableFishing.fishingLicense'),
                 headerRight: () => <ProfileButton mini />,
               }}
             />
