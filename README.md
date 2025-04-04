@@ -189,6 +189,7 @@ mvuvi-app/
 - [x] Created platform-specific MapView component for web compatibility
 - [x] Added web-specific version of the app with proper fallback UI
 - [x] Fixed Tamagui CSS loading issues for web platform
+- [x] Renamed moon phase images to use day-based naming convention instead of illumination percentage
 
 ### Pending Tasks
 - [ ] Weather API integration
