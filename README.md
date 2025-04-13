@@ -204,6 +204,7 @@ mvuvi-app/
 - [x] Fixed missing screen components in navigation (SafetyTipsScreen, FishSpeciesScreen, SeasonalCalendarScreen)
 - [x] Fixed syntax errors caused by special apostrophes in string literals
 - [x] Fixed navigation errors for missing screen routes
+- [x] Added React DevTools debugging instructions to README
 
 ### Pending Tasks
 - [ ] Weather API integration
@@ -259,6 +260,17 @@ mvuvi-app/
 - Run TypeScript type checking: `yarn tsc` or `npx tsc`
 - Run linting: `yarn lint` or `npx eslint . --ext .js,.jsx,.ts,.tsx`
 - Fix linting issues: `yarn lint:fix` or `npx eslint . --ext .js,.jsx,.ts,.tsx --fix`
+- Launch React DevTools: `yarn devtools` or `npx react-devtools`
+
+### Debugging
+
+Starting with React Native 0.77, JavaScript logs will be removed from Metro. Use React Native DevTools as your primary debugging tool:
+
+1. Start your app with `yarn start` or `npx expo start`
+2. Press `j` in the terminal to open React DevTools (requires Google Chrome or Microsoft Edge)
+3. Alternatively, run `yarn devtools` in a separate terminal to launch React DevTools manually
+
+React DevTools provides component inspection, props/state viewing, and performance profiling capabilities that are more powerful than console logs.
 
 ### Web Development Notes
 
